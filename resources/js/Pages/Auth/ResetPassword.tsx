@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import GuestLayout from "@/Layouts/GuestLayout";
+import Auth from "@/Layouts/Auth";
 import PrimaryButton from "@/Components/PrimaryButton";
-import { Head, useForm } from "@inertiajs/react";
+import { useForm } from "@inertiajs/react";
 import React from "react";
 import AuthForm from "@/Components/AuthForm";
 import FormInputField from "@/Components/FormInputField";
@@ -21,7 +21,7 @@ export default function ResetPassword({ token, email }) {
     }, []);
 
     return (
-        <GuestLayout
+        <Auth
             img_path={"forgot_reset_password"}
             img_classes="object-right"
             title="Reset Password"
@@ -65,6 +65,6 @@ export default function ResetPassword({ token, email }) {
                     Reset Password
                 </PrimaryButton>
             </AuthForm>
-        </GuestLayout>
+        </Auth>
     );
 }

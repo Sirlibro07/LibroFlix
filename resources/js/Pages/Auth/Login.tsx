@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import GuestLayout from "@/Layouts/GuestLayout";
+import Auth from "@/Layouts/Auth";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { Link, useForm } from "@inertiajs/react";
 import React from "react";
@@ -23,11 +23,7 @@ export default function Login({ status, canResetPassword }) {
     }, []);
 
     return (
-        <GuestLayout
-            img_path={"login_register"}
-            form_position="end"
-            title="Log In"
-        >
+        <Auth img_path={"login_register"} form_position="end" title="Log In">
             <AuthForm name="Log In" route={route} post={post} endpoint="login">
                 <FormInputField
                     name={"email"}
@@ -64,6 +60,6 @@ export default function Login({ status, canResetPassword }) {
                     )}
                 </div>
             </AuthForm>
-        </GuestLayout>
+        </Auth>
     );
 }

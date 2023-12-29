@@ -1,16 +1,25 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import "./CSS/GuestLayout.css";
 import imgStoragePath from "../Helpers/images";
 import { Head } from "@inertiajs/react";
 
-export default function Guest({
+interface AuthProps {
+    children: ReactNode;
+    img_path: string;
+    img_classes?: string;
+    form_position?: string;
+    title: string;
+    media_query_breakpoint?: string;
+}
+
+export default function Auth({
     children,
     img_path,
     img_classes = "",
     form_position = "start",
     title,
     media_query_breakpoint = "580px",
-}) {
+}: AuthProps) {
     const img = (version: string) => {
         return imgStoragePath(`backgrounds/${img_path}/${version}`);
     };

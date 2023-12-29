@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import GuestLayout from "@/Layouts/GuestLayout";
-import "../../Layouts/CSS/GuestLayoutMediaQuery.css";
+import Auth from "@/Layouts/Auth";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { Link, useForm } from "@inertiajs/react";
 import React from "react";
@@ -22,7 +21,7 @@ export default function Register() {
     }, []);
 
     return (
-        <GuestLayout img_path={"login_register"} title="Sign Up">
+        <Auth img_path={"login_register"} title="Sign Up">
             <AuthForm
                 name="Sign Up"
                 route={route}
@@ -70,6 +69,6 @@ export default function Register() {
                     <Link href={route("login")}>Already have an account ?</Link>
                 </div>
             </AuthForm>
-        </GuestLayout>
+        </Auth>
     );
 }
