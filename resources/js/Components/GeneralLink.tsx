@@ -19,7 +19,7 @@ const GeneralLink = ({
             {`
                     
 
-        a::after {
+        .general_link::after {
             content: "";
             position: absolute;
             bottom: -4px;
@@ -32,7 +32,7 @@ const GeneralLink = ({
             border-radius: 1px;
         }
 
-        a:hover::after {
+        .general_link:hover::after {
             width: 50%;
         }
 
@@ -42,7 +42,10 @@ const GeneralLink = ({
 
     return (
         <>
-            <Link href={href} className={`relative  ${className}`}>
+            <Link
+                href={href}
+                className={`${border && "general_link"} relative  ${className}`}
+            >
                 {children}
             </Link>
             {border && css}
