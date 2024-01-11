@@ -5,6 +5,7 @@ import { Link, useForm } from "@inertiajs/react";
 import React from "react";
 import AuthForm from "@/Components/AuthForm";
 import FormInputField from "@/Components/FormInputField";
+import GeneralLink from "@/Components/GeneralLink";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -65,7 +66,9 @@ export default function Register() {
                 <PrimaryButton disabled={processing}>Sign Up</PrimaryButton>
 
                 <div className="flex flex-col items-center mt-4 gap-y-2 text-label ">
-                    <Link href={route("login")}>Already have an account ?</Link>
+                    <GeneralLink href={route("login")}>
+                        Already have an account ?
+                    </GeneralLink>
                 </div>
             </AuthForm>
         </Auth>

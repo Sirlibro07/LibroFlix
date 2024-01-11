@@ -8,6 +8,7 @@ import AuthForm from "@/Components/AuthForm";
 import FormInputField from "@/Components/FormInputField";
 import FormCheckboxField from "@/Components/FormCheckboxField";
 import AuthSuccessMessage from "@/Components/AuthSuccessMessage";
+import GeneralLink from "@/Components/GeneralLink";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -52,16 +53,19 @@ export default function Login({ status, canResetPassword }) {
                 <PrimaryButton disabled={processing}>Log in</PrimaryButton>
 
                 <div className="flex flex-col items-center mt-4 gap-y-2 text-border_label ">
-                    <Link href={route("register")} className="text-label">
+                    <GeneralLink
+                        href={route("register")}
+                        className="text-label"
+                    >
                         Sign Up ?
-                    </Link>
+                    </GeneralLink>
                     {canResetPassword && (
-                        <Link
+                        <GeneralLink
                             href={route("password.request")}
                             className="text-label"
                         >
                             forgot password?
-                        </Link>
+                        </GeneralLink>
                     )}
                 </div>
             </AuthForm>

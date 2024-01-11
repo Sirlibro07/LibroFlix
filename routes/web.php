@@ -29,6 +29,11 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', [MovieController::class, 'index'])->name("home");
 
+// Route::get('/', function () {
+//     return to_route('movies');
+// })->name("home");
 
+
+// Route::get('/movies/{filter}', [MovieController::class, 'index'])->name("movies.index");
 
 require __DIR__ . '/auth.php';
