@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import submit from "@/Helpers/submit";
 
 interface AuthFormProps {
     children: ReactNode;
@@ -17,7 +16,9 @@ export default function AuthForm({
     return (
         <form
             onSubmit={(e) => {
-                submit(e, method_function, route, route_name);
+                e.preventDefault();
+
+                method_function(route(route_name));
             }}
             className="w-full h-fit bg-body px-mobile_side_padding py-mobile_auth_y_padding rounded-t-auth_big_radius lg:w-6/12 lg:max-w-pc_auth_max_width lg:rounded-auth_big_radius lg:h-[calc(100%-3.75rem)] lg:min-h-[600px] lg:mx-pc_auth_x_margin  lg:flex lg:flex-col lg:justify-center lg:py-0 xl:px-desktop_auth_x_padding"
         >

@@ -3,7 +3,6 @@ import Input from "./Input";
 import SearchBarIcon from "./SearchBarIcon";
 import Select from "./Select";
 import { useForm } from "@inertiajs/react";
-import submit from "@/Helpers/submit";
 
 const SearchBar = () => {
     const { data, setData, get, processing, errors, reset } = useForm({
@@ -12,7 +11,7 @@ const SearchBar = () => {
 
     return (
         <form
-            className={`absolute  top-[5.688rem] mt-6 px-4 w-full  right-0  lg:right-4 lg:px-0 lg:h-fit lg:m-0 lg:w-[350px] lg:top-auto xl:w-searchbar_width 
+            className={`absolute top-[5.688rem] mt-6 px-4 w-full  right-0  lg:right-4 lg:px-0 lg:h-fit lg:m-0 lg:w-[350px] lg:top-auto xl:w-searchbar_width 
            `}
         >
             <div className="w-full relative flex items-center">
