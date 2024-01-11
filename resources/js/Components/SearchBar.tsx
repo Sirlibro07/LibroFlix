@@ -2,7 +2,7 @@ import React from "react";
 import Input from "./Input";
 import SearchBarIcon from "./SearchBarIcon";
 import Select from "./Select";
-import { useForm } from "@inertiajs/react";
+import { router, useForm } from "@inertiajs/react";
 
 const SearchBar = () => {
     const { data, setData, get, processing, errors, reset } = useForm({
@@ -21,7 +21,7 @@ const SearchBar = () => {
                     id={"search"}
                     name={"search"}
                     placeholder="Search"
-                    value={data.search} //state per il double-binding
+                    value={data.search}
                     className={"px-9 lg:h-10"}
                     setData={setData}
                 />

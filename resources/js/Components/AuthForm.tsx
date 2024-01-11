@@ -13,12 +13,16 @@ export default function AuthForm({
     method_function,
     route_name,
 }: AuthFormProps) {
+    const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        method_function(route(route_name));
+    };
+
     return (
         <form
             onSubmit={(e) => {
-                e.preventDefault();
-
-                method_function(route(route_name));
+                submitHandler(e);
             }}
             className="w-full h-fit bg-body px-mobile_side_padding py-mobile_auth_y_padding rounded-t-auth_big_radius lg:w-6/12 lg:max-w-pc_auth_max_width lg:rounded-auth_big_radius lg:h-[calc(100%-3.75rem)] lg:min-h-[600px] lg:mx-pc_auth_x_margin  lg:flex lg:flex-col lg:justify-center lg:py-0 xl:px-desktop_auth_x_padding"
         >
