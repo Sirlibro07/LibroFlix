@@ -24,9 +24,8 @@ export default function Register() {
         <Auth img_path={"login_register"} title="Sign Up">
             <AuthForm
                 name="Sign Up"
-                route={route}
-                post={post}
-                endpoint="register"
+                method_function={post}
+                route_name="register"
             >
                 <FormInputField
                     name={"name"}

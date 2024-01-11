@@ -1,12 +1,12 @@
 const submit = (
     e: React.FormEvent<HTMLFormElement>,
-    post: (url: string) => unknown,
-    route: (url: string) => string,
-    endpoint: string
+    method_function: (url: string) => unknown,
+    route_function: (url: string) => string,
+    route_name: string
 ) => {
     e.preventDefault();
 
-    post(route(endpoint));
+    method_function(route_function(route_name));
 };
 
 export default submit;

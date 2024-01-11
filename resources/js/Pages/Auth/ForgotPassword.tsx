@@ -21,9 +21,8 @@ export default function ForgotPassword({ status }) {
         >
             <AuthForm
                 name="Recover Password"
-                post={post}
-                route={route}
-                endpoint="password.email"
+                method_function={post}
+                route_name="password.email"
             >
                 <FormInputField
                     name={"email"}

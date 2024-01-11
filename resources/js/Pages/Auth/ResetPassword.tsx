@@ -28,9 +28,8 @@ export default function ResetPassword({ token, email }) {
         >
             <AuthForm
                 name="Reset Password"
-                route={route}
-                post={post}
-                endpoint="password.store"
+                method_function={post}
+                route_name="password.store"
             >
                 <FormInputField
                     name={"email"}

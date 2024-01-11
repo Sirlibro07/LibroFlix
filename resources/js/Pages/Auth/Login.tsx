@@ -24,7 +24,7 @@ export default function Login({ status, canResetPassword }) {
 
     return (
         <Auth img_path={"login_register"} form_position="end" title="Log In">
-            <AuthForm name="Log In" route={route} post={post} endpoint="login">
+            <AuthForm name="Log In" method_function={post} route_name="login">
                 <FormInputField
                     name={"email"}
                     state_field={data.email}
@@ -51,7 +51,7 @@ export default function Login({ status, canResetPassword }) {
 
                 <PrimaryButton disabled={processing}>Log in</PrimaryButton>
 
-                <div className="flex flex-col  items-center mt-4 gap-y-2 text-border_label ">
+                <div className="flex flex-col items-center mt-4 gap-y-2 text-border_label ">
                     <Link href={route("register")} className="text-label">
                         Sign Up ?
                     </Link>
