@@ -1,7 +1,19 @@
 import { Link } from "@inertiajs/react";
-import React from "react";
+import React, { ReactNode } from "react";
 
-const GeneralLink = ({ href, className = "", children }) => {
+interface GeneralLinkProps {
+    href: string;
+    className?: string;
+    border?: boolean;
+    children: ReactNode;
+}
+
+const GeneralLink = ({
+    href,
+    className = "",
+    border = true,
+    children,
+}: GeneralLinkProps) => {
     const css = (
         <style>
             {`
@@ -33,7 +45,7 @@ const GeneralLink = ({ href, className = "", children }) => {
             <Link href={href} className={`relative  ${className}`}>
                 {children}
             </Link>
-            {css}
+            {border && css}
         </>
     );
 };

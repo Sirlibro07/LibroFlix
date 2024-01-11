@@ -1,14 +1,15 @@
 import React from "react";
-import { Link } from "@inertiajs/react";
+import GeneralLink from "./GeneralLink";
 
 const Logo = () => {
     return (
-        <Link
+        <GeneralLink
             href={route("home")}
-            className=" text-brand text-logo font-display py-6"
+            className="text-brand text-logo font-display py-6"
+            border={false}
         >
             Librone
-        </Link>
+        </GeneralLink>
     );
 };
 
