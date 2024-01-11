@@ -65,7 +65,7 @@ export default function Register() {
 
                 <PrimaryButton disabled={processing}>Sign Up</PrimaryButton>
 
-                <div className="flex flex-col  items-center mt-4 gap-y-2 text-border_label ">
+                <div className="flex flex-col items-center mt-4 gap-y-2 text-label ">
                     <Link href={route("login")}>Already have an account ?</Link>
                 </div>
             </AuthForm>

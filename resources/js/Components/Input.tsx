@@ -5,6 +5,7 @@ interface InputProps {
     type: string;
     id: string;
     name: string;
+    placeholder?: string;
     autoComplete?: string;
     value: string;
     className: string;
@@ -16,6 +17,7 @@ const Input = ({
     type,
     id,
     name,
+    placeholder = "",
     autoComplete,
     value,
     className,
@@ -31,10 +33,11 @@ const Input = ({
             name={name}
             autoComplete={autoComplete ? autoComplete : name}
             value={value}
+            placeholder={placeholder}
             onChange={(e) => {
                 onChangeHandler(e, state, setData);
             }}
-            className={`w-full h-auth_input_btn bg-body text-contrast rounded-10 text-input border-border_label focus:border-border_label focus:ring-0 focus:ring-white ${className}`}
+            className={`w-full h-auth_input_btn bg-body text-contrast rounded-10 text-input border-border_color placeholder-light_color focus:border-border_color focus:ring-0  ${className}`}
         />
     );
 };

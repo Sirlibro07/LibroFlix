@@ -52,9 +52,14 @@ export default function Login({ status, canResetPassword }) {
                 <PrimaryButton disabled={processing}>Log in</PrimaryButton>
 
                 <div className="flex flex-col  items-center mt-4 gap-y-2 text-border_label ">
-                    <Link href={route("register")}>Sign Up ?</Link>
+                    <Link href={route("register")} className="text-label">
+                        Sign Up ?
+                    </Link>
                     {canResetPassword && (
-                        <Link href={route("password.request")}>
+                        <Link
+                            href={route("password.request")}
+                            className="text-label"
+                        >
                             forgot password?
                         </Link>
                     )}

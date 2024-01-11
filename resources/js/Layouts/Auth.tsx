@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "./CSS/GuestLayout.css";
+import "./CSS/Auth.css";
 import imgStoragePath from "../Helpers/images";
 import { Head } from "@inertiajs/react";
 

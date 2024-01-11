@@ -1,24 +1,26 @@
 import React, { ReactNode } from "react";
+import Button from "./Button";
 
 interface PrimaryButtonProps {
+    disabled?: boolean;
     className?: string;
-    disabled: boolean;
     children: ReactNode;
+    custom_margin_top?: string;
 }
 
 export default function PrimaryButton({
+    disabled = null,
     className = "",
-    disabled,
+    custom_margin_top = "",
     children,
 }: PrimaryButtonProps) {
     return (
-        <button
+        <Button
             disabled={disabled}
-            className={`w-full h-auth_input_btn mt-7 bg-brand text-white font-label rounded-10 ${
-                disabled && "opacity-90"
-            } ${className}`}
+            className={`bg-brand ${className}`}
+            custom_margin_top={custom_margin_top}
         >
             {children}
-        </button>
+        </Button>
     );
 }

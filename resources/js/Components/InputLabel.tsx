@@ -14,7 +14,7 @@ export default function InputLabel({
     return (
         <label
             htmlFor={htmlFor}
-            className={`text-border_label font-label inline-block mb-1 ${className}`}
+            className={`text-label font-medium inline-block mb-1 ${className}`}
         >
             {value}
         </label>
