@@ -1,5 +1,5 @@
 import React from "react";
-import onChangeHandler from "@/Helpers/onChangeHandler";
+import Input_Checkbox_onChangeHandler from "@/Helpers/Input_Checkbox_onChangeHandler";
 
 interface CheckboxProps {
     className?: string;
@@ -17,7 +17,7 @@ export default function Checkbox({
     return (
         <input
             onChange={(e) => {
-                onChangeHandler(e, name, setData);
+                Input_Checkbox_onChangeHandler(e, name, setData);
             }}
             checked={checked}
             name={name}

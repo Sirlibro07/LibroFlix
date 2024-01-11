@@ -1,4 +1,5 @@
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
+import NavbarIconsOnClickhandler from "@/Helpers/NavbarIconsOnClickhandler";
 import React, { useContext } from "react";
 
 const MenuIcon = () => {
@@ -7,10 +8,13 @@ const MenuIcon = () => {
         Menu_Searchbar_Context
     ).setIsMenuVisible;
 
-    const handleOnclick = () => {
-        setIsMenuVisible((isMenuVisible) => !isMenuVisible);
-    };
+    const setIsSearchbarVisible = useContext(
+        Menu_Searchbar_Context
+    ).setIsSearchbarVisible;
 
+    const handleOnclick = () => {
+        NavbarIconsOnClickhandler(setIsMenuVisible, setIsSearchbarVisible);
+    };
     const bars = [1, 2, 3];
 
     return (
