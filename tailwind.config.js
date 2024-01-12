@@ -36,6 +36,7 @@ export default {
             maxWidth: {
                 pc_auth_max_width: "850px",
                 mobile_menu_max_width: "336px",
+                input_max_width: "600px",
             },
             height: {
                 auth_input_btn: "50px",
