@@ -8,6 +8,7 @@ interface ProfileFormProps {
     route_name: string;
     processing: any;
     recentlySuccessful?: boolean;
+    button_text?: string;
 }
 
 const ProfileForm = ({
@@ -16,6 +17,7 @@ const ProfileForm = ({
     route_name,
     processing,
     recentlySuccessful = false,
+    button_text = "Update",
 }: ProfileFormProps) => {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -31,7 +33,7 @@ const ProfileForm = ({
             )}
 
             {children}
-            <PrimaryButton disabled={processing}>Update</PrimaryButton>
+            <PrimaryButton disabled={processing}>{button_text}</PrimaryButton>
         </form>
     );
 };
