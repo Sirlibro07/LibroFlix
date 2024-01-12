@@ -28,7 +28,7 @@ const SearchBar = () => {
                 e.preventDefault();
                 router.get(route("lol", "sup"));
             }}
-            className={`absolute z-10 top-[5.688rem] mt-6 px-4 w-full  right-0  lg:right-4 lg:px-0 lg:h-fit lg:m-0 lg:w-[350px] lg:top-auto xl:w-searchbar_width 
+            className={`absolute z-10 top-[5.688rem] mt-6 px-4 w-full  right-0  lg:static lg:px-0 lg:h-fit lg:m-0 lg:max-w-[27rem] lg:top-auto xl:w-searchbar_width 
            ${visibility_styles}`}
         >
             <div className="w-full relative flex items-center">
