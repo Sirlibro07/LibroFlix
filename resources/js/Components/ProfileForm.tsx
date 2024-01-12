@@ -17,8 +17,11 @@ const ProfileForm = ({
     return (
         <form onSubmit={submitHandler}>
             {recentlySuccessful && (
-                <small className="text-white block">Updated</small>
+                <div className="w-full flex justify-center bg-success rounded-10">
+                    <p className="text-white py-3">Updated</p>
+                </div>
             )}
+
             {children}
             <PrimaryButton disabled={processing}>Update</PrimaryButton>
         </form>
