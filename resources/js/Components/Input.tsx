@@ -37,7 +37,7 @@ const Input = ({
             onChange={(e) => {
                 Input_Checkbox_onChangeHandler(e, state, setData);
             }}
-            className={`w-full max-w-input_max_width h-auth_input_btn bg-body text-contrast rounded-10 text-input border-border_color placeholder-light_color focus:border-border_color focus:ring-0  ${className}`}
+            className={`w-full h-auth_input_btn bg-body text-contrast rounded-10 text-input border-border_color placeholder-light_color focus:border-border_color focus:ring-0  ${className}`}
         />
     );
 };
