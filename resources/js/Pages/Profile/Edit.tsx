@@ -20,7 +20,7 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                     { name: "Password" },
                     { name: "Other" },
                 ]}
-                ul_className="mt-8"
+                ul_className="mt-8 mb-16"
             />
 
             <UpdateProfileInformationForm />
