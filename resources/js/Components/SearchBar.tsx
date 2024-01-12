@@ -17,6 +17,13 @@ const SearchBar = () => {
         Menu_Searchbar_Context
     ).isSearchbarVisible;
 
+    const visibility_styles =
+        window.innerWidth > 1024
+            ? "lg:flex"
+            : isSearchbarVisible && !isMenuVisible
+            ? "flex"
+            : "hidden";
+
     return (
         <form
             onSubmit={(e) => {
@@ -24,7 +31,7 @@ const SearchBar = () => {
                 router.get(route("lol", "sup"));
             }}
             className={`absolute z-10 top-[5.688rem] mt-6 px-4 w-full  right-0  lg:right-4 lg:px-0 lg:h-fit lg:m-0 lg:w-[350px] lg:top-auto xl:w-searchbar_width 
-           ${isSearchbarVisible && !isMenuVisible ? "flex" : "hidden"}`}
+           ${visibility_styles}`}
         >
             <div className="w-full relative flex items-center">
                 <SearchBarIcon className="absolute left-3 text-base" />
