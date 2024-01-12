@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import "./CSS/Auth.css";
 import imgStoragePath from "../Helpers/images";
 import { Head } from "@inertiajs/react";
+import "../Helpers/CSS/borders.css";
 
 interface AuthProps {
     children: ReactNode;

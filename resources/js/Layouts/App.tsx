@@ -1,16 +1,16 @@
 import Navbar from "@/Components/Navbar";
 import React from "react";
+import "../Helpers/CSS/borders.css";
 
 export default function App({ user, children, className = "" }) {
     return (
         <>
             <Navbar />
             <section
-                className={`bg-red-400 px-mobile_side_padding h-fit ${className}`}
+                className={`yo bg-black  px-mobile_side_padding h-[500px] ${className}`}
             >
                 {children}
             </section>
-            {/* <section className="bg-black w-full h-[40rem]"></section> */}
         </>
     );
 }
