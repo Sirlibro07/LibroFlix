@@ -31,7 +31,7 @@ const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
                     <section
                         className={`px-mobile_side_padding ${
                             (isMenuVisible || isSearchbarVisible) &&
-                            "brightness-[30%]"
+                            "lower_brightness"
                         }  ${className}`}
                     >
                         {children}

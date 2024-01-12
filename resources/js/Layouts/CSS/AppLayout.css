@@ -5,3 +5,9 @@ body,
     min-height: 100%;
     background-color: black;
 }
+
+@media (max-width: 1024px) {
+    .lower_brightness {
+        filter: brightness(30%);
+    }
+}
