@@ -23,6 +23,7 @@ export default function DeleteUserForm() {
                 route_name="profile.destroy"
                 processing={processing}
                 button_text="Delete Account"
+                button_styles="bg-error_danger"
             >
                 <FormInputField
                     name={"password"}

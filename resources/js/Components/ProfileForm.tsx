@@ -4,6 +4,7 @@ import formSubmit from "@/Helpers/formSubmit";
 
 interface ProfileFormProps {
     children: ReactNode;
+    button_styles?: string;
     method_function: any;
     route_name: string;
     processing: any;
@@ -13,6 +14,7 @@ interface ProfileFormProps {
 
 const ProfileForm = ({
     children,
+    button_styles = "",
     method_function,
     route_name,
     processing,
@@ -33,7 +35,7 @@ const ProfileForm = ({
             )}
 
             {children}
-            <PrimaryButton disabled={processing} className="bg-error_danger">
+            <PrimaryButton disabled={processing} className={button_styles}>
                 {button_text}
             </PrimaryButton>
         </form>
