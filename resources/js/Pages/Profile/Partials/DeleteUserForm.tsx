@@ -20,8 +20,9 @@ export default function DeleteUserForm() {
         <>
             <ProfileForm
                 method_function={destroy}
-                route_name="password.update"
+                route_name="profile.destroy"
                 processing={processing}
+                button_text="Delete Account"
             >
                 <FormInputField
                     name={"password"}
