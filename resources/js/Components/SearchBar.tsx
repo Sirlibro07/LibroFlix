@@ -32,7 +32,7 @@ const SearchBar = () => {
     }, []);
 
     const visibility_styles =
-        width > 1024
+        width > 1023
             ? "lg:flex"
             : isSearchbarVisible && !isMenuVisible
             ? "flex"
