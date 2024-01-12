@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import NavbarAccountLinks from "./NavbarAccountLinks";
-import GeneralLink from "./GeneralLink";
 import NavbarLink from "./NavbarLink";
 
 const NavbarLinks = () => {
