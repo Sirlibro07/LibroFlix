@@ -8,13 +8,13 @@ const ProfileForm = ({
     processing,
     recentlySuccessful,
 }) => {
-    const submit = (e: React.FormEvent<HTMLFormElement>) => {
+    const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         method_function(route(route_name));
     };
     return (
-        <form onSubmit={submit}>
+        <form onSubmit={submitHandler}>
             {recentlySuccessful && (
                 <small className="text-white block">Updated</small>
             )}
