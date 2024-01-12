@@ -23,8 +23,8 @@ const SearchBar = () => {
                 e.preventDefault();
                 router.get(route("lol", "sup"));
             }}
-            className={`absolute top-[5.688rem] mt-6 px-4 w-full  right-0  lg:right-4 lg:px-0 lg:h-fit lg:m-0 lg:w-[350px] lg:top-auto xl:w-searchbar_width 
-           ${isSearchbarVisible && !isMenuVisible ? "block" : "hidden"}`}
+            className={`absolute z-10 top-[5.688rem] mt-6 px-4 w-full  right-0  lg:right-4 lg:px-0 lg:h-fit lg:m-0 lg:w-[350px] lg:top-auto xl:w-searchbar_width 
+           ${isSearchbarVisible && !isMenuVisible ? "flex" : "hidden"}`}
         >
             <div className="w-full relative flex items-center">
                 <SearchBarIcon className="absolute left-3 text-base" />
