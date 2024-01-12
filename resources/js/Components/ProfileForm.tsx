@@ -1,14 +1,22 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import PrimaryButton from "./PrimaryButton";
 import formSubmit from "@/Helpers/formSubmit";
+
+interface ProfileFormProps {
+    children: ReactNode;
+    method_function: any;
+    route_name: string;
+    processing: any;
+    recentlySuccessful?: boolean;
+}
 
 const ProfileForm = ({
     children,
     method_function,
     route_name,
     processing,
-    recentlySuccessful,
-}) => {
+    recentlySuccessful = false,
+}: ProfileFormProps) => {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
