@@ -1,6 +1,7 @@
 import { useForm } from "@inertiajs/react";
 import ProfileForm from "@/Components/ProfileForm";
 import FormInputField from "@/Components/FormInputField";
+import React from "react";
 
 export default function UpdatePasswordForm() {
     const {
