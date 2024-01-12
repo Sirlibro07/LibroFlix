@@ -6,14 +6,20 @@ import UserContext from "@/Contexts/UserContext";
 
 const NavbarLinks = () => {
     const isMenuVisible = useContext(Menu_Searchbar_Context).isMenuVisible;
+    const isLoggedIn = useContext(UserContext).isLoggedIn;
 
     const routes = [
         { name: "Movies", route: "home", pathname: "1" },
         { name: "Characters", route: "home", pathname: "2" },
-        // { name: "Account", route: "profile.edit", pathname: "profile" },
     ];
 
-    const user = useContext(UserContext);
+    if (isLoggedIn) {
+        routes.push({
+            name: "Account",
+            route: "profile.edit",
+            pathname: "profile",
+        });
+    }
 
     return (
         <ul
@@ -25,7 +31,7 @@ const NavbarLinks = () => {
                 <NavbarLink link={link} key={index} />
             ))}
 
-            <NavbarAccountLinks />
+            {!isLoggedIn && <NavbarAccountLinks />}
         </ul>
     );
 };
