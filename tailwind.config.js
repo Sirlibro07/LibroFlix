@@ -42,7 +42,7 @@ export default {
                 normal_btn: "40px",
             },
             width: {
-                searchbar_width: "430px",
+                searchbar_width: "27rem",
             },
             colors: {
                 brand: "#A2663E",
