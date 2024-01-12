@@ -13,13 +13,12 @@ const NavbarLinks = () => {
         { name: "Characters", route: "home", pathname: "2" },
     ];
 
-    if (isLoggedIn) {
+    isLoggedIn &&
         routes.push({
             name: "Account",
             route: "profile.edit",
             pathname: "profile",
         });
-    }
 
     return (
         <ul
