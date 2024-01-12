@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import GeneralLink from "./GeneralLink";
 
 interface NavbarLinkProps {
@@ -10,6 +10,19 @@ interface NavbarLinkProps {
 }
 
 const NavbarLink = ({ link }: NavbarLinkProps) => {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleWindowResize = () => {
+            setWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleWindowResize);
+
+        return () => {
+            window.removeEventListener("resize", handleWindowResize);
+        };
+    }, []);
     return (
         <li className=" ml-[-0.5rem] flex items-center lg:ml-0 ">
             <div className="w-4 h-4 mr-3 rounded-full bg-brand lg:hidden"></div>
@@ -21,7 +34,7 @@ const NavbarLink = ({ link }: NavbarLinkProps) => {
                         : "lg:text-unused_link_option_color"
                 }
             >
-                {window.innerWidth > 1023 ? link.name : link.name.toUpperCase()}
+                {width > 1023 ? link.name : link.name.toUpperCase()}
             </GeneralLink>
         </li>
     );
