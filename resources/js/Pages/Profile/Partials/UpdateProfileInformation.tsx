@@ -1,11 +1,12 @@
 import { useForm, usePage } from "@inertiajs/react";
 import ProfileForm from "@/Components/ProfileForm";
 import FormInputField from "@/Components/FormInputField";
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "@/Contexts/UserContext";
 
 const UpdateProfileInformation = () => {
     {
-        const user = usePage().props.auth.user;
+        const user = useContext(UserContext);
 
         const { data, setData, patch, errors, processing, recentlySuccessful } =
             useForm({
