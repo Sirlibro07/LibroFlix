@@ -28,7 +28,7 @@ const NavbarLinks = () => {
                         href={route(link.route)}
                         className={
                             "/" + link.pathname === window.location.pathname
-                                ? "lg:text-contrast"
+                                ? "lg:text-contrast custom_border_active"
                                 : "lg:text-unused_option_color"
                         }
                     >

@@ -33,6 +33,7 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                     { name: "Password" },
                     { name: "Other" },
                 ]}
+                currentOption={currentOption}
                 setCurrentOption={setCurrentOption}
                 ul_className="mt-8 mb-16"
             />

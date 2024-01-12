@@ -5,12 +5,14 @@ type option = { name: string };
 interface OptionsListProps {
     options: option[];
     ul_className?: string;
+    currentOption: string;
     setCurrentOption: any;
 }
 
 const OptionsList = ({
     options,
     ul_className = "",
+    currentOption,
     setCurrentOption,
 }: OptionsListProps) => {
     return (
@@ -22,7 +24,13 @@ const OptionsList = ({
                         setCurrentOption(option.name);
                     }}
                 >
-                    <button className="custom_border relative text-white font-normal">
+                    <button
+                        className={`custom_border  relative ${
+                            currentOption === option.name
+                                ? "text-white custom_border_active"
+                                : "text-unused_option_color"
+                        } font-normal`}
+                    >
                         {option.name}
                     </button>
                 </li>

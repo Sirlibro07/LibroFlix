@@ -14,3 +14,7 @@
 .custom_border:hover::after {
     width: 50%;
 }
+
+.custom_border_active::after {
+    width: 50%;
+}
