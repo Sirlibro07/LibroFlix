@@ -18,7 +18,7 @@ const Navbar = () => {
                 setIsSearchbarVisible: setIsSearchbarVisible,
             }}
         >
-            <nav className="relative bg-black flex px-mobile_side_padding items-center justify-between border-b border-border_color  border-solid lg:justify-normal">
+            <nav className=" bg-black flex px-mobile_side_padding items-center justify-between border-b border-border_color  border-solid lg:justify-normal">
                 <Logo />
                 <NavbarIcons />
                 <NavbarLinks />

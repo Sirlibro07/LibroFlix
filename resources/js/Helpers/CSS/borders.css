@@ -1,0 +1,16 @@
+.custom_border::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+    width: 0%;
+    border-radius: 1px;
+}
+
+.custom_border:hover::after {
+    width: 50%;
+}

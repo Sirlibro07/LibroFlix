@@ -5,6 +5,7 @@ interface GeneralLinkProps {
     href: string;
     className?: string;
     border?: boolean;
+    key?: React.Key;
     children: ReactNode;
 }
 
@@ -12,43 +13,20 @@ const GeneralLink = ({
     href,
     className = "",
     border = true,
+    key = null,
     children,
 }: GeneralLinkProps) => {
-    const css = (
-        <style>
-            {`
-                    
-
-        .general_link::after {
-            content: "";
-            position: absolute;
-            bottom: -4px;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 2px;
-            background-color: white; 
-            transition: width 0.3s ease;
-            width: 0%;
-            border-radius: 1px;
-        }
-
-        .general_link:hover::after {
-            width: 50%;
-        }
-
-        `}
-        </style>
-    );
-
     return (
         <>
             <Link
+                key={key && key}
                 href={href}
-                className={`${border && "general_link"} relative  ${className}`}
+                className={`${
+                    border && "custom_border"
+                } relative  ${className}`}
             >
                 {children}
             </Link>
-            {border && css}
         </>
     );
 };

@@ -1,4 +1,3 @@
-import { Link } from "@inertiajs/react";
 import React, { useContext } from "react";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import NavbarAccountLinks from "./NavbarAccountLinks";
