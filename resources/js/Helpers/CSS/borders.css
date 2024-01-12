@@ -6,13 +6,14 @@
     transform: translateX(-50%);
     height: 2px;
     background-color: white;
-    transition: width 0.3s ease;
+
     width: 0%;
     border-radius: 1px;
 }
 
 .custom_border:hover::after {
     width: 50%;
+    transition: width 0.3s ease;
 }
 
 .custom_border_active::after {
