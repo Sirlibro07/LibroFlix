@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Input from "./Input";
 import SearchBarIcon from "./SearchBarIcon";
 import Select from "./Select";
@@ -17,8 +17,22 @@ const SearchBar = () => {
         Menu_Searchbar_Context
     ).isSearchbarVisible;
 
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleWindowResize = () => {
+            setWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleWindowResize);
+
+        return () => {
+            window.removeEventListener("resize", handleWindowResize);
+        };
+    }, []);
+
     const visibility_styles =
-        window.innerWidth > 1024
+        width > 1024
             ? "lg:flex"
             : isSearchbarVisible && !isMenuVisible
             ? "flex"
