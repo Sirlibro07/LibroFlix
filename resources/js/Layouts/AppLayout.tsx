@@ -1,6 +1,7 @@
 import Navbar from "@/Components/Navbar";
 import React, { useState } from "react";
 import "../Helpers/CSS/borders.css";
+import "../Helpers/CSS/navbar_visibility.css";
 import "./CSS/AppLayout.css";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import UserContext from "@/Contexts/UserContext";

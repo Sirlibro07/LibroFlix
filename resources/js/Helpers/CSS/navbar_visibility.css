@@ -1,0 +1,9 @@
+@media (max-width: 1024px) {
+    .navbar_item_visible {
+        display: flex;
+    }
+
+    .navbar_item_not_visible {
+        display: none;
+    }
+}
