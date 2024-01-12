@@ -17,7 +17,11 @@ const AppLayout = ({ user, children, className = "" }) => {
             }}
         >
             <Navbar />
-            <section className={`px-mobile_side_padding  ${className}`}>
+            <section
+                className={`px-mobile_side_padding ${
+                    (isMenuVisible || isSearchbarVisible) && "brightness-[30%]"
+                }  ${className}`}
+            >
                 {children}
             </section>
         </Menu_Searchbar_Context.Provider>
