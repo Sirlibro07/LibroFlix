@@ -1,7 +1,7 @@
 import App from "@/Layouts/App";
 import DeleteUserForm from "./Partials/DeleteUserForm";
 import UpdatePasswordForm from "./Partials/UpdatePasswordForm";
-import UpdateProfileInformationForm from "./Partials/UpdateProfileInformationForm";
+import UpdateProfileInformationForm from "./Partials/UpdateProfileInformation";
 import { Head } from "@inertiajs/react";
 import React from "react";
 import OptionsList from "@/Components/OptionsList";
@@ -17,17 +17,13 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
             <OptionsList
                 options={[
                     { name: "Profile" },
-                    { name: "Update Password" },
+                    { name: "Password" },
                     { name: "Other" },
                 ]}
                 ul_className="mt-8"
             />
 
-            <UpdateProfileInformationForm
-                mustVerifyEmail={mustVerifyEmail}
-                status={status}
-                className="max-w-xl"
-            />
+            <UpdateProfileInformationForm />
 
             {/* <UpdatePasswordForm />
 
