@@ -1,3 +1,4 @@
+import formSubmit from "@/Helpers/formSubmit";
 import React, { ReactNode } from "react";
 
 interface AuthFormProps {
@@ -14,9 +15,7 @@ export default function AuthForm({
     route_name,
 }: AuthFormProps) {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-        method_function(route(route_name));
+        formSubmit(e, method_function, route, route_name);
     };
 
     return (

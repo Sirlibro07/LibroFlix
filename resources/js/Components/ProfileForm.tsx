@@ -1,5 +1,6 @@
 import React from "react";
 import PrimaryButton from "./PrimaryButton";
+import formSubmit from "@/Helpers/formSubmit";
 
 const ProfileForm = ({
     children,
@@ -11,7 +12,7 @@ const ProfileForm = ({
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        method_function(route(route_name));
+        formSubmit(e, method_function, route, route_name);
     };
     return (
         <form onSubmit={submitHandler}>
