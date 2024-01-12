@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import Auth from "@/Layouts/Auth";
 import PrimaryButton from "@/Components/PrimaryButton";
-import { Link, useForm } from "@inertiajs/react";
+import { useForm } from "@inertiajs/react";
 import React from "react";
 import AuthForm from "@/Components/AuthForm";
 import FormInputField from "@/Components/FormInputField";
