@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import OptionsList from "@/Components/OptionsList";
 
 export default function Edit({ auth, mustVerifyEmail, status }) {
-    const [currentOption, setCurrentOption] = useState("Other");
+    const [currentOption, setCurrentOption] = useState("Profile");
 
     const renderCurrentOption = () => {
         switch (currentOption) {
