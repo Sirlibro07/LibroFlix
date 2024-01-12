@@ -33,7 +33,9 @@ const ProfileForm = ({
             )}
 
             {children}
-            <PrimaryButton disabled={processing}>{button_text}</PrimaryButton>
+            <PrimaryButton disabled={processing} className="bg-error_danger">
+                {button_text}
+            </PrimaryButton>
         </form>
     );
 };
