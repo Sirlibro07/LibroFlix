@@ -53,7 +53,7 @@ export default {
                 success: "#689B5B",
                 error_danger: "#A61C1E",
                 border_color: "#413F43",
-                unused_option_color: "#706A6B",
+                unused_link_option_color: "#706A6B",
                 light_color: "#BBBBBB",
             },
             margin: {

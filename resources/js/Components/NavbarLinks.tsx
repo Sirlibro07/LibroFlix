@@ -29,7 +29,7 @@ const NavbarLinks = () => {
                         className={
                             "/" + link.pathname === window.location.pathname
                                 ? "lg:text-contrast custom_border_active"
-                                : "lg:text-unused_option_color"
+                                : "lg:text-unused_link_option_color"
                         }
                     >
                         {window.innerWidth > 1023
