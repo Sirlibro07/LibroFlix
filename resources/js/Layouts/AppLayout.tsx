@@ -7,7 +7,7 @@ const AppLayout = ({ user, children, className = "" }) => {
     return (
         <>
             <Navbar />
-            <section className={`yo   px-mobile_side_padding  ${className}`}>
+            <section className={`px-mobile_side_padding  ${className}`}>
                 {children}
             </section>
         </>
