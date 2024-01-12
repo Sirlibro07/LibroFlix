@@ -4,7 +4,7 @@ import imgStoragePath from "../Helpers/images";
 import { Head } from "@inertiajs/react";
 import "../Helpers/CSS/borders.css";
 
-interface AuthProps {
+interface AuthLayoutProps {
     children: ReactNode;
     img_path: string;
     img_classes?: string;
@@ -13,14 +13,14 @@ interface AuthProps {
     media_query_breakpoint?: string;
 }
 
-export default function Auth({
+const AuthLayout = ({
     children,
     img_path,
     img_classes = "",
     form_position = "start",
     title,
     media_query_breakpoint = "580px",
-}: AuthProps) {
+}: AuthLayoutProps) => {
     const img = (version: string) => {
         return imgStoragePath(`backgrounds/${img_path}/${version}`);
     };
@@ -63,4 +63,6 @@ export default function Auth({
             </main>
         </>
     );
-}
+};
+
+export default AuthLayout;

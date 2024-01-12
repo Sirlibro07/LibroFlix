@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import Auth from "@/Layouts/Auth";
+import AuthLayout from "@/Layouts/AuthLayout";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { useForm } from "@inertiajs/react";
 import React from "react";
@@ -24,7 +24,11 @@ export default function Login({ status, canResetPassword }) {
     }, []);
 
     return (
-        <Auth img_path={"login_register"} form_position="end" title="Log In">
+        <AuthLayout
+            img_path={"login_register"}
+            form_position="end"
+            title="Log In"
+        >
             <AuthForm name="Log In" method_function={post} route_name="login">
                 <FormInputField
                     name={"email"}
@@ -69,6 +73,6 @@ export default function Login({ status, canResetPassword }) {
                     )}
                 </div>
             </AuthForm>
-        </Auth>
+        </AuthLayout>
     );
 }

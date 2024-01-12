@@ -1,4 +1,4 @@
-import Auth from "@/Layouts/Auth";
+import AuthLayout from "@/Layouts/AuthLayout";
 import { useForm } from "@inertiajs/react";
 import React from "react";
 import AuthForm from "@/Components/AuthForm";
@@ -12,7 +12,7 @@ export default function ForgotPassword({ status }) {
     });
 
     return (
-        <Auth
+        <AuthLayout
             img_path={"forgot_reset_password"}
             form_position="end"
             img_classes="object-right"
@@ -38,6 +38,6 @@ export default function ForgotPassword({ status }) {
                     Send Recovery Email
                 </PrimaryButton>
             </AuthForm>
-        </Auth>
+        </AuthLayout>
     );
 }

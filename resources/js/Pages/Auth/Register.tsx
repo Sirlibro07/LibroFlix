@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import Auth from "@/Layouts/Auth";
+import AuthLayout from "@/Layouts/AuthLayout";
 import PrimaryButton from "@/Components/PrimaryButton";
-import { Link, useForm } from "@inertiajs/react";
+import { useForm } from "@inertiajs/react";
 import React from "react";
 import AuthForm from "@/Components/AuthForm";
 import FormInputField from "@/Components/FormInputField";
@@ -22,7 +22,7 @@ export default function Register() {
     }, []);
 
     return (
-        <Auth img_path={"login_register"} title="Sign Up">
+        <AuthLayout img_path={"login_register"} title="Sign Up">
             <AuthForm
                 name="Sign Up"
                 method_function={post}
@@ -71,6 +71,6 @@ export default function Register() {
                     </GeneralLink>
                 </div>
             </AuthForm>
-        </Auth>
+        </AuthLayout>
     );
 }
