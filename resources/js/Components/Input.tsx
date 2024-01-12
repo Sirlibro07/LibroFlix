@@ -43,3 +43,7 @@ const Input = ({
 };
 
 export default Input;
+
+// the value prop is the current state for double binding,
+// the state_to_change prop is a string that tells which state we should go update in the function,
+// so while the value prop is the state itself, the state_to_change is just a string with the name of the state
