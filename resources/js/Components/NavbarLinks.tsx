@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import NavbarAccountLinks from "./NavbarAccountLinks";
 import NavbarLink from "./NavbarLink";
+import UserContext from "@/Contexts/UserContext";
 
 const NavbarLinks = () => {
     const isMenuVisible = useContext(Menu_Searchbar_Context).isMenuVisible;
@@ -11,6 +12,8 @@ const NavbarLinks = () => {
         { name: "Characters", route: "home", pathname: "2" },
         // { name: "Account", route: "profile.edit", pathname: "profile" },
     ];
+
+    const user = useContext(UserContext);
 
     return (
         <ul

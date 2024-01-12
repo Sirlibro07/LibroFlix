@@ -1,6 +1,7 @@
 import { createContext } from "react";
 
 interface UserContextType {
+    isLoggedIn: boolean;
     name: string;
     email: string;
 }

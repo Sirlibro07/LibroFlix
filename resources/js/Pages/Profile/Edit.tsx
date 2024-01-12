@@ -6,7 +6,7 @@ import { Head } from "@inertiajs/react";
 import React, { useState } from "react";
 import OptionsList from "@/Components/OptionsList";
 
-export default function Edit({ auth, mustVerifyEmail, status }) {
+export default function Edit({ auth, mustVerifyEmail, status, isLoggedIn }) {
     const [currentOption, setCurrentOption] = useState("Profile");
 
     const renderCurrentOption = () => {
@@ -21,7 +21,7 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
     };
 
     return (
-        <AppLayout user={auth.user} className="pt-8">
+        <AppLayout user={auth.user} isLoggedIn={isLoggedIn} className="pt-8">
             <Head title="Profile" />
             <header className="font-display text-mobile_h1 text-contrast">
                 Account

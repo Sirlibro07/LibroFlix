@@ -5,14 +5,18 @@ import "./CSS/AppLayout.css";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import UserContext from "@/Contexts/UserContext";
 
-const AppLayout = ({ user, children, className = "" }) => {
+const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
 
     return (
         <>
             <UserContext.Provider
-                value={{ name: user.name, email: user.email }}
+                value={{
+                    isLoggedIn: isLoggedIn,
+                    name: isLoggedIn ? user.name : "",
+                    email: isLoggedIn ? user.email : "",
+                }}
             >
                 <Menu_Searchbar_Context.Provider
                     value={{
