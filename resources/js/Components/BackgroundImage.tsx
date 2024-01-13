@@ -1,8 +1,12 @@
 import React from "react";
 
-const BackgroundImage = ({ img_function, img_classes }) => {
+const BackgroundImage = ({
+    img_function,
+    picture_classes = "",
+    img_classes = "",
+}) => {
     return (
-        <picture className="w-full h-full absolute left-0 z-[-1]">
+        <picture className={`absolute left-0 z-[-1] ${picture_classes}`}>
             <source
                 media="(min-width: 1536px)"
                 srcSet={img_function("desktop")}
@@ -17,7 +21,7 @@ const BackgroundImage = ({ img_function, img_classes }) => {
             />
 
             <img
-                className={img_classes}
+                className={`w-full h-full object-cover ${img_classes}`}
                 alt="background-image"
                 src={img_function("mobile")}
                 decoding="async"
