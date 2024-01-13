@@ -1,3 +1,4 @@
+import BackgroundImage from "@/Components/BackgroundImage";
 import getImg from "@/Helpers/getImg";
 import AppLayout from "@/Layouts/AppLayout";
 import React from "react";
@@ -8,7 +9,7 @@ const Index = ({ auth, isLoggedIn }) => {
     };
     return (
         <AppLayout user={auth.user} isLoggedIn={isLoggedIn}>
-            <img alt="background-image" src={img("desktop")} decoding="async" />
+            <BackgroundImage img_function={img} img_classes={""} />
         </AppLayout>
     );
 };
