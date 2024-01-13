@@ -1,8 +1,12 @@
+import AppLayout from "@/Layouts/AppLayout";
 import React from "react";
-import AuthenticatedLayout from "@/Layouts/AppLayout.1";
 
-const Index = () => {
-    // return <AuthenticatedLayout></AuthenticatedLayout>;
+const Index = ({ auth, isLoggedIn }) => {
+    return (
+        <AppLayout user={auth.user} isLoggedIn={isLoggedIn}>
+            <></>
+        </AppLayout>
+    );
 };
 
 export default Index;
