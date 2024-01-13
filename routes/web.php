@@ -33,6 +33,6 @@ Route::get('/', function () {
 })->name("home");
 
 
-Route::get('/movies/{title?}', [MovieController::class, 'index'])->name("movies.index");
+Route::get('/movies', [MovieController::class, 'index'])->name("movies.index");
 
 require __DIR__ . '/auth.php';
