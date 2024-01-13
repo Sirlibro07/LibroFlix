@@ -3,6 +3,7 @@ import "./CSS/AuthLayout.css";
 import imgStoragePath from "../Helpers/imgStoragePath";
 import { Head } from "@inertiajs/react";
 import "../Helpers/CSS/borders.css";
+import getImg from "@/Helpers/getImg";
 
 interface AuthLayoutProps {
     children: ReactNode;
@@ -22,7 +23,7 @@ const AuthLayout = ({
     media_query_breakpoint = "580px",
 }: AuthLayoutProps) => {
     const img = (version: string) => {
-        return imgStoragePath(`backgrounds/${img_path}/${version}`);
+        return getImg(img_path, version);
     };
 
     return (
