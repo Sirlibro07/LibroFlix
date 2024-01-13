@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 
-const Input_Checkbox_onChangeHandler = (
-    e: ChangeEvent<HTMLInputElement>,
+const formElementsOnChangeHandler = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
     property: string,
     setData: (PrevState: object) => void
 ) => {
@@ -17,4 +17,4 @@ const Input_Checkbox_onChangeHandler = (
     });
 };
 
-export default Input_Checkbox_onChangeHandler;
+export default formElementsOnChangeHandler;
