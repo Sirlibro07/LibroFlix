@@ -1,10 +1,16 @@
 import React from "react";
 
+interface BackgroundImageProps {
+    img_function: (version: string) => string;
+    picture_classes?: string;
+    img_classes?: string;
+}
+
 const BackgroundImage = ({
     img_function,
     picture_classes = "",
     img_classes = "",
-}) => {
+}: BackgroundImageProps) => {
     return (
         <picture className={`absolute left-0 z-[-1] ${picture_classes}`}>
             <source
