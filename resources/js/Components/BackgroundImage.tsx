@@ -2,7 +2,7 @@ import React from "react";
 
 const BackgroundImage = ({ img_function, img_classes }) => {
     return (
-        <picture className="w-full h-full absolute z-[-1]">
+        <picture className="w-full h-full absolute left-0 z-[-1]">
             <source
                 media="(min-width: 1536px)"
                 srcSet={img_function("desktop")}
