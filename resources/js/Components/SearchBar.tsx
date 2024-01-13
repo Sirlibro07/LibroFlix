@@ -26,7 +26,7 @@ const SearchBar = () => {
         <form
             onSubmit={(e) => {
                 e.preventDefault();
-                router.get(route("lol", "sup"));
+                router.get(route("search", [data.search, data.filter]));
             }}
             className={`absolute z-10 top-[5.688rem] mt-6 px-4 w-full  right-0  lg:static lg:px-0 lg:h-fit lg:m-0 lg:w-[20rem] xl:w-searchbar_width  lg:top-auto
            ${visibility_styles}`}
