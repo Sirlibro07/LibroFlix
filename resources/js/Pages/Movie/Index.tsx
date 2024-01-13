@@ -9,7 +9,10 @@ const Index = ({ auth, isLoggedIn }) => {
     };
     return (
         <AppLayout user={auth.user} isLoggedIn={isLoggedIn}>
-            <BackgroundImage img_function={img} img_classes={"w-full"} />
+            <BackgroundImage
+                picture_classes="w-full h-[40rem] sm:h-[48.75rem]"
+                img_function={img}
+            />
         </AppLayout>
     );
 };
