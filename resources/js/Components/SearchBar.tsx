@@ -8,7 +8,7 @@ import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 const SearchBar = () => {
     const [data, setData] = useState({
         search: "",
-        filter: "Movies",
+        filter: "All",
     });
 
     const isMenuVisible = useContext(Menu_Searchbar_Context).isMenuVisible;
