@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,5 +35,6 @@ Route::get('/', function () {
 
 
 Route::get('/movies', [MovieController::class, 'index'])->name("movies.index");
+Route::get('/search/{filter}/{name?}', [SearchController::class, 'search'])->name("search");
 
 require __DIR__ . '/auth.php';
