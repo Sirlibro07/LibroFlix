@@ -1,5 +1,6 @@
 import React from "react";
 import formElementsOnChangeHandler from "@/Helpers/formElementsOnChangeHandler";
+import "../Helpers/CSS/select.css";
 
 interface SelectProps {
     setData: React.Dispatch<
@@ -12,33 +13,6 @@ interface SelectProps {
 
 const Select = ({ setData }: SelectProps) => {
     const filter_options = ["Movies", "Characters"];
-
-    const css = (
-        <style>
-            {`
-                    select {
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                        appearance: none;
-                        background: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>')
-                            no-repeat right center;
-                        transition: background-color 0.15s;
-                    }
-
-                    select:hover {
-                        background: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z" fill="%23000000"/><path d="M0 0h24v24H0z" fill="none"/></svg>')
-                            no-repeat right center;
-                        transition: background-color 0.45s;
-                    }
-
-                    select option {
-                        background: rgba(0, 0, 0, 1);
-                        color: white;
-                        cursor: pointer;
-                    }
-                `}
-        </style>
-    );
 
     return (
         <>
@@ -57,7 +31,6 @@ const Select = ({ setData }: SelectProps) => {
                     </option>
                 ))}
             </select>
-            {css}
         </>
     );
 };
