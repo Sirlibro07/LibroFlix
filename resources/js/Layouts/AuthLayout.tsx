@@ -3,6 +3,7 @@ import "./CSS/AuthLayout.css";
 import { Head } from "@inertiajs/react";
 import "../Helpers/CSS/borders.css";
 import getImg from "@/Helpers/getImg";
+import BackgroundImage from "@/Components/BackgroundImage";
 
 interface AuthLayoutProps {
     children: ReactNode;
@@ -40,25 +41,10 @@ const AuthLayout = ({
             <main
                 className={`w-full h-full relative flex items-end lg:items-center lg:justify-${form_position}`}
             >
-                <picture className="w-full h-full absolute z-[-1]">
-                    <source
-                        media="(min-width: 1536px)"
-                        srcSet={img("desktop")}
-                    />
-                    <source
-                        media="(min-width: 1024px)"
-                        srcSet={img("laptop")}
-                    />
-                    <source media="(min-width: 640px)" srcSet={img("tablet")} />
-
-                    <img
-                        className={`w-full h-full object-cover object-top lg:object-bottom  ${img_classes}`}
-                        alt="background-image"
-                        src={img("mobile")}
-                        decoding="async"
-                    />
-                </picture>
-
+                <BackgroundImage
+                    img_function={img}
+                    img_classes={`w-full h-full object-cover object-top lg:object-bottom ${img_classes}`}
+                />
                 {children}
             </main>
         </>
