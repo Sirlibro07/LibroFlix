@@ -7,7 +7,7 @@ import getImg from "@/Helpers/getImg";
 
 interface AuthLayoutProps {
     children: ReactNode;
-    img_path: string;
+    folder_name: string;
     img_classes?: string;
     form_position?: string;
     title: string;
@@ -16,14 +16,14 @@ interface AuthLayoutProps {
 
 const AuthLayout = ({
     children,
-    img_path,
+    folder_name,
     img_classes = "",
     form_position = "start",
     title,
     media_query_breakpoint = "580px",
 }: AuthLayoutProps) => {
     const img = (version: string) => {
-        return getImg(img_path, version);
+        return getImg(folder_name, version);
     };
 
     return (

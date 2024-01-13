@@ -22,7 +22,7 @@ export default function ResetPassword({ token, email }) {
 
     return (
         <AuthLayout
-            img_path={"forgot_reset_password"}
+            folder_name={"forgot_reset_password"}
             img_classes="object-right"
             title="Reset Password"
         >

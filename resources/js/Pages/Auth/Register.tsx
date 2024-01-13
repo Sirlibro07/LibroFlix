@@ -22,7 +22,7 @@ export default function Register() {
     }, []);
 
     return (
-        <AuthLayout img_path={"login_register"} title="Sign Up">
+        <AuthLayout folder_name={"login_register"} title="Sign Up">
             <AuthForm
                 name="Sign Up"
                 method_function={post}

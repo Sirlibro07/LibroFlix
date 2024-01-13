@@ -13,7 +13,7 @@ export default function ForgotPassword({ status }) {
 
     return (
         <AuthLayout
-            img_path={"forgot_reset_password"}
+            folder_name={"forgot_reset_password"}
             form_position="end"
             img_classes="object-right"
             title="Forgot Password"
