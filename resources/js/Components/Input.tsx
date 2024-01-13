@@ -1,5 +1,5 @@
 import React from "react";
-import Input_Checkbox_onChangeHandler from "@/Helpers/Input_Checkbox_onChangeHandler";
+import formElementsOnChangeHandler from "@/Helpers/formElementsOnChangeHandler";
 
 interface InputProps {
     type: string;
@@ -35,7 +35,7 @@ const Input = ({
             value={value}
             placeholder={placeholder}
             onChange={(e) => {
-                Input_Checkbox_onChangeHandler(e, state, setData);
+                formElementsOnChangeHandler(e, state, setData);
             }}
             className={`w-full h-auth_input_btn bg-body text-contrast rounded-10 text-input border-border_color placeholder-light_color focus:border-border_color focus:ring-0  ${className}`}
         />

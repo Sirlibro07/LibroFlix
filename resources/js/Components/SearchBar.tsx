@@ -44,7 +44,7 @@ const SearchBar = () => {
                 />
                 <div className="absolute right-0 h-full flex items-center  ">
                     <div className="w-[0.063rem] h-[calc(100%-1.3rem)] bg-border_color"></div>
-                    <Select />
+                    <Select setData={setData} />
                 </div>
             </div>
             <button type="submit" className="hidden"></button>
