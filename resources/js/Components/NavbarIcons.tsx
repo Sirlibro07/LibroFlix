@@ -1,12 +1,12 @@
 import React from "react";
 import MenuIcon from "./MenuIcon";
-import SearchBarIcon from "./SearchBarIcon";
+import SearchIcon from "./SearchIcon";
 
 const NavbarIcons = () => {
     return (
         <>
             <div className="flex items-center">
-                <SearchBarIcon className="lg:hidden " />
+                <SearchIcon className="lg:hidden " />
                 <MenuIcon />
             </div>
         </>

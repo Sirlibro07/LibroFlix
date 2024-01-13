@@ -2,11 +2,11 @@ import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import React, { useContext } from "react";
 import NavbarIconsOnClickhandler from "@/Helpers/NavbarIconsOnClickhandler";
 
-interface SearchBarIconProps {
+interface SearchIconProps {
     className?: string;
 }
 
-const SearchBarIcon = ({ className }: SearchBarIconProps) => {
+const SearchIcon = ({ className }: SearchIconProps) => {
     const setIsMenuVisible = useContext(
         Menu_Searchbar_Context
     ).setIsMenuVisible;
@@ -26,4 +26,4 @@ const SearchBarIcon = ({ className }: SearchBarIconProps) => {
     );
 };
 
-export default SearchBarIcon;
+export default SearchIcon;
