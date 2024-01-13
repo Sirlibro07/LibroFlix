@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Input from "./Input";
 import SearchIcon from "./SearchIcon";
 import Select from "./Select";
-import { router, useForm } from "@inertiajs/react";
+import { router } from "@inertiajs/react";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 
 const SearchBar = () => {
-    const { data, setData, get, processing, errors, reset } = useForm({
+    const [data, setData] = useState({
         search: "",
         filter: "Movies",
     });
