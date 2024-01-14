@@ -1,6 +1,5 @@
 import BackgroundImage from "@/Components/BackgroundImage";
 import FirstMovieDescription from "@/Components/FirstMovieDescription";
-import MovieInfo from "@/Components/MovieInfo";
 import getBackgroundImg from "@/Helpers/getBackgroundImg";
 import AppLayout from "@/Layouts/AppLayout";
 import React from "react";
@@ -18,7 +17,6 @@ const Index = ({ auth, isLoggedIn }) => {
 
             <div className="absolute left-0 w-full text-white mt-[180px] bg-slate-500">
                 <FirstMovieDescription />
-                <MovieInfo date={"2007"} />
             </div>
         </AppLayout>
     );
