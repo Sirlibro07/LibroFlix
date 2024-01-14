@@ -15,7 +15,9 @@ const Index = ({ auth, isLoggedIn }) => {
                 img_function={img}
             />
 
-            <FirstMovieDescription />
+            <div className="absolute left-0 mt-[180px] bg-slate-500 w-full">
+                <FirstMovieDescription />
+            </div>
         </AppLayout>
     );
 };
