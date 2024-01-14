@@ -15,7 +15,7 @@ const Index = ({ auth, isLoggedIn }) => {
                 img_function={img}
             />
 
-            <div className="absolute left-0 w-full text-white mt-[180px] bg-slate-500">
+            <div className="absolute left-0 w-full text-white mt-[180px]">
                 <FirstMovie />
             </div>
         </AppLayout>
