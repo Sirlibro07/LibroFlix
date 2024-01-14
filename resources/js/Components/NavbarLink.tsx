@@ -27,7 +27,7 @@ const NavbarLink = ({ link }: NavbarLinkProps) => {
         <li className=" ml-[-0.5rem] flex items-center lg:ml-0 ">
             <div className="w-4 h-4 mr-3 rounded-full bg-brand lg:hidden"></div>
             <GeneralLink
-                href={route(link.route)}
+                route_name={link.route}
                 className={
                     "/" + link.pathname === window.location.pathname
                         ? "lg:text-contrast custom_border_active"

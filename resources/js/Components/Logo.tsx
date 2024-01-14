@@ -4,7 +4,7 @@ import GeneralLink from "./GeneralLink";
 const Logo = () => {
     return (
         <GeneralLink
-            href={route("home")}
+            route_name="home"
             className="text-brand text-logo font-display py-6"
             border={false}
         >

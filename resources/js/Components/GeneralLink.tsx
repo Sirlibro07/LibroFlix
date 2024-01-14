@@ -2,7 +2,7 @@ import { Link } from "@inertiajs/react";
 import React, { ReactNode } from "react";
 
 interface GeneralLinkProps {
-    href: string;
+    route_name: string;
     className?: string;
     border?: boolean;
     key?: React.Key;
@@ -10,7 +10,7 @@ interface GeneralLinkProps {
 }
 
 const GeneralLink = ({
-    href,
+    route_name,
     className = "",
     border = true,
     key = null,
@@ -20,7 +20,7 @@ const GeneralLink = ({
         <>
             <Link
                 key={key && key}
-                href={href}
+                href={route(route_name)}
                 className={`${
                     border && "custom_border"
                 } relative  ${className}`}
