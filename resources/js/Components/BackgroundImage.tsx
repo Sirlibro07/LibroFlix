@@ -1,16 +1,18 @@
 import React from "react";
 
-interface AuthBackgroundImageProps {
+interface BackgroundImageProps {
     img_function: (version: string) => string;
+    picture_classes?: string;
     img_classes?: string;
 }
 
-const AuthBackgroundImage = ({
+const BackgroundImage = ({
     img_function,
+    picture_classes = "",
     img_classes = "",
-}: AuthBackgroundImageProps) => {
+}: BackgroundImageProps) => {
     return (
-        <picture className={`absolute left-0 z-[-1] w-full h-full`}>
+        <picture className={`absolute left-0 z-[-1] ${picture_classes}`}>
             <source
                 media="(min-width: 1536px)"
                 srcSet={img_function("desktop")}
@@ -25,7 +27,7 @@ const AuthBackgroundImage = ({
             />
 
             <img
-                className={`w-full h-full object-cover object-top lg:object-bottom ${img_classes}`}
+                className={`w-full h-full object-cover ${img_classes}`}
                 alt="background-image"
                 src={img_function("mobile")}
                 decoding="async"
@@ -34,4 +36,4 @@ const AuthBackgroundImage = ({
     );
 };
 
-export default AuthBackgroundImage;
+export default BackgroundImage;

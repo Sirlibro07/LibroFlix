@@ -3,7 +3,7 @@ import "./CSS/AuthLayout.css";
 import { Head } from "@inertiajs/react";
 import "../Helpers/CSS/borders.css";
 import getBackgroundImg from "@/Helpers/getBackgroundImg";
-import AuthBackgroundImage from "@/Components/AuthBackgroundImage";
+import BackgroundImage from "@/Components/BackgroundImage";
 
 interface AuthLayoutProps {
     children: ReactNode;
@@ -41,9 +41,10 @@ const AuthLayout = ({
             <main
                 className={`w-full h-full relative flex items-end lg:items-center lg:justify-${form_position}`}
             >
-                <AuthBackgroundImage
+                <BackgroundImage
+                    picture_classes="w-full h-full"
                     img_function={img}
-                    img_classes={img_classes}
+                    img_classes={`object-top lg:object-bottom ${img_classes}`}
                 />
                 {children}
             </main>
