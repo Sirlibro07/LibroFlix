@@ -1,7 +1,7 @@
 import React from "react";
 import MovieInfo from "./MovieInfo";
 
-const FirstMovieDescription = () => {
+const FirstMovie = () => {
     return (
         <>
             <div className="px-[44px] text-center z-1 ">
@@ -14,4 +14,4 @@ const FirstMovieDescription = () => {
     );
 };
 
-export default FirstMovieDescription;
+export default FirstMovie;

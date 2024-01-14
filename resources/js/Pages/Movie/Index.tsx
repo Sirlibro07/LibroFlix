@@ -1,5 +1,5 @@
 import BackgroundImage from "@/Components/BackgroundImage";
-import FirstMovieDescription from "@/Components/FirstMovieDescription";
+import FirstMovie from "@/Components/FirstMovie";
 import getBackgroundImg from "@/Helpers/getBackgroundImg";
 import AppLayout from "@/Layouts/AppLayout";
 import React from "react";
@@ -16,7 +16,7 @@ const Index = ({ auth, isLoggedIn }) => {
             />
 
             <div className="absolute left-0 w-full text-white mt-[180px] bg-slate-500">
-                <FirstMovieDescription />
+                <FirstMovie />
             </div>
         </AppLayout>
     );
