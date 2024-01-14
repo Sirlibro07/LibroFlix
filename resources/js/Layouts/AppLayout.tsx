@@ -1,5 +1,5 @@
 import Navbar from "@/Components/Navbar";
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import "../Helpers/CSS/borders.css";
 import "../Helpers/CSS/navbar_visibility.css";
 import "./CSS/AppLayout.css";
@@ -10,8 +10,8 @@ const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
 
-    return (
-        <>
+    const renderWithProviders = (children: ReactNode) => {
+        return (
             <UserContext.Provider
                 value={{
                     isLoggedIn: isLoggedIn,
@@ -27,6 +27,16 @@ const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
                         setIsSearchbarVisible: setIsSearchbarVisible,
                     }}
                 >
+                    {children}
+                </Menu_Searchbar_Context.Provider>
+            </UserContext.Provider>
+        );
+    };
+
+    return (
+        <>
+            {renderWithProviders(
+                <>
                     <Navbar />
                     <section
                         className={`px-mobile_side_padding ${
@@ -36,8 +46,8 @@ const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
                     >
                         {children}
                     </section>
-                </Menu_Searchbar_Context.Provider>
-            </UserContext.Provider>
+                </>
+            )}
         </>
     );
 };
