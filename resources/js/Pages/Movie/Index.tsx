@@ -11,7 +11,7 @@ const Index = ({ auth, isLoggedIn }) => {
     return (
         <AppLayout user={auth.user} isLoggedIn={isLoggedIn}>
             <BackgroundImage
-                picture_classes="w-full top-[5.625rem]  z-[0] sm:h-[48.75rem]"
+                picture_classes="w-full top-[5.625rem] h-[627px] z-[0] sm:h-[48.75rem]"
                 img_function={img}
             />
 
