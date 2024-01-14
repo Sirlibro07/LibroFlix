@@ -1,6 +1,7 @@
 import React from "react";
 import MovieInfo from "./MovieInfo";
 import MovieDescription from "./MovieDescription";
+import GeneralLink from "./GeneralLink";
 
 const FirstMovie = () => {
     return (
@@ -17,6 +18,14 @@ const FirstMovie = () => {
             intervention or the kinship of all living things but I tell you
             Jerry at that moment, I was a marine biologist."
                 />
+
+                <GeneralLink
+                    route_name={"home"}
+                    border={false}
+                    className="bg-contrast text-body font-medium block py-[10px] mt-6 rounded-10"
+                >
+                    Watch Now
+                </GeneralLink>
             </div>
         </>
     );
