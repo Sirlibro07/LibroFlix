@@ -28,6 +28,7 @@ export default {
                 desktop_h1: "67px",
                 logo: "28px",
                 typescale_21_px: "21px",
+                typescale_19_px: "19px",
             },
             borderRadius: {
                 10: "0.625rem",
