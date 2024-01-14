@@ -14,9 +14,8 @@ const Index = ({ auth, isLoggedIn }) => {
                 picture_classes="w-full h-full z-[0] sm:h-[48.75rem]"
                 img_function={img}
             />
-            <div className="absolute z-1">
-                <FirstMovieDescription />
-            </div>
+
+            <FirstMovieDescription />
         </AppLayout>
     );
 };
