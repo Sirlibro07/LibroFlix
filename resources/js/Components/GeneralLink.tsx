@@ -23,7 +23,7 @@ const GeneralLink = ({
                 href={route(route_name)}
                 className={`${
                     border && "custom_border"
-                } relative  ${className}`}
+                } relative rounded-10  ${className}`}
             >
                 {children}
             </Link>
