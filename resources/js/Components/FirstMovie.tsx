@@ -7,12 +7,16 @@ import MovieTitle from "./MovieTitle";
 const FirstMovie = () => {
     return (
         <>
-            <div className="px-[44px] text-center z-1 ">
+            <div className="px-[2.75rem] text-center z-1 sm:text-start ">
+                <MovieInfo
+                    date={"2007"}
+                    className="hidden sm:flex sm:justify-start sm:mb-[-0.25rem]"
+                />
                 <MovieTitle
                     title="Naruto Shippuden: The Movie"
-                    className=" text-[33px]"
+                    className="text-mobile_h1 sm:text-desktop_h1 sm:leading-[120%]"
                 />
-                <MovieInfo date={"2007"} />
+                <MovieInfo date={"2007"} className="sm:hidden" />
                 <MovieDescription
                     description="So I started to walk into the water. I won't lie to you boys, I was
                                 terrified. But I pressed on, and as I made my way past the breakers
@@ -24,7 +28,7 @@ const FirstMovie = () => {
                 <GeneralLink
                     route_name={"home"}
                     border={false}
-                    className="bg-contrast text-body font-medium block py-[10px] mt-6 rounded-10"
+                    className="bg-contrast text-body font-medium block text-center py-[10px] mt-6 rounded-10"
                 >
                     Watch Now
                 </GeneralLink>
