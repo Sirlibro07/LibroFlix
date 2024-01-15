@@ -3,11 +3,18 @@ body,
 #app {
     height: fit-content;
     min-height: 100%;
-    background-color: black;
 }
 
 @media (max-width: 1024px) {
-    .lower_brightness {
-        filter: brightness(30%);
+    .lower_brightness::before {
+        content: "";
+        position: absolute;
+        top: 91px;
+        height: 100%;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        backdrop-filter: brightness(30%);
+        pointer-events: none;
     }
 }
