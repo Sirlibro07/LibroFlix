@@ -1,9 +1,7 @@
 import React, { ReactNode } from "react";
 import "./CSS/AuthLayout.css";
-import { Head } from "@inertiajs/react";
 import "../Helpers/CSS/borders.css";
 import getBackgroundImg from "@/Helpers/getBackgroundImg";
-import BackgroundImage from "@/Components/BackgroundImage";
 import AuthLayoutChildren from "@/Components/AuthLayoutChildren";
 
 interface AuthLayoutProps {
