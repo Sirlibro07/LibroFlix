@@ -4,7 +4,7 @@ import BackgroundImage from "./BackgroundImage";
 
 interface AuthLayoutChildrenProps {
     title: string;
-    img: any;
+    img: (version: string) => string;
     img_classes: string;
     form_position: string;
     children: ReactNode;
