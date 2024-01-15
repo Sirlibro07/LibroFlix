@@ -17,11 +17,7 @@ const AppLayoutChildren = ({
     return (
         <>
             <Navbar />
-            <section
-                className={`px-mobile_side_padding ${
-                    (isMenuVisible || isSearchbarVisible) && "lower_brightness"
-                }  ${className}`}
-            >
+            <section className={`px-mobile_side_padding  ${className}`}>
                 {children}
             </section>
         </>
