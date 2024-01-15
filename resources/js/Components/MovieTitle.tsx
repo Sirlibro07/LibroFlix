@@ -6,7 +6,7 @@ interface MovieTitleProps {
 }
 
 const MovieTitle = ({ title, className }: MovieTitleProps) => {
-    return <h1 className={className}>{title}</h1>;
+    return <h1 className={`font-semibold ${className}`}>{title}</h1>;
 };
 
 export default MovieTitle;

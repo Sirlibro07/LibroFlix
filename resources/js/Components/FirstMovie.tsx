@@ -10,7 +10,7 @@ const FirstMovie = () => {
             <div className="px-[44px] text-center z-1 ">
                 <MovieTitle
                     title="Naruto Shippuden: The Movie"
-                    className="font-bold text-[33px]"
+                    className=" text-[33px]"
                 />
                 <MovieInfo date={"2007"} />
                 <MovieDescription
