@@ -19,11 +19,11 @@ const MoviesIndexContent = ({ img }: MoviesIndexContentProps) => {
     return (
         <>
             <BackgroundImage
-                picture_classes={`w-full top-[5.625rem] h-[627px] z-[0] sm:h-[48.75rem] ${conditional_style}`}
+                picture_classes={`w-full top-[5.625rem] h-[39.188rem] z-[0] sm:h-[48.75rem] ${conditional_style}`}
                 img_function={img}
             />
             <div
-                className={`absolute left-0 w-full text-white mt-[180px] ${conditional_style}`}
+                className={`absolute left-0 w-full text-white mt-[11.25rem] ${conditional_style}`}
             >
                 <FirstMovie />
             </div>
