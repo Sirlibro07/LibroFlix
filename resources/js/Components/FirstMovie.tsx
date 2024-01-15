@@ -3,6 +3,7 @@ import MovieInfo from "./MovieInfo";
 import MovieDescription from "./MovieDescription";
 import GeneralLink from "./GeneralLink";
 import MovieTitle from "./MovieTitle";
+import MovieRating from "./MovieRating";
 
 const FirstMovie = () => {
     return (
@@ -16,6 +17,7 @@ const FirstMovie = () => {
                     title="Naruto Shippuden: The Movie"
                     className="text-mobile_h1 sm:text-desktop_h1 sm:leading-[120%]"
                 />
+                <MovieRating rating={2.2} className="hidden sm:flex my-3" />
                 <MovieInfo date={"2007"} className="sm:hidden" />
                 <MovieDescription
                     description="So I started to walk into the water. I won't lie to you boys, I was
@@ -28,7 +30,7 @@ const FirstMovie = () => {
                 <GeneralLink
                     route_name={"home"}
                     border={false}
-                    className="bg-contrast text-body font-medium block text-center py-[10px] mt-6 rounded-10"
+                    className="bg-brand font-medium block text-center py-[10px] mt-6 rounded-10"
                 >
                     Watch Now
                 </GeneralLink>
