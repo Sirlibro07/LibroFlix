@@ -8,12 +8,7 @@ interface AppLayoutChildrenProps {
     children: ReactNode;
 }
 
-const AppLayoutChildren = ({
-    isMenuVisible,
-    isSearchbarVisible,
-    className,
-    children,
-}: AppLayoutChildrenProps) => {
+const AppLayoutChildren = ({ className, children }: AppLayoutChildrenProps) => {
     return (
         <>
             <Navbar />
