@@ -8,6 +8,7 @@ const Index = ({ auth, isLoggedIn }) => {
     const img = (version: string) => {
         return getBackgroundImg("movies", version);
     };
+
     return (
         <AppLayout user={auth.user} isLoggedIn={isLoggedIn}>
             <BackgroundImage
