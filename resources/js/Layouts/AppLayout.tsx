@@ -5,6 +5,7 @@ import "../Helpers/CSS/navbar_visibility.css";
 import "./CSS/AppLayout.css";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import UserContext from "@/Contexts/UserContext";
+import AppLayoutChildren from "@/Components/AppLayoutChildren";
 
 const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -36,17 +37,13 @@ const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
     return (
         <>
             {renderWithProviders(
-                <>
-                    <Navbar />
-                    <section
-                        className={`px-mobile_side_padding ${
-                            (isMenuVisible || isSearchbarVisible) &&
-                            "lower_brightness"
-                        }  ${className}`}
-                    >
-                        {children}
-                    </section>
-                </>
+                <AppLayoutChildren
+                    isMenuVisible={isMenuVisible}
+                    isSearchbarVisible={isSearchbarVisible}
+                    className={className}
+                >
+                    {children}
+                </AppLayoutChildren>
             )}
         </>
     );
