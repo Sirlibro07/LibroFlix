@@ -19,7 +19,7 @@ const MoviesIndexContent = ({ img }: MoviesIndexContentProps) => {
     return (
         <>
             <BackgroundImage
-                picture_classes={`w-full top-[5.625rem] h-[39.188rem] z-[0] sm:h-[48.75rem] ${conditional_style}`}
+                picture_classes={`w-full top-[5.625rem] h-[39.188rem] z-[0] md:h-[48.75rem] ${conditional_style}`}
                 img_function={img}
             />
             <div
