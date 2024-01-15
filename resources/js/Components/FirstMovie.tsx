@@ -2,14 +2,16 @@ import React from "react";
 import MovieInfo from "./MovieInfo";
 import MovieDescription from "./MovieDescription";
 import GeneralLink from "./GeneralLink";
+import MovieTitle from "./MovieTitle";
 
 const FirstMovie = () => {
     return (
         <>
             <div className="px-[44px] text-center z-1 ">
-                <h1 className="font-bold text-[33px]">
-                    Naruto Shippuden: The Movie
-                </h1>
+                <MovieTitle
+                    title="Naruto Shippuden: The Movie"
+                    className="font-bold text-[33px]"
+                />
                 <MovieInfo date={"2007"} />
                 <MovieDescription
                     description="So I started to walk into the water. I won't lie to you boys, I was
