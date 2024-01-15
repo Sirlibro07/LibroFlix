@@ -5,6 +5,7 @@ import MovieDescription from "./MovieDescription";
 import GeneralLink from "./GeneralLink";
 import MovieTitle from "./MovieTitle";
 import MovieRating from "./MovieRating";
+import FirstMovieLinks from "./FirstMovieLinks";
 
 const FirstMovie = () => {
     return (
@@ -28,13 +29,7 @@ const FirstMovie = () => {
                                 Jerry at that moment, I was a marine biologist."
                 />
 
-                <GeneralLink
-                    route_name={"home"}
-                    border={false}
-                    className="bg-brand font-medium block text-center py-[0.625rem] mt-6 "
-                >
-                    Watch Now
-                </GeneralLink>
+                <FirstMovieLinks />
             </div>
         </>
     );
