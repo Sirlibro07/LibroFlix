@@ -20,19 +20,8 @@ export default function Edit({ auth, mustVerifyEmail, status, isLoggedIn }) {
         }
     };
 
-    const css = `html,
-                  body,
-                  #app {
-                      background-color: black;
-                  }`;
-
     return (
-        <AppLayout
-            user={auth.user}
-            isLoggedIn={isLoggedIn}
-            className="pt-8"
-            css={css}
-        >
+        <AppLayout user={auth.user} isLoggedIn={isLoggedIn} className="pt-8">
             <Head title="Profile" />
             <header className="font-display text-mobile_h1 text-contrast">
                 Account
