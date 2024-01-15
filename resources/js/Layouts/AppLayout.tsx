@@ -6,7 +6,13 @@ import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import UserContext from "@/Contexts/UserContext";
 import AppLayoutChildren from "@/Components/AppLayoutChildren";
 
-const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
+const AppLayout = ({
+    user,
+    isLoggedIn,
+    children,
+    className = "",
+    css = "",
+}) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
 
@@ -44,6 +50,7 @@ const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
                     {children}
                 </AppLayoutChildren>
             )}
+            <style>{css}</style>
         </>
     );
 };
