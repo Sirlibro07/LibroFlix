@@ -1,4 +1,3 @@
-import Navbar from "@/Components/Navbar";
 import React, { ReactNode, useState } from "react";
 import "../Helpers/CSS/borders.css";
 import "../Helpers/CSS/navbar_visibility.css";
