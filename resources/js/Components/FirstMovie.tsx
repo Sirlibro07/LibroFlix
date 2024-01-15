@@ -31,7 +31,7 @@ const FirstMovie = () => {
                 <GeneralLink
                     route_name={"home"}
                     border={false}
-                    className="bg-brand font-medium block text-center py-[10px] mt-6 rounded-10"
+                    className="bg-brand font-medium block text-center py-[0.625rem] mt-6 "
                 >
                     Watch Now
                 </GeneralLink>
