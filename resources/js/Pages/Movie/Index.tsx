@@ -1,5 +1,4 @@
-import BackgroundImage from "@/Components/BackgroundImage";
-import FirstMovie from "@/Components/FirstMovie";
+import MoviesIndexContent from "@/Components/MoviesIndexContent";
 import getBackgroundImg from "@/Helpers/getBackgroundImg";
 import AppLayout from "@/Layouts/AppLayout";
 import React from "react";
@@ -11,14 +10,7 @@ const Index = ({ auth, isLoggedIn }) => {
 
     return (
         <AppLayout user={auth.user} isLoggedIn={isLoggedIn}>
-            <BackgroundImage
-                picture_classes="w-full top-[5.625rem] h-[627px] z-[0] sm:h-[48.75rem]"
-                img_function={img}
-            />
-
-            <div className="absolute left-0 w-full text-white mt-[180px]">
-                <FirstMovie />
-            </div>
+            <MoviesIndexContent img={img} />
         </AppLayout>
     );
 };
