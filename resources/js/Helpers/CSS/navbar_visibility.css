@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     .navbar_item_visible {
         display: flex;
     }
