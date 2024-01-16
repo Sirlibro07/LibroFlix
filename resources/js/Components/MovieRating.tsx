@@ -11,8 +11,6 @@ const MovieRating = ({ rating, className }: MovieRatingProps) => {
 
     const newArray = Array.from({ length: integer }, (_, index) => index);
 
-    console.log(newArray);
-
     return (
         <ul className={`flex gap-x-2 ${className}`}>
             {newArray.map((_, index) => (
