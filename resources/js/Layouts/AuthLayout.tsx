@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import "./CSS/AuthLayout.css";
 import "../Helpers/CSS/borders.css";
+import "../Helpers/CSS/letter_spacing.css";
 import getBackgroundImg from "@/Helpers/getBackgroundImg";
 import AuthLayoutChildren from "@/Components/AuthLayoutChildren";
 

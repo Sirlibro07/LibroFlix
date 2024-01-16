@@ -2,6 +2,7 @@ import React, { ReactNode, useState } from "react";
 import "../Helpers/CSS/borders.css";
 import "../Helpers/CSS/navbar_visibility.css";
 import "./CSS/AppLayout.css";
+import "../Helpers/CSS/letter_spacing.css";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import UserContext from "@/Contexts/UserContext";
 import AppLayoutChildren from "@/Components/AppLayoutChildren";
