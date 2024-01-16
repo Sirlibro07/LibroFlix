@@ -29,6 +29,8 @@ export default {
                 logo: "28px",
                 typescale_21_px: "21px",
                 typescale_19_px: "19px",
+                typescale_23_px: "23px",
+                typescale_33_px: "33px",
             },
             borderRadius: {
                 10: "0.625rem",
