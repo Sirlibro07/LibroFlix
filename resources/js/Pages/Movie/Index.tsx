@@ -5,7 +5,7 @@ import React from "react";
 
 const Index = ({ auth, isLoggedIn }) => {
     const img = (version: string) => {
-        return getBackgroundImg("movies", version);
+        return getBackgroundImg("first_movie", version);
     };
 
     return (
