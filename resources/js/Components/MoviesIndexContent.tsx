@@ -21,14 +21,14 @@ const MoviesIndexContent = () => {
     return (
         <>
             <BackgroundImage
-                picture_classes={`w-full top-[5.625rem] h-[39.188rem] z-[0] md:h-[48.75rem] ${conditional_style}`}
+                picture_classes={`w-full  top-[5.625rem] h-[39.188rem] z-[0] md:h-[48.75rem] ${conditional_style}`}
                 img_function={img}
             />
             <div
-                className={`absolute left-0 w-full text-white mt-[9rem]  ${conditional_style}`}
+                className={`px-mobile_side_padding md:px-10 lg:px-20 absolute left-0 w-full text-white mt-[9rem]  ${conditional_style}`}
             >
                 <FirstMovie />
-                <div className="px-4 mt-16">
+                <div className="mt-16">
                     <p className="text-typescale_23_px">Movies</p>
                     <Slider />
                 </div>
