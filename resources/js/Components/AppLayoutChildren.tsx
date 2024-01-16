@@ -12,9 +12,7 @@ const AppLayoutChildren = ({ className, children }: AppLayoutChildrenProps) => {
     return (
         <>
             <Navbar />
-            <section
-                className={`px-mobile_side_padding md:px-10 lg:px-20 ${className}`}
-            >
+            <section className={`body-padding ${className}`}>
                 {children}
             </section>
         </>
