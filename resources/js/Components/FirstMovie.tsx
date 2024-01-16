@@ -2,7 +2,6 @@ import React from "react";
 MovieTitle;
 import MovieInfo from "./MovieInfo";
 import MovieDescription from "./MovieDescription";
-import GeneralLink from "./GeneralLink";
 import MovieTitle from "./MovieTitle";
 import MovieRating from "./MovieRating";
 import FirstMovieLinks from "./FirstMovieLinks";
