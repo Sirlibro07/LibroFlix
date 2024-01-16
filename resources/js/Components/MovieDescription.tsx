@@ -16,7 +16,7 @@ const MovieDescription = ({
                 WebkitLineClamp: "3",
                 WebkitBoxOrient: "vertical",
             }}
-            className={`text-light_color overflow-hidden ${className}`}
+            className={`text-light_color overflow-hidden ${className} md:text-xl`}
         >
             {description}
         </p>
