@@ -24,7 +24,7 @@ const MoviesIndexContent = () => {
                 img_function={img}
             />
             <div
-                className={`absolute left-0 w-full text-white mt-[11.25rem] ${conditional_style}`}
+                className={`absolute left-0 w-full text-white mt-[9rem] ${conditional_style}`}
             >
                 <FirstMovie />
             </div>
