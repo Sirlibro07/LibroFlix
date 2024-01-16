@@ -2,8 +2,6 @@ import React, { ReactNode } from "react";
 import Navbar from "./Navbar";
 
 interface AppLayoutChildrenProps {
-    isMenuVisible: boolean;
-    isSearchbarVisible: boolean;
     className: string;
     children: ReactNode;
 }
