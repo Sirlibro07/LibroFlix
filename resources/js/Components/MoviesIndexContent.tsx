@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import BackgroundImage from "./BackgroundImage";
 import FirstMovie from "./FirstMovie";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
+import getBackgroundImg from "@/Helpers/getBackgroundImg";
 
-interface MoviesIndexContentProps {
-    img: (version: string) => string;
-}
+const MoviesIndexContent = () => {
+    const img = (version: string) => {
+        return getBackgroundImg("first_movie", version);
+    };
 
-const MoviesIndexContent = ({ img }: MoviesIndexContentProps) => {
     const isMenuVisible = useContext(Menu_Searchbar_Context).isMenuVisible;
     const isSearchbarVisible = useContext(
         Menu_Searchbar_Context
