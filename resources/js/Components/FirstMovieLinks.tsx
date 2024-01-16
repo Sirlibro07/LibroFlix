@@ -12,7 +12,7 @@ const FirstMovieLinks = () => {
             >
                 Watch Now
             </GeneralLink>
-            <div className="w-full flex gap-x-5">
+            <div className="w-full  gap-x-5 hidden md:flex ">
                 <GeneralLinkWithIcon
                     route_name={"home"}
                     className="bg-brand"
