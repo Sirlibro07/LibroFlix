@@ -19,9 +19,10 @@ const FirstMovie = () => {
                     title="Naruto Shippuden: The Movie"
                     className="text-mobile_h1 md:text-desktop_h1 md:leading-[120%]"
                 />
-                <MovieRating rating={2.2} className="hidden md:flex my-3" />
+                <MovieRating rating={2.2} className="hidden md:flex my-2" />
                 <MovieInfo date={"2007"} className="md:hidden" />
                 <MovieDescription
+                    className="mb-5"
                     description="So I started to walk into the water. I won't lie to you boys, I was
                                 terrified. But I pressed on, and as I made my way past the breakers
                                 a strange calm came over me. I don't know if it was divine

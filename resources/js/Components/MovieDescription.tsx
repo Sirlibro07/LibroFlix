@@ -2,9 +2,13 @@ import React from "react";
 
 interface MovieDescriptionProps {
     description: string;
+    className?: string;
 }
 
-const MovieDescription = ({ description }: MovieDescriptionProps) => {
+const MovieDescription = ({
+    description,
+    className = "",
+}: MovieDescriptionProps) => {
     return (
         <p
             style={{
@@ -12,7 +16,7 @@ const MovieDescription = ({ description }: MovieDescriptionProps) => {
                 WebkitLineClamp: "3",
                 WebkitBoxOrient: "vertical",
             }}
-            className="text-light_color overflow-hidden "
+            className={`text-light_color overflow-hidden ${className}`}
         >
             {description}
         </p>
