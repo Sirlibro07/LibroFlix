@@ -22,7 +22,7 @@ const FirstMovie = () => {
                 <MovieRating rating={2.2} className="hidden md:flex my-2" />
                 <MovieInfo date={"2007"} className="md:hidden" />
                 <MovieDescription
-                    className="mb-5"
+                    className="mb-4 lg:w-4/6 xl:w-1/2 2xl:w-5/12"
                     description="So I started to walk into the water. I won't lie to you boys, I was
                                 terrified. But I pressed on, and as I made my way past the breakers
                                 a strange calm came over me. I don't know if it was divine
