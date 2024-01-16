@@ -10,13 +10,13 @@ import FirstMovieLinks from "./FirstMovieLinks";
 const FirstMovie = () => {
     return (
         <>
-            <div className="px-[2.75rem] text-center z-1 md:text-start md:w-1/2 ">
+            <div className="px-[2.75rem] text-center z-1 md:text-start   ">
                 <MovieInfo
                     date={"2007"}
                     className="hidden md:flex md:justify-start md:mb-[-0.25rem]"
                 />
                 <MovieTitle
-                    title="Naruto Shippuden: The Movie"
+                    title={`Naruto Shippuden:\nThe Movie`}
                     className="text-mobile_h1 md:text-desktop_h1 md:leading-[120%]"
                 />
                 <MovieRating rating={2.2} className="hidden md:flex my-2" />
