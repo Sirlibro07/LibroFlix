@@ -1,4 +1,5 @@
 import React from "react";
+import "../Helpers/CSS/first_movie_description.css";
 
 interface MovieDescriptionProps {
     description: string;
@@ -10,16 +11,17 @@ const MovieDescription = ({
     className = "",
 }: MovieDescriptionProps) => {
     return (
-        <p
-            style={{
-                display: "-webkit-box",
-                WebkitLineClamp: "3",
-                WebkitBoxOrient: "vertical",
-            }}
-            className={`text-light_color overflow-hidden ${className} md:text-xl`}
-        >
-            {description}
-        </p>
+        <>
+            <p
+                style={{
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                }}
+                className={`first_movie_description text-light_color overflow-hidden ${className} md:text-xl`}
+            >
+                {description}
+            </p>
+        </>
     );
 };
 

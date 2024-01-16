@@ -1,0 +1,9 @@
+.first_movie_description {
+    -webkit-line-clamp: 3;
+}
+
+@media (min-width: 768px) {
+    .first_movie_description {
+        -webkit-line-clamp: 2;
+    }
+}
