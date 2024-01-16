@@ -21,7 +21,7 @@ const GeneralLinkWithIcon = ({
             className={`font-medium ${className}  py-[0.625rem] pl-3 pr-4`}
         >
             <div className="flex items-center">
-                <i className={`fa-solid fa-${icon} mr-3  text-[1.25rem]`}></i>
+                <i className={`fa-solid fa-${icon} mr-3  text-[1.125rem]`}></i>
                 {children}
             </div>
         </GeneralLink>
