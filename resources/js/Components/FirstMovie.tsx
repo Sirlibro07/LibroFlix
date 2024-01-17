@@ -12,14 +12,14 @@ const FirstMovie = () => {
             <div className="text-center z-1 md:text-start   ">
                 <MovieInfo
                     date={"2007"}
-                    className="hidden md:flex md:justify-start md:mb-[-0.25rem]"
+                    className="hidden md:flex md:justify-start md:mb-[-0.25rem] md:mt-4"
                 />
                 <MovieTitle
                     title={`Naruto Shippuden:\nThe Movie`}
                     className="text-mobile_h1 md:text-desktop_h1 md:leading-[120%]"
                 />
                 <MovieRating rating={5} className="hidden md:flex my-2" />
-                <MovieInfo date={"2007"} className="mt-3 md:hidden" />
+                <MovieInfo date={"2007"} className="mt-2 md:hidden" />
                 <MovieDescription
                     className="mb-4 lg:w-4/6 xl:w-1/2 2xl:w-5/12"
                     description="So I started to walk into the water. I won't lie to you boys, I was
