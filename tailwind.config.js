@@ -32,6 +32,9 @@ export default {
                 typescale_23_px: "23px",
                 typescale_33_px: "33px",
             },
+            aspectRatio: {
+                card: "10 / 16",
+            },
             borderRadius: {
                 10: "0.625rem",
                 auth_big_radius: "40px",
