@@ -74,6 +74,10 @@ export default {
                 1: "0.063rem",
             },
         },
+        screens: {
+            xs: "420px",
+            ...defaultTheme.screens,
+        },
     },
 
     plugins: [forms],
