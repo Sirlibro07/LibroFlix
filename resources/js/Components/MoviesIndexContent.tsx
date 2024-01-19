@@ -4,6 +4,8 @@ import FirstMovie from "./FirstMovie";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import getBackgroundImg from "@/Helpers/getBackgroundImg";
 import Slider from "./Slider";
+import MovieCard from "./MovieCard";
+import MoviesSlider from "./MoviesSlider";
 
 const MoviesIndexContent = () => {
     const img = (version: string) => {
@@ -28,11 +30,13 @@ const MoviesIndexContent = () => {
                 className={`body-padding absolute left-0 w-full text-white mt-[9rem]  ${conditional_style}`}
             >
                 <FirstMovie />
-                <div className="mt-16">
-                    <p className="text-typescale_23_px font-medium mb-6">
+                <div className="mb-16 mt-16 md:mt-[120px]">
+                    <p className="text-typescale_23_px font-medium mb-6 md:text-typescale_33_px">
                         Movies
                     </p>
-                    <Slider />
+                    <MoviesSlider
+                        movies={[{ name: "Land" }, { name: "Land" }]}
+                    />
                 </div>
             </div>
         </>
