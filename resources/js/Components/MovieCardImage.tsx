@@ -6,15 +6,14 @@ interface MovieCardImageProps {
 }
 
 const MovieCardImage = ({ name }: MovieCardImageProps) => {
-    const img = (name: string) => {
+    const img = () => {
         return imgStoragePath(`cards/movies/${name}`);
     };
     return (
         <img
-            src={img(name)}
+            src={img()}
             alt={`movie-${name}-card-bg-image`}
-            decoding="async"
-            className="w-full h-full object-cover rounded-10"
+            className="w-full h-full object-cover rounded-10 transition-all duration-300 group-hover:brightness-[30%]"
         />
     );
 };
