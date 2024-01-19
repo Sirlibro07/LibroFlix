@@ -10,7 +10,7 @@ const MoviesSlider = ({ movies }: MoviesSliderProps) => {
     return (
         <Slider>
             {movies.map((movie) => (
-                <MovieCard name={movie.name} />
+                <MovieCard thumbnail_path={movie.thumbnail_path} />
             ))}
         </Slider>
     );

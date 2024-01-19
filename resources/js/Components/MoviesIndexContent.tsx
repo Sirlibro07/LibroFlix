@@ -35,7 +35,10 @@ const MoviesIndexContent = () => {
                         Movies
                     </p>
                     <MoviesSlider
-                        movies={[{ name: "Land" }, { name: "Land" }]}
+                        movies={[
+                            { thumbnail_path: "Land" },
+                            { thumbnail_path: "Land" },
+                        ]}
                     />
                 </div>
             </div>
