@@ -8,7 +8,7 @@ interface SliderButtonProps {
 const SliderButton = ({ direction }: SliderButtonProps) => {
     return (
         <div
-            className={`absolute w-[66px] h-[66px] cursor-pointer bg-white ${direction}-0 rounded-full flex justify-center items-center`}
+            className={`hidden absolute w-[66px] h-[66px] cursor-pointer bg-white ${direction}-0 rounded-full flex justify-center items-center md:flex`}
         >
             <ArrowIcon direction={direction} />
         </div>
