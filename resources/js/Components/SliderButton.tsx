@@ -10,7 +10,7 @@ const SliderButton = ({ direction }: SliderButtonProps) => {
         <div
             className={`absolute w-[66px] h-[66px] cursor-pointer bg-white ${direction}-0 rounded-full flex justify-center items-center`}
         >
-            <ArrowIcon direction="right" />
+            <ArrowIcon direction={direction} />
         </div>
     );
 };
