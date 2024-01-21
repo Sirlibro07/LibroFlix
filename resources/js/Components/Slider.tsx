@@ -11,8 +11,8 @@ const Slider = ({ children }: SliderProps) => {
             <div className="w-full  grid grid-cols-2 gap-4 xs:grid-cols-3 md:flex md:items-center md:overflow-hidden">
                 {children}
             </div>
-            <SliderButton direction="right" />
             <SliderButton direction="left" />
+            <SliderButton direction="right" />
         </section>
     );
 };
