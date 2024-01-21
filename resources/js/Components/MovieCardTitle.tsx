@@ -6,7 +6,14 @@ interface MovieCardTitleProps {
 
 const MovieCardTitle = ({ title }: MovieCardTitleProps) => {
     return (
-        <p className="absolute bottom-3 font-medium left-3 whitespace-pre-line">
+        <p
+            style={{
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: "2",
+            }}
+            className="absolute bottom-3 font-medium left-3 right-3 whitespace-pre-line overflow-hidden"
+        >
             {title}
         </p>
     );
