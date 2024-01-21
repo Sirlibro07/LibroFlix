@@ -6,7 +6,9 @@ interface MovieCardTitleProps {
 
 const MovieCardTitle = ({ title }: MovieCardTitleProps) => {
     return (
-        <p className="absolute bottom-3 left-3 whitespace-pre-line">{title}</p>
+        <p className="absolute bottom-3 font-medium left-3 whitespace-pre-line">
+            {title}
+        </p>
     );
 };
 
