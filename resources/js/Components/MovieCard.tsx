@@ -9,7 +9,7 @@ interface MovieCardProps {
 const MovieCard = ({ thumbnail_path }: MovieCardProps) => {
     return (
         <>
-            <div className="group relative aspect-card cursor-pointer transition-all duration-300 md:shrink-0 md:hover:scale-[.95]">
+            <div className="group relative cursor-pointer transition-all duration-300 md:shrink-0 md:hover:scale-[.95]">
                 <MovieCardImage thumbnail_path={thumbnail_path} />
                 <MovieCardContent />
             </div>
