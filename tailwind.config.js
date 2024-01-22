@@ -33,7 +33,7 @@ export default {
                 typescale_33_px: "33px",
             },
             aspectRatio: {
-                card: "10 / 16",
+                card: "11 / 16",
             },
             borderRadius: {
                 10: "0.625rem",
