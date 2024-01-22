@@ -9,8 +9,8 @@ interface MoviesSliderProps {
 const MoviesSlider = ({ movies }: MoviesSliderProps) => {
     return (
         <Slider>
-            {movies.map((movie) => (
-                <MovieCard thumbnail_path={movie.thumbnail_path} />
+            {movies.map((movie, index) => (
+                <MovieCard thumbnail_path={movie.thumbnail_path} key={index} />
             ))}
         </Slider>
     );
