@@ -7,10 +7,16 @@ interface MoviesSliderProps {
 }
 
 const MoviesSlider = ({ movies }: MoviesSliderProps) => {
+    console.log(movies.length);
+
     return (
         <Slider>
             {movies.map((movie, index) => (
-                <MovieCard thumbnail_path={movie.thumbnail_path} key={index} />
+                <MovieCard
+                    thumbnail_path={movie.thumbnail_path}
+                    key={index}
+                    cards_number={movies.length}
+                />
             ))}
         </Slider>
     );
