@@ -43,11 +43,7 @@ const AppLayout = ({
     return (
         <>
             {renderWithProviders(
-                <AppLayoutChildren
-                    isMenuVisible={isMenuVisible}
-                    isSearchbarVisible={isSearchbarVisible}
-                    className={className}
-                >
+                <AppLayoutChildren className={className}>
                     {children}
                 </AppLayoutChildren>
             )}
