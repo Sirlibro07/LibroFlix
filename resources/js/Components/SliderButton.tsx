@@ -13,7 +13,7 @@ const SliderButton = ({ direction, onCLickHandler }: SliderButtonProps) => {
             onClick={() => {
                 onCLickHandler(direction === "right" ? -100 : +100);
             }}
-            className={`hidden  absolute top-1/2  transform -translate-y-1/2  w-[66px] h-[66px] cursor-pointer  bg-white button-${direction}  rounded-full flex justify-center items-center lg:flex`}
+            className={`hidden  absolute top-1/2  transform -translate-y-1/2  w-[4.125rem] h-[4.125rem] cursor-pointer  bg-white button-${direction}  rounded-full flex justify-center items-center lg:flex`}
         >
             <ArrowIcon direction={direction} />
         </div>
