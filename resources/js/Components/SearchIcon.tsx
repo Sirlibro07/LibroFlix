@@ -21,7 +21,7 @@ const SearchIcon = ({ className }: SearchIconProps) => {
     return (
         <i
             onClick={handleOnclick}
-            className={`fa-solid fa-magnifying-glass cursor-pointer text-contrast text-[1.563rem] mr-4 ${className}`}
+            className={`fa-solid fa-magnifying-glass pointer-events-none text-contrast text-[1.563rem] mr-4 ${className}`}
         ></i>
     );
 };
