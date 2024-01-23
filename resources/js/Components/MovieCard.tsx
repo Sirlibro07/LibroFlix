@@ -13,15 +13,11 @@ const MovieCard = ({ thumbnail_path, cards_number }: MovieCardProps) => {
         return `w-[calc((100%/${number})-1rem)]`;
     };
 
-    const card_min_width = cards_number <= 5 ? "md:min-w-[250px]" : "";
-
     return (
         <>
             <Link
                 className={`group relative cursor-pointer aspect-card transition-all duration-300 
-                md:shrink-0  md:${width(3)}  md:hover:scale-[.95] xl:${width(
-                    5
-                )} ${card_min_width}`}
+                md:shrink-0 md:hover:scale-95 lg:w-[calc(20%-1rem)] `}
                 href={""}
             >
                 <MovieCardImage thumbnail_path={thumbnail_path} />
@@ -32,3 +28,8 @@ const MovieCard = ({ thumbnail_path, cards_number }: MovieCardProps) => {
 };
 
 export default MovieCard;
+
+// className={`group relative cursor-pointer aspect-card transition-all duration-300
+//                 md:shrink-0 md:hover:scale-95  md:${width(3)}   xl:${width(
+//                     5
+//                 )}  `}
