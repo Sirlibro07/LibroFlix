@@ -32,7 +32,7 @@ const SearchBar = () => {
            ${visibility_styles}`}
         >
             <div className="w-full relative flex items-center">
-                <SearchIcon className="absolute left-3 text-base cursor-auto" />
+                <SearchIcon className="absolute pointer-events-none left-3 text-base cursor-auto" />
                 <Input
                     type={"text"}
                     id={"search"}

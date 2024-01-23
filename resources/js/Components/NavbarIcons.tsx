@@ -6,7 +6,7 @@ const NavbarIcons = () => {
     return (
         <>
             <div className="flex items-center">
-                <SearchIcon className="lg:hidden " />
+                <SearchIcon className="cursor-pointer lg:hidden " />
                 <MenuIcon />
             </div>
         </>
