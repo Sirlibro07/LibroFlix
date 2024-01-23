@@ -24,8 +24,3 @@ const MovieCard = ({ thumbnail_path, cards_number }: MovieCardProps) => {
 };
 
 export default MovieCard;
-
-// className={`group relative cursor-pointer aspect-card transition-all duration-300
-//                 md:shrink-0 md:hover:scale-95  md:${width(3)}   xl:${width(
-//                     5
-//                 )}  `}
