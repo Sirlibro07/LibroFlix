@@ -17,7 +17,7 @@ const MovieCard = ({ thumbnail_path, cards_number }: MovieCardProps) => {
         <>
             <Link
                 className={`group relative cursor-pointer aspect-card transition-all duration-300 
-                md:shrink-0 md:hover:scale-95 lg:w-[calc(20%-1rem)] `}
+                lg:shrink-0 lg:hover:scale-95 lg:w-[calc(20%-1rem)] `}
                 href={""}
             >
                 <MovieCardImage thumbnail_path={thumbnail_path} />
