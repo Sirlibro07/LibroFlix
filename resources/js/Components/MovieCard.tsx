@@ -9,10 +9,6 @@ interface MovieCardProps {
 }
 
 const MovieCard = ({ thumbnail_path, cards_number }: MovieCardProps) => {
-    const width = (number: number) => {
-        return `w-[calc((100%/${number})-1rem)]`;
-    };
-
     return (
         <>
             <Link
