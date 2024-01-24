@@ -5,7 +5,7 @@ import "./CSS/AppLayout.css";
 import "../Helpers/CSS/letter_spacing.css";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import UserContext from "@/Contexts/UserContext";
-import AppLayoutChildren from "@/Components/AppLayoutChildren";
+import Navbar from "@/Components/Navbar";
 
 const AppLayout = ({
     user,
@@ -40,12 +40,27 @@ const AppLayout = ({
         );
     };
 
+    const onClickHandler = () => {
+        setIsMenuVisible(false);
+        setIsSearchbarVisible(false);
+    };
+
     return (
         <>
             {renderWithProviders(
-                <AppLayoutChildren className={className}>
-                    {children}
-                </AppLayoutChildren>
+                <>
+                    <Navbar />
+                    <section
+                        className={`body-padding ${
+                            isMenuVisible || isSearchbarVisible
+                                ? "brightness-[30%]"
+                                : ""
+                        } ${className}`}
+                        onClick={onClickHandler}
+                    >
+                        {children}
+                    </section>
+                </>
             )}
             <style>{css}</style>
         </>
