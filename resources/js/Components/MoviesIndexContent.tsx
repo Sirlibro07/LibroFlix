@@ -1,34 +1,46 @@
-import React, { useContext } from "react";
-import BackgroundImage from "./BackgroundImage";
+import React from "react";
 import FirstMovie from "./FirstMovie";
-import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
-import getBackgroundImg from "@/Helpers/getBackgroundImg";
-import Slider from "./Slider";
-import MovieCard from "./MovieCard";
 import MoviesSlider from "./MoviesSlider";
+import "../Helpers/CSS/movies-body-img.css";
+import getBackgroundImg from "@/Helpers/getBackgroundImg";
 
 const MoviesIndexContent = () => {
     const img = (version: string) => {
         return getBackgroundImg("first_movie", version);
     };
 
-    const isMenuVisible = useContext(Menu_Searchbar_Context).isMenuVisible;
-    const isSearchbarVisible = useContext(
-        Menu_Searchbar_Context
-    ).isSearchbarVisible;
+    const body_styles = `
+    body {
+        background-image: url("${img("mobile")}");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 90px;
+        background-position-x: 55%;
+        background-color: black;
+    }
 
-    const conditional_style =
-        (isMenuVisible || isSearchbarVisible) && "lower_brightness";
+    @media (min-width: 768px) {
+        body {
+            background-image: url("${img("tablet")}");
+        }
+    }
+
+    @media (min-width: 1024px) {
+        body {
+            background-image: url("${img("laptop")}");
+        }
+    }
+
+    @media (min-width: 1536px) {
+        body {
+            background-image: url("${img("desktop")}");
+        }
+    }
+`;
 
     return (
         <>
-            <BackgroundImage
-                picture_classes={`w-full brightness-[85%] top-[5.625rem] h-[44rem] z-[0] md:h-[48.75rem] ${conditional_style}`}
-                img_function={img}
-            />
-            <div
-                className={`body-padding absolute left-0 w-full text-white mt-[9rem]  ${conditional_style}`}
-            >
+            <div className={`w-full text-white mt-[9rem]`}>
                 <FirstMovie />
                 <div className="mb-16 mt-16 md:mt-[120px]">
                     <p className="text-typescale_23_px font-medium mb-6 md:text-typescale_33_px">
@@ -42,6 +54,7 @@ const MoviesIndexContent = () => {
                     />
                 </div>
             </div>
+            <style>{body_styles}</style>
         </>
     );
 };
