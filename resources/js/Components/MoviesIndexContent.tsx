@@ -1,7 +1,6 @@
 import React from "react";
 import FirstMovie from "./FirstMovie";
 import MoviesSlider from "./MoviesSlider";
-import "../Helpers/CSS/movies-body-img.css";
 import getBackgroundImg from "@/Helpers/getBackgroundImg";
 
 const MoviesIndexContent = () => {
