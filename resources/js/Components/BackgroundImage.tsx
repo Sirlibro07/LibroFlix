@@ -22,7 +22,7 @@ const BackgroundImage = ({
                 srcSet={img_function("laptop")}
             />
             <source
-                media="(min-width: 640px)"
+                media="(min-width: 768px)"
                 srcSet={img_function("tablet")}
             />
 
