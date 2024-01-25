@@ -42,9 +42,6 @@ const MoviesIndexContent = () => {
             <div className={`w-full text-white mt-[9rem]`}>
                 <FirstMovie />
                 <div className="mb-16 mt-16 md:mt-[120px]">
-                    <p className="text-typescale_23_px font-medium mb-6 md:text-typescale_33_px">
-                        Movies
-                    </p>
                     <MoviesSlider
                         movies={[
                             { thumbnail_path: "Land" },
