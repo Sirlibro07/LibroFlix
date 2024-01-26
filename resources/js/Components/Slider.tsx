@@ -13,26 +13,18 @@ const Slider = ({ children }: SliderProps) => {
     };
 
     return (
-        <>
-            <section className="relative">
-                <div className="overflow-hidden">
-                    <div
-                        style={{ transform: `translateX(${translateX}%)` }}
-                        className={`w-fulltransition-all duration-300 grid gap-4 grid-cols-[repeat(auto-fit,minmax(140px,1fr))] lg:flex lg:items-center `}
-                    >
-                        {children}
-                    </div>
+        <section className="relative">
+            <div className="overflow-hidden">
+                <div
+                    style={{ transform: `translateX(${translateX}%)` }}
+                    className={`w-fulltransition-all duration-300 grid gap-4 grid-cols-[repeat(auto-fit,minmax(140px,1fr))] lg:flex lg:items-center `}
+                >
+                    {children}
                 </div>
-                <SliderButton
-                    direction="left"
-                    onCLickHandler={onCLickHandler}
-                />
-                <SliderButton
-                    direction="right"
-                    onCLickHandler={onCLickHandler}
-                />
-            </section>
-        </>
+            </div>
+            <SliderButton direction="left" onCLickHandler={onCLickHandler} />
+            <SliderButton direction="right" onCLickHandler={onCLickHandler} />
+        </section>
     );
 };
 
