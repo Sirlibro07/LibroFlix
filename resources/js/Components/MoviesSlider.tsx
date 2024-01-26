@@ -11,7 +11,7 @@ const MoviesSlider = ({ movies }: MoviesSliderProps) => {
 
     return (
         <>
-            <p className="text-typescale_23_px font-medium mb-6 md:text-typescale_33_px">
+            <p className="text-typescale_23_px font-medium mb-6 md:text-typescale_33_px  mt-16 md:mt-[120px]">
                 Movies
             </p>
             <Slider>
