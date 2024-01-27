@@ -6,14 +6,10 @@ import "../Helpers/CSS/letter_spacing.css";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import UserContext from "@/Contexts/UserContext";
 import Navbar from "@/Components/Navbar";
+import getBackgroundImg from "@/Helpers/getBackgroundImg";
+import BackgroundImage from "@/Components/BackgroundImage";
 
-const AppLayout = ({
-    user,
-    isLoggedIn,
-    children,
-    className = "",
-    css = "",
-}) => {
+const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
 
@@ -45,6 +41,10 @@ const AppLayout = ({
         setIsSearchbarVisible(false);
     };
 
+    const img = (version: string) => {
+        return getBackgroundImg("first_movie", version);
+    };
+
     return (
         <>
             {renderWithProviders(
@@ -60,9 +60,14 @@ const AppLayout = ({
                     >
                         {children}
                     </section>
+                    <div className="w-full absolute top-[5.625rem] bottom-0 z-[-1]">
+                        <BackgroundImage
+                            img_function={img}
+                            picture_classes="w-full  h-[44rem]  md:h-[48.75rem]"
+                        />
+                    </div>
                 </>
             )}
-            <style>{css}</style>
         </>
     );
 };

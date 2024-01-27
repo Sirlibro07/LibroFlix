@@ -45,9 +45,6 @@ export default function Edit({ auth, mustVerifyEmail, status, isLoggedIn }) {
 
                 {renderCurrentOption()}
             </AppLayout>
-            <style>{`body {
-    background-color: black;
-}`}</style>
         </>
     );
 }
