@@ -63,7 +63,7 @@ const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
                     <div className="w-full absolute top-[5.625rem] bottom-0 z-[-1]">
                         <BackgroundImage
                             img_function={img}
-                            picture_classes="w-full  h-[44rem]  md:h-[48.75rem]"
+                            picture_classes="h-[44rem]  md:h-[48.75rem]"
                         />
                     </div>
                 </>

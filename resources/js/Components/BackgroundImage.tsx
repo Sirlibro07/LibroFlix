@@ -12,7 +12,7 @@ const BackgroundImage = ({
     img_classes = "",
 }: BackgroundImageProps) => {
     return (
-        <picture className={`absolute left-0 z-[-1] ${picture_classes}`}>
+        <picture className={`w-full absolute left-0 z-[-1] ${picture_classes}`}>
             <source
                 media="(min-width: 1536px)"
                 srcSet={img_function("desktop")}

@@ -24,7 +24,7 @@ const AuthLayoutChildren = ({
                 className={`w-full h-full relative flex items-end lg:items-center lg:justify-${form_position}`}
             >
                 <BackgroundImage
-                    picture_classes="w-full h-full"
+                    picture_classes="h-full"
                     img_function={img}
                     img_classes={`object-top lg:object-bottom ${img_classes}`}
                 />
