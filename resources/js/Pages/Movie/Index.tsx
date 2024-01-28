@@ -1,4 +1,5 @@
 import MoviesIndexContent from "@/Components/MoviesIndexContent";
+import MoviesContext from "@/Contexts/MoviesContext";
 import AppLayout from "@/Layouts/AppLayout";
 import React from "react";
 
@@ -12,7 +13,9 @@ const Index = ({ auth, isLoggedIn, movies }) => {
             bg_image={true}
             border={false}
         >
-            <MoviesIndexContent />
+            <MoviesContext.Provider value={movies}>
+                <MoviesIndexContent />
+            </MoviesContext.Provider>
         </AppLayout>
     );
 };

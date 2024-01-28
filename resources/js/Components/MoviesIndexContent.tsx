@@ -7,12 +7,7 @@ const MoviesIndexContent = () => {
         <>
             <div className={`w-full text-white mt-[9rem]`}>
                 <FirstMovie />
-                <MoviesSlider
-                    movies={[
-                        { thumbnail_path: "Land" },
-                        { thumbnail_path: "Land" },
-                    ]}
-                />
+                <MoviesSlider />
             </div>
         </>
     );

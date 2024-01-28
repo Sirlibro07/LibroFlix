@@ -5,10 +5,9 @@ import { Link } from "@inertiajs/react";
 
 interface MovieCardProps {
     thumbnail_path: string;
-    cards_number: number;
 }
 
-const MovieCard = ({ thumbnail_path, cards_number }: MovieCardProps) => {
+const MovieCard = ({ thumbnail_path }: MovieCardProps) => {
     return (
         <>
             <Link

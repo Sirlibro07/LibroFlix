@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Slider from "./Slider";
 import MovieCard from "./MovieCard";
+import MoviesContext from "@/Contexts/MoviesContext";
 
-interface MoviesSliderProps {
-    movies: any; //still need to decide how the apiResource will look like on the backend side
-}
+const MoviesSlider = () => {
+    const movies = useContext(MoviesContext).data;
+    console.log(movies);
 
-const MoviesSlider = ({ movies }: MoviesSliderProps) => {
-    console.log(movies.length);
+    const thumbnail_path = (title: string) => {
+        return title.replace(/ /g, "_");
+    };
 
     return (
         <>
@@ -17,9 +19,8 @@ const MoviesSlider = ({ movies }: MoviesSliderProps) => {
             <Slider>
                 {movies.map((movie, index) => (
                     <MovieCard
-                        thumbnail_path={movie.thumbnail_path}
+                        thumbnail_path={thumbnail_path(movie.title)}
                         key={index}
-                        cards_number={movies.length}
                     />
                 ))}
             </Slider>
