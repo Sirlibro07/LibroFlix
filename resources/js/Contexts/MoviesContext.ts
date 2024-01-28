@@ -7,6 +7,7 @@ interface MoviesContextType {
         description: string;
         rating: number;
         year: number;
+        version: string;
     }[];
 }
 
