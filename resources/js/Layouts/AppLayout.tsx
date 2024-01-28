@@ -9,7 +9,13 @@ import Navbar from "@/Components/Navbar";
 import AppLayoutChildren from "@/Components/AppLayoutChildren";
 import AppLayoutBackgoundImage from "@/Components/AppLayoutBackgoundImage";
 
-const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
+const AppLayout = ({
+    user,
+    isLoggedIn,
+    children,
+    className = "",
+    bg_image = false,
+}) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
 
@@ -54,7 +60,7 @@ const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
                     >
                         {children}
                     </AppLayoutChildren>
-                    <AppLayoutBackgoundImage />
+                    {bg_image && <AppLayoutBackgoundImage />}
                 </>
             )}
         </>
