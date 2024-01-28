@@ -5,6 +5,7 @@ import UpdateProfileInformationForm from "./Partials/UpdateProfileInformation";
 import { Head } from "@inertiajs/react";
 import React, { useState } from "react";
 import OptionsList from "@/Components/OptionsList";
+import LogoutForm from "@/Components/LogoutForm";
 
 export default function Edit({ auth, mustVerifyEmail, status, isLoggedIn }) {
     const [currentOption, setCurrentOption] = useState("Profile");
@@ -12,7 +13,12 @@ export default function Edit({ auth, mustVerifyEmail, status, isLoggedIn }) {
     const renderCurrentOption = () => {
         switch (currentOption) {
             case "Profile":
-                return <UpdateProfileInformationForm />;
+                return (
+                    <>
+                        <UpdateProfileInformationForm />
+                        <LogoutForm />
+                    </>
+                );
             case "Password":
                 return <UpdatePasswordForm />;
             case "Other":
