@@ -31,7 +31,7 @@ const Navbar = ({
             </nav>
             <div
                 onClick={onClickHandler}
-                className={`w-full bg-red-600 h-[calc(100%-5.625rem)] absolute top-[5.625rem] left-0 z-[1] ${
+                className={`w-full h-[calc(100%-5.625rem)] absolute top-[5.625rem] left-0 z-[1] ${
                     isMenuVisible || isSearchbarVisible ? "block" : "hidden"
                 }`}
             ></div>
