@@ -4,7 +4,12 @@ import React from "react";
 
 const Index = ({ auth, isLoggedIn }) => {
     return (
-        <AppLayout user={auth.user} isLoggedIn={isLoggedIn} bg_image={true}>
+        <AppLayout
+            user={auth.user}
+            isLoggedIn={isLoggedIn}
+            bg_image={true}
+            border={false}
+        >
             <MoviesIndexContent />
         </AppLayout>
     );

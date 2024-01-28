@@ -4,9 +4,13 @@ import NavbarIcons from "./NavbarIcons";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 
-const Navbar = () => {
+const Navbar = ({ border }) => {
     return (
-        <nav className="body-padding relative bg-black flex  items-center justify-between border-b border-border_color  border-solid lg:justify-normal">
+        <nav
+            className={`body-padding relative bg-black flex  items-center justify-between ${
+                border && "border-b border-border_color border-solid"
+            } lg:justify-normal`}
+        >
             <Logo />
             <NavbarIcons />
             <NavbarLinks />

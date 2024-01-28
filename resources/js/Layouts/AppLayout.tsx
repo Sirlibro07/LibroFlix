@@ -15,6 +15,7 @@ const AppLayout = ({
     children,
     className = "",
     bg_image = false,
+    border = true,
 }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
@@ -51,7 +52,7 @@ const AppLayout = ({
         <>
             {renderWithProviders(
                 <>
-                    <Navbar />
+                    <Navbar border={border} />
                     <AppLayoutChildren
                         isMenuVisible={isMenuVisible}
                         isSearchbarVisible={isSearchbarVisible}
