@@ -21,9 +21,6 @@ const MoviesSlider = () => {
                     <MovieCard
                         thumbnail_path={thumbnail_path(movie.title)}
                         key={index}
-                        version={movie.version}
-                        title={movie.title}
-                        id={movie.id}
                     />
                 ))}
             </Slider>
