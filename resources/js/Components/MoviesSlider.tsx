@@ -17,10 +17,10 @@ const MoviesSlider = () => {
                 Movies
             </p>
             <Slider>
-                {movies.map((movie, index) => (
+                {movies.map((movie) => (
                     <MovieCard
                         thumbnail_path={thumbnail_path(movie.title)}
-                        key={index}
+                        key={movie.id}
                     />
                 ))}
             </Slider>
