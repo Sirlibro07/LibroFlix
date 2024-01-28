@@ -9,6 +9,7 @@ import Navbar from "@/Components/Navbar";
 import getBackgroundImg from "@/Helpers/getBackgroundImg";
 import BackgroundImage from "@/Components/BackgroundImage";
 import AppLayoutChildren from "@/Components/AppLayoutChildren";
+import AppLayoutBackgoundImage from "@/Components/AppLayoutBackgoundImage";
 
 const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -55,12 +56,7 @@ const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
                     >
                         {children}
                     </AppLayoutChildren>
-                    <div className="w-full absolute top-[5.625rem] bottom-0 z-[-1]">
-                        <BackgroundImage
-                            folder_name="first_movie"
-                            picture_classes="h-[44rem]  md:h-[48.75rem]"
-                        />
-                    </div>
+                    <AppLayoutBackgoundImage />
                 </>
             )}
         </>
