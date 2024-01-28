@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\MovieResource;
+use App\Models\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -14,7 +16,13 @@ class MovieController extends Controller
      */
     public function index(): Response
     {
-        return Inertia::render('Movie/Index', ['isLoggedIn' => Auth::check(),]);
+        return Inertia::render(
+            'Movie/Index',
+            [
+                'isLoggedIn' => Auth::check(),
+                'movies' => MovieResource::collection(Movie::all()),
+            ]
+        );
     }
 
     /**

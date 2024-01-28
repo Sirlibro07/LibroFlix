@@ -2,7 +2,9 @@ import MoviesIndexContent from "@/Components/MoviesIndexContent";
 import AppLayout from "@/Layouts/AppLayout";
 import React from "react";
 
-const Index = ({ auth, isLoggedIn }) => {
+const Index = ({ auth, isLoggedIn, movies }) => {
+    console.log(movies);
+
     return (
         <AppLayout
             user={auth.user}
