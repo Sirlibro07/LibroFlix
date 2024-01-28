@@ -14,7 +14,6 @@ const MovieCardContent = ({ version, title, id }: MovieCardContentProps) => {
             <MovieCardPlayButton />
             <MovieCardTitle
                 title={`Naruto ${version} Movie ${id}:\n  ${title}`}
-                // title={"Naruto Og Movie 1:\n Ninja Clash in the Land of Snow"}
             />
         </div>
     );
