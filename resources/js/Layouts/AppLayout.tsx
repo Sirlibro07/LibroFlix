@@ -6,8 +6,6 @@ import "../Helpers/CSS/letter_spacing.css";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import UserContext from "@/Contexts/UserContext";
 import Navbar from "@/Components/Navbar";
-import getBackgroundImg from "@/Helpers/getBackgroundImg";
-import BackgroundImage from "@/Components/BackgroundImage";
 import AppLayoutChildren from "@/Components/AppLayoutChildren";
 import AppLayoutBackgoundImage from "@/Components/AppLayoutBackgoundImage";
 
