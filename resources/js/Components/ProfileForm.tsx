@@ -7,7 +7,7 @@ interface ProfileFormProps {
     button_styles?: string;
     method_function: any;
     route_name: string;
-    processing: any;
+    processing?: boolean;
     recentlySuccessful?: boolean;
     button_text?: string;
 }
@@ -17,7 +17,7 @@ const ProfileForm = ({
     button_styles = "",
     method_function,
     route_name,
-    processing,
+    processing = false,
     recentlySuccessful = false,
     button_text = "Update",
 }: ProfileFormProps) => {
