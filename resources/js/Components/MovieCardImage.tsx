@@ -13,7 +13,7 @@ const MovieCardImage = ({ thumbnail_path }: MovieCardImageProps) => {
         <img
             src={img()}
             alt={`movie-${thumbnail_path}-card-bg-image`}
-            className="w-full h-full object-cover rounded-10 transition-all duration-300 group-hover:brightness-[30%]"
+            className="w-full h-full object-cover object-top rounded-10 transition-all duration-300 group-hover:brightness-[30%]"
         />
     );
 };
