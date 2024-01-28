@@ -26,12 +26,6 @@ const AppLayoutChildren = ({
             >
                 {children}
             </section>
-            <div
-                onClick={onClickHandler}
-                className={`w-full h-[calc(100%-5.625rem)] absolute top-[5.625rem] left-0 ${
-                    isMenuVisible || isSearchbarVisible ? "block" : "hidden"
-                }`}
-            ></div>
         </>
     );
 };
