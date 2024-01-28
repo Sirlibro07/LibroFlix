@@ -4,7 +4,7 @@ import BackgroundImage from "./BackgroundImage";
 
 interface AuthLayoutChildrenProps {
     title: string;
-    img: (version: string) => string;
+    folder_name: string;
     img_classes: string;
     form_position: string;
     children: ReactNode;
@@ -12,7 +12,7 @@ interface AuthLayoutChildrenProps {
 
 const AuthLayoutChildren = ({
     title,
-    img,
+    folder_name,
     img_classes,
     form_position,
     children,
@@ -25,7 +25,7 @@ const AuthLayoutChildren = ({
             >
                 <BackgroundImage
                     picture_classes="h-full"
-                    img_function={img}
+                    folder_name={folder_name}
                     img_classes={`object-top lg:object-bottom ${img_classes}`}
                 />
                 {children}

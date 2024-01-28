@@ -42,10 +42,6 @@ const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
         setIsSearchbarVisible(false);
     };
 
-    const img = (version: string) => {
-        return getBackgroundImg("first_movie", version);
-    };
-
     return (
         <>
             {renderWithProviders(
@@ -61,7 +57,7 @@ const AppLayout = ({ user, isLoggedIn, children, className = "" }) => {
                     </AppLayoutChildren>
                     <div className="w-full absolute top-[5.625rem] bottom-0 z-[-1]">
                         <BackgroundImage
-                            img_function={img}
+                            folder_name="first_movie"
                             picture_classes="h-[44rem]  md:h-[48.75rem]"
                         />
                     </div>

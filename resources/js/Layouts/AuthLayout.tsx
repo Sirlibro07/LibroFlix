@@ -39,7 +39,7 @@ const AuthLayout = ({
             </style>
             <AuthLayoutChildren
                 title={title}
-                img={img}
+                folder_name={folder_name}
                 img_classes={img_classes}
                 form_position={form_position}
             >
