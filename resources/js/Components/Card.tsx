@@ -12,13 +12,13 @@ const Card = ({ children, className, route_name, cards_number }: CardProps) => {
     return (
         <>
             <Link
-                className={`slider group relative cursor-pointer aspect-card transition-all duration-300 
+                className={`card group relative cursor-pointer aspect-card transition-all duration-300 
                 md:hover:scale-95 lg:shrink-0 ${className}`}
                 href={route(route_name)}
             >
                 {children}
             </Link>
-            <style>{`.slider
+            <style>{`.card
             {
                 @media(min-width:1024px)
                 {
