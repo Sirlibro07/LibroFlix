@@ -3,12 +3,17 @@ import React, { ReactNode } from "react";
 
 interface CardProps {
     children: ReactNode;
-    className: string;
+    className?: string;
     route_name: string;
     cards_number: string;
 }
 
-const Card = ({ children, className, route_name, cards_number }: CardProps) => {
+const Card = ({
+    children,
+    className = "",
+    route_name,
+    cards_number,
+}: CardProps) => {
     return (
         <>
             <Link

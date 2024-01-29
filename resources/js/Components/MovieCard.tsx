@@ -9,7 +9,7 @@ interface MovieCardProps {
 
 const MovieCard = ({ thumbnail_path }: MovieCardProps) => {
     return (
-        <Card className={""} route_name={"home"} cards_number={"5"}>
+        <Card route_name={"home"} cards_number={"5"}>
             <MovieCardImage thumbnail_path={thumbnail_path} />
             <MovieCardPlayButton />
         </Card>
