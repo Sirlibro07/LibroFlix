@@ -16,6 +16,7 @@ const MoviesSection = () => {
         <MovieCard
             thumbnail_path={thumbnail_path(movie.title)}
             key={movie.id}
+            cards_number="5"
         />
     );
 
