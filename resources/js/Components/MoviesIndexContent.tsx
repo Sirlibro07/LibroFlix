@@ -1,13 +1,13 @@
 import React from "react";
 import FirstMovie from "./FirstMovie";
-import MoviesSlider from "./MoviesSlider";
+import MoviesSection from "./MoviesSection";
 
 const MoviesIndexContent = () => {
     return (
         <>
             <div className={`w-full text-white mt-[9rem]`}>
                 <FirstMovie />
-                <MoviesSlider />
+                <MoviesSection />
             </div>
         </>
     );

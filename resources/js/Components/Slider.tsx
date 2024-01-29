@@ -13,7 +13,7 @@ const Slider = ({ children }: SliderProps) => {
             <div className="overflow-hidden">
                 <div
                     style={{ transform: `translateX(${translateX}%)` }}
-                    className={`w-full transition-all duration-300 grid gap-4 grid-cols-[repeat(auto-fit,minmax(140px,1fr))] lg:flex lg:items-center `}
+                    className={`hidden w-full transition-all gap-4 duration-300 lg:flex `}
                 >
                     {children}
                 </div>
