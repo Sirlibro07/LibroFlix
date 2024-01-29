@@ -7,7 +7,7 @@ const MovieCardPlayButton = () => {
     };
 
     return (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[45%] md:w-[35%]">
+        <div className="opacity-0 transition-all duration-300 group-hover:opacity-100 absolute bg-red-500 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[45%] md:w-[35%]">
             <img src={img()} alt="play-icon" decoding="async" />
         </div>
     );

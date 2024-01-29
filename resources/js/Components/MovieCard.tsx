@@ -1,7 +1,7 @@
 import React from "react";
 import MovieCardImage from "./MovieCardImage";
-import MovieCardContent from "./MovieCardContent";
 import { Link } from "@inertiajs/react";
+import MovieCardPlayButton from "./MovieCardPlayButton";
 
 interface MovieCardProps {
     thumbnail_path: string;
@@ -16,7 +16,7 @@ const MovieCard = ({ thumbnail_path }: MovieCardProps) => {
                 href={""}
             >
                 <MovieCardImage thumbnail_path={thumbnail_path} />
-                <MovieCardContent />
+                <MovieCardPlayButton />
             </Link>
         </>
     );
