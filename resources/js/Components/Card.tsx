@@ -6,6 +6,7 @@ interface CardProps {
     className?: string;
     route_name: string;
     cards_number: string;
+    apply_css?: boolean;
 }
 
 const Card = ({
@@ -13,6 +14,7 @@ const Card = ({
     className = "",
     route_name,
     cards_number,
+    apply_css = true,
 }: CardProps) => {
     return (
         <>
@@ -23,13 +25,17 @@ const Card = ({
             >
                 {children}
             </Link>
-            <style>{`.card
+            {apply_css && (
+                <style>{`
+            .card
             {
                 @media(min-width:1024px)
                 {
                     width: calc(100%/${cards_number} - 1rem)
                 }
-            }`}</style>
+            }
+            `}</style>
+            )}
         </>
     );
 };
