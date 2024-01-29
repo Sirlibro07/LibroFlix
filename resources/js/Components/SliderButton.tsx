@@ -4,21 +4,21 @@ import "../Helpers/CSS/slider_button.css";
 
 interface SliderButtonProps {
     direction: string;
+    TranslateX: number;
     setTranslateX: (value: React.SetStateAction<number>) => void;
 }
 
-const SliderButton = ({ direction, setTranslateX }: SliderButtonProps) => {
+const SliderButton = ({
+    direction,
+    TranslateX,
+    setTranslateX,
+}: SliderButtonProps) => {
     const nextTranslate = () => {
         setTranslateX((prevState) => prevState - 100);
     };
 
     const previousTranslate = () => {
-        setTranslateX((prevState) => {
-            const state = prevState < 0 ? prevState + 100 : prevState;
-            console.log(state);
-
-            return state;
-        });
+        TranslateX < 0 ? setTranslateX((prevState) => prevState + 100) : "";
     };
 
     const executeFunction = () => {

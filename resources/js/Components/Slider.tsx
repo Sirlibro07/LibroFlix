@@ -18,8 +18,16 @@ const Slider = ({ children }: SliderProps) => {
                     {children}
                 </div>
             </div>
-            <SliderButton direction="left" setTranslateX={setTranslateX} />
-            <SliderButton direction="right" setTranslateX={setTranslateX} />
+            <SliderButton
+                direction="left"
+                TranslateX={translateX}
+                setTranslateX={setTranslateX}
+            />
+            <SliderButton
+                TranslateX={translateX}
+                direction="right"
+                setTranslateX={setTranslateX}
+            />
         </section>
     );
 };
