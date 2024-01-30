@@ -1,6 +1,5 @@
 import React from "react";
 import ArrowIcon from "./ArrowIcon";
-import "../Helpers/CSS/slider_button.css";
 
 interface SliderButtonProps {
     direction: string;
@@ -35,6 +34,9 @@ const SliderButton = ({
 
     return (
         <div
+            style={
+                direction === "right" ? { right: "-17px" } : { left: "-33px" }
+            }
             onClick={executeFunction}
             className={`hidden  absolute top-1/2  transform -translate-y-1/2  w-[4.125rem] h-[4.125rem] cursor-pointer  bg-white button-${direction}  rounded-full flex justify-center items-center lg:flex`}
         >
