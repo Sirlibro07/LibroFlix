@@ -4,6 +4,7 @@ import "../Helpers/CSS/borders.css";
 import "../Helpers/CSS/letter_spacing.css";
 import getBackgroundImg from "@/Helpers/getBackgroundImg";
 import AuthLayoutChildren from "@/Components/AuthLayoutChildren";
+import { Head } from "@inertiajs/react";
 
 interface AuthLayoutProps {
     children: ReactNode;
@@ -37,6 +38,7 @@ const AuthLayout = ({
                         }
                     }`}
             </style>
+            <Head title={title} />
             <AuthLayoutChildren
                 title={title}
                 folder_name={folder_name}

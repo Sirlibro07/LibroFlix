@@ -1,4 +1,3 @@
-import { Head } from "@inertiajs/react";
 import React, { ReactNode } from "react";
 import BackgroundImage from "./BackgroundImage";
 
@@ -19,7 +18,6 @@ const AuthLayoutChildren = ({
 }: AuthLayoutChildrenProps) => {
     return (
         <>
-            <Head title={title} />
             <main
                 className={`w-full h-full relative flex items-end lg:items-center lg:justify-${form_position}`}
             >
