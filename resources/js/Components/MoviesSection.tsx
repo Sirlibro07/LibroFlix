@@ -6,7 +6,7 @@ import Grid from "./Grid";
 
 const MoviesSection = () => {
     const movies = useContext(MoviesContext).data;
-    console.log(movies);
+    const visible_cards = 5;
 
     const thumbnail_path = (title: string) => {
         return title.replace(/ /g, "_");
@@ -16,7 +16,7 @@ const MoviesSection = () => {
         <MovieCard
             thumbnail_path={thumbnail_path(movie.title)}
             key={movie.id}
-            cards_number="5"
+            visible_cards={visible_cards}
         />
     );
 
@@ -26,7 +26,9 @@ const MoviesSection = () => {
                 Movies
             </p>
             <Grid>{movies.map(renderMovieCard)}</Grid>
-            <Slider>{movies.map(renderMovieCard)}</Slider>
+            <Slider visible_cards={visible_cards}>
+                {movies.map(renderMovieCard)}
+            </Slider>
         </>
     );
 };

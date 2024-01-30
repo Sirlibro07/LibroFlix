@@ -5,7 +5,7 @@ interface CardProps {
     children: ReactNode;
     className?: string;
     route_name: string;
-    cards_number: string;
+    visible_cards: number;
     apply_css?: boolean;
 }
 
@@ -13,7 +13,7 @@ const Card = ({
     children,
     className = "",
     route_name,
-    cards_number,
+    visible_cards,
     apply_css = true,
 }: CardProps) => {
     return (
@@ -31,7 +31,7 @@ const Card = ({
             {
                 @media(min-width:1024px)
                 {
-                    width: calc(100%/${cards_number} - 1rem)
+                    width: calc(100%/${visible_cards} - 1rem)
                 }
             }
             `}</style>

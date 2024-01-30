@@ -3,9 +3,10 @@ import SliderButton from "./SliderButton";
 
 interface SliderProps {
     children: ReactNode;
+    visible_cards: number;
 }
 
-const Slider = ({ children }: SliderProps) => {
+const Slider = ({ children, visible_cards }: SliderProps) => {
     const [translateX, setTranslateX] = useState(0);
 
     return (
@@ -22,11 +23,13 @@ const Slider = ({ children }: SliderProps) => {
                 direction="left"
                 TranslateX={translateX}
                 setTranslateX={setTranslateX}
+                visible_cards={visible_cards}
             />
             <SliderButton
                 TranslateX={translateX}
                 direction="right"
                 setTranslateX={setTranslateX}
+                visible_cards={visible_cards}
             />
         </section>
     );
