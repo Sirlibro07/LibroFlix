@@ -2,7 +2,6 @@ import React, { ReactNode } from "react";
 import BackgroundImage from "./BackgroundImage";
 
 interface AuthLayoutChildrenProps {
-    title: string;
     folder_name: string;
     img_classes: string;
     form_position: string;
@@ -10,7 +9,6 @@ interface AuthLayoutChildrenProps {
 }
 
 const AuthLayoutChildren = ({
-    title,
     folder_name,
     img_classes,
     form_position,
