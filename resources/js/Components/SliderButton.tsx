@@ -22,11 +22,11 @@ const SliderButton = ({
         (total_cards - visible_cards * current_index) / visible_cards;
 
     const nextTranslate = () => {
-        can_go_next >= 1 ? setTranslateX((prevState) => prevState - 100) : "";
+        can_go_next >= 1 && setTranslateX((prevState) => prevState - 100);
     };
 
     const previousTranslate = () => {
-        TranslateX < 0 ? setTranslateX((prevState) => prevState + 100) : "";
+        TranslateX < 0 && setTranslateX((prevState) => prevState + 100);
     };
 
     const executeFunction = () => {
