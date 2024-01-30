@@ -1,4 +1,5 @@
 import React from "react";
+import Option from "./Option";
 
 type option = { name: string };
 
@@ -6,7 +7,7 @@ interface OptionsListProps {
     options: option[];
     ul_className?: string;
     currentOption: string;
-    setCurrentOption: any;
+    setCurrentOption: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const OptionsList = ({
@@ -18,22 +19,12 @@ const OptionsList = ({
     return (
         <ul className={`flex gap-6 ${ul_className}`}>
             {options.map((option: option, index: React.Key) => (
-                <li
+                <Option
+                    currentOption={currentOption}
+                    setCurrentOption={setCurrentOption}
+                    option_name={option.name}
                     key={index}
-                    onClick={() => {
-                        setCurrentOption(option.name);
-                    }}
-                >
-                    <button
-                        className={`custom_border  relative ${
-                            currentOption === option.name
-                                ? "text-white custom_border_active"
-                                : "text-unused_link_option_color"
-                        } font-normal`}
-                    >
-                        {option.name}
-                    </button>
-                </li>
+                />
             ))}
         </ul>
     );
