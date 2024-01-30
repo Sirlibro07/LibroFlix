@@ -5,6 +5,7 @@ import "../Helpers/CSS/slider_button.css";
 interface SliderButtonProps {
     direction: string;
     visible_cards: number;
+    total_cards: number;
     TranslateX: number;
     setTranslateX: (value: React.SetStateAction<number>) => void;
 }
@@ -12,6 +13,7 @@ interface SliderButtonProps {
 const SliderButton = ({
     direction,
     visible_cards,
+    total_cards,
     TranslateX,
     setTranslateX,
 }: SliderButtonProps) => {

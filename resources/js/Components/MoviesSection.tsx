@@ -26,7 +26,7 @@ const MoviesSection = () => {
                 Movies
             </p>
             <Grid>{movies.map(renderMovieCard)}</Grid>
-            <Slider visible_cards={visible_cards}>
+            <Slider visible_cards={visible_cards} total_cards={movies.length}>
                 {movies.map(renderMovieCard)}
             </Slider>
         </>

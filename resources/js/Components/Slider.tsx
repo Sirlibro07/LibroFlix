@@ -4,9 +4,10 @@ import SliderButton from "./SliderButton";
 interface SliderProps {
     children: ReactNode;
     visible_cards: number;
+    total_cards: number;
 }
 
-const Slider = ({ children, visible_cards }: SliderProps) => {
+const Slider = ({ children, visible_cards, total_cards }: SliderProps) => {
     const [translateX, setTranslateX] = useState(0);
 
     return (
@@ -24,12 +25,14 @@ const Slider = ({ children, visible_cards }: SliderProps) => {
                 TranslateX={translateX}
                 setTranslateX={setTranslateX}
                 visible_cards={visible_cards}
+                total_cards={total_cards}
             />
             <SliderButton
                 TranslateX={translateX}
                 direction="right"
                 setTranslateX={setTranslateX}
                 visible_cards={visible_cards}
+                total_cards={total_cards}
             />
         </section>
     );
