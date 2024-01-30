@@ -32,18 +32,19 @@ const SearchBar = () => {
            ${visibility_styles}`}
         >
             <div className="w-full relative flex items-center">
-                <SearchIcon className="absolute pointer-events-none left-3 text-base cursor-auto" />
+                <SearchIcon className="absolute pointer-events-none left-3  text-base cursor-auto" />
                 <Input
                     type={"text"}
                     id={"search"}
                     name={"search"}
                     placeholder="Search"
                     value={data.search}
-                    className={"px-9 lg:h-10"}
+                    className={"px-9 lg:h-10 rounded-10 "}
                     setData={setData}
+                    borders={true}
                 />
                 <div className="absolute right-0 h-full flex items-center  ">
-                    <div className="w-[0.063rem] h-[calc(100%-1.3rem)] bg-border_color"></div>
+                    <div className="w-[0.063rem] h-[calc(100%-1.3rem)] "></div>
                     <Select setData={setData} />
                 </div>
             </div>
@@ -53,4 +54,3 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-// ${isSearchbarVisible && !isMenuVisible ? "block" : "hidden"}
