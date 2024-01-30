@@ -17,7 +17,7 @@ const AuthLayoutChildren = ({
     return (
         <>
             <main
-                className={`w-full h-full relative flex items-end lg:items-center lg:justify-${form_position}`}
+                className={`w-full h-full relative flex items-end lg:items-center lg:justify-start`}
             >
                 <BackgroundImage
                     picture_classes="h-full"

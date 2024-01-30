@@ -23,7 +23,7 @@ export default function AuthForm({
             onSubmit={(e) => {
                 submitHandler(e);
             }}
-            className="w-full h-fit bg-body px-mobile_side_padding py-mobile_auth_y_padding rounded-t-auth_big_radius lg:w-6/12 lg:max-w-pc_auth_max_width lg:rounded-auth_big_radius lg:h-[calc(100%-3.75rem)] lg:min-h-[600px] lg:mx-pc_auth_x_margin  lg:flex lg:flex-col lg:justify-center lg:py-0 xl:px-desktop_auth_x_padding"
+            className="w-full h-fit bg-body px-mobile_side_padding py-mobile_auth_y_padding rounded-t-auth_big_radius lg:w-[45%] lg:max-w-pc_auth_max_width lg:min-h-[600px]  lg:rounded-none lg:h-full  lg:flex lg:flex-col lg:justify-center lg:px-10"
         >
             <h1 className="font-display text-mobile_h1 text-contrast text-center lg:text-desktop_h1 ">
                 {name}
