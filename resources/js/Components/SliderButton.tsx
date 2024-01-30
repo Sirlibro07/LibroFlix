@@ -17,8 +17,12 @@ const SliderButton = ({
     TranslateX,
     setTranslateX,
 }: SliderButtonProps) => {
+    const current_index = parseInt(Math.abs(TranslateX).toString()[0]);
+    const can_go_next =
+        (total_cards - visible_cards * current_index) / visible_cards;
+
     const nextTranslate = () => {
-        setTranslateX((prevState) => prevState - 100);
+        can_go_next >= 1 ? setTranslateX((prevState) => prevState - 100) : "";
     };
 
     const previousTranslate = () => {
