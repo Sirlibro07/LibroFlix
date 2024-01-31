@@ -22,11 +22,12 @@ const MoviesSection = () => {
 
     return (
         <>
-            <p className="text-typescale_23_px font-medium mb-6 md:text-typescale_33_px  mt-16 md:mt-[120px]">
-                Movies
-            </p>
             <Grid>{movies.map(renderMovieCard)}</Grid>
-            <Slider visible_cards={visible_cards} total_cards={movies.length}>
+            <Slider
+                visible_cards={visible_cards}
+                total_cards={movies.length}
+                title="Movies"
+            >
                 {movies.map(renderMovieCard)}
             </Slider>
         </>
