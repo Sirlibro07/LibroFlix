@@ -37,7 +37,7 @@ const Input = ({
             onChange={(e) => {
                 formElementsOnChangeHandler(e, state, setData);
             }}
-            className={`w-full h-auth_input_btn bg-body text-contrast rounded-10 text-input border-border_color placeholder-light_color focus:border-border_color focus:ring-0  ${className}`}
+            className={`w-full h-auth_input_btn bg-body text-contrast rounded-10 text-input border-2 border-border_color placeholder-light_color focus:border-border_color focus:ring-0  ${className}`}
         />
     );
 };
