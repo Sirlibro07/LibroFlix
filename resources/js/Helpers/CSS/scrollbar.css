@@ -5,12 +5,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #413f43;
+    background: white;
     width: 2px;
+    border-radius: 10px;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #413f43;
+::-webkit-scrollbar-track {
+    background: black;
     width: 2px;
 }
