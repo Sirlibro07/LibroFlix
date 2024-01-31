@@ -6,7 +6,7 @@ const NavbarAccountLinks = () => {
     return (
         <div className="text-base  px-3 sm:flex sm:gap-x-3 lg:absolute lg:top-0 lg:right-0 lg:flex lg:items-center lg:h-full lg:mr-4">
             <a href={route("login")} className="block w-full">
-                <SecondaryButton className="lg:w-[91px]">
+                <SecondaryButton className="lg:w-[91px] bg-[black]">
                     Log In
                 </SecondaryButton>
             </a>
