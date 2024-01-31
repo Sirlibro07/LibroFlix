@@ -17,7 +17,7 @@ export default function ForgotPassword({ status }) {
             form_position="end"
             img_classes="object-right"
             title="Forgot Password"
-            media_query_breakpoint="360px"
+            media_query_breakpoint="290px"
         >
             <AuthForm
                 name="Recover Password"

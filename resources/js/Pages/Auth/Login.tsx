@@ -28,6 +28,7 @@ export default function Login({ status, canResetPassword }) {
             folder_name={"login_register"}
             form_position="end"
             title="Log In"
+            media_query_breakpoint="500px"
         >
             <AuthForm name="Log In" method_function={post} route_name="login">
                 <FormInputField

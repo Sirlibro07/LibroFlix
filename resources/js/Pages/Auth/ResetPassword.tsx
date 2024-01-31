@@ -25,6 +25,7 @@ export default function ResetPassword({ token, email }) {
             folder_name={"forgot_reset_password"}
             img_classes="object-right"
             title="Reset Password"
+            media_query_breakpoint="475px"
         >
             <AuthForm
                 name="Reset Password"
