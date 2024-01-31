@@ -25,7 +25,7 @@ const SliderContent = ({
             <div className="overflow-hidden">
                 <div
                     style={{ transform: `translateX(${translateX}%)` }}
-                    className={`slider_content flex w-full  transition-all gap-4 duration-300  `}
+                    className={`slider_content flex w-full  transition-all gap-4 duration-300 pb-4  `}
                 >
                     {children}
                 </div>
