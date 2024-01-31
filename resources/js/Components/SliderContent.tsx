@@ -1,4 +1,5 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect } from "react";
+import "../Helpers/CSS/slider_content.css";
 
 interface SliderContentProps {
     children: ReactNode;
@@ -30,13 +31,6 @@ const SliderContent = ({
                     {children}
                 </div>
             </div>
-            <style>{`@media(max-width:1024px)
-                {
-                    .slider_content
-                    {
-                        overflow-x: scroll
-                    }
-                }`}</style>
         </>
     );
 };
