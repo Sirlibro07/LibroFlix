@@ -1,6 +1,7 @@
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import React, { useContext } from "react";
 import NavbarIconsOnClickhandler from "@/Helpers/NavbarIconsOnClickhandler";
+import Icon from "./Icon";
 
 interface SearchIconProps {
     className?: string;
@@ -19,10 +20,11 @@ const SearchIcon = ({ className }: SearchIconProps) => {
     };
 
     return (
-        <i
+        <Icon
+            icon="magnifying-glass"
+            className={`text-[1.563rem] mr-4 ${className}`}
             onClick={handleOnclick}
-            className={`fa-solid fa-magnifying-glass text-contrast text-[1.563rem] mr-4 ${className}`}
-        ></i>
+        />
     );
 };
 

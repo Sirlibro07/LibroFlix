@@ -4,6 +4,7 @@ import Input from "./Input";
 import InputError from "./InputError";
 import capitalizeFirstLetter from "@/Helpers/capitalizeFirstLetter";
 import Icon from "./Icon";
+import FormInputIcon from "./FormInputIcon";
 
 interface FormInputFieldProps {
     name: string;
@@ -44,7 +45,7 @@ const FormInputField = ({
                     state_to_change={state_to_change}
                 />
 
-                <Icon icon={icon} />
+                <FormInputIcon icon={icon} />
             </div>
 
             <InputError message={errors_field} />

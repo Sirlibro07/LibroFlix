@@ -1,9 +1,10 @@
 import React from "react";
 
-const Icon = ({ icon }) => {
+const Icon = ({ icon, className = "", onClick = null }) => {
     return (
         <i
-            className={`fa-solid fa-${icon} absolute left-3 text-xl text-contrast`}
+            onClick={onClick}
+            className={`fa-solid fa-${icon}  ${className}`}
         ></i>
     );
 };
