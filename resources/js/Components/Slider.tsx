@@ -25,11 +25,18 @@ const Slider = ({
                 <div className="overflow-hidden">
                     <div
                         style={{ transform: `translateX(${translateX}%)` }}
-                        className={`hidden w-full transition-all gap-4 duration-300 lg:flex `}
+                        className={`slider_content flex w-full  transition-all gap-4 duration-300  `}
                     >
                         {children}
                     </div>
                 </div>
+                <style>{`@media(max-width:1024px)
+                {
+                    .slider_content
+                    {
+                        overflow-x: scroll
+                    }
+                }`}</style>
                 <SliderButton
                     direction="left"
                     TranslateX={translateX}
