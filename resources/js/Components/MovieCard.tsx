@@ -5,21 +5,12 @@ import Card from "./Card";
 
 interface MovieCardProps {
     thumbnail_path: string;
-    apply_css?: boolean;
     visible_cards: number;
 }
 
-const MovieCard = ({
-    thumbnail_path,
-    apply_css = true,
-    visible_cards,
-}: MovieCardProps) => {
+const MovieCard = ({ thumbnail_path, visible_cards }: MovieCardProps) => {
     return (
-        <Card
-            route_name={"home"}
-            visible_cards={visible_cards}
-            apply_css={apply_css}
-        >
+        <Card route_name={"home"} visible_cards={visible_cards}>
             <MovieCardImage thumbnail_path={thumbnail_path} />
             <MovieCardPlayButton />
         </Card>

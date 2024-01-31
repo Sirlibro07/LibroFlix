@@ -14,7 +14,6 @@ const Card = ({
     className = "",
     route_name,
     visible_cards,
-    apply_css = true,
 }: CardProps) => {
     return (
         <>
@@ -25,8 +24,7 @@ const Card = ({
             >
                 {children}
             </Link>
-            {apply_css && (
-                <style>{`
+            <style>{`
             .card
             {
                 @media(min-width:1024px)
@@ -35,7 +33,6 @@ const Card = ({
                 }
             }
             `}</style>
-            )}
         </>
     );
 };
