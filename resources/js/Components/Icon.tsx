@@ -2,7 +2,9 @@ import React from "react";
 
 const Icon = ({ icon }) => {
     return (
-        <i className={`fa-solid fa-${icon} absolute text-xl text-contrast`}></i>
+        <i
+            className={`fa-solid fa-${icon} absolute left-3 text-xl text-contrast`}
+        ></i>
     );
 };
 

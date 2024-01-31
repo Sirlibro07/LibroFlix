@@ -11,7 +11,6 @@ interface InputProps {
     className: string;
     setData: (PrevState: object) => void;
     state_to_change?: string;
-    borders?: boolean;
 }
 
 const Input = ({
@@ -24,7 +23,6 @@ const Input = ({
     className,
     setData,
     state_to_change,
-    borders = false,
 }: InputProps) => {
     const state = state_to_change ? state_to_change : name;
 
@@ -39,9 +37,7 @@ const Input = ({
             onChange={(e) => {
                 formElementsOnChangeHandler(e, state, setData);
             }}
-            className={`w-full h-auth_input_btn bg-body text-contrast  text-input ${
-                borders ? "border-1" : "border-0 border-b-[1px]"
-            } border-border_color placeholder-light_color focus:border-border_color focus:ring-0  ${className}`}
+            className={`w-full h-auth_input_btn bg-body text-contrast rounded-10 text-input border-border_color placeholder-light_color focus:border-border_color focus:ring-0  ${className}`}
         />
     );
 };
