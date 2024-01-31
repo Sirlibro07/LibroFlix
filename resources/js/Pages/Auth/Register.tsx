@@ -37,7 +37,7 @@ export default function Register() {
                     type={"text"}
                     state_field={data.name}
                     errors_field={errors.name}
-                    icon="lock"
+                    icon="user"
                     setData={setData}
                 />
 
