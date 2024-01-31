@@ -1,5 +1,7 @@
 import React, { ReactNode, useState } from "react";
 import SliderButton from "./SliderButton";
+import SliderContent from "./SliderContent";
+import SliderButtons from "./SliderButtons";
 
 interface SliderProps {
     children: ReactNode;
@@ -22,31 +24,11 @@ const Slider = ({
                 {title}
             </p>
             <section className="relative">
-                <div className="overflow-hidden">
-                    <div
-                        style={{ transform: `translateX(${translateX}%)` }}
-                        className={`slider_content flex w-full  transition-all gap-4 duration-300  `}
-                    >
-                        {children}
-                    </div>
-                </div>
-                <style>{`@media(max-width:1024px)
-                {
-                    .slider_content
-                    {
-                        overflow-x: scroll
-                    }
-                }`}</style>
-                <SliderButton
-                    direction="left"
-                    TranslateX={translateX}
-                    setTranslateX={setTranslateX}
-                    visible_cards={visible_cards}
-                    total_cards={total_cards}
-                />
-                <SliderButton
-                    TranslateX={translateX}
-                    direction="right"
+                <SliderContent translateX={translateX}>
+                    {children}
+                </SliderContent>
+                <SliderButtons
+                    translateX={translateX}
                     setTranslateX={setTranslateX}
                     visible_cards={visible_cards}
                     total_cards={total_cards}
