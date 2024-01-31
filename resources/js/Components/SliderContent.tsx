@@ -1,11 +1,25 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 
 interface SliderContentProps {
     children: ReactNode;
     translateX: number;
+    setTranslateX: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const SliderContent = ({ children, translateX }: SliderContentProps) => {
+const SliderContent = ({
+    children,
+    translateX,
+    setTranslateX,
+}: SliderContentProps) => {
+    useEffect(() => {
+        const handleResize = () => {
+            window.innerWidth > 1023 && setTranslateX(0);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
     return (
         <>
             <div className="overflow-hidden">
