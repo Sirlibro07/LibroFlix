@@ -32,7 +32,7 @@ const SliderButton = ({
         direction === "right" ? nextTranslate() : previousTranslate();
     };
 
-    const low_brightness_style = "brightness-[20%]";
+    const low_brightness_style = "brightness-[20%] cursor-default";
 
     const previous_btn_visibility = `${
         current_index == 0 && low_brightness_style
