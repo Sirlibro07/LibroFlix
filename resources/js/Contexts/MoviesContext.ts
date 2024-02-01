@@ -1,8 +1,14 @@
 import { createContext } from "react";
-import MovieType from "@/Helpers/interfaces/MovieType";
 
 interface MoviesContextType {
-    data: MovieType[];
+    data: {
+        id: number;
+        title: string;
+        description: string;
+        rating: number;
+        year: number;
+        version: string;
+    }[];
 }
 
 const MoviesContext = createContext<MoviesContextType | undefined>(undefined);
