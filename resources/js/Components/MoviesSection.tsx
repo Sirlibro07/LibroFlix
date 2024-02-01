@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Slider from "./Slider";
 import MoviesContext from "@/Contexts/MoviesContext";
 import SliderCard from "./SliderCard";
+import MovieType from "@/Helpers/interfaces/MovieType";
 
 const MoviesSection = () => {
     const movies = useContext(MoviesContext).data;
@@ -11,7 +12,7 @@ const MoviesSection = () => {
         return title.replace(/ /g, "_");
     };
 
-    const renderMovieCard = (movie) => (
+    const renderMovieCard = (movie: MovieType) => (
         <SliderCard
             route_name={"home"}
             visible_cards={5}
