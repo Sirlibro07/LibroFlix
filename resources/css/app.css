@@ -27,3 +27,7 @@ input:-webkit-autofill {
 .body-padding {
     @apply px-mobile_side_padding md:px-10 lg:px-[3.625rem] xl:px-20;
 }
+
+.hover-shrink {
+    @apply cursor-pointer transition-all duration-300 hover:scale-95;
+}
