@@ -33,6 +33,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/', HomeController::class)->name("home");
 
 
-Route::get('/search/{filter}/{name?}', [SearchController::class, 'search'])->name("search");
+Route::get('/search/{filter?}/{name?}', [SearchController::class, 'search'])->name("search");
 
 require __DIR__ . '/auth.php';
