@@ -17,7 +17,6 @@ const SliderSection = () => {
         <SliderCard
             route_name={"home"}
             key={element.id}
-            visible_cards={5}
             thumbnail_path={`${folder}/${thumbnail_path(element.title)}`}
         />
     );

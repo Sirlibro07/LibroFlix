@@ -6,7 +6,6 @@ import SliderCardPlayButton from "./SliderCardPlayButton";
 interface SliderCardProps {
     className?: string;
     route_name: string;
-    visible_cards: number;
     thumbnail_path: string;
 }
 
