@@ -8,10 +8,7 @@ const NavbarLinks = () => {
     const isMenuVisible = useContext(Menu_Searchbar_Context).isMenuVisible;
     const isLoggedIn = useContext(UserContext).isLoggedIn;
 
-    const routes = [
-        { name: "Movies", route: "home", pathname: "movies" },
-        { name: "Characters", route: "home", pathname: "2" },
-    ];
+    const routes = [{ name: "Home", route: "home", pathname: "/" }];
 
     isLoggedIn &&
         routes.push({
