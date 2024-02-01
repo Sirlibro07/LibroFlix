@@ -45,15 +45,19 @@ const SliderButton = ({
             style={
                 direction === "right" ? { right: "-17px" } : { left: "-33px" }
             }
-            onClick={executeFunction}
-            className={`hidden  absolute top-1/2  transform -translate-y-1/2  w-[4.125rem] h-[4.125rem] cursor-pointer  bg-white button-${direction}  rounded-full flex justify-center items-center lg:flex
+            className="h-full flex items-center  absolute top-1/2  transform -translate-y-1/2"
+        >
+            <button
+                onClick={executeFunction}
+                className={`hidden     w-[4.125rem] h-[4.125rem] cursor-pointer  bg-white button-${direction}  rounded-full flex justify-center items-center lg:flex
             ${
                 direction === "right"
                     ? next_btn_visibility
                     : previous_btn_visibility
             }`}
-        >
-            <ArrowIcon direction={direction} />
+            >
+                <ArrowIcon direction={direction} />
+            </button>
         </div>
     );
 };
