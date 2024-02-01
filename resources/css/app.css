@@ -28,6 +28,10 @@ input:-webkit-autofill {
     @apply px-mobile_side_padding md:px-10 lg:px-[3.625rem] xl:px-20;
 }
 
+.transitions {
+    @apply transition-all duration-300;
+}
+
 .hover-shrink {
-    @apply cursor-pointer transition-all duration-300 hover:scale-95;
+    @apply transitions cursor-pointer  hover:scale-95;
 }
