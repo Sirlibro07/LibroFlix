@@ -9,6 +9,7 @@ import UserContext from "@/Contexts/UserContext";
 import Navbar from "@/Components/Navbar";
 import AppLayoutChildren from "@/Components/AppLayoutChildren";
 import AppLayoutBackgoundImage from "@/Components/AppLayoutBackgoundImage";
+import Footer from "@/Components/Footer";
 
 const AppLayout = ({
     user,
@@ -68,6 +69,7 @@ const AppLayout = ({
                         {children}
                     </AppLayoutChildren>
                     {bg_image && <AppLayoutBackgoundImage />}
+                    <Footer />
                 </>
             )}
         </>
