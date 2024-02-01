@@ -2,7 +2,7 @@ import React from "react";
 import FirstMovie from "./FirstMovie";
 import SliderSection from "./SlidersSection";
 
-const MoviesIndexContent = () => {
+const HomeContent = () => {
     return (
         <>
             <div className={`w-full text-white mt-[9rem]`}>
@@ -13,4 +13,4 @@ const MoviesIndexContent = () => {
     );
 };
 
-export default MoviesIndexContent;
+export default HomeContent;

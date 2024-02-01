@@ -1,4 +1,4 @@
-import MoviesIndexContent from "@/Components/MoviesIndexContent";
+import HomeContent from "@/Components/HomeContent";
 import MoviesContext from "@/Contexts/MoviesContext";
 import AppLayout from "@/Layouts/AppLayout";
 import React from "react";
@@ -14,7 +14,7 @@ const Home = ({ auth, isLoggedIn, movies }) => {
             border={false}
         >
             <MoviesContext.Provider value={movies}>
-                <MoviesIndexContent />
+                <HomeContent />
             </MoviesContext.Provider>
         </AppLayout>
     );
