@@ -12,14 +12,14 @@ const SliderSection = () => {
     };
 
     const renderSliderCard = (
-        movie: { id: number; title: string },
+        element: { id: number; title: string },
         folder: string
     ) => (
         <SliderCard
             route_name={"home"}
-            key={movie.id}
+            key={element.id}
             visible_cards={5}
-            thumbnail_path={`${folder}/${thumbnail_path(movie.title)}`}
+            thumbnail_path={`${folder}/${thumbnail_path(element.title)}`}
         />
     );
 
