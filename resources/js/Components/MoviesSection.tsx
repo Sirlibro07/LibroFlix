@@ -30,6 +30,13 @@ const MoviesSection = () => {
             >
                 {movies.map(renderMovieCard)}
             </Slider>
+            <Slider
+                visible_cards={visible_cards}
+                total_cards={movies.length}
+                title="Movies"
+            >
+                {movies.map(renderMovieCard)}
+            </Slider>
         </>
     );
 };

@@ -20,10 +20,10 @@ const Slider = ({
 
     return (
         <>
-            <p className="text-typescale_23_px font-medium mb-6 md:text-typescale_33_px  mt-16 md:mt-[120px]">
+            <p className="text-typescale_23_px font-medium mb-6 md:text-typescale_33_px">
                 {title}
             </p>
-            <section className="relative">
+            <section className="relative mb-12">
                 <SliderContent
                     translateX={translateX}
                     setTranslateX={setTranslateX}

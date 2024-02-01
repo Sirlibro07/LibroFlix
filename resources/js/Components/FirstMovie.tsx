@@ -9,7 +9,7 @@ import FirstMovieLinks from "./FirstMovieLinks";
 const FirstMovie = () => {
     return (
         <>
-            <div className="text-center z-1 md:text-start   ">
+            <div className="text-center z-1 md:text-start mb-16 md:mb-[120px]   ">
                 <MovieInfo
                     date={"2007"}
                     className="hidden md:flex md:justify-start md:mb-[-0.25rem] md:mt-4"
