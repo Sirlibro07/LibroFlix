@@ -19,7 +19,7 @@ const Card = ({
         <>
             <Link
                 className={`card group w-full max-w-[250px] lg:max-w-none shrink-0 relative cursor-pointer aspect-card transition-all duration-300 
-                md:hover:scale-95 ${className}`}
+                hover:scale-95 ${className}`}
                 href={route(route_name)}
             >
                 {children}
