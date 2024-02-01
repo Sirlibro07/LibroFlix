@@ -4,7 +4,7 @@ import MoviesContext from "@/Contexts/MoviesContext";
 import SliderCard from "./SliderCard";
 import MovieType from "@/Helpers/interfaces/MovieType";
 
-const MoviesSection = () => {
+const SliderSection = () => {
     const movies = useContext(MoviesContext).data;
     const visible_cards = 5;
 
@@ -12,11 +12,12 @@ const MoviesSection = () => {
         return title.replace(/ /g, "_");
     };
 
-    const renderMovieCard = (movie: MovieType) => (
+    const renderSliderCard = (movie: MovieType, folder: string) => (
         <SliderCard
             route_name={"home"}
+            key={movie.id}
             visible_cards={5}
-            thumbnail_path={thumbnail_path(movie.title)}
+            thumbnail_path={`${folder}/${thumbnail_path(movie.title)}`}
         />
     );
 
@@ -27,10 +28,10 @@ const MoviesSection = () => {
                 total_cards={movies.length}
                 title="Movies"
             >
-                {movies.map(renderMovieCard)}
+                {movies.map((movie) => renderSliderCard(movie, "movies"))}
             </Slider>
         </>
     );
 };
 
-export default MoviesSection;
+export default SliderSection;
