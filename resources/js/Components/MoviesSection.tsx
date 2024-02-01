@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import Slider from "./Slider";
 import MovieCard from "./MovieCard";
 import MoviesContext from "@/Contexts/MoviesContext";
-import Grid from "./Grid";
 
 const MoviesSection = () => {
     const movies = useContext(MoviesContext).data;
@@ -23,13 +22,6 @@ const MoviesSection = () => {
     return (
         <>
             {/* <Grid>{movies.map(renderMovieCard)}</Grid> */}
-            <Slider
-                visible_cards={visible_cards}
-                total_cards={movies.length}
-                title="Movies"
-            >
-                {movies.map(renderMovieCard)}
-            </Slider>
             <Slider
                 visible_cards={visible_cards}
                 total_cards={movies.length}
