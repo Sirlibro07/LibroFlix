@@ -41,24 +41,24 @@ const SliderButton = ({
     const next_btn_visibility = `${!can_go_next && low_brightness_style}`;
 
     return (
-        <div
+        <button
+            onClick={executeFunction}
             style={
                 direction === "right" ? { right: "-17px" } : { left: "-33px" }
             }
-            className="h-full flex items-center  absolute top-1/2  transform -translate-y-1/2"
-        >
-            <button
-                onClick={executeFunction}
-                className={`hidden     w-[4.125rem] h-[4.125rem] cursor-pointer  bg-white button-${direction}  rounded-full flex justify-center items-center lg:flex
-            ${
+            className={`hidden h-full items-center  absolute top-1/2  transform -translate-y-1/2 lg:flex ${
                 direction === "right"
                     ? next_btn_visibility
                     : previous_btn_visibility
             }`}
+        >
+            <div
+                className={`w-[4.125rem] h-[4.125rem]  bg-white button-${direction}  rounded-full flex justify-center items-center
+            `}
             >
                 <ArrowIcon direction={direction} />
-            </button>
-        </div>
+            </div>
+        </button>
     );
 };
 
