@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Slider from "./Slider";
-import MovieCard from "./MovieCard";
 import MoviesContext from "@/Contexts/MoviesContext";
+import SliderCard from "./SliderCard";
 
 const MoviesSection = () => {
     const movies = useContext(MoviesContext).data;
@@ -12,16 +12,15 @@ const MoviesSection = () => {
     };
 
     const renderMovieCard = (movie) => (
-        <MovieCard
+        <SliderCard
+            route_name={"home"}
+            visible_cards={5}
             thumbnail_path={thumbnail_path(movie.title)}
-            key={movie.id}
-            visible_cards={visible_cards}
         />
     );
 
     return (
         <>
-            {/* <Grid>{movies.map(renderMovieCard)}</Grid> */}
             <Slider
                 visible_cards={visible_cards}
                 total_cards={movies.length}
