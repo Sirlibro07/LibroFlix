@@ -3,7 +3,6 @@ import ArrowIcon from "./ArrowIcon";
 
 interface SliderButtonProps {
     direction: string;
-    visible_cards: number;
     total_cards: number;
     TranslateX: number;
     setTranslateX: (value: React.SetStateAction<number>) => void;
@@ -11,11 +10,11 @@ interface SliderButtonProps {
 
 const SliderButton = ({
     direction,
-    visible_cards,
     total_cards,
     TranslateX,
     setTranslateX,
 }: SliderButtonProps) => {
+    const visible_cards = 5;
     const current_index = parseInt(Math.abs(TranslateX).toString()[0]);
     const can_go_next =
         (total_cards - visible_cards * current_index) / visible_cards >= 1;

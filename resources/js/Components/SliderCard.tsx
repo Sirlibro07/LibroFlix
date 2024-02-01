@@ -13,7 +13,6 @@ interface SliderCardProps {
 const SliderCard = ({
     className = "",
     route_name,
-    visible_cards,
     thumbnail_path,
 }: SliderCardProps) => {
     const css = (
@@ -22,7 +21,7 @@ const SliderCard = ({
             {
                 @media(min-width:1024px)
                 {
-                    width: calc(100%/${visible_cards} - 1rem)
+                    width: calc(100%/5 - 1rem)
                 }
             }
             `}</style>

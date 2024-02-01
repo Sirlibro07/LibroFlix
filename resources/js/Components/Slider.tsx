@@ -5,17 +5,11 @@ import SliderButtons from "./SliderButtons";
 
 interface SliderProps {
     children: ReactNode;
-    visible_cards: number;
     total_cards: number;
     title: string;
 }
 
-const Slider = ({
-    children,
-    visible_cards,
-    total_cards,
-    title,
-}: SliderProps) => {
+const Slider = ({ children, total_cards, title }: SliderProps) => {
     const [translateX, setTranslateX] = useState(0);
 
     return (
@@ -33,7 +27,6 @@ const Slider = ({
                 <SliderButtons
                     translateX={translateX}
                     setTranslateX={setTranslateX}
-                    visible_cards={visible_cards}
                     total_cards={total_cards}
                 />
             </section>
