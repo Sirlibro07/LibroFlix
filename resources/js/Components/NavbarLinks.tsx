@@ -9,7 +9,7 @@ const NavbarLinks = () => {
     const isLoggedIn = useContext(UserContext).isLoggedIn;
 
     const routes = [
-        { name: "Movies", route: "movies.index", pathname: "movies" },
+        { name: "Movies", route: "home", pathname: "movies" },
         { name: "Characters", route: "home", pathname: "2" },
     ];
 

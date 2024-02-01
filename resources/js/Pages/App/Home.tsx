@@ -3,7 +3,7 @@ import MoviesContext from "@/Contexts/MoviesContext";
 import AppLayout from "@/Layouts/AppLayout";
 import React from "react";
 
-const Index = ({ auth, isLoggedIn, movies }) => {
+const Home = ({ auth, isLoggedIn, movies }) => {
     console.log(movies);
 
     return (
@@ -20,4 +20,4 @@ const Index = ({ auth, isLoggedIn, movies }) => {
     );
 };
 
-export default Index;
+export default Home;

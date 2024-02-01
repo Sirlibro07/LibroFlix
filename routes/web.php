@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
@@ -29,12 +30,9 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get('/', function () {
-    return to_route('movies.index');
-})->name("home");
+Route::get('/', HomeController::class)->name("home");
 
 
-Route::get('/movies', [MovieController::class, 'index'])->name("movies.index");
 Route::get('/search/{filter}/{name?}', [SearchController::class, 'search'])->name("search");
 
 require __DIR__ . '/auth.php';
