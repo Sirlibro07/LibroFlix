@@ -30,7 +30,7 @@ const NavbarLink = ({ link }: NavbarLinkProps) => {
                 route_name={link.route}
                 className={
                     "/" + link.pathname === window.location.pathname
-                        ? "lg:text-contrast custom_border_active"
+                        ? "lg: custom_border_active"
                         : "lg:text-unused_link_option_color"
                 }
             >

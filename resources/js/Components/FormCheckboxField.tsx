@@ -17,7 +17,7 @@ const FormCheckboxField = ({
     return (
         <div className="flex items-center mt-4 ">
             <Checkbox name={name} checked={state_field} setData={setData} />
-            <span className=" text-input  text-contrast ml-2">{label}</span>
+            <span className=" text-input  ml-2">{label}</span>
         </div>
     );
 };

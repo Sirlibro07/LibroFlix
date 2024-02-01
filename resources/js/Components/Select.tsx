@@ -22,7 +22,7 @@ const Select = ({ setData }: SelectProps) => {
                 }}
                 name="filter"
                 id="filter"
-                className="h-full text-contrast border-0 rounded-10 pr-7 bg-[20] cursor-pointer focus:ring-0 hover:bg-white hover:text-black"
+                className="h-full  border-0 rounded-10 pr-7 bg-[20] cursor-pointer focus:ring-0 hover:bg-white hover:text-black"
             >
                 <option value="All">All</option>
                 {filter_options.map((filter_option, index) => (
