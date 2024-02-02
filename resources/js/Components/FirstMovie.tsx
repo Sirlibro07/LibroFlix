@@ -8,8 +8,7 @@ import FirstMovieLinks from "./FirstMovieLinks";
 import MoviesContext from "@/Contexts/MoviesContext";
 
 const FirstMovie = () => {
-    const movie3 = useContext(MoviesContext).data[3];
-    console.log(movie3);
+    const forth_movie = useContext(MoviesContext).data[3];
 
     return (
         <>
@@ -19,21 +18,21 @@ const FirstMovie = () => {
                     className="hidden md:flex md:justify-start md:mb-[-0.25rem] md:mt-4"
                 />
                 <MovieTitle
-                    title={movie3.title}
-                    version={movie3.version}
+                    title={forth_movie.title}
+                    version={forth_movie.version}
                     className="text-mobile_h1 whitespace-pre-line md:text-desktop_h1 md:leading-[120%]"
                 />
                 <MovieRating
-                    rating={movie3.rating}
+                    rating={forth_movie.rating}
                     className="hidden md:flex my-2"
                 />
                 <MovieInfo
-                    date={movie3.year}
+                    date={forth_movie.year}
                     className="mt-2 justify-center md:hidden"
                 />
                 <MovieDescription
                     className="mb-4 lg:w-4/6 xl:w-1/2 2xl:w-5/12 line-clamp-2 md:line-clamp-3 md:text-xl"
-                    description={movie3.description}
+                    description={forth_movie.description}
                     description_p={false}
                 />
 
