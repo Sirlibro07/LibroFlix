@@ -8,7 +8,7 @@ const HomeContent = () => {
     return (
         <div className={`w-full text-white mt-[9rem]`}>
             <FirstMovie />
-            <Slider total_cards={movies.length} title="Movies" />;
+            <Slider total_cards={movies.length} title="Movies" />
         </div>
     );
 };
