@@ -44,8 +44,7 @@ export default {
                 mobile_menu_max_width: "336px",
             },
             height: {
-                auth_input_btn: "50px",
-                normal_btn: "40px",
+                elements_height: "44px",
             },
             width: {
                 searchbar_width: "27rem",

@@ -11,15 +11,10 @@ interface PrimaryButtonProps {
 export default function PrimaryButton({
     disabled = null,
     className = "",
-    custom_margin_top = "",
     children,
 }: PrimaryButtonProps) {
     return (
-        <Button
-            disabled={disabled}
-            className={`bg-brand ${className}`}
-            custom_margin_top={custom_margin_top}
-        >
+        <Button disabled={disabled} className={`bg-brand ${className}`}>
             {children}
         </Button>
     );

@@ -4,17 +4,14 @@ import PrimaryButton from "./PrimaryButton";
 
 const NavbarAccountLinks = () => {
     return (
-        <div className="text-base  px-3 sm:flex sm:gap-x-3 lg:absolute lg:top-0 lg:right-0 lg:flex lg:items-center lg:h-full lg:mr-4">
-            <a href={route("login")} className="block w-full">
-                <SecondaryButton className="lg:w-[91px] bg-[black]">
+        <div className="text-base w-full  sm:flex sm:gap-x-3 lg:absolute lg:top-0 lg:right-4 lg:flex lg:items-center lg:h-full lg:w-fit">
+            <a href={route("login")} className="block w-full lg:w-auto lg:px-4">
+                <SecondaryButton className="w-full mb-3 lg:px-4 lg:mb-0">
                     Log In
                 </SecondaryButton>
             </a>
-            <a href={route("register")} className="block w-full">
-                <PrimaryButton
-                    custom_margin_top="mt-2"
-                    className="sm:mt-0  lg:w-[105px] lg:h-normal_btn"
-                >
+            <a href={route("register")} className="block w-full lg:w-auto">
+                <PrimaryButton className="w-full lg:px-4">
                     Sign Up
                 </PrimaryButton>
             </a>
@@ -23,3 +20,4 @@ const NavbarAccountLinks = () => {
 };
 
 export default NavbarAccountLinks;
+// was forced to use normal <a> links because of rendering bugs

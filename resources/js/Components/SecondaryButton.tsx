@@ -10,12 +10,5 @@ export default function SecondaryButton({
     className = "",
     children,
 }: SecondaryButtonProps) {
-    return (
-        <Button
-            className={`bg-secondary  lg:h-normal_btn ${className}`}
-            custom_margin_top="mt-0"
-        >
-            {children}
-        </Button>
-    );
+    return <Button className={`bg-black ${className}`}>{children}</Button>;
 }
