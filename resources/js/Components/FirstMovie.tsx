@@ -20,6 +20,7 @@ const FirstMovie = () => {
                 />
                 <MovieTitle
                     title={movie3.title}
+                    version={movie3.version}
                     className="text-mobile_h1 whitespace-pre-line md:text-desktop_h1 md:leading-[120%]"
                 />
                 <MovieRating

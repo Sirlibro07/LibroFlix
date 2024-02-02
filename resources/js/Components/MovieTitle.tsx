@@ -7,9 +7,29 @@ interface MovieTitleProps {
 }
 
 const MovieTitle = ({ title, className, version = "" }: MovieTitleProps) => {
+    const getPrefix = (version: string) => {
+        let prefix: string;
+
+        switch (version) {
+            case "Og":
+                prefix = "Naruto Og";
+                break;
+            case "Shippuden":
+                prefix = "Naruto Shippuden";
+                break;
+            case "Boruto":
+                prefix = "Boruto";
+                break;
+            default:
+                prefix = "Unknown version";
+        }
+
+        return prefix;
+    };
+
     return (
         <h1 className={`font-semibold whitespace-pre-line ${className}`}>{`${
-            version && `${version}:\n`
+            version && `${getPrefix(version)}:\n`
         } ${title}`}</h1>
     );
 };
