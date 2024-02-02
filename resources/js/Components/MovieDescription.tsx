@@ -14,7 +14,7 @@ const MovieDescription = ({
 }: MovieDescriptionProps) => {
     return (
         <>
-            <p className="mt-10 mb-4">Description:</p>
+            <p className="mt-10 mb-4 font-medium">Description:</p>
             <p
                 className={`${
                     slice_lines && "first_movie_description"
