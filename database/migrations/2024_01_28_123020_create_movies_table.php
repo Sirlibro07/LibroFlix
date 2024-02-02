@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text("description");
             $table->float("rating");
             $table->year("year");
+            $table->string("version");
             $table->timestamps();
         });
     }
