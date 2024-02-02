@@ -11,7 +11,7 @@ const FirstMovie = () => {
         <>
             <div className="text-center z-1 md:text-start mb-16 md:mb-[120px]   ">
                 <MovieInfo
-                    date={"2007"}
+                    date={2007}
                     className="hidden md:flex md:justify-start md:mb-[-0.25rem] md:mt-4"
                 />
                 <MovieTitle
@@ -19,7 +19,10 @@ const FirstMovie = () => {
                     className="font-semibold text-mobile_h1 whitespace-pre-line md:text-desktop_h1 md:leading-[120%]"
                 />
                 <MovieRating rating={5} className="hidden md:flex my-2" />
-                <MovieInfo date={"2007"} className="mt-2 md:hidden" />
+                <MovieInfo
+                    date={2007}
+                    className="mt-2 justify-center md:hidden"
+                />
                 <MovieDescription
                     className="mb-4 lg:w-4/6 xl:w-1/2 2xl:w-5/12"
                     description="So I started to walk into the water. I won't lie to you boys, I was
