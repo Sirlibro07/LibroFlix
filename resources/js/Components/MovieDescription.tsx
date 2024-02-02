@@ -5,16 +5,20 @@ interface MovieDescriptionProps {
     description: string;
     className?: string;
     slice_lines?: boolean;
+    description_p?: boolean;
 }
 
 const MovieDescription = ({
     description,
     className = "",
     slice_lines = false,
+    description_p = true,
 }: MovieDescriptionProps) => {
     return (
         <>
-            <p className="mt-10 mb-4 font-medium">Description:</p>
+            {description_p && (
+                <p className="mt-10 mb-4 font-medium">Description:</p>
+            )}
             <p
                 className={`${
                     slice_lines && "first_movie_description"
