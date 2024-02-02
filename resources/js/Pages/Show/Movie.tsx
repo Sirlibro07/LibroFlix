@@ -1,5 +1,5 @@
+import BackgroundImage from "@/Components/BackgroundImage";
 import MoviePageContent from "@/Components/MoviePageContent";
-import Movie_Season_BackgroundImage from "@/Components/Movie_Season_BackgroundImage";
 import MovieContext from "@/Contexts/MovieContext";
 import thumbnail_path from "@/Helpers/thumbnail_path";
 import AppLayout from "@/Layouts/AppLayout";
@@ -15,8 +15,11 @@ export default function Movie({ auth, isLoggedIn, movie }) {
                 isLoggedIn={isLoggedIn}
                 border={false}
                 bg_image={
-                    <Movie_Season_BackgroundImage
-                        title={thumbnail_path(movie.data.title)}
+                    <BackgroundImage
+                        folder_name={`movies/${thumbnail_path(
+                            movie.data.title
+                        )}`}
+                        picture_classes="top-[90px] brightness-50"
                     />
                 }
                 body_padding={false}
