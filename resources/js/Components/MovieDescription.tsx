@@ -14,6 +14,7 @@ const MovieDescription = ({
 }: MovieDescriptionProps) => {
     return (
         <>
+            <p className="mt-10 mb-4">Description:</p>
             <p
                 style={{
                     display: "-webkit-box",
