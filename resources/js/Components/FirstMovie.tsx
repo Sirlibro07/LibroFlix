@@ -32,7 +32,7 @@ const FirstMovie = () => {
                     className="mt-2 justify-center md:hidden"
                 />
                 <MovieDescription
-                    className="mb-4 lg:w-4/6 xl:w-1/2 2xl:w-5/12 line-clamp-2 md:line-clamp-3"
+                    className="mb-4 lg:w-4/6 xl:w-1/2 2xl:w-5/12 line-clamp-2 md:line-clamp-3 md:text-xl"
                     description={movie3.description}
                 />
 

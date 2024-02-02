@@ -18,7 +18,7 @@ const MovieDescription = ({
             <p
                 className={`${
                     slice_lines && "first_movie_description"
-                } text-light_color overflow-hidden ${className} md:text-xl`}
+                } text-light_color overflow-hidden ${className}`}
             >
                 {description}
             </p>
