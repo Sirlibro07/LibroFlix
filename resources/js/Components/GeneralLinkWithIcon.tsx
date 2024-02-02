@@ -4,12 +4,14 @@ import GeneralLink from "./GeneralLink";
 interface GeneralLinkWithIconProps {
     children: ReactNode;
     route_name: string;
+    route_parameter?: string;
     icon: string;
     className?: string;
 }
 
 const GeneralLinkWithIcon = ({
     route_name,
+    route_parameter = "",
     icon,
     children,
     className = "",
@@ -17,6 +19,7 @@ const GeneralLinkWithIcon = ({
     return (
         <GeneralLink
             route_name={route_name}
+            route_parameter={route_parameter}
             border={false}
             className={`font-medium ${className}  py-[0.625rem] pl-3 pr-4`}
         >

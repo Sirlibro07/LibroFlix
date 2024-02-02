@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 
 interface GeneralLinkProps {
     route_name: string;
+    route_parameter?: string;
     className?: string;
     border?: boolean;
     key?: React.Key;
@@ -11,6 +12,7 @@ interface GeneralLinkProps {
 
 const GeneralLink = ({
     route_name,
+    route_parameter = "",
     className = "",
     border = true,
     children,
@@ -18,7 +20,7 @@ const GeneralLink = ({
     return (
         <>
             <Link
-                href={route(route_name)}
+                href={route(route_name, route_parameter)}
                 className={`${
                     border && "custom_border"
                 } relative rounded-10  ${className}`}

@@ -2,7 +2,7 @@ import React from "react";
 import GeneralLink from "./GeneralLink";
 import GeneralLinkWithIcon from "./GeneralLinkWithIcon";
 
-const FirstMovieLinks = () => {
+const FirstMovieLinks = ({ title }) => {
     return (
         <>
             <GeneralLink
@@ -14,7 +14,8 @@ const FirstMovieLinks = () => {
             </GeneralLink>
             <div className="w-full  gap-x-5 hidden md:flex ">
                 <GeneralLinkWithIcon
-                    route_name={"home"}
+                    route_name={`movies.show`}
+                    route_parameter={title}
                     className="bg-brand"
                     icon="plus"
                 >

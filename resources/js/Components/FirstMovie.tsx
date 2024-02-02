@@ -36,7 +36,7 @@ const FirstMovie = () => {
                     description_p={false}
                 />
 
-                <FirstMovieLinks />
+                <FirstMovieLinks title={forth_movie.title} />
             </div>
         </>
     );
