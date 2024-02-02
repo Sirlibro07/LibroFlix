@@ -2,13 +2,10 @@ import React, { useContext } from "react";
 import Slider from "./Slider";
 import MoviesContext from "@/Contexts/MoviesContext";
 import SliderCard from "./SliderCard";
+import thumbnail_path from "@/Helpers/thumbnail_path";
 
 const SliderSection = () => {
     const movies = useContext(MoviesContext).data;
-
-    const thumbnail_path = (title: string) => {
-        return title.replace(/ /g, "_");
-    };
 
     const renderSliderCard = (
         element: { id: number; title: string },
