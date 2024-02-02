@@ -7,7 +7,7 @@ interface MovieTitleProps {
 
 const MovieTitle = ({ title, className }: MovieTitleProps) => {
     return (
-        <h1 className={`font-medium text-typescale_33_px ${className}`}>
+        <h1 className={`font-semibold text-typescale_33_px ${className}`}>
             {title}
         </h1>
     );

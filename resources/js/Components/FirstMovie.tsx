@@ -16,7 +16,7 @@ const FirstMovie = () => {
                 />
                 <MovieTitle
                     title={`Naruto Shippuden:\nThe Movie`}
-                    className="font-semibold text-mobile_h1 whitespace-pre-line md:text-desktop_h1 md:leading-[120%]"
+                    className="text-mobile_h1 whitespace-pre-line md:text-desktop_h1 md:leading-[120%]"
                 />
                 <MovieRating rating={5} className="hidden md:flex my-2" />
                 <MovieInfo
