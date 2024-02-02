@@ -6,12 +6,7 @@ import React, { ReactNode } from "react";
 export default function Movie({ auth, isLoggedIn, movie }) {
     const renderMovieContent = (children: ReactNode) => {
         return (
-            <AppLayout
-                user={auth.user}
-                isLoggedIn={isLoggedIn}
-                border={false}
-                bg_image={true}
-            >
+            <AppLayout user={auth.user} isLoggedIn={isLoggedIn} border={false}>
                 <MovieContext.Provider value={movie}>
                     {children}
                 </MovieContext.Provider>

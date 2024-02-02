@@ -8,7 +8,6 @@ import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import UserContext from "@/Contexts/UserContext";
 import Navbar from "@/Components/Navbar";
 import AppLayoutChildren from "@/Components/AppLayoutChildren";
-import AppLayoutBackgoundImage from "@/Components/AppLayoutBackgoundImage";
 import Footer from "@/Components/Footer";
 
 const AppLayout = ({
@@ -16,10 +15,8 @@ const AppLayout = ({
     isLoggedIn,
     children,
     className = "",
-    bg_image = false,
     border = true,
-    bg_image_className = "",
-    bg_image_folder_name = "",
+    bg_image = <></>,
 }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
@@ -70,12 +67,7 @@ const AppLayout = ({
                     >
                         {children}
                     </AppLayoutChildren>
-                    {bg_image && (
-                        <AppLayoutBackgoundImage
-                            bg_image_className={bg_image_className}
-                            bg_image_folder_name={bg_image_folder_name}
-                        />
-                    )}
+                    {bg_image}
                     <Footer />
                 </>
             )}

@@ -1,3 +1,4 @@
+import FirstMovieBackgroundImage from "@/Components/FirstMovieBackgroundImage";
 import HomeContent from "@/Components/HomeContent";
 import MoviesContext from "@/Contexts/MoviesContext";
 import AppLayout from "@/Layouts/AppLayout";
@@ -11,10 +12,8 @@ const Home = ({ auth, isLoggedIn, movies }) => {
             <AppLayout
                 user={auth.user}
                 isLoggedIn={isLoggedIn}
-                bg_image={true}
+                bg_image={<FirstMovieBackgroundImage />}
                 border={false}
-                bg_image_className="w-full h-[44rem] md:h-[48.75rem] absolute top-[5.625rem] bottom-0 z-[-1]"
-                bg_image_folder_name="first_movie"
             >
                 <MoviesContext.Provider value={movies}>
                     {children}
