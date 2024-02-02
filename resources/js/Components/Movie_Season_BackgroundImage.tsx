@@ -11,7 +11,7 @@ const Movie_Season_BackgroundImage = ({
     return (
         <BackgroundImage
             folder_name={`movies/${title}`}
-            picture_classes="w-full aspect-card absolute top-[90px] z-[-1]"
+            picture_classes="top-[90px]"
         />
     );
 };
