@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ArrowIcon from "./ArrowIcon";
 
 interface SliderButtonProps {
@@ -14,10 +14,24 @@ const SliderButton = ({
     TranslateX,
     setTranslateX,
 }: SliderButtonProps) => {
-    const visible_cards = 5;
+    const [visibleCards, setVisibleCards] = useState(
+        window.innerWidth < 1536 ? 4 : 5
+    );
+    useEffect(() => {
+        const handleWindowResize = () => {
+            setVisibleCards(window.innerWidth < 1536 ? 4 : 5);
+        };
+
+        window.addEventListener("resize", handleWindowResize);
+
+        return () => {
+            window.removeEventListener("resize", handleWindowResize);
+        };
+    }, []);
+
     const current_index = parseInt(Math.abs(TranslateX).toString()[0]);
     const can_go_next =
-        (total_cards - visible_cards * current_index) / visible_cards >= 1.2;
+        (total_cards - visibleCards * current_index) / visibleCards >= 1.2;
 
     const nextTranslate = () => {
         can_go_next && setTranslateX((prevState) => prevState - 100);

@@ -1,5 +1,11 @@
-.slider_card {
-    @media (min-width: 1024px) {
+@media (min-width: 1024px) {
+    .slider_card {
+        width: calc(100% / 4 - 1rem);
+    }
+}
+
+@media (min-width: 1536px) {
+    .slider_card {
         width: calc(100% / 5 - 1rem);
     }
 }
