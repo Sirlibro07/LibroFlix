@@ -7,23 +7,16 @@ import thumbnail_path from "@/Helpers/thumbnail_path";
 const SliderSection = () => {
     const movies = useContext(MoviesContext).data;
 
-    const renderSliderCard = (
-        element: { id: number; title: string },
-        folder: string
-    ) => (
-        <SliderCard
-            route_name={"home"}
-            key={element.id}
-            thumbnail_path={`${folder}/${thumbnail_path(element.title)}`}
-        />
-    );
-
     return (
-        <>
-            <Slider total_cards={movies.length} title="Movies">
-                {movies.map((movie) => renderSliderCard(movie, "movies"))}
-            </Slider>
-        </>
+        <Slider total_cards={movies.length} title="Movies">
+            {movies.map((movie) => (
+                <SliderCard
+                    route_name={"home"}
+                    key={movie.id}
+                    thumbnail_path={thumbnail_path(movie.title)}
+                />
+            ))}
+        </Slider>
     );
 };
 

@@ -7,7 +7,7 @@ interface SliderCardImageProps {
 
 const SliderCardImage = ({ thumbnail_path }: SliderCardImageProps) => {
     const img = () => {
-        return imgStoragePath(`cards/${thumbnail_path}`);
+        return imgStoragePath(`cards/movies/${thumbnail_path}`);
     };
     return (
         <img
