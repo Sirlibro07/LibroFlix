@@ -11,7 +11,7 @@ const MoviePageContent = () => {
 
     return (
         <div className="body-padding py-4 h-fit mt-[300px] bg-black rounded-tl-[25px] rounded-tr-[25px]">
-            <MovieTitle title={movie.title} />
+            <MovieTitle title={movie.title} className="text-typescale_33_px" />
             <MovieInfo date={movie.year} />
             <MovieRating rating={movie.rating} className={""} />
             <PrimaryButton>Watch Now</PrimaryButton>
