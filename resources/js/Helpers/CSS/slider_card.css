@@ -1,0 +1,5 @@
+.slider_card {
+    @media (min-width: 1024px) {
+        width: calc(100% / 5 - 1rem);
+    }
+}

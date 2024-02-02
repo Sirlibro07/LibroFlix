@@ -2,6 +2,7 @@ import { Link } from "@inertiajs/react";
 import React from "react";
 import SliderCardImage from "./SliderCardImage";
 import SliderCardPlayButton from "./SliderCardPlayButton";
+import "../Helpers/CSS/slider_card.css";
 
 interface SliderCardProps {
     className?: string;
@@ -14,30 +15,15 @@ const SliderCard = ({
     route_name,
     thumbnail_path,
 }: SliderCardProps) => {
-    const css = (
-        <style>{`
-            .slider_card
-            {
-                @media(min-width:1024px)
-                {
-                    width: calc(100%/5 - 1rem)
-                }
-            }
-            `}</style>
-    );
-
     return (
-        <>
-            <Link
-                className={`slider_card group w-full max-w-[250px] lg:max-w-none shrink-0 relative aspect-card 
+        <Link
+            className={`slider_card group w-full max-w-[250px] lg:max-w-none shrink-0 relative aspect-card 
                 hover-shrink ${className}`}
-                href={route(route_name)}
-            >
-                <SliderCardImage thumbnail_path={thumbnail_path} />
-                <SliderCardPlayButton />
-            </Link>
-            {css}
-        </>
+            href={route(route_name)}
+        >
+            <SliderCardImage thumbnail_path={thumbnail_path} />
+            <SliderCardPlayButton />
+        </Link>
     );
 };
 
