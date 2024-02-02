@@ -16,9 +16,7 @@ export default function Movie({ auth, isLoggedIn, movie }) {
                 border={false}
                 bg_image={
                     <Movie_Season_BackgroundImage
-                        path={`cards/movies/${thumbnail_path(
-                            movie.data.title
-                        )}`}
+                        title={thumbnail_path(movie.data.title)}
                     />
                 }
                 body_padding={false}

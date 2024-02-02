@@ -2,17 +2,26 @@ import imgStoragePath from "@/Helpers/imgStoragePath";
 import React from "react";
 
 interface Movie_Season_BackgroundImageProps {
-    path: string;
+    title: string;
 }
 
 const Movie_Season_BackgroundImage = ({
-    path,
+    title,
 }: Movie_Season_BackgroundImageProps) => {
     return (
-        <img
-            src={imgStoragePath(path)}
-            className="w-full aspect-card object-cover absolute top-[90px] z-[-1]"
-        />
+        <picture className={`w-full aspect-card absolute top-[90px] z-[-1]`}>
+            <source
+                media="(min-width: 768px)"
+                srcSet={imgStoragePath(`backgrounds/movies/${title}`)}
+            />
+
+            <img
+                className={`w-full h-full object-cover object-bottom`}
+                alt="background-image"
+                src={imgStoragePath(`cards/movies/${title}`)}
+                decoding="async"
+            />
+        </picture>
     );
 };
 
