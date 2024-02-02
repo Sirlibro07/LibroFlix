@@ -31,6 +31,8 @@ export default function ResetPassword({ token, email }) {
                 name="Reset Password"
                 method_function={post}
                 route_name="password.store"
+                button_title="Reset Password"
+                processing={processing}
             >
                 <FormInputField
                     name={"email"}
@@ -60,10 +62,6 @@ export default function ResetPassword({ token, email }) {
                     setData={setData}
                     state_to_change="password_confirmation"
                 />
-
-                <PrimaryButton disabled={processing}>
-                    Reset Password
-                </PrimaryButton>
             </AuthForm>
         </AuthLayout>
     );

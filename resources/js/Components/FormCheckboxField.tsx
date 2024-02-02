@@ -15,9 +15,9 @@ const FormCheckboxField = ({
     setData,
 }: FormCheckboxFieldProps) => {
     return (
-        <div className="flex items-center mt-4 ">
+        <div className="flex items-center">
             <Checkbox name={name} checked={state_field} setData={setData} />
-            <span className=" text-input  ml-2">{label}</span>
+            <span className="text-input  ml-1 sm:ml-2">{label}</span>
         </div>
     );
 };

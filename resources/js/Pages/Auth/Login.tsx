@@ -30,7 +30,15 @@ export default function Login({ status, canResetPassword }) {
             title="Log In"
             media_query_breakpoint="500px"
         >
-            <AuthForm name="Log In" method_function={post} route_name="login">
+            <AuthForm
+                name="Log In"
+                method_function={post}
+                route_name="login"
+                button_title="Log in"
+                link_route_name="register"
+                link_title="Sign up"
+                processing={processing}
+            >
                 <FormInputField
                     name={"email"}
                     state_field={data.email}
@@ -48,25 +56,19 @@ export default function Login({ status, canResetPassword }) {
                 />
                 <AuthSuccessMessage status={status} />
 
-                <FormCheckboxField
-                    name="remember"
-                    label="Remember me"
-                    state_field={data.remember}
-                    setData={setData}
-                />
-
-                <PrimaryButton disabled={processing}>Log in</PrimaryButton>
-
-                <div className="flex flex-col items-center mt-4 gap-y-2 text-border_label ">
-                    <GeneralLink route_name="register" className="text-label">
-                        Sign Up ?
-                    </GeneralLink>
+                <div className="flex items-center justify-between mt-4 ">
+                    <FormCheckboxField
+                        name="remember"
+                        label="Remember me"
+                        state_field={data.remember}
+                        setData={setData}
+                    />
                     {canResetPassword && (
                         <GeneralLink
                             route_name="password.request"
-                            className="text-label"
+                            className="text-label text-end"
                         >
-                            forgot password?
+                            lost password?
                         </GeneralLink>
                     )}
                 </div>

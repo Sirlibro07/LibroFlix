@@ -12,7 +12,6 @@ interface GeneralLinkProps {
 
 const GeneralLink = ({
     route_name,
-    route_parameter = "",
     className = "",
     border = true,
     children,
@@ -20,7 +19,7 @@ const GeneralLink = ({
     return (
         <>
             <Link
-                href={route(route_name, route_parameter)}
+                href={route(route_name)}
                 className={`${
                     border && "custom_border"
                 } relative rounded-10  ${className}`}

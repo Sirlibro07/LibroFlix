@@ -1,11 +1,17 @@
 import formSubmit from "@/Helpers/formSubmit";
 import React, { ReactNode } from "react";
+import PrimaryButton from "./PrimaryButton";
+import GeneralLink from "./GeneralLink";
 
 interface AuthFormProps {
     children: ReactNode;
     name: string;
     method_function: (url: string) => void;
     route_name: string;
+    button_title: string;
+    link_route_name?: string;
+    link_title?: string;
+    processing: boolean;
 }
 
 export default function AuthForm({
@@ -13,6 +19,10 @@ export default function AuthForm({
     name,
     method_function,
     route_name,
+    button_title,
+    link_route_name = "",
+    link_title = "",
+    processing = false,
 }: AuthFormProps) {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         formSubmit(e, method_function, route, route_name);
@@ -29,6 +39,17 @@ export default function AuthForm({
                 {name}
             </h1>
             {children}
+            <PrimaryButton disabled={processing} className="w-full mb-4 mt-8">
+                {button_title}
+            </PrimaryButton>
+            {link_route_name && (
+                <GeneralLink
+                    route_name={link_route_name}
+                    className="text-label w-fit mx-auto block "
+                >
+                    {link_title}
+                </GeneralLink>
+            )}
         </form>
     );
 }

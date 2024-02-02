@@ -3,7 +3,6 @@ import { useForm } from "@inertiajs/react";
 import React from "react";
 import AuthForm from "@/Components/AuthForm";
 import FormInputField from "@/Components/FormInputField";
-import PrimaryButton from "@/Components/PrimaryButton";
 import AuthSuccessMessage from "@/Components/AuthSuccessMessage";
 
 export default function ForgotPassword({ status }) {
@@ -23,6 +22,8 @@ export default function ForgotPassword({ status }) {
                 name="Recover Password"
                 method_function={post}
                 route_name="password.email"
+                button_title="Send Recovery Email"
+                processing={processing}
             >
                 <FormInputField
                     name={"email"}
@@ -33,10 +34,6 @@ export default function ForgotPassword({ status }) {
                 />
 
                 <AuthSuccessMessage status={status} />
-
-                <PrimaryButton disabled={processing}>
-                    Send Recovery Email
-                </PrimaryButton>
             </AuthForm>
         </AuthLayout>
     );
