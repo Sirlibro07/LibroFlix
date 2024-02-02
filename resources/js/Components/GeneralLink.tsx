@@ -13,13 +13,11 @@ const GeneralLink = ({
     route_name,
     className = "",
     border = true,
-    key = null,
     children,
 }: GeneralLinkProps) => {
     return (
         <>
             <Link
-                key={key && key}
                 href={route(route_name)}
                 className={`${
                     border && "custom_border"
