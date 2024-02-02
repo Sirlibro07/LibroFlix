@@ -7,7 +7,7 @@ const MovieCard = ({ title }) => {
         <img
             src={imgStoragePath(`cards/movies/${thumbnail_path(title)}`)}
             alt="movie-card-img"
-            className="hidden aspect-card mt-[-130px] rounded-[20px] mr-6  md:block"
+            className="hidden aspect-card mt-[-150px] rounded-[20px] mr-6  md:block"
         />
     );
 };
