@@ -1,12 +1,15 @@
 import React from "react";
 import BackgroundImage from "./BackgroundImage";
 
-const AppLayoutBackgoundImage = () => {
+const AppLayoutBackgoundImage = ({
+    bg_image_className,
+    bg_image_folder_name,
+}) => {
     return (
-        <div className="w-full absolute top-[5.625rem] bottom-0 z-[-1]">
+        <div className={bg_image_className}>
             <BackgroundImage
-                folder_name="first_movie"
-                picture_classes="h-[44rem]  md:h-[48.75rem]"
+                folder_name={bg_image_folder_name}
+                picture_classes="w-full h-full"
             />
         </div>
     );

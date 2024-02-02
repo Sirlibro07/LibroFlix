@@ -18,6 +18,8 @@ const AppLayout = ({
     className = "",
     bg_image = false,
     border = true,
+    bg_image_className = "",
+    bg_image_folder_name = "",
 }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
@@ -68,7 +70,12 @@ const AppLayout = ({
                     >
                         {children}
                     </AppLayoutChildren>
-                    {bg_image && <AppLayoutBackgoundImage />}
+                    {bg_image && (
+                        <AppLayoutBackgoundImage
+                            bg_image_className={bg_image_className}
+                            bg_image_folder_name={bg_image_folder_name}
+                        />
+                    )}
                     <Footer />
                 </>
             )}

@@ -13,6 +13,8 @@ const Home = ({ auth, isLoggedIn, movies }) => {
                 isLoggedIn={isLoggedIn}
                 bg_image={true}
                 border={false}
+                bg_image_className="w-full h-[44rem] md:h-[48.75rem] absolute top-[5.625rem] bottom-0 z-[-1]"
+                bg_image_folder_name="first_movie"
             >
                 <MoviesContext.Provider value={movies}>
                     {children}
