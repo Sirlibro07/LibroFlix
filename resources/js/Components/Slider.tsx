@@ -1,15 +1,13 @@
-import React, { ReactNode, useState } from "react";
-import SliderButton from "./SliderButton";
+import React, { useState } from "react";
 import SliderContent from "./SliderContent";
 import SliderButtons from "./SliderButtons";
 
 interface SliderProps {
-    children: ReactNode;
     total_cards: number;
     title: string;
 }
 
-const Slider = ({ children, total_cards, title }: SliderProps) => {
+const Slider = ({ total_cards, title }: SliderProps) => {
     const [translateX, setTranslateX] = useState(0);
 
     return (
@@ -21,9 +19,7 @@ const Slider = ({ children, total_cards, title }: SliderProps) => {
                 <SliderContent
                     translateX={translateX}
                     setTranslateX={setTranslateX}
-                >
-                    {children}
-                </SliderContent>
+                ></SliderContent>
                 <SliderButtons
                     translateX={translateX}
                     setTranslateX={setTranslateX}

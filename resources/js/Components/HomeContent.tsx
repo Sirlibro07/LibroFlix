@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import FirstMovie from "./FirstMovie";
-import SliderSection from "./SliderSection";
+import Slider from "./Slider";
+import MoviesContext from "@/Contexts/MoviesContext";
 
 const HomeContent = () => {
+    const movies = useContext(MoviesContext).data;
     return (
-        <>
-            <div className={`w-full text-white mt-[9rem]`}>
-                <FirstMovie />
-                <SliderSection />
-            </div>
-        </>
+        <div className={`w-full text-white mt-[9rem]`}>
+            <FirstMovie />
+            <Slider total_cards={movies.length} title="Movies" />;
+        </div>
     );
 };
 
