@@ -11,7 +11,7 @@ const Movie_Season_BackgroundImage = ({
     return (
         <BackgroundImage
             folder_name={`movies/${title}`}
-            picture_classes="top-[90px]"
+            picture_classes="top-[90px] brightness-50"
         />
     );
 };
