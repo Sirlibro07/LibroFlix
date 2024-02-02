@@ -1,6 +1,6 @@
 import React from "react";
 import FirstMovie from "./FirstMovie";
-import SliderSection from "./SlidersSection";
+import SliderSection from "./SliderSection";
 
 const HomeContent = () => {
     return (
