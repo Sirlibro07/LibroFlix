@@ -1,12 +1,27 @@
 import MoviePageContent from "@/Components/MoviePageContent";
+import Movie_Season_BackgroundImage from "@/Components/Movie_Season_BackgroundImage";
 import MovieContext from "@/Contexts/MovieContext";
+import thumbnail_path from "@/Helpers/thumbnail_path";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 
 export default function Movie({ auth, isLoggedIn, movie }) {
+    console.log(movie.data.title);
+
     const renderMovieContent = (children: ReactNode) => {
         return (
-            <AppLayout user={auth.user} isLoggedIn={isLoggedIn} border={false}>
+            <AppLayout
+                user={auth.user}
+                isLoggedIn={isLoggedIn}
+                border={false}
+                bg_image={
+                    <Movie_Season_BackgroundImage
+                        path={`cards/movies/${thumbnail_path(
+                            movie.data.title
+                        )}`}
+                    />
+                }
+            >
                 <MovieContext.Provider value={movie}>
                     {children}
                 </MovieContext.Provider>
