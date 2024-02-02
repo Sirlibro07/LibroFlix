@@ -4,21 +4,21 @@ interface AppLayoutChildrenProps {
     isMenuVisible: boolean;
     isSearchbarVisible: boolean;
     className: string;
-    onClickHandler: () => void;
     children: ReactNode;
+    body_padding?: boolean;
 }
 
 const AppLayoutChildren = ({
     isMenuVisible,
     isSearchbarVisible,
     className,
-    onClickHandler,
     children,
+    body_padding = true,
 }: AppLayoutChildrenProps) => {
     return (
         <>
             <section
-                className={`body-padding ${
+                className={`${body_padding && "body-padding"} ${
                     isMenuVisible || isSearchbarVisible
                         ? "brightness-[30%]"
                         : ""

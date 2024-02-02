@@ -17,6 +17,7 @@ const AppLayout = ({
     className = "",
     border = true,
     bg_image = <></>,
+    body_padding = true,
 }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
@@ -63,7 +64,7 @@ const AppLayout = ({
                         isMenuVisible={isMenuVisible}
                         isSearchbarVisible={isSearchbarVisible}
                         className={className}
-                        onClickHandler={onClickHandler}
+                        body_padding={body_padding}
                     >
                         {children}
                     </AppLayoutChildren>

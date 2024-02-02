@@ -21,6 +21,7 @@ export default function Movie({ auth, isLoggedIn, movie }) {
                         )}`}
                     />
                 }
+                body_padding={false}
             >
                 <MovieContext.Provider value={movie}>
                     {children}
