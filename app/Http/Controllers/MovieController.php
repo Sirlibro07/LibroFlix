@@ -21,7 +21,7 @@ class MovieController extends Controller
             'Show/Movie',
             [
                 'isLoggedIn' => Auth::check(),
-                'movie' => MovieResource::make(Movie::where("title", $title)->first())
+                'movie' => MovieResource::make(Movie::where("title", $title)->firstOrFail())
             ]
         );
     }
