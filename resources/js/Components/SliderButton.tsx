@@ -29,6 +29,8 @@ const SliderButton = ({
         };
     }, []);
 
+    const are_buttons_visible = total_cards > visibleCards;
+
     const current_index = parseInt(Math.abs(TranslateX).toString()[0]);
     const can_go_next =
         (total_cards - visibleCards * current_index) / visibleCards >= 1.2;
@@ -59,7 +61,9 @@ const SliderButton = ({
             style={
                 direction === "right" ? { right: "-17px" } : { left: "-33px" }
             }
-            className={`hidden h-full items-center  absolute top-1/2  transform -translate-y-1/2 lg:flex ${
+            className={`hidden h-full items-center  absolute top-1/2  transform -translate-y-1/2 ${
+                are_buttons_visible && "lg:flex"
+            } ${
                 direction === "right"
                     ? next_btn_visibility
                     : previous_btn_visibility
