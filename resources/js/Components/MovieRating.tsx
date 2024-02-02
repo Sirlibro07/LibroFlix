@@ -18,7 +18,7 @@ const MovieRating = ({ rating, className }: MovieRatingProps) => {
                     <i className="fa-solid fa-star text-brand text-[1.25rem]"></i>
                 </li>
             ))}
-            {decimal > 0 && decimal < 0.5 && (
+            {decimal >= 0.5 && (
                 <i className="fa-solid fa-star-half-stroke text-brand text-[1.25rem]"></i>
             )}
         </ul>
