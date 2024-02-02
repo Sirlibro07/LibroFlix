@@ -16,13 +16,6 @@ const FirstMovieLinks = () => {
                 <GeneralLinkWithIcon
                     route_name={"home"}
                     className="bg-brand"
-                    icon="play"
-                >
-                    Play
-                </GeneralLinkWithIcon>
-                <GeneralLinkWithIcon
-                    route_name={"home"}
-                    className="bg-secondary"
                     icon="plus"
                 >
                     Learn More
