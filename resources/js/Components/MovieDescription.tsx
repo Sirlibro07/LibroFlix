@@ -16,10 +16,6 @@ const MovieDescription = ({
         <>
             <p className="mt-10 mb-4">Description:</p>
             <p
-                style={{
-                    display: "-webkit-box",
-                    WebkitBoxOrient: "vertical",
-                }}
                 className={`${
                     slice_lines && "first_movie_description"
                 } text-light_color overflow-hidden ${className} md:text-xl`}
