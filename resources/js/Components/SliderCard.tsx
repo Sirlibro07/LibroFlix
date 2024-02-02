@@ -16,7 +16,7 @@ const SliderCard = ({
 }: SliderCardProps) => {
     const css = (
         <style>{`
-            .card
+            .slider_card
             {
                 @media(min-width:1024px)
                 {
@@ -29,7 +29,7 @@ const SliderCard = ({
     return (
         <>
             <Link
-                className={`card group w-full max-w-[250px] lg:max-w-none shrink-0 relative aspect-card 
+                className={`slider_card group w-full max-w-[250px] lg:max-w-none shrink-0 relative aspect-card 
                 hover-shrink ${className}`}
                 href={route(route_name)}
             >
