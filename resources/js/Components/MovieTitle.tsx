@@ -9,7 +9,7 @@ interface MovieTitleProps {
 const MovieTitle = ({ title, className, version = "" }: MovieTitleProps) => {
     return (
         <h1 className={`font-semibold whitespace-pre-line ${className}`}>{`${
-            version && `${version}\n:`
+            version && `${version}:\n`
         } ${title}`}</h1>
     );
 };
