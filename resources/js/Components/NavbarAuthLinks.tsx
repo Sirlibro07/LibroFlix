@@ -1,15 +1,15 @@
 import React from "react";
-import Button from "./Button";
+import NavbarAuthLink from "./NavbarAuthLink";
 
 const NavbarAuthLinks = () => {
     return (
         <div className="text-base w-full flex gap-3 px-4 lg:absolute lg:top-0 lg:right-4 lg:flex lg:items-center lg:h-full lg:w-fit">
-            <a href={route("login")} className="block w-full lg:w-auto lg:px-4">
-                <Button className="w-full lg:px-4">Log in</Button>
-            </a>
-            <a href={route("register")} className="block w-full lg:w-auto">
-                <Button className="w-full bg-brand lg:px-4 ">Sign up</Button>
-            </a>
+            <NavbarAuthLink route_name="login" link_className="lg:px-4">
+                Log in
+            </NavbarAuthLink>
+            <NavbarAuthLink route_name="register" button_className="bg-brand">
+                Sign up
+            </NavbarAuthLink>
         </div>
     );
 };
