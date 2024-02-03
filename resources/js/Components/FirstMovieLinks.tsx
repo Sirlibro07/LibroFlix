@@ -5,7 +5,7 @@ import Button from "./Button";
 
 const FirstMovieLinks = ({ title }) => {
     return (
-        <Link className="" href={route("movies.show", title)}>
+        <Link href={route("movies.show", title)}>
             <Button className="w-full bg-brand md:hidden">Watch Now</Button>
             <ButtonWithIcon className="hidden md:block">
                 Learn More
