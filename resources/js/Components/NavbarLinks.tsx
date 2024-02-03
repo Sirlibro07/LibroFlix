@@ -5,8 +5,8 @@ import UserContext from "@/Contexts/UserContext";
 import NavbarAuthLinks from "./NavbarAuthLinks";
 
 const NavbarLinks = () => {
-    const isMenuVisible = useContext(Menu_Searchbar_Context).isMenuVisible;
-    const isLoggedIn = useContext(UserContext).isLoggedIn;
+    const { isMenuVisible } = useContext(Menu_Searchbar_Context);
+    const { isLoggedIn } = useContext(UserContext);
 
     const routes = [{ name: "Home", route: "home", pathname: "/" }];
 
