@@ -1,7 +1,7 @@
 import formSubmit from "@/Helpers/formSubmit";
 import React, { ReactNode } from "react";
-import PrimaryButton from "./PrimaryButton";
 import GeneralLink from "./GeneralLink";
+import Button from "./Button";
 
 interface AuthFormProps {
     children: ReactNode;
@@ -38,10 +38,13 @@ export default function AuthForm({
             <h1 className="font-display text-mobile_h1 text-center lg:text-desktop_h1 ">
                 {name}
             </h1>
+
             {children}
-            <PrimaryButton disabled={processing} className="w-full mb-4 mt-8">
+
+            <Button className="w-full mb-4 mt-8 bg-brand" disabled={processing}>
                 {button_title}
-            </PrimaryButton>
+            </Button>
+
             {link_route_name && (
                 <GeneralLink
                     route_name={link_route_name}
