@@ -36,6 +36,11 @@ const AuthLayout = ({
                         #app {
                             height: fit-content;
                         }
+
+                        .auth_form
+                        {
+                            border-radius: 0;
+                        }
                     }`}
             </style>
             <Head title={title} />
