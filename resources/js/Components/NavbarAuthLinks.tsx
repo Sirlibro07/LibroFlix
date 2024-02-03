@@ -15,4 +15,3 @@ const NavbarAuthLinks = () => {
 };
 
 export default NavbarAuthLinks;
-// was forced to use normal <a> links because of rendering bugs

@@ -27,3 +27,4 @@ const NavbarAuthLink = ({
 };
 
 export default NavbarAuthLink;
+// was forced to use normal <a> links because of rendering bugs
