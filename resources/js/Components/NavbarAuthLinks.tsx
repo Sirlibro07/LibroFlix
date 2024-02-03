@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 
-const NavbarAccountLinks = () => {
+const NavbarAuthLinks = () => {
     return (
         <div className="text-base w-full flex gap-3 px-4 lg:absolute lg:top-0 lg:right-4 lg:flex lg:items-center lg:h-full lg:w-fit">
             <a href={route("login")} className="block w-full lg:w-auto lg:px-4">
@@ -14,5 +14,5 @@ const NavbarAccountLinks = () => {
     );
 };
 
-export default NavbarAccountLinks;
+export default NavbarAuthLinks;
 // was forced to use normal <a> links because of rendering bugs

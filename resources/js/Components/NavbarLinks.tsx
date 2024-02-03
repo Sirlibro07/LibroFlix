@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
-import NavbarAccountLinks from "./NavbarAccountLinks";
 import NavbarLink from "./NavbarLink";
 import UserContext from "@/Contexts/UserContext";
+import NavbarAuthLinks from "./NavbarAuthLinks";
 
 const NavbarLinks = () => {
     const isMenuVisible = useContext(Menu_Searchbar_Context).isMenuVisible;
@@ -29,7 +29,7 @@ const NavbarLinks = () => {
                 <NavbarLink link={link} key={index} />
             ))}
 
-            {!isLoggedIn && <NavbarAccountLinks />}
+            {!isLoggedIn && <NavbarAuthLinks />}
         </ul>
     );
 };
