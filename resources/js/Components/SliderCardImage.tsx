@@ -2,17 +2,17 @@ import imgStoragePath from "@/Helpers/imgStoragePath";
 import React from "react";
 
 interface SliderCardImageProps {
-    thumbnail_path: string;
+    underscoreToSpace: string;
 }
 
-const SliderCardImage = ({ thumbnail_path }: SliderCardImageProps) => {
+const SliderCardImage = ({ underscoreToSpace }: SliderCardImageProps) => {
     const img = () => {
-        return imgStoragePath(`cards/movies/${thumbnail_path}`);
+        return imgStoragePath(`cards/movies/${underscoreToSpace}`);
     };
     return (
         <img
             src={img()}
-            alt={`movie-${thumbnail_path}-card-bg-image`}
+            alt={`movie-${underscoreToSpace}-card-bg-image`}
             decoding="async"
             className="w-full h-full object-cover object-top rounded-10 transitions group-hover:brightness-[30%]"
         />

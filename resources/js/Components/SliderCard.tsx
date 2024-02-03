@@ -6,13 +6,13 @@ import "../Helpers/CSS/slider_card.css";
 
 interface SliderCardProps {
     className?: string;
-    thumbnail_path: string;
+    underscoreToSpace: string;
     title: string;
 }
 
 const SliderCard = ({
     className = "",
-    thumbnail_path,
+    underscoreToSpace,
     title,
 }: SliderCardProps) => {
     return (
@@ -21,7 +21,7 @@ const SliderCard = ({
                 hover-shrink ${className}`}
             href={route("movies.show", { title })}
         >
-            <SliderCardImage thumbnail_path={thumbnail_path} />
+            <SliderCardImage underscoreToSpace={underscoreToSpace} />
             <SliderCardPlayButton />
         </Link>
     );

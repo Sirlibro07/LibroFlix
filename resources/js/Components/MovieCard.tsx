@@ -1,11 +1,11 @@
 import imgStoragePath from "@/Helpers/imgStoragePath";
-import thumbnail_path from "@/Helpers/thumbnail_path";
+import underscoreToSpace from "@/Helpers/underscoreToSpace";
 import React from "react";
 
 const MovieCard = ({ title }) => {
     return (
         <img
-            src={imgStoragePath(`cards/movies/${thumbnail_path(title)}`)}
+            src={imgStoragePath(`cards/movies/${underscoreToSpace(title)}`)}
             alt="movie-card-img"
             className="hidden aspect-card mt-[-150px] rounded-[20px] mr-6  md:block"
         />

@@ -1,7 +1,7 @@
 import BackgroundImage from "@/Components/BackgroundImage";
 import MoviePageContent from "@/Components/MoviePageContent";
 import MovieContext from "@/Contexts/MovieContext";
-import thumbnail_path from "@/Helpers/thumbnail_path";
+import underscoreToSpace from "@/Helpers/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 
@@ -16,7 +16,7 @@ export default function Movie({ auth, isLoggedIn, movie }) {
                 border={false}
                 bg_image={
                     <BackgroundImage
-                        folder_name={`movies/${thumbnail_path(
+                        folder_name={`movies/${underscoreToSpace(
                             movie.data.title
                         )}`}
                         picture_classes="top-[90px] brightness-50"

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import "../Helpers/CSS/slider_content.css";
 import SliderCard from "./SliderCard";
 import MoviesContext from "@/Contexts/MoviesContext";
-import thumbnail_path from "@/Helpers/thumbnail_path";
+import underscoreToSpace from "@/Helpers/underscoreToSpace";
 
 interface SliderContentProps {
     translateX: number;
@@ -31,7 +31,7 @@ const SliderContent = ({ translateX, setTranslateX }: SliderContentProps) => {
                 {movies.map((movie) => (
                     <SliderCard
                         key={movie.id}
-                        thumbnail_path={thumbnail_path(movie.title)}
+                        underscoreToSpace={underscoreToSpace(movie.title)}
                         title={movie.title}
                     />
                 ))}
