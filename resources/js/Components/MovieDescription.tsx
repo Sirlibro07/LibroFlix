@@ -1,5 +1,4 @@
 import React from "react";
-import "../Helpers/CSS/first_movie_description.css";
 
 interface MovieDescriptionProps {
     description: string;
@@ -17,7 +16,9 @@ const MovieDescription = ({
             {description_p && (
                 <p className="mt-10 mb-4 font-medium">Description:</p>
             )}
-            <p className={` text-light_color overflow-hidden ${className}`}>
+            <p
+                className={` text-light_color overflow-hidden max-w-prose ${className}`}
+            >
                 {description}
             </p>
         </>
