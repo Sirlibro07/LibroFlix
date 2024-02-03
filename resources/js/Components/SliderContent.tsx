@@ -30,9 +30,9 @@ const SliderContent = ({ translateX, setTranslateX }: SliderContentProps) => {
             >
                 {movies.map((movie) => (
                     <SliderCard
-                        route_name={"home"}
                         key={movie.id}
                         thumbnail_path={thumbnail_path(movie.title)}
+                        title={movie.title}
                     />
                 ))}
             </div>
