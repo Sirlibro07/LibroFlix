@@ -3,6 +3,7 @@ import NavbarLinks from "./NavbarLinks";
 import NavbarIcons from "./NavbarIcons";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
+import NavbarItemsCloseOverlay from "./NavbarItemsCloseOverlay";
 
 interface NavbarProps {
     onClickHandler: () => void;
@@ -29,12 +30,11 @@ const Navbar = ({
                 <NavbarLinks />
                 <SearchBar />
             </nav>
-            <div
-                onClick={onClickHandler}
-                className={`w-full h-[calc(100%-5.625rem)] absolute top-[5.625rem] left-0 z-[1] ${
-                    isMenuVisible || isSearchbarVisible ? "block" : "hidden"
-                }`}
-            ></div>
+            <NavbarItemsCloseOverlay
+                onClickHandler={onClickHandler}
+                isMenuVisible={isMenuVisible}
+                isSearchbarVisible={isSearchbarVisible}
+            />
         </>
     );
 };
