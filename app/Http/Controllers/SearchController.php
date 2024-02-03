@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 
 class SearchController extends Controller
 {
-    public function search(string $filter, string $name)
+    public function search(string $title)
     {
-        return $filter . "<br>" . $name;
+        return $title;
     }
 }

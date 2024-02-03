@@ -34,7 +34,6 @@ Route::get('/', HomeController::class)->name("home");
 
 Route::get("/movies/{title}", [MovieController::class, 'show'])->name("movies.show");
 
-
-Route::get('/search/{filter?}/{name?}', [SearchController::class, 'search'])->name("search");
+Route::get('/search/{title}', [SearchController::class, 'search'])->name("search");
 
 require __DIR__ . '/auth.php';
