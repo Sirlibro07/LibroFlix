@@ -19,7 +19,7 @@ export default function Movie({ auth, isLoggedIn, movie }) {
                         folder_name={`movies/${underscoreToSpace(
                             movie.data.title
                         )}`}
-                        picture_classes="top-[90px] brightness-50"
+                        picture_classes="top-navbar_height brightness-50"
                     />
                 }
                 body_padding={false}

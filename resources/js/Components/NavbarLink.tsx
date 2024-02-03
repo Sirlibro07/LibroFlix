@@ -31,7 +31,7 @@ const NavbarLink = ({ link }: NavbarLinkProps) => {
                 className={
                     "/" + link.pathname === window.location.pathname
                         ? "lg: custom_border_active"
-                        : "lg:text-unused_link_option_color"
+                        : "lg:text-grey"
                 }
             >
                 {width > 1023 ? link.name : link.name.toUpperCase()}

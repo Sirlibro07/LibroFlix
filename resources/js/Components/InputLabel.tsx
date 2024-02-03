@@ -14,7 +14,7 @@ export default function InputLabel({
     return (
         <label
             htmlFor={htmlFor}
-            className={`text-label font-medium inline-block mb-1 ${className}`}
+            className={`auth_label_link inline-block mb-1 ${className}`}
         >
             {value}
         </label>

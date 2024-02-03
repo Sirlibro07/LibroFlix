@@ -65,9 +65,9 @@ export default function Login({ status, canResetPassword }) {
                     {canResetPassword && (
                         <GeneralLink
                             route_name="password.request"
-                            className="text-label text-end"
+                            className="auth_label_link text-end"
                         >
-                            lost password?
+                            Lost password?
                         </GeneralLink>
                     )}
                 </div>

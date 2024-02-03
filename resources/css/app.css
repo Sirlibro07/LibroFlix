@@ -25,7 +25,7 @@ input:-webkit-autofill {
 }
 
 .body-padding {
-    @apply px-mobile_side_padding md:px-10 lg:px-[3.625rem] xl:px-20;
+    @apply px-4 md:px-10 lg:px-[3.625rem] xl:px-20;
 }
 
 .transitions {
@@ -35,3 +35,11 @@ input:-webkit-autofill {
 .hover-shrink {
     @apply transitions cursor-pointer  hover:scale-95;
 }
+
+.auth_label_link {
+    @apply text-grey text-sm font-medium;
+}
+
+/* *::-webkit-scrollbar {
+    display: none;
+} */

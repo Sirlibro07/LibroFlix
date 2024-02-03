@@ -21,7 +21,7 @@ const Option = ({
                 className={`custom_border  relative ${
                     currentOption === option_name
                         ? "text-white custom_border_active"
-                        : "text-unused_link_option_color"
+                        : "text-grey"
                 } font-normal`}
             >
                 {option_name}

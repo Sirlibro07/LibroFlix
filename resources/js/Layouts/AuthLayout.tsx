@@ -35,6 +35,7 @@ const AuthLayout = ({
                         body,
                         #app {
                             height: fit-content;
+                            background-color: black
                         }
 
                         .auth_form

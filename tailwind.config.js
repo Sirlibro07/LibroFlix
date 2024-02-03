@@ -23,51 +23,27 @@ export default {
                 ],
             },
             fontSize: {
-                input: "15px",
-                mobile_h1: "38px",
-                desktop_h1: "67px",
-                logo: "28px",
-                typescale_21_px: "21px",
                 typescale_19_px: "19px",
+                typescale_21_px: "21px",
                 typescale_23_px: "23px",
+                typescale_28_px: "28px",
                 typescale_33_px: "33px",
+                typescale_38px: "38px",
+                typescale_67px: "67px",
             },
             aspectRatio: {
                 card: "11 / 16",
             },
             borderRadius: {
                 10: "0.625rem",
-                auth_big_radius: "40px",
-            },
-            maxWidth: {
-                pc_auth_max_width: "850px",
-                mobile_menu_max_width: "336px",
             },
             height: {
                 elements_height: "44px",
-            },
-            width: {
-                searchbar_width: "27rem",
+                navbar_height: "90px",
             },
             colors: {
                 brand: "#A2663E",
-                label: "#5F5F61",
-                secondary: "#1E1E1E",
-                body: "black",
-                contrast: "white",
-                success: "#689B5B",
-                error_danger: "#A61C1E",
-                border_color: "#413F43",
-                unused_link_option_color: "#706A6B",
-                light_color: "#BBBBBB",
-            },
-            margin: {
-                pc_auth_x_margin: "1.875rem",
-            },
-            padding: {
-                mobile_side_padding: "16px",
-                mobile_auth_y_padding: "32px",
-                desktop_auth_x_padding: "100px",
+                grey: "#5F5F61",
             },
             spacing: {
                 1: "0.063rem",

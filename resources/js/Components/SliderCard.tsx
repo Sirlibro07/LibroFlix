@@ -10,7 +10,7 @@ interface SliderCardProps {
 const SliderCard = ({ thumbnail_path, title }: SliderCardProps) => {
     return (
         <Card
-            className={`slider_card group w-full max-w-[250px] lg:max-w-none shrink-0 relative aspect-card 
+            className={`slider_card group max-w-[250px] lg:max-w-none shrink-0 relative
                 hover-shrink`}
             title={title}
             thumbnail_path={thumbnail_path}

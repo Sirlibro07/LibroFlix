@@ -21,8 +21,8 @@ const Navbar = ({
     return (
         <>
             <nav
-                className={`body-padding relative bg-black flex  items-center justify-between ${
-                    border && "border-b border-border_color border-solid"
+                className={`body-padding relative h-navbar_height flex  items-center justify-between ${
+                    border && "border-b border-grey border-solid"
                 } lg:justify-normal`}
             >
                 <Logo />

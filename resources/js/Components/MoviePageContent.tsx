@@ -23,8 +23,13 @@ const MoviePageContent = () => {
                 <MovieInfo date={movie.year} />
                 <MovieRating rating={movie.rating} className={"mb-6"} />
                 <Button className="bg-brand w-full md:hidden">Watch Now</Button>
-                <ButtonWithIcon icon="play">Play</ButtonWithIcon>
-                <MovieDescription description={movie.description} />
+                <ButtonWithIcon icon="play" className="hidden md:block">
+                    Play
+                </ButtonWithIcon>
+                <MovieDescription
+                    description={movie.description}
+                    className="max-w-[90ch]"
+                />
             </div>
         </div>
     );

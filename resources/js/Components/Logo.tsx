@@ -5,7 +5,7 @@ const Logo = () => {
     return (
         <GeneralLink
             route_name="home"
-            className="text-brand text-logo font-display py-6"
+            className="text-brand text-typescale_28_px font-display"
             border={false}
         >
             Librone

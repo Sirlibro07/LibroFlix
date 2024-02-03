@@ -6,7 +6,7 @@ import CardPlayButton from "./CardPlayButton";
 const Card = ({ className, title, thumbnail_path }) => {
     return (
         <Link
-            className={` group   relative aspect-card 
+            className={` group relative aspect-card 
                 hover-shrink ${className}`}
             href={route("movies.show", { title })}
         >

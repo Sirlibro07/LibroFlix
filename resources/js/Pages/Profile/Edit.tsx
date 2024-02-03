@@ -34,7 +34,7 @@ export default function Edit({ auth, mustVerifyEmail, status, isLoggedIn }) {
                 className="pt-8"
             >
                 <Head title="Profile" />
-                <header className="font-display text-mobile_h1 ">
+                <header className="font-display text-typescale_38px ">
                     Account
                 </header>
 

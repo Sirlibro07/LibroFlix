@@ -1,16 +1,17 @@
-/* width */
 ::-webkit-scrollbar {
     width: 2px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: white;
+    background: #5f5f61;
     width: 2px;
     border-radius: 10px;
 }
 
-/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
 ::-webkit-scrollbar-track {
     background: black;
     width: 2px;
