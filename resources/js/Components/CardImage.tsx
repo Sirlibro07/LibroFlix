@@ -1,11 +1,11 @@
 import imgStoragePath from "@/Helpers/imgStoragePath";
 import React from "react";
 
-interface SliderCardImageProps {
+interface CardImageProps {
     thumbnail_path: string;
 }
 
-const SliderCardImage = ({ thumbnail_path }: SliderCardImageProps) => {
+const CardImage = ({ thumbnail_path }: CardImageProps) => {
     const img = () => {
         return imgStoragePath(`cards/movies/${thumbnail_path}`);
     };
@@ -19,4 +19,4 @@ const SliderCardImage = ({ thumbnail_path }: SliderCardImageProps) => {
     );
 };
 
-export default SliderCardImage;
+export default CardImage;

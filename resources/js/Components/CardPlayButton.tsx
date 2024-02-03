@@ -1,7 +1,7 @@
 import imgStoragePath from "@/Helpers/imgStoragePath";
 import React from "react";
 
-const SliderCardPlayButton = () => {
+const CardPlayButton = () => {
     const img = () => {
         return imgStoragePath("cards/icons/play");
     };
@@ -13,4 +13,4 @@ const SliderCardPlayButton = () => {
     );
 };
 
-export default SliderCardPlayButton;
+export default CardPlayButton;
