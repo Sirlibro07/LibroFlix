@@ -8,12 +8,8 @@ interface SearchIconProps {
 }
 
 const SearchIcon = ({ className }: SearchIconProps) => {
-    const setIsMenuVisible = useContext(
-        Menu_Searchbar_Context
-    ).setIsMenuVisible;
-    const setIsSearchbarVisible = useContext(
-        Menu_Searchbar_Context
-    ).setIsSearchbarVisible;
+    const { setIsMenuVisible } = useContext(Menu_Searchbar_Context);
+    const { setIsSearchbarVisible } = useContext(Menu_Searchbar_Context);
 
     const handleOnclick = () => {
         NavbarIconsOnClickhandler(setIsSearchbarVisible, setIsMenuVisible);
