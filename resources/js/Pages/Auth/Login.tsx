@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 
 import AuthLayout from "@/Layouts/AuthLayout";
-import PrimaryButton from "@/Components/PrimaryButton";
 import { useForm } from "@inertiajs/react";
 import React from "react";
 import AuthForm from "@/Components/AuthForm";
@@ -28,7 +27,7 @@ export default function Login({ status, canResetPassword }) {
             folder_name={"login_register"}
             form_position="end"
             title="Log In"
-            media_query_breakpoint="500px"
+            media_query_breakpoint="450px"
         >
             <AuthForm
                 name="Log In"

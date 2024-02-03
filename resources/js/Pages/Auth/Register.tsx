@@ -23,7 +23,7 @@ export default function Register() {
         <AuthLayout
             folder_name={"login_register"}
             title="Sign Up"
-            media_query_breakpoint="665px"
+            media_query_breakpoint="590px"
         >
             <AuthForm
                 name="Sign Up"
