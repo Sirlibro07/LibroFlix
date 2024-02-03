@@ -12,7 +12,7 @@ const MoviePageContent = () => {
     const movie = useContext(MovieContext).data;
 
     return (
-        <div className="body-padding py-4 h-fit mt-[350px] rounded-tl-[25px] rounded-tr-[25px] md:flex md:items-start md:rounded-none">
+        <div className="body-padding py-4 h-fit mt-[350px] bg-black rounded-tl-[25px] rounded-tr-[25px] md:flex md:items-start md:rounded-none pb-[200px]">
             <MovieCard title={movie.title} />
             <div>
                 <MovieTitle
