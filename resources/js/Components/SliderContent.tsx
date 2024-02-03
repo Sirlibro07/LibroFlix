@@ -31,7 +31,7 @@ const SliderContent = ({ translateX, setTranslateX }: SliderContentProps) => {
                 {movies.map((movie) => (
                     <SliderCard
                         key={movie.id}
-                        underscoreToSpace={underscoreToSpace(movie.title)}
+                        thumbnail_path={underscoreToSpace(movie.title)}
                         title={movie.title}
                     />
                 ))}
