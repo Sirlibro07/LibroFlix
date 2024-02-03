@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import Input from "./Input";
 import SearchIcon from "./SearchIcon";
-import Select from "./Select";
 import { router } from "@inertiajs/react";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
+import Button from "./Button";
 
 const SearchBar = () => {
     const [data, setData] = useState({
@@ -37,20 +37,18 @@ const SearchBar = () => {
                     type={"text"}
                     id={"search"}
                     name={"search"}
-                    placeholder="Search"
+                    placeholder="Search movie"
                     value={data.search}
                     className={"px-9 lg:h-10"}
                     setData={setData}
                 />
-                <div className="absolute right-0 h-full flex items-center  ">
-                    <div className="w-[0.063rem] h-[calc(100%-1.3rem)] bg-border_color"></div>
-                    <Select setData={setData} />
-                </div>
+
+                <Button className="absolute right-0 h-full px-4 rounded-10  transitions bg-white text-black hover:bg-brand hover:text-white">
+                    Search
+                </Button>
             </div>
-            <button type="submit" className="hidden"></button>
         </form>
     );
 };
 
 export default SearchBar;
-// ${isSearchbarVisible && !isMenuVisible ? "block" : "hidden"}
