@@ -7,7 +7,7 @@ const MovieCard = ({ title }) => {
         <img
             src={imgStoragePath(`cards/movies/${underscoreToSpace(title)}`)}
             alt="movie-card-img"
-            className="hidden object-cover aspect-card mt-[-150px] rounded-[20px] mr-6  md:block"
+            className="hidden object-cover aspect-card mt-[-150px] rounded-[20px] mr-7 md:block"
         />
     );
 };

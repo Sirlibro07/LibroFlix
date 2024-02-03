@@ -29,6 +29,7 @@ export default {
                 typescale_28_px: "28px",
                 typescale_33_px: "33px",
                 typescale_38px: "38px",
+                typescale_50px: "50px",
                 typescale_67px: "67px",
             },
             aspectRatio: {
