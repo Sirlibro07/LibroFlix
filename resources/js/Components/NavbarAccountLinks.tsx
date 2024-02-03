@@ -1,6 +1,4 @@
 import React from "react";
-import SecondaryButton from "./SecondaryButton";
-import PrimaryButton from "./PrimaryButton";
 import Button from "./Button";
 
 const NavbarAccountLinks = () => {
