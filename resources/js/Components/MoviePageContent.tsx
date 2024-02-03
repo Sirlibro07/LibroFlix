@@ -3,9 +3,10 @@ import React, { useContext } from "react";
 import MovieTitle from "./MovieTitle";
 import MovieInfo from "./MovieInfo";
 import MovieRating from "./MovieRating";
-import PrimaryButton from "./PrimaryButton";
 import MovieDescription from "./MovieDescription";
 import MovieCard from "./MovieCard";
+import Button from "./Button";
+import ButtonWithIcon from "./ButtonWithIcon";
 
 const MoviePageContent = () => {
     const movie = useContext(MovieContext).data;
@@ -20,9 +21,9 @@ const MoviePageContent = () => {
                     className="text-typescale_33_px"
                 />
                 <MovieInfo date={movie.year} />
-                <MovieRating rating={movie.rating} className={""} />
-                <PrimaryButton>Watch Now</PrimaryButton>
-
+                <MovieRating rating={movie.rating} className={"mb-6"} />
+                <Button className="bg-brand w-full md:hidden">Watch Now</Button>
+                <ButtonWithIcon icon="play">Play</ButtonWithIcon>
                 <MovieDescription description={movie.description} />
             </div>
         </div>
