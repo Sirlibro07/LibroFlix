@@ -1,6 +1,6 @@
 import React from "react";
-import PrimaryButton from "./PrimaryButton";
 import { router } from "@inertiajs/react";
+import Button from "./Button";
 
 const LogoutForm = () => {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
@@ -11,7 +11,7 @@ const LogoutForm = () => {
 
     return (
         <form onSubmit={submitHandler} className="max-w-[41.25rem]">
-            <PrimaryButton className="bg-error_danger">Logout</PrimaryButton>
+            <Button className="bg-error_danger w-full">Logout</Button>
         </form>
     );
 };

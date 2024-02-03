@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 import { useForm } from "@inertiajs/react";
 import FormInputField from "@/Components/FormInputField";
 import ProfileForm from "@/Components/ProfileForm";
@@ -10,7 +9,6 @@ export default function DeleteUserForm() {
         setData,
         delete: destroy,
         processing,
-        reset,
         errors,
     } = useForm({
         password: "",
@@ -22,8 +20,8 @@ export default function DeleteUserForm() {
                 method_function={destroy}
                 route_name="profile.destroy"
                 processing={processing}
-                button_text="Delete Account"
-                button_styles="bg-error_danger"
+                button_title="Deleted Account"
+                button_bg_color="bg-error_danger"
             >
                 <FormInputField
                     name={"password"}
@@ -33,7 +31,6 @@ export default function DeleteUserForm() {
                     setData={setData}
                 />
             </ProfileForm>
-            ;
         </>
     );
 }

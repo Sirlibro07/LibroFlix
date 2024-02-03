@@ -14,7 +14,6 @@ const UpdateProfileInformation = () => {
                 email: user.email,
             });
 
-        //
         return (
             <>
                 <ProfileForm

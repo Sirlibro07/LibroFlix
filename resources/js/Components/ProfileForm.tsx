@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
-import PrimaryButton from "./PrimaryButton";
 import formSubmit from "@/Helpers/formSubmit";
+import Button from "./Button";
 
 interface ProfileFormProps {
     children: ReactNode;
@@ -9,17 +9,18 @@ interface ProfileFormProps {
     route_name: string;
     processing?: boolean;
     recentlySuccessful?: boolean;
-    button_text?: string;
+    button_title?: string;
+    button_bg_color?: string;
 }
 
 const ProfileForm = ({
     children,
-    button_styles = "",
     method_function,
     route_name,
     processing = false,
     recentlySuccessful = false,
-    button_text = "Update",
+    button_title = "Update",
+    button_bg_color = "bg-brand",
 }: ProfileFormProps) => {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -35,9 +36,12 @@ const ProfileForm = ({
             )}
 
             {children}
-            <PrimaryButton disabled={processing} className={button_styles}>
-                {button_text}
-            </PrimaryButton>
+            <Button
+                className={`w-full my-5 ${button_bg_color}`}
+                disabled={processing}
+            >
+                {button_title}
+            </Button>
         </form>
     );
 };
