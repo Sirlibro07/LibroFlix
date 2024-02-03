@@ -17,7 +17,7 @@ const MovieDescription = ({
                 <p className="mt-10 mb-4 font-medium">Description:</p>
             )}
             <p
-                className={` text-light_color overflow-hidden max-w-prose ${className}`}
+                className={` text-light_color overflow-hidden max-w-[90ch] ${className}`}
             >
                 {description}
             </p>
