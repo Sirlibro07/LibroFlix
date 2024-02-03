@@ -47,6 +47,7 @@ export default {
             },
             spacing: {
                 1: "0.063rem",
+                navbar_height: "90px",
             },
         },
         screens: {
