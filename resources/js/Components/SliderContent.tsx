@@ -23,22 +23,20 @@ const SliderContent = ({ translateX, setTranslateX }: SliderContentProps) => {
     const movies = useContext(MoviesContext).data;
 
     return (
-        <>
-            <div className="overflow-hidden">
-                <div
-                    style={{ transform: `translateX(${translateX}%)` }}
-                    className={`slider_content flex w-full  transition-all gap-4 duration-300 pb-4  `}
-                >
-                    {movies.map((movie) => (
-                        <SliderCard
-                            route_name={"home"}
-                            key={movie.id}
-                            thumbnail_path={thumbnail_path(movie.title)}
-                        />
-                    ))}
-                </div>
+        <div className="overflow-hidden">
+            <div
+                style={{ transform: `translateX(${translateX}%)` }}
+                className={`slider_content flex w-full  transition-all gap-4 duration-300 pb-4  `}
+            >
+                {movies.map((movie) => (
+                    <SliderCard
+                        route_name={"home"}
+                        key={movie.id}
+                        thumbnail_path={thumbnail_path(movie.title)}
+                    />
+                ))}
             </div>
-        </>
+        </div>
     );
 };
 
