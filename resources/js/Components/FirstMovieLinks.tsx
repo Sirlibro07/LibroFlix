@@ -7,7 +7,7 @@ const FirstMovieLinks = ({ title }) => {
     return (
         <Link href={route("movies.show", title)}>
             <Button className="w-full bg-brand md:hidden">Watch Now</Button>
-            <ButtonWithIcon className="hidden md:block">
+            <ButtonWithIcon icon="plus" className="hidden md:block">
                 Learn More
             </ButtonWithIcon>
         </Link>
