@@ -20,7 +20,7 @@ export default function DeleteUserForm() {
                 method_function={destroy}
                 route_name="profile.destroy"
                 processing={processing}
-                button_title="Deleted Account"
+                button_title="Delete Account"
                 button_bg_color="bg-red"
             >
                 <FormInputField
