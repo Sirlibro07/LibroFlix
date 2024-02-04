@@ -35,7 +35,7 @@ export default function Login({ status, canResetPassword }) {
                 route_name="login"
                 button_title="Log in"
                 link_route_name="register"
-                link_title="Sign up"
+                link_title="Don't have an account? Sign up"
                 processing={processing}
             >
                 <FormInputField
