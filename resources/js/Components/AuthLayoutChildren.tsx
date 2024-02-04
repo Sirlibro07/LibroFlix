@@ -22,7 +22,7 @@ const AuthLayoutChildren = ({
                 img_classes={`object-top lg:object-bottom ${img_classes}`}
             />
             <main
-                className={`w-full h-fit relative flex items-end lg:h-[100vh]  lg:items-center lg:justify-start`}
+                className={`w-full h-fit relative bg-black flex items-end rounded-t-[1.875rem] lg:w-[37.5rem] lg:h-full lg:min-h-[100vh] lg:rounded-none  lg:items-center lg:justify-start`}
             >
                 {children}
             </main>
