@@ -47,7 +47,7 @@ export default {
                 grey: "#5F5F61",
             },
             spacing: {
-                1: "0.063rem",
+                one_px: "0.063rem",
                 navbar_height: "90px",
             },
         },

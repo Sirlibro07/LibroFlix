@@ -37,7 +37,7 @@ input:-webkit-autofill {
 }
 
 .auth_label_link {
-    @apply text-grey text-sm font-medium;
+    @apply text-grey text-sm font-medium lg:text-[0.938rem];
 }
 
 /* *::-webkit-scrollbar {
