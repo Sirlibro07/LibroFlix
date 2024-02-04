@@ -7,31 +7,41 @@ import MovieDescription from "./MovieDescription";
 import MovieCard from "./MovieCard";
 import Button from "./Button";
 import ButtonWithIcon from "./ButtonWithIcon";
+import MovieBlur from "./MovieBlur";
 
 const MoviePageContent = () => {
     const movie = useContext(MovieContext).data;
 
     return (
-        <div className="body-padding py-4 h-fit mt-[350px] bg-black rounded-tl-[25px] rounded-tr-[25px] md:flex md:items-start md:rounded-none">
-            <MovieCard title={movie.title} />
-            <div>
-                <MovieTitle
-                    title={movie.title}
-                    version={movie.version}
-                    className="text-typescale_33_px md:text-typescale-50px md:whitespace-normal"
-                />
-                <MovieInfo date={movie.year} />
-                <MovieRating rating={movie.rating} className={"mb-6 md:mb-5"} />
-                <Button className="bg-brand w-full md:hidden">Watch Now</Button>
-                <ButtonWithIcon icon="play" className="hidden md:block">
-                    Play
-                </ButtonWithIcon>
-                <MovieDescription
-                    description={movie.description}
-                    className="max-w-[90ch]"
-                />
+        <>
+            <MovieBlur />
+            <div className="relative body-padding py-4 h-fit mt-[350px]   bg-black rounded-tl-[25px] rounded-tr-[25px] md:flex md:items-start md:rounded-none md:mt-[-20px]">
+                <MovieCard title={movie.title} />
+
+                <div>
+                    <MovieTitle
+                        title={movie.title}
+                        version={movie.version}
+                        className="text-typescale_33_px md:text-typescale-50px md:whitespace-normal"
+                    />
+                    <MovieInfo date={movie.year} />
+                    <MovieRating
+                        rating={movie.rating}
+                        className={"mb-6 md:mb-5"}
+                    />
+                    <Button className="bg-brand w-full md:hidden">
+                        Watch Now
+                    </Button>
+                    <ButtonWithIcon icon="play" className="hidden md:block">
+                        Play
+                    </ButtonWithIcon>
+                    <MovieDescription
+                        description={movie.description}
+                        className="max-w-[90ch]"
+                    />
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
