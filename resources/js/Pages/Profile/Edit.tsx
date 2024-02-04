@@ -32,6 +32,7 @@ export default function Edit({ auth, mustVerifyEmail, status, isLoggedIn }) {
                 user={auth.user}
                 isLoggedIn={isLoggedIn}
                 className="pt-8"
+                footer_className="mt-[400px]"
             >
                 <Head title="Profile" />
                 <header className="font-display text-typescale_38px ">
@@ -51,6 +52,12 @@ export default function Edit({ auth, mustVerifyEmail, status, isLoggedIn }) {
 
                 {renderCurrentOption()}
             </AppLayout>
+            <style>
+                {`body
+                {
+                    background-color: black
+                }`}
+            </style>
         </>
     );
 }

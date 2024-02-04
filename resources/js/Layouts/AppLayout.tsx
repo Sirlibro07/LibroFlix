@@ -18,6 +18,7 @@ const AppLayout = ({
     border = true,
     bg_image = <></>,
     body_padding = true,
+    footer_className = "",
 }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
@@ -69,7 +70,7 @@ const AppLayout = ({
                         {children}
                     </AppLayoutChildren>
                     {bg_image}
-                    <Footer />
+                    <Footer className={footer_className} />
                 </>
             )}
         </>

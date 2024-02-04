@@ -37,7 +37,7 @@ const ProfileForm = ({
 
             {children}
             <Button
-                className={`w-full my-5 ${button_bg_color}`}
+                className={`w-full mt-9 mb-5 ${button_bg_color}`}
                 disabled={processing}
             >
                 {button_title}
