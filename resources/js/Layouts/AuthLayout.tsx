@@ -29,7 +29,7 @@ const AuthLayout = ({
 
     return (
         <>
-            <style>
+            {/* <style>
                 {`@media (max-height: ${media_query_breakpoint}) {
                         html,
                         body,
@@ -43,7 +43,7 @@ const AuthLayout = ({
                             border-radius: 0;
                         }
                     }`}
-            </style>
+            </style> */}
             <Head title={title} />
             <AuthLayoutChildren
                 folder_name={folder_name}

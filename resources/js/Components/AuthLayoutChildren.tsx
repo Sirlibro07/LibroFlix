@@ -16,14 +16,14 @@ const AuthLayoutChildren = ({
 }: AuthLayoutChildrenProps) => {
     return (
         <>
+            <BackgroundImage
+                picture_classes="h-full"
+                folder_name={folder_name}
+                img_classes={`object-top lg:object-bottom ${img_classes}`}
+            />
             <main
-                className={`w-full h-full relative flex items-end lg:items-center lg:justify-start`}
+                className={`w-full h-fit relative flex items-end lg:h-[100vh]  lg:items-center lg:justify-start`}
             >
-                <BackgroundImage
-                    picture_classes="h-full"
-                    folder_name={folder_name}
-                    img_classes={`object-top lg:object-bottom ${img_classes}`}
-                />
                 {children}
             </main>
         </>
