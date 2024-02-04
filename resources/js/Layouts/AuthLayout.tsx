@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import "./CSS/AuthLayout.css";
 import "../Helpers/CSS/borders.css";
 import "../Helpers/CSS/letter_spacing.css";
 import getBackgroundImg from "@/Helpers/getBackgroundImg";
@@ -34,9 +33,18 @@ const AuthLayout = ({
     link_title = "",
     processing = false,
 }: AuthLayoutProps) => {
-    const img = (version: string) => {
-        return getBackgroundImg(folder_name, version);
-    };
+    const css = `html,
+body,
+#app {
+    min-height: 100vh;
+    height: fit-content;
+    position: relative;
+}
+
+#app {
+    display: flex;
+    align-items: end;
+}`;
 
     return (
         <>
@@ -57,6 +65,7 @@ const AuthLayout = ({
             >
                 {children}
             </AuthLayoutChildren>
+            <style>{css}</style>
         </>
     );
 };

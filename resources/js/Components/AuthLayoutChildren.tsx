@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import BackgroundImage from "./BackgroundImage";
 import AuthForm from "./AuthForm";
 
 interface AuthLayoutChildrenProps {

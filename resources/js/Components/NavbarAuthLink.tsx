@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import Button from "./Button";
+import { Link } from "@inertiajs/react";
 
 interface NavbarAuthLinkProps {
     route_name: string;
@@ -15,16 +16,15 @@ const NavbarAuthLink = ({
     children,
 }: NavbarAuthLinkProps) => {
     return (
-        <a
+        <Link
             href={route(route_name)}
             className={`block w-full lg:w-auto ${link_className}`}
         >
             <Button className={`w-full lg:px-4 ${button_className}`}>
                 {children}
             </Button>
-        </a>
+        </Link>
     );
 };
 
 export default NavbarAuthLink;
-// was forced to use normal <a> links because of rendering bugs
