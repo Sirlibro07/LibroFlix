@@ -4,7 +4,6 @@ type MovieType = {
     description: string;
     rating: number;
     year: number;
-    version: string;
 };
 
 export default MovieType;
