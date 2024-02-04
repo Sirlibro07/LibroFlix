@@ -24,44 +24,40 @@ export default function ResetPassword({ token, email }) {
             folder_name={"forgot_reset_password"}
             img_classes="object-right"
             title="Reset Password"
-            media_query_breakpoint="460px"
+            name="Reset Password"
+            method_function={post}
+            route_name="password.store"
+            button_title="Reset Password"
+            processing={processing}
         >
-            <AuthForm
-                name="Reset Password"
-                method_function={post}
-                route_name="password.store"
-                button_title="Reset Password"
-                processing={processing}
-            >
-                <FormInputField
-                    name={"email"}
-                    state_field={data.email}
-                    setData={setData}
-                    errors_field={errors.email}
-                    icon="envelope"
-                />
+            <FormInputField
+                name={"email"}
+                state_field={data.email}
+                setData={setData}
+                errors_field={errors.email}
+                icon="envelope"
+            />
 
-                <FormInputField
-                    name={"new password"}
-                    type="password"
-                    state_field={data.password}
-                    setData={setData}
-                    errors_field={errors.password}
-                    icon="lock"
-                    state_to_change="password"
-                />
+            <FormInputField
+                name={"new password"}
+                type="password"
+                state_field={data.password}
+                setData={setData}
+                errors_field={errors.password}
+                icon="lock"
+                state_to_change="password"
+            />
 
-                <FormInputField
-                    name={"new password confirmation"}
-                    type={"password"}
-                    state_name={"password_confirmation"}
-                    state_field={data.password_confirmation}
-                    errors_field={errors.password_confirmation}
-                    icon="lock"
-                    setData={setData}
-                    state_to_change="password_confirmation"
-                />
-            </AuthForm>
+            <FormInputField
+                name={"new password confirmation"}
+                type={"password"}
+                state_name={"password_confirmation"}
+                state_field={data.password_confirmation}
+                errors_field={errors.password_confirmation}
+                icon="lock"
+                setData={setData}
+                state_to_change="password_confirmation"
+            />
         </AuthLayout>
     );
 }

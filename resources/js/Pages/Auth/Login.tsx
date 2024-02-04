@@ -26,51 +26,47 @@ export default function Login({ status, canResetPassword }) {
         <AuthLayout
             folder_name={"login_register"}
             title="Log In"
-            media_query_breakpoint="450px"
+            name="Log In"
+            method_function={post}
+            route_name="login"
+            button_title="Log in"
+            link_route_name="register"
+            link_title="Don't have an account? Sign up"
+            processing={processing}
         >
-            <AuthForm
-                name="Log In"
-                method_function={post}
-                route_name="login"
-                button_title="Log in"
-                link_route_name="register"
-                link_title="Don't have an account? Sign up"
-                processing={processing}
-            >
-                <FormInputField
-                    name={"email"}
-                    state_field={data.email}
-                    setData={setData}
-                    errors_field={errors.email}
-                    icon="envelope"
-                />
+            <FormInputField
+                name={"email"}
+                state_field={data.email}
+                setData={setData}
+                errors_field={errors.email}
+                icon="envelope"
+            />
 
-                <FormInputField
-                    name={"password"}
-                    state_field={data.password}
-                    setData={setData}
-                    errors_field={errors.password}
-                    icon="lock"
-                />
-                <AuthSuccessMessage status={status} />
+            <FormInputField
+                name={"password"}
+                state_field={data.password}
+                setData={setData}
+                errors_field={errors.password}
+                icon="lock"
+            />
+            <AuthSuccessMessage status={status} />
 
-                <div className="flex items-center justify-between mt-4 ">
-                    <FormCheckboxField
-                        name="remember"
-                        label="Remember me"
-                        state_field={data.remember}
-                        setData={setData}
-                    />
-                    {canResetPassword && (
-                        <GeneralLink
-                            route_name="password.request"
-                            className="auth_label_link text-end"
-                        >
-                            Lost password?
-                        </GeneralLink>
-                    )}
-                </div>
-            </AuthForm>
+            <div className="flex items-center justify-between mt-4 ">
+                <FormCheckboxField
+                    name="remember"
+                    label="Remember me"
+                    state_field={data.remember}
+                    setData={setData}
+                />
+                {canResetPassword && (
+                    <GeneralLink
+                        route_name="password.request"
+                        className="auth_label_link text-end"
+                    >
+                        Lost password?
+                    </GeneralLink>
+                )}
+            </div>
         </AuthLayout>
     );
 }

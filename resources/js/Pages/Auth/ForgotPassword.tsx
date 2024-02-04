@@ -13,28 +13,23 @@ export default function ForgotPassword({ status }) {
     return (
         <AuthLayout
             folder_name={"forgot_reset_password"}
-            form_position="end"
             img_classes="object-right"
             title="Forgot Password"
-            media_query_breakpoint="290px"
+            name="Recover Password"
+            method_function={post}
+            route_name="password.email"
+            button_title="Send Recovery Email"
+            processing={processing}
         >
-            <AuthForm
-                name="Recover Password"
-                method_function={post}
-                route_name="password.email"
-                button_title="Send Recovery Email"
-                processing={processing}
-            >
-                <FormInputField
-                    name={"email"}
-                    state_field={data.email}
-                    setData={setData}
-                    errors_field={errors.email}
-                    icon="envelope"
-                />
+            <FormInputField
+                name={"email"}
+                state_field={data.email}
+                setData={setData}
+                errors_field={errors.email}
+                icon="envelope"
+            />
 
-                <AuthSuccessMessage status={status} />
-            </AuthForm>
+            <AuthSuccessMessage status={status} />
         </AuthLayout>
     );
 }
