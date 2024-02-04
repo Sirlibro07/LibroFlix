@@ -10,7 +10,7 @@ body {
     position: relative;
 }
 
-body::before {
+html::before {
     content: "";
     position: absolute;
     top: 0;

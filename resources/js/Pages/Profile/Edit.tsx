@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import OptionsList from "@/Components/OptionsList";
 import LogoutForm from "@/Components/LogoutForm";
 
-export default function Edit({ auth, mustVerifyEmail, status, isLoggedIn }) {
+export default function Edit({ auth, isLoggedIn }) {
     const [currentOption, setCurrentOption] = useState("Profile");
 
     const renderCurrentOption = () => {
@@ -27,37 +27,29 @@ export default function Edit({ auth, mustVerifyEmail, status, isLoggedIn }) {
     };
 
     return (
-        <>
-            <AppLayout
-                user={auth.user}
-                isLoggedIn={isLoggedIn}
-                className="pt-8"
-                footer_className="mt-[400px]"
-            >
-                <Head title="Profile" />
-                <header className="font-display text-typescale_38px ">
-                    Account
-                </header>
+        <AppLayout
+            user={auth.user}
+            isLoggedIn={isLoggedIn}
+            className="pt-8"
+            footer_className="mt-[400px]"
+        >
+            <Head title="Profile" />
+            <header className="font-display text-typescale_38px ">
+                Account
+            </header>
 
-                <OptionsList
-                    options={[
-                        { name: "Profile" },
-                        { name: "Password" },
-                        { name: "Other" },
-                    ]}
-                    currentOption={currentOption}
-                    setCurrentOption={setCurrentOption}
-                    ul_className="mt-8 mb-16"
-                />
+            <OptionsList
+                options={[
+                    { name: "Profile" },
+                    { name: "Password" },
+                    { name: "Other" },
+                ]}
+                currentOption={currentOption}
+                setCurrentOption={setCurrentOption}
+                ul_className="mt-8 mb-16"
+            />
 
-                {renderCurrentOption()}
-            </AppLayout>
-            <style>
-                {`body
-                {
-                    background-color: black
-                }`}
-            </style>
-        </>
+            {renderCurrentOption()}
+        </AppLayout>
     );
 }
