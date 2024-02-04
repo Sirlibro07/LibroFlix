@@ -45,6 +45,8 @@ export default {
             colors: {
                 brand: "#A2663E",
                 grey: "#5F5F61",
+                green: "#689B5B",
+                red: "#A61C1E",
             },
             spacing: {
                 one_px: "0.063rem",

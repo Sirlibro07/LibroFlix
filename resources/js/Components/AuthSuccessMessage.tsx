@@ -8,7 +8,7 @@ const AuthSuccessMessage = ({ status }: AuthSuccessMessageProps) => {
     return (
         <>
             {status && (
-                <small className="text-sm text-success block">{status}</small>
+                <small className="text-sm text-green block">{status}</small>
             )}
         </>
     );

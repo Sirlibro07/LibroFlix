@@ -30,7 +30,7 @@ const ProfileForm = ({
     return (
         <form onSubmit={submitHandler} className="max-w-[41.25rem]">
             {recentlySuccessful && (
-                <div className="w-full flex justify-center bg-success rounded-10">
+                <div className="w-full flex justify-center bg-green rounded-10">
                     <p className="text-white py-3">Updated</p>
                 </div>
             )}
