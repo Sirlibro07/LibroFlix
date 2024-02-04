@@ -4,7 +4,7 @@ import MovieTitle from "./MovieTitle";
 import MovieInfo from "./MovieInfo";
 import MovieRating from "./MovieRating";
 import MovieDescription from "./MovieDescription";
-import MovieCard from "./MovieCard";
+import MovieImg from "./MovieImg";
 import Button from "./Button";
 import ButtonWithIcon from "./ButtonWithIcon";
 import MovieBlur from "./MovieBlur";
@@ -16,7 +16,7 @@ const MoviePageContent = () => {
         <>
             <MovieBlur />
             <div className="relative body-padding py-4 h-fit mt-[350px]   bg-black rounded-tl-[25px] rounded-tr-[25px] md:flex md:items-start md:rounded-none md:mt-[-20px]">
-                <MovieCard title={movie.title} />
+                <MovieImg title={movie.title} />
 
                 <div>
                     <MovieTitle

@@ -2,7 +2,7 @@ import imgStoragePath from "@/Helpers/imgStoragePath";
 import underscoreToSpace from "@/Helpers/underscoreToSpace";
 import React from "react";
 
-const MovieCard = ({ title }) => {
+const MovieImg = ({ title }) => {
     return (
         <img
             src={imgStoragePath(`cards/movies/${underscoreToSpace(title)}`)}
@@ -13,4 +13,4 @@ const MovieCard = ({ title }) => {
     );
 };
 
-export default MovieCard;
+export default MovieImg;
