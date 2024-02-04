@@ -1,5 +1,5 @@
 import BackgroundImage from "@/Components/BackgroundImage";
-import MoviePageContent from "@/Components/MoviePageContent";
+import MovieContent from "@/Components/MovieContent";
 import MovieContext from "@/Contexts/MovieContext";
 import underscoreToSpace from "@/Helpers/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
@@ -31,5 +31,5 @@ export default function Movie({ auth, isLoggedIn, movie }) {
         );
     };
 
-    return <>{renderMovieContent(<MoviePageContent />)}</>;
+    return <>{renderMovieContent(<MovieContent />)}</>;
 }

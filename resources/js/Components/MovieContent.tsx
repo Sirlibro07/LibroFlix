@@ -9,7 +9,7 @@ import Button from "./Button";
 import ButtonWithIcon from "./ButtonWithIcon";
 import MovieBlur from "./MovieBlur";
 
-const MoviePageContent = () => {
+const MovieContent = () => {
     const movie = useContext(MovieContext).data;
 
     return (
@@ -44,4 +44,4 @@ const MoviePageContent = () => {
     );
 };
 
-export default MoviePageContent;
+export default MovieContent;
