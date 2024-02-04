@@ -21,7 +21,6 @@ const MoviePageContent = () => {
                 <div>
                     <MovieTitle
                         title={movie.title}
-                        version={movie.version}
                         className="text-typescale_33_px md:text-typescale-50px md:whitespace-normal"
                     />
                     <MovieInfo date={movie.year} />
