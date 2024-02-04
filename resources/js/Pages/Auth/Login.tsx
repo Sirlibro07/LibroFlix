@@ -25,7 +25,6 @@ export default function Login({ status, canResetPassword }) {
     return (
         <AuthLayout
             folder_name={"login_register"}
-            form_position="end"
             title="Log In"
             media_query_breakpoint="450px"
         >

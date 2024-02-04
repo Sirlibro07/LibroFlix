@@ -33,7 +33,7 @@ export default function AuthForm({
             onSubmit={(e) => {
                 submitHandler(e);
             }}
-            className="auth_form w-full h-fit px-4 py-8 lg:flex lg:flex-col lg:justify-center lg:px-10"
+            className="auth_form w-full h-fit bg-black px-4 py-8 rounded-t-[1.875rem] lg:rounded-none lg:flex lg:flex-col lg:justify-center lg:px-10 lg:h-full lg:min-h-[100vh] lg:w-[37.5rem]"
         >
             <h1 className="font-display text-typescale_38px text-center lg:text-typescale_67px ">
                 {name}
