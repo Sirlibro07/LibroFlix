@@ -18,7 +18,7 @@ const LeftSliderbutton = ({
     return (
         <SliderButton
             onClickHandler={previousTranslate}
-            className="left-0 ml-[calc(-4.5rem/2)]"
+            className="left-[calc(-4.5rem/2)]"
             direction="left"
             visible={can_go_previous}
         />
