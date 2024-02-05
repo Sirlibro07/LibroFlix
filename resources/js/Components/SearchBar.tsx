@@ -8,8 +8,6 @@ const SearchBar = () => {
         search: "",
     });
 
-    const { isMenuVisible } = useContext(Menu_Searchbar_Context);
-
     const { isSearchbarVisible } = useContext(Menu_Searchbar_Context);
 
     const visibility_styles = isSearchbarVisible
