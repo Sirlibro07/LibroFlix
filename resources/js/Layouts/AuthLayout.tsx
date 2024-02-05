@@ -1,10 +1,9 @@
 import React, { ReactNode } from "react";
 import "../Helpers/CSS/borders.css";
 import "../Helpers/CSS/letter_spacing.css";
-import getBackgroundImg from "@/Helpers/getBackgroundImg";
-import AuthLayoutChildren from "@/Components/AuthLayoutChildren";
 import { Head } from "@inertiajs/react";
 import BackgroundImage from "@/Components/BackgroundImage";
+import AuthForm from "@/Components/AuthForm";
 
 interface AuthLayoutProps {
     children: ReactNode;
@@ -44,7 +43,8 @@ body,
 #app {
     display: flex;
     align-items: end;
-}`;
+     }
+                `;
 
     return (
         <>
@@ -54,7 +54,7 @@ body,
                 folder_name={folder_name}
                 img_classes={`object-top lg:object-bottom ${img_classes}`}
             />
-            <AuthLayoutChildren
+            <AuthForm
                 name={name}
                 method_function={method_function}
                 route_name={route_name}
@@ -64,7 +64,7 @@ body,
                 link_title={link_title}
             >
                 {children}
-            </AuthLayoutChildren>
+            </AuthForm>
             <style>{css}</style>
         </>
     );

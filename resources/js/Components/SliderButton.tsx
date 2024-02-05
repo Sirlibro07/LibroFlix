@@ -70,7 +70,7 @@ const SliderButton = ({
             }`}
         >
             <div
-                className={`w-[3.5rem] h-[3.5rem]  bg-white button-${direction}  rounded-full flex justify-center items-center xl:scale-[130%]
+                className={`w-[3.5rem] h-[3.5rem]  bg-white  rounded-full flex justify-center items-center xl:scale-[130%]
             `}
             >
                 <ArrowIcon direction={direction} />
