@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import FooterSocialsSection from "./FooterSocialsSection";
+import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 
 const Footer = ({ className = "" }) => {
+    const { isMenuVisible } = useContext(Menu_Searchbar_Context);
+    const { isSearchbarVisible } = useContext(Menu_Searchbar_Context);
+
     return (
         <footer
-            className={`body-padding flex flex-col items-center gap-y-6 py-11 z-[100] mt-[200px] border-0 border-t border-grey lg:flex-row  justify-between ${className}`}
+            className={`body-padding flex flex-col items-center gap-y-6 py-11 z-[100] mt-[200px] border-0 border-t border-grey lg:flex-row  justify-between ${
+                isMenuVisible || isSearchbarVisible ? "brightness-[30%]" : ""
+            } ${className}`}
         >
             <FooterSocialsSection />
             <p className="text-sm">Website by Fabio</p>
