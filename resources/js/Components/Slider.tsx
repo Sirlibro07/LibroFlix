@@ -15,10 +15,7 @@ const Slider = ({ total_cards, title }: SliderProps) => {
             <p className="text-typescale_23_px font-medium mb-6 md:text-typescale_33_px">
                 {title}
             </p>
-            <section
-                style={{ backgroundColor: "red" }}
-                className="relative mb-12"
-            >
+            <section className="relative mb-12">
                 <SliderContent
                     translateX={translateX}
                     setTranslateX={setTranslateX}
