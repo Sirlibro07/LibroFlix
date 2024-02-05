@@ -21,8 +21,8 @@ export default function ForgotPassword({ status }) {
             processing={processing}
         >
             <FormInputField
-                input_name={"email"}
-                state_field={data.email}
+                name={"email"}
+                value={data.email}
                 setData={setData}
                 errors_field={errors.email}
                 icon="envelope"

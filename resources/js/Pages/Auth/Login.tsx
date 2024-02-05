@@ -11,7 +11,6 @@ export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
-        ciao: "",
         remember: false,
     });
 
@@ -34,15 +33,15 @@ export default function Login({ status, canResetPassword }) {
             processing={processing}
         >
             <FormInputField
-                input_name={"email"}
-                state_field={data.email}
+                name={"email"}
+                value={data.email}
                 setData={setData}
                 errors_field={errors.email}
                 icon="envelope"
             />
             <FormInputField
-                input_name={"password"}
-                state_field={data.password}
+                name={"password"}
+                value={data.password}
                 setData={setData}
                 errors_field={errors.password}
                 icon="lock"

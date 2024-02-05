@@ -3,12 +3,12 @@ import formElementsOnChangeHandler from "@/Helpers/formElementsOnChangeHandler";
 import InputType from "@/Helpers/interfaces/InputType";
 
 const Input = ({
-    type,
+    type = "",
     name,
     placeholder = "",
     autoComplete,
     value,
-    className,
+    className = "",
     setData,
     state_name,
 }: InputType) => {
@@ -16,7 +16,7 @@ const Input = ({
 
     return (
         <input
-            type={type}
+            type={type ? type : "text"}
             id={name}
             name={name}
             autoComplete={autoComplete ? autoComplete : name}

@@ -17,11 +17,10 @@ const SearchBarContent = ({ value, setData }: SearchBarContentProps) => {
         <div className="w-full relative flex items-center">
             <SearchIcon className="absolute pointer-events-none left-3 text-base text-grey cursor-auto" />
             <Input
-                type={"text"}
-                id={"search"}
                 name={"search"}
-                placeholder="Search movie"
                 value={value}
+                type={"text"}
+                placeholder="Search movie"
                 className={"px-9 lg:h-10"}
                 setData={setData}
             />

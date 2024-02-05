@@ -30,17 +30,17 @@ export default function ResetPassword({ token, email }) {
             processing={processing}
         >
             <FormInputField
-                input_name={"email"}
-                state_field={data.email}
+                name={"email"}
+                value={data.email}
                 setData={setData}
                 errors_field={errors.email}
                 icon="envelope"
             />
 
             <FormInputField
-                input_name={"new password"}
+                name={"new password"}
+                value={data.password}
                 type="password"
-                state_field={data.password}
                 setData={setData}
                 errors_field={errors.password}
                 icon="lock"
@@ -48,10 +48,10 @@ export default function ResetPassword({ token, email }) {
             />
 
             <FormInputField
-                input_name={"new password confirmation"}
+                name={"new password confirmation"}
+                value={data.password_confirmation}
                 type={"password"}
                 state_name={"password_confirmation"}
-                state_field={data.password_confirmation}
                 errors_field={errors.password_confirmation}
                 icon="lock"
                 setData={setData}
