@@ -37,7 +37,7 @@ const RightSliderButton = ({
     return (
         <SliderButton
             onClickHandler={nextTranslate}
-            className="right-0 mr-[calc(-4.5rem/2+20px)]"
+            className="right-[calc(-4.5rem/2+16px)]"
             direction="right"
             visible={can_go_next}
         />
