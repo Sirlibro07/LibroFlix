@@ -19,7 +19,7 @@ const NavbarLinks = () => {
 
     return (
         <ul
-            className={`gap-y-12 bg-black  rounded-bl-xl text-typescale_21_px flex flex-col border border-t-0 border-r-0 z-10 border-grey  border-solid  absolute top-[5.625rem] w-[90%]   right-0 transition-all duration-200 ${
+            className={`gap-y-12 bg-black  rounded-bl-xl text-typescale_21_px flex flex-col border border-t-0 border-r-0 z-10 border-grey  border-solid  absolute top-navbar_height w-[90%]   right-0 transition-all duration-200 ${
                 isMenuVisible ? "flex" : "hidden"
             } h-fit pt-12 ${
                 isLoggedIn ? "pb-12" : "pb-4"
