@@ -1,7 +1,6 @@
 import AuthLayout from "@/Layouts/AuthLayout";
 import { useForm } from "@inertiajs/react";
 import React from "react";
-import AuthForm from "@/Components/AuthForm";
 import FormInputField from "@/Components/FormInputField";
 import AuthSuccessMessage from "@/Components/AuthSuccessMessage";
 
@@ -22,7 +21,7 @@ export default function ForgotPassword({ status }) {
             processing={processing}
         >
             <FormInputField
-                name={"email"}
+                input_name={"email"}
                 state_field={data.email}
                 setData={setData}
                 errors_field={errors.email}

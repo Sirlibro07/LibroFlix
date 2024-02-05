@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import AuthLayout from "@/Layouts/AuthLayout";
 import { useForm } from "@inertiajs/react";
 import React from "react";
-import AuthForm from "@/Components/AuthForm";
 import FormInputField from "@/Components/FormInputField";
 
 export default function ResetPassword({ token, email }) {
@@ -31,7 +30,7 @@ export default function ResetPassword({ token, email }) {
             processing={processing}
         >
             <FormInputField
-                name={"email"}
+                input_name={"email"}
                 state_field={data.email}
                 setData={setData}
                 errors_field={errors.email}
@@ -39,24 +38,23 @@ export default function ResetPassword({ token, email }) {
             />
 
             <FormInputField
-                name={"new password"}
+                input_name={"new password"}
                 type="password"
                 state_field={data.password}
                 setData={setData}
                 errors_field={errors.password}
                 icon="lock"
-                state_to_change="password"
+                state_name="password"
             />
 
             <FormInputField
-                name={"new password confirmation"}
+                input_name={"new password confirmation"}
                 type={"password"}
                 state_name={"password_confirmation"}
                 state_field={data.password_confirmation}
                 errors_field={errors.password_confirmation}
                 icon="lock"
                 setData={setData}
-                state_to_change="password_confirmation"
             />
         </AuthLayout>
     );

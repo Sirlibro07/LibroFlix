@@ -1,9 +1,7 @@
 import { useEffect } from "react";
-
 import AuthLayout from "@/Layouts/AuthLayout";
 import { useForm } from "@inertiajs/react";
 import React from "react";
-import AuthForm from "@/Components/AuthForm";
 import FormInputField from "@/Components/FormInputField";
 import FormCheckboxField from "@/Components/FormCheckboxField";
 import AuthSuccessMessage from "@/Components/AuthSuccessMessage";
@@ -13,6 +11,7 @@ export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
+        ciao: "",
         remember: false,
     });
 
@@ -35,15 +34,14 @@ export default function Login({ status, canResetPassword }) {
             processing={processing}
         >
             <FormInputField
-                name={"email"}
+                input_name={"email"}
                 state_field={data.email}
                 setData={setData}
                 errors_field={errors.email}
                 icon="envelope"
             />
-
             <FormInputField
-                name={"password"}
+                input_name={"password"}
                 state_field={data.password}
                 setData={setData}
                 errors_field={errors.password}

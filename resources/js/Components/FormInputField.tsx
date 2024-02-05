@@ -3,46 +3,43 @@ import InputLabel from "./InputLabel";
 import Input from "./Input";
 import InputError from "./InputError";
 import capitalizeFirstLetter from "@/Helpers/capitalizeFirstLetter";
-import Icon from "./Icon";
 import FormInputIcon from "./FormInputIcon";
 
 interface FormInputFieldProps {
-    name: string;
+    input_name: string;
     type?: string;
     state_name?: string;
     state_field: string;
     setData: (PrevState: object) => void;
     errors_field: string;
     icon: string;
-    state_to_change?: string;
 }
 
 const FormInputField = ({
-    name,
+    input_name,
     type = null,
-    state_name = null,
+    state_name = "",
     state_field,
     setData,
     errors_field,
     icon,
-    state_to_change = "",
 }: FormInputFieldProps) => {
     return (
         <>
             <InputLabel
-                htmlFor={name}
-                value={capitalizeFirstLetter(name)}
+                htmlFor={input_name}
+                value={capitalizeFirstLetter(input_name)}
                 className="mt-5"
             />
             <div className="relative flex  items-center">
                 <Input
-                    type={type ? type : name}
-                    id={name}
-                    name={state_name ? state_name : name}
+                    type={type ? type : input_name}
+                    id={input_name}
+                    name={input_name}
                     value={state_field}
                     setData={setData}
                     className="pl-10"
-                    state_to_change={state_to_change}
+                    state_name={state_name}
                 />
 
                 <FormInputIcon icon={icon} />

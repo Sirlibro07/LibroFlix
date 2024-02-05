@@ -10,7 +10,7 @@ interface InputProps {
     value: string;
     className: string;
     setData: (PrevState: object) => void;
-    state_to_change?: string;
+    state_name?: string;
 }
 
 const Input = ({
@@ -22,9 +22,9 @@ const Input = ({
     value,
     className,
     setData,
-    state_to_change,
+    state_name,
 }: InputProps) => {
-    const state = state_to_change ? state_to_change : name;
+    const state_to_change = state_name ? state_name : name;
 
     return (
         <input
@@ -35,7 +35,7 @@ const Input = ({
             value={value}
             placeholder={placeholder}
             onChange={(e) => {
-                formElementsOnChangeHandler(e, state, setData);
+                formElementsOnChangeHandler(e, state_to_change, setData);
             }}
             className={`w-full h-elements_height bg-black  rounded-10 border-2 border-grey placeholder-grey focus:border-grey focus:ring-0  ${className}`}
         />
@@ -45,5 +45,5 @@ const Input = ({
 export default Input;
 
 // the value prop is the current state for double binding,
-// the state_to_change prop is a string that tells which state we should go update in the function,
-// so while the value prop is the state itself, the state_to_change is just a string with the name of the state
+// the state_name prop is a string that tells which state we should go update in the function,
+// so while the value prop is the state itself, the state_name is just a string with the name of the state

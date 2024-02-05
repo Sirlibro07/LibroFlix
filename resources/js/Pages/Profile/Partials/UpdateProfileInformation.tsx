@@ -23,7 +23,7 @@ const UpdateProfileInformation = () => {
                     recentlySuccessful={recentlySuccessful}
                 >
                     <FormInputField
-                        name={"name"}
+                        input_name={"name"}
                         type={"text"}
                         state_field={data.name}
                         errors_field={errors.name}
@@ -32,7 +32,7 @@ const UpdateProfileInformation = () => {
                     />
 
                     <FormInputField
-                        name={"email"}
+                        input_name={"email"}
                         state_field={data.email}
                         errors_field={errors.email}
                         icon="envelope"

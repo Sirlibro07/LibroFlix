@@ -26,29 +26,29 @@ export default function UpdatePasswordForm() {
             recentlySuccessful={recentlySuccessful}
         >
             <FormInputField
-                name={"Current Password"}
+                input_name={"Current Password"}
                 type="password"
                 state_field={data.current_password}
                 errors_field={errors.current_password}
                 icon="lock"
                 setData={setData}
-                state_to_change={"current_password"}
+                state_name={"current_password"}
             />
             <FormInputField
-                name={"password"}
+                input_name={"password"}
                 state_field={data.password}
                 errors_field={errors.password}
                 icon="lock"
                 setData={setData}
             />
             <FormInputField
-                name={"Password Confirmation"}
+                input_name={"Password Confirmation"}
                 type="password"
                 state_field={data.password_confirmation}
                 errors_field={errors.password_confirmation}
                 icon="lock"
                 setData={setData}
-                state_to_change={"password_confirmation"}
+                state_name={"password_confirmation"}
             />
         </ProfileForm>
     );
