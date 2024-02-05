@@ -1,20 +1,20 @@
-import React, { ReactNode } from "react";
+import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
+import React, { ReactNode, useContext } from "react";
 
 interface AppLayoutChildrenProps {
-    isMenuVisible: boolean;
-    isSearchbarVisible: boolean;
     className: string;
     children: ReactNode;
     body_padding?: boolean;
 }
 
 const AppLayoutChildren = ({
-    isMenuVisible,
-    isSearchbarVisible,
     className,
     children,
     body_padding = true,
 }: AppLayoutChildrenProps) => {
+    const { isMenuVisible } = useContext(Menu_Searchbar_Context);
+    const { isSearchbarVisible } = useContext(Menu_Searchbar_Context);
+
     return (
         <>
             <section

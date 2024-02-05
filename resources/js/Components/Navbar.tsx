@@ -7,17 +7,10 @@ import NavbarItemsCloseOverlay from "./NavbarItemsCloseOverlay";
 
 interface NavbarProps {
     onClickHandler: () => void;
-    isMenuVisible: boolean;
-    isSearchbarVisible: boolean;
     border: boolean;
 }
 
-const Navbar = ({
-    border,
-    onClickHandler,
-    isMenuVisible,
-    isSearchbarVisible,
-}: NavbarProps) => {
+const Navbar = ({ border, onClickHandler }: NavbarProps) => {
     return (
         <>
             <nav
@@ -30,11 +23,7 @@ const Navbar = ({
                 <NavbarLinks />
                 <SearchBar />
             </nav>
-            <NavbarItemsCloseOverlay
-                onClickHandler={onClickHandler}
-                isMenuVisible={isMenuVisible}
-                isSearchbarVisible={isSearchbarVisible}
-            />
+            <NavbarItemsCloseOverlay onClickHandler={onClickHandler} />
         </>
     );
 };

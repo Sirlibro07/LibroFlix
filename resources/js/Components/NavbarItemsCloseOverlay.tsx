@@ -1,16 +1,16 @@
-import React from "react";
+import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
+import React, { useContext } from "react";
 
 interface NavbarItemsCloseOverlay {
     onClickHandler: () => void;
-    isMenuVisible: boolean;
-    isSearchbarVisible: boolean;
 }
 
 const NavbarItemsCloseOverlay = ({
     onClickHandler,
-    isMenuVisible,
-    isSearchbarVisible,
 }: NavbarItemsCloseOverlay) => {
+    const { isMenuVisible } = useContext(Menu_Searchbar_Context);
+    const { isSearchbarVisible } = useContext(Menu_Searchbar_Context);
+
     return (
         <div
             onClick={onClickHandler}

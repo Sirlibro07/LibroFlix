@@ -55,15 +55,8 @@ const AppLayout = ({
         <>
             {renderWithProviders(
                 <>
-                    <Navbar
-                        border={border}
-                        onClickHandler={onClickHandler}
-                        isMenuVisible={isMenuVisible}
-                        isSearchbarVisible={isSearchbarVisible}
-                    />
+                    <Navbar border={border} onClickHandler={onClickHandler} />
                     <AppLayoutChildren
-                        isMenuVisible={isMenuVisible}
-                        isSearchbarVisible={isSearchbarVisible}
                         className={className}
                         body_padding={body_padding}
                     >
