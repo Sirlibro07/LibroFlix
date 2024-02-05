@@ -4,13 +4,11 @@ import Input from "./Input";
 import InputError from "./InputError";
 import capitalizeFirstLetter from "@/Helpers/capitalizeFirstLetter";
 import FormInputIcon from "./FormInputIcon";
+import InputType from "@/Helpers/interfaces/InputType";
 
-interface FormInputFieldProps {
+interface FormInputFieldProps extends InputType {
     input_name: string;
-    type?: string;
-    state_name?: string;
     state_field: string;
-    setData: (PrevState: object) => void;
     errors_field: string;
     icon: string;
 }
@@ -34,7 +32,6 @@ const FormInputField = ({
             <div className="relative flex  items-center">
                 <Input
                     type={type ? type : input_name}
-                    id={input_name}
                     name={input_name}
                     value={state_field}
                     setData={setData}
