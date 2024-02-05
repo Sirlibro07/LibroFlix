@@ -21,7 +21,7 @@ const SearchBar = () => {
         <form
             onSubmit={(e) => {
                 e.preventDefault();
-                router.get(route("search", data.search));
+                router.get(route("movies.index", data.search));
             }}
             className={`absolute z-10 top-[5.688rem] mt-6 px-4 w-full  right-0  lg:static lg:px-0 lg:h-fit lg:m-0 lg:w-[20rem] xl:w-[27rem] lg:top-auto
            ${visibility_styles}`}

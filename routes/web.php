@@ -3,7 +3,6 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,8 +31,11 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', HomeController::class)->name("home");
 
-Route::get("/movies/{title}", [MovieController::class, 'show'])->name("movies.show");
 
-Route::get('/search/{title}', [SearchController::class, 'search'])->name("search");
+Route::prefix("movies")->group(function () {
+    Route::get("search/{title}", [MovieController::class, 'index'])->name("movies.index");
+    Route::get("{title}", [MovieController::class, 'show'])->name("movies.show");
+});
+
 
 require __DIR__ . '/auth.php';
