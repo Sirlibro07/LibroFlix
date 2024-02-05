@@ -31,7 +31,7 @@ export default function Edit({ auth, isLoggedIn }) {
             user={auth.user}
             isLoggedIn={isLoggedIn}
             className="pt-8"
-            footer_className="mt-[400px]"
+            footer_className="mt-[25rem]"
         >
             <Head title="Profile" />
             <header className="font-display text-typescale_38px ">

@@ -8,7 +8,7 @@ const Footer = ({ className = "" }) => {
 
     return (
         <footer
-            className={`body-padding flex flex-col items-center gap-y-6 py-11 z-[100] mt-[200px] border-0 border-t border-grey lg:flex-row  justify-between ${
+            className={`body-padding flex flex-col items-center gap-y-6 py-11 z-[100] mt-[12.5rem] border-0 border-t border-grey lg:flex-row  justify-between ${
                 isMenuVisible || isSearchbarVisible ? "brightness-[30%]" : ""
             } ${className}`}
         >

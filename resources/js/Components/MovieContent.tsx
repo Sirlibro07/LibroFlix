@@ -15,7 +15,7 @@ const MovieContent = () => {
     return (
         <>
             <MovieBlur />
-            <div className="relative body-padding py-4 h-fit mt-[350px]   bg-black rounded-tl-[25px] rounded-tr-[25px] md:flex md:items-start md:rounded-none md:mt-[-20px]">
+            <div className="relative body-padding py-4 h-fit mt-[21.875rem]   bg-black rounded-tl-[1.563rem] rounded-tr-[1.563rem] md:flex md:items-start md:rounded-none md:mt-[-1.25rem]">
                 <MovieImg title={movie.title} />
 
                 <div>

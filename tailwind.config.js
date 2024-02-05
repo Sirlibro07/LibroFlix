@@ -23,14 +23,14 @@ export default {
                 ],
             },
             fontSize: {
-                typescale_19_px: "19px",
-                typescale_21_px: "21px",
-                typescale_23_px: "23px",
-                typescale_28_px: "28px",
-                typescale_33_px: "33px",
-                typescale_38px: "38px",
-                typescale_50px: "50px",
-                typescale_67px: "67px",
+                typescale_19_px: "1.1875rem",
+                typescale_21_px: "1.3125rem",
+                typescale_23_px: "1.4375rem",
+                typescale_28_px: "1.75rem",
+                typescale_33_px: "2.0625rem",
+                typescale_38px: "2.375rem",
+                typescale_50px: "3.125rem",
+                typescale_67px: "4.1875rem",
             },
             aspectRatio: {
                 card: "11 / 16",
@@ -39,8 +39,8 @@ export default {
                 10: "0.625rem",
             },
             height: {
-                elements_height: "44px",
-                navbar_height: "90px",
+                elements_height: "2.75rem",
+                navbar_height: "5.625rem",
             },
             colors: {
                 brand: "#A2663E",
@@ -50,7 +50,7 @@ export default {
             },
             spacing: {
                 one_px: "0.063rem",
-                navbar_height: "90px",
+                navbar_height: "5.625rem",
             },
         },
         screens: {
