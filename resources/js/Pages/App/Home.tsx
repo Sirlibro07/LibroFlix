@@ -22,15 +22,7 @@ const Home = ({ auth, isLoggedIn, movies }) => {
         );
     };
 
-    return (
-        <>
-            {renderHomeContent(
-                <>
-                    <HomeContent />
-                </>
-            )}
-        </>
-    );
+    return <>{renderHomeContent(<HomeContent />)}</>;
 };
 
 export default Home;

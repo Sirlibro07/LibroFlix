@@ -16,17 +16,13 @@ const AppLayoutChildren = ({
     const { isSearchbarVisible } = useContext(Menu_Searchbar_Context);
 
     return (
-        <>
-            <section
-                className={`${body_padding && "body-padding"} ${
-                    isMenuVisible || isSearchbarVisible
-                        ? "brightness-[30%]"
-                        : ""
-                } ${className}`}
-            >
-                {children}
-            </section>
-        </>
+        <section
+            className={`${body_padding && "body-padding"} ${
+                isMenuVisible || isSearchbarVisible ? "brightness-[30%]" : ""
+            } ${className}`}
+        >
+            {children}
+        </section>
     );
 };
 

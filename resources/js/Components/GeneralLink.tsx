@@ -17,16 +17,14 @@ const GeneralLink = ({
     children,
 }: GeneralLinkProps) => {
     return (
-        <>
-            <Link
-                href={route(route_name)}
-                className={`${
-                    border && "custom_border"
-                } relative rounded-10  ${className}`}
-            >
-                {children}
-            </Link>
-        </>
+        <Link
+            href={route(route_name)}
+            className={`${
+                border && "custom_border"
+            } relative rounded-10  ${className}`}
+        >
+            {children}
+        </Link>
     );
 };
 
