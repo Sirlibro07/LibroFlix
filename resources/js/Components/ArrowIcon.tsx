@@ -6,7 +6,7 @@ interface ArrowIconProps {
 }
 
 const ArrowIcon = ({ direction }: ArrowIconProps) => {
-    return <Icon icon={`arrow-${direction}`} className="text-black text-2xl" />;
+    return <Icon icon={`arrow-${direction}`} className="text-black text-3xl" />;
 };
 
 export default ArrowIcon;

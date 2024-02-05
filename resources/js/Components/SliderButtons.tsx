@@ -1,5 +1,6 @@
 import React from "react";
-import SliderButton from "./SliderButton";
+import LeftSliderbutton from "./LeftSliderbutton";
+import RightSliderButton from "./RightSliderButton";
 
 interface SliderButtonsProps {
     translateX: number;
@@ -14,15 +15,12 @@ const SliderButtons = ({
 }: SliderButtonsProps) => {
     return (
         <>
-            <SliderButton
-                direction="left"
-                TranslateX={translateX}
+            <LeftSliderbutton
+                translateX={translateX}
                 setTranslateX={setTranslateX}
-                total_cards={total_cards}
             />
-            <SliderButton
-                TranslateX={translateX}
-                direction="right"
+            <RightSliderButton
+                translateX={translateX}
                 setTranslateX={setTranslateX}
                 total_cards={total_cards}
             />
