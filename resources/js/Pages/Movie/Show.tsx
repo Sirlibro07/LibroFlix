@@ -5,7 +5,7 @@ import underscoreToSpace from "@/Helpers/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 
-export default function Movie({ auth, isLoggedIn, movie }) {
+export default function Show({ auth, isLoggedIn, movie }) {
     console.log(movie.data.title);
 
     const renderMovieContent = (children: ReactNode) => {
