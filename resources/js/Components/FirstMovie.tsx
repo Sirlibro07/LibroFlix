@@ -14,8 +14,7 @@ const FirstMovie = () => {
         <>
             <div className="text-center z-1 md:text-start mb-16 md:mb-[120px]   ">
                 <MovieTitle
-                    title={forth_movie.title}
-                    version={forth_movie.version}
+                    title={`Naruto Shippuden:\n${forth_movie.title}`}
                     className="text-typescale_38px whitespace-pre-line md:text-typescale_67px md:leading-[120%]"
                 />
                 <MovieRating
