@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import "../Helpers/CSS/slider_content.css";
+import "@/Helpers/CSS/slider_content.css";
 import SliderCard from "./SliderCard";
 import MoviesContext from "@/Contexts/MoviesContext";
 import underscoreToSpace from "@/Helpers/underscoreToSpace";

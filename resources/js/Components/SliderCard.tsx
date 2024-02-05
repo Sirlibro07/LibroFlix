@@ -1,5 +1,5 @@
 import React from "react";
-import "../Helpers/CSS/slider_card.css";
+import "@/Helpers/CSS/slider_card.css";
 import Card from "./Card";
 
 interface SliderCardProps {

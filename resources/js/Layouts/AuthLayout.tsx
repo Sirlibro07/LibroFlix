@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
-import "../Helpers/CSS/borders.css";
-import "../Helpers/CSS/letter_spacing.css";
+import "@/Helpers/CSS/borders.css";
+import "@/Helpers/CSS/letter_spacing.css";
 import { Head } from "@inertiajs/react";
 import BackgroundImage from "@/Components/BackgroundImage";
 import AuthForm from "@/Components/AuthForm";
