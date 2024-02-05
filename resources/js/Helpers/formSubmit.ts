@@ -1,7 +1,6 @@
 const formSubmit = (
     e: React.FormEvent<HTMLFormElement>,
-    method_function,
-    route,
+    method_function: (url: string) => void,
     route_name: string
 ) => {
     e.preventDefault();

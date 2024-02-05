@@ -25,7 +25,7 @@ const ProfileForm = ({
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        formSubmit(e, method_function, route, route_name);
+        formSubmit(e, method_function, route_name);
     };
     return (
         <form onSubmit={submitHandler} className="max-w-[41.25rem]">

@@ -25,7 +25,7 @@ export default function AuthForm({
     processing = false,
 }: AuthFormProps) {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
-        formSubmit(e, method_function, route, route_name);
+        formSubmit(e, method_function, route_name);
     };
 
     return (
