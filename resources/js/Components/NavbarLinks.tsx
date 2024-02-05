@@ -29,7 +29,7 @@ const NavbarLinks = () => {
                 <NavbarLink link={link} key={index} />
             ))}
 
-            {!isLoggedIn && <NavbarAuthLinks />}
+            {!isLoggedIn && <NavbarAuthLinks className="lg:hidden" />}
         </ul>
     );
 };

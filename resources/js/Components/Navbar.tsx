@@ -4,6 +4,7 @@ import NavbarIcons from "./NavbarIcons";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 import NavbarItemsCloseOverlay from "./NavbarItemsCloseOverlay";
+import NavbarAuthLinks from "./NavbarAuthLinks";
 
 interface NavbarProps {
     onClickHandler: () => void;
@@ -15,13 +16,18 @@ const Navbar = ({ border, onClickHandler }: NavbarProps) => {
         <>
             <nav
                 className={`body-padding relative h-navbar_height flex  items-center justify-between ${
-                    border && "border-b border-grey border-solid"
-                } lg:justify-normal`}
+                    border &&
+                    "border-b border-grey border-solid lg:justify-between "
+                }`}
             >
-                <Logo />
-                <NavbarIcons />
-                <NavbarLinks />
-                <SearchBar />
+                <div className="w-full flex justify-between items-center lg:w-fit lg:justify-normal">
+                    <Logo />
+                    <NavbarIcons />
+                    <NavbarLinks />
+
+                    <SearchBar />
+                </div>
+                {true && <NavbarAuthLinks className="hidden lg:flex" />}
             </nav>
             <NavbarItemsCloseOverlay onClickHandler={onClickHandler} />
         </>
