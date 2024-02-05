@@ -26,25 +26,25 @@ export default function UpdatePasswordForm() {
             recentlySuccessful={recentlySuccessful}
         >
             <FormInputField
-                input_name={"Current Password"}
+                name={"Current Password"}
+                value={data.current_password}
                 type="password"
-                state_field={data.current_password}
                 errors_field={errors.current_password}
                 icon="lock"
                 setData={setData}
                 state_name={"current_password"}
             />
             <FormInputField
-                input_name={"password"}
-                state_field={data.password}
+                name={"password"}
+                value={data.password}
                 errors_field={errors.password}
                 icon="lock"
                 setData={setData}
             />
             <FormInputField
-                input_name={"Password Confirmation"}
+                name={"Password Confirmation"}
+                value={data.password_confirmation}
                 type="password"
-                state_field={data.password_confirmation}
                 errors_field={errors.password_confirmation}
                 icon="lock"
                 setData={setData}
