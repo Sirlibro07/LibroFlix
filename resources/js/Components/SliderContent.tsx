@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import "@/CSS/slider_content.css";
 import SliderCard from "./SliderCard";
 import MoviesContext from "@/Contexts/MoviesContext";
-import underscoreToSpace from "@/Helpers/underscoreToSpace";
+import underscoreToSpace from "@/Shared/underscoreToSpace";
 
 interface SliderContentProps {
     translateX: number;

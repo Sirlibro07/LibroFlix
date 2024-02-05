@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import formSubmit from "@/Helpers/formSubmit";
+import formSubmit from "@/Shared/formSubmit";
 import Button from "./Button";
 
 interface ProfileFormProps {

@@ -1,5 +1,5 @@
-import imgStoragePath from "@/Helpers/imgStoragePath";
-import underscoreToSpace from "@/Helpers/underscoreToSpace";
+import imgStoragePath from "@/Shared/imgStoragePath";
+import underscoreToSpace from "@/Shared/underscoreToSpace";
 import React from "react";
 
 const MovieImg = ({ title }) => {

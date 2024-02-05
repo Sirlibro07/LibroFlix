@@ -1,5 +1,5 @@
 import React from "react";
-import formElementsOnChangeHandler from "@/Helpers/formElementsOnChangeHandler";
+import formElementsOnChangeHandler from "@/Shared/formElementsOnChangeHandler";
 
 interface CheckboxProps {
     className?: string;

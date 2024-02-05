@@ -1,6 +1,6 @@
 import React from "react";
-import formElementsOnChangeHandler from "@/Helpers/formElementsOnChangeHandler";
-import InputType from "@/Helpers/interfaces/InputType";
+import formElementsOnChangeHandler from "@/Shared/formElementsOnChangeHandler";
+import InputType from "@/Shared/interfaces/InputType";
 
 const Input = ({
     type = "",

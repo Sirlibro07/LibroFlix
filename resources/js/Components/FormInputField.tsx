@@ -2,9 +2,9 @@ import React from "react";
 import InputLabel from "./InputLabel";
 import Input from "./Input";
 import InputError from "./InputError";
-import capitalizeFirstLetter from "@/Helpers/capitalizeFirstLetter";
+import capitalizeFirstLetter from "@/Shared/capitalizeFirstLetter";
 import FormInputIcon from "./FormInputIcon";
-import InputType from "@/Helpers/interfaces/InputType";
+import InputType from "@/Shared/interfaces/InputType";
 
 interface FormInputFieldProps extends InputType {
     name: string;

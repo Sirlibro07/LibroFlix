@@ -1,4 +1,4 @@
-import formSubmit from "@/Helpers/formSubmit";
+import formSubmit from "@/Shared/formSubmit";
 import React, { ReactNode } from "react";
 import GeneralLink from "./GeneralLink";
 import Button from "./Button";

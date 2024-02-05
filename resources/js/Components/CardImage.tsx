@@ -1,4 +1,4 @@
-import imgStoragePath from "@/Helpers/imgStoragePath";
+import imgStoragePath from "@/Shared/imgStoragePath";
 import React from "react";
 
 interface CardImageProps {

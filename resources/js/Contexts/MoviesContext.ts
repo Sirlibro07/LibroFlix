@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import MovieType from "@/Helpers/interfaces/MovieType";
+import MovieType from "@/Shared/interfaces/MovieType";
 
 interface MoviesContextType {
     data: MovieType[];
