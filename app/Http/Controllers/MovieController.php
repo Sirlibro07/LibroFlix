@@ -20,7 +20,7 @@ class MovieController extends Controller
     public function show(string $title): Response
     {
         return Inertia::render(
-            'Movie/Show',
+            'App/Movie/Show',
             [
                 'isLoggedIn' => Auth::check(),
                 'movie' => MovieResource::make(Movie::where("title", $title)->firstOrFail())
