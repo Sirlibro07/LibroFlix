@@ -12,10 +12,9 @@ const SearchBar = () => {
 
     const { isSearchbarVisible } = useContext(Menu_Searchbar_Context);
 
-    const visibility_styles =
-        isSearchbarVisible && !isMenuVisible
-            ? "navbar_item_visible"
-            : "navbar_item_not_visible";
+    const visibility_styles = isSearchbarVisible
+        ? "navbar_item_visible"
+        : "navbar_item_not_visible";
 
     return (
         <form
