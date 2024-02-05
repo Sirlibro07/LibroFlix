@@ -12,9 +12,6 @@ class MovieController extends Controller
 {
 
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $title): Response
     {
         return Inertia::render(

@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 
 const formElementsOnChangeHandler = (
-    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
+    e: ChangeEvent<HTMLInputElement>,
     property: string,
     setData: (PrevState: object) => void
 ) => {
