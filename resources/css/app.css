@@ -8,6 +8,7 @@
     box-sizing: border-box;
     font-display: swap;
     color: white;
+    filter: saturate(105%);
 }
 
 #app {
