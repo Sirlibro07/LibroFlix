@@ -5,9 +5,7 @@ import underscoreToSpace from "@/Shared/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 
-export default function Show({ auth, isLoggedIn, movie }) {
-    console.log(movie.data.title);
-
+const Show = ({ auth, isLoggedIn, movie }) => {
     const renderMovieContent = (children: ReactNode) => {
         return (
             <AppLayout
@@ -32,4 +30,5 @@ export default function Show({ auth, isLoggedIn, movie }) {
     };
 
     return <>{renderMovieContent(<MovieContent />)}</>;
-}
+};
+export default Show;
