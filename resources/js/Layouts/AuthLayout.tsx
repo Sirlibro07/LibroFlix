@@ -32,20 +32,6 @@ const AuthLayout = ({
     link_title = "",
     processing = false,
 }: AuthLayoutProps) => {
-    const css = `html,
-body,
-#app {
-    min-height: 100vh;
-    height: fit-content;
-    position: relative;
-}
-
-#app {
-    display: flex;
-    align-items: end;
-     }
-                `;
-
     return (
         <>
             <Head title={title} />
@@ -65,7 +51,6 @@ body,
             >
                 {children}
             </AuthForm>
-            <style>{css}</style>
         </>
     );
 };

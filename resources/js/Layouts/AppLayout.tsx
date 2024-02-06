@@ -1,7 +1,6 @@
 import React, { ReactNode, useState } from "react";
 import "@/CSS/borders.css";
 import "@/CSS/navbar_visibility.css";
-import "@/CSS/AppLayout.css";
 import "@/CSS/letter_spacing.css";
 import "@/CSS/scrollbar.css";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
