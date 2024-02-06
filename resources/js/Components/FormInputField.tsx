@@ -22,11 +22,11 @@ const FormInputField = ({
     icon,
 }: FormInputFieldProps) => {
     return (
-        <>
+        <div className="mb-6">
             <InputLabel
                 htmlFor={name}
                 value={capitalizeFirstLetter(name)}
-                className="mt-6"
+                className=""
             />
             <div className="relative flex  items-center">
                 <Input
@@ -42,7 +42,7 @@ const FormInputField = ({
             </div>
 
             <InputError message={errors_field} />
-        </>
+        </div>
     );
 };
 
