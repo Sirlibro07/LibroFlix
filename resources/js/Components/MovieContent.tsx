@@ -5,8 +5,6 @@ import MovieInfo from "./MovieInfo";
 import MovieRating from "./MovieRating";
 import MovieDescription from "./MovieDescription";
 import MovieImg from "./MovieImg";
-import Button from "./Button";
-import ButtonWithIcon from "./ButtonWithIcon";
 import MovieBlur from "./MovieBlur";
 import MovieButtons from "./MovieButtons";
 
@@ -16,7 +14,7 @@ const MovieContent = () => {
     return (
         <>
             <MovieBlur />
-            <div className="relative body-padding py-4 h-fit mt-[21.875rem]   bg-black rounded-tl-[1.563rem] rounded-tr-[1.563rem] md:flex md:items-start md:rounded-none md:mt-[-1.25rem]">
+            <div className="relative mb-8 body-padding py-4 h-fit mt-[21.875rem]   bg-black rounded-tl-[1.563rem] rounded-tr-[1.563rem] md:flex md:items-start md:rounded-none md:mt-[-1.25rem]">
                 <MovieImg title={movie.title} />
 
                 <div>

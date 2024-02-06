@@ -57,7 +57,7 @@ const AppLayout = ({
                     <Navbar border={border} />
                     {bg_image}
                     <div
-                        className={`${body_padding_style} ${low_brightness_style} relative h-fit min-h-[calc(100vh-90px)] flex flex-col justify-between`}
+                        className={`${body_padding_style} ${low_brightness_style} relative h-fit min-h-[calc(100vh+12.5rem)] pb-[15.625rem] flex flex-col justify-between`}
                     >
                         <AppLayoutChildren className={className}>
                             {children}
