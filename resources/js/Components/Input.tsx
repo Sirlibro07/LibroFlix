@@ -25,7 +25,7 @@ const Input = ({
             onChange={(e) => {
                 formElementsOnChangeHandler(e, state_to_change, setData);
             }}
-            className={`w-full h-elements_height bg-black  rounded-10 border-2 border-grey placeholder-grey focus:border-grey focus:ring-0  ${className}`}
+            className={`w-full h-elements_height bg-[#111111]  rounded-10 border-2 border-transparent focus:border-grey focus:ring-0  ${className}`}
         />
     );
 };
