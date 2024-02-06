@@ -48,7 +48,7 @@ export default function Login({ status, canResetPassword }) {
             />
             <AuthSuccessMessage status={status} />
 
-            <div className="flex items-center justify-between mt-4 ">
+            <div className="flex items-center justify-between mt-6 ">
                 <FormCheckboxField
                     name="remember"
                     label="Remember me"
