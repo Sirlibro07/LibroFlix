@@ -8,6 +8,7 @@ import MovieImg from "./MovieImg";
 import Button from "./Button";
 import ButtonWithIcon from "./ButtonWithIcon";
 import MovieBlur from "./MovieBlur";
+import MovieButtons from "./MovieButtons";
 
 const MovieContent = () => {
     const movie = useContext(MovieContext).data;
@@ -28,12 +29,7 @@ const MovieContent = () => {
                         rating={movie.rating}
                         className={"mb-6 md:mb-5"}
                     />
-                    <Button className="bg-brand w-full md:hidden">
-                        Watch Now
-                    </Button>
-                    <ButtonWithIcon icon="play" className="hidden md:block">
-                        Watch Now
-                    </ButtonWithIcon>
+                    <MovieButtons />
                     <MovieDescription
                         description={movie.description}
                         className="max-w-[90ch]"
