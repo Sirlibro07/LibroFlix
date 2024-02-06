@@ -39,7 +39,7 @@ export default {
                 10: "0.625rem",
             },
             height: {
-                elements_height: "2.75rem",
+                elements_height: "3.25rem",
                 navbar_height: "5.625rem",
             },
             colors: {
