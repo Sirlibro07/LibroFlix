@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavbarLinks from "./NavbarLinks";
 import NavbarIcons from "./NavbarIcons";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 import NavbarItemsCloseOverlay from "./NavbarItemsCloseOverlay";
 import NavbarAuthLinks from "./NavbarAuthLinks";
+import UserContext from "@/Contexts/UserContext";
 
 interface NavbarProps {
     onClickHandler: () => void;
@@ -12,6 +13,8 @@ interface NavbarProps {
 }
 
 const Navbar = ({ border, onClickHandler }: NavbarProps) => {
+    const { isLoggedIn } = useContext(UserContext);
+
     return (
         <>
             <nav
@@ -27,7 +30,7 @@ const Navbar = ({ border, onClickHandler }: NavbarProps) => {
 
                     <SearchBar />
                 </div>
-                {true && <NavbarAuthLinks className="hidden lg:flex" />}
+                {!isLoggedIn && <NavbarAuthLinks className="hidden lg:flex" />}
             </nav>
             <NavbarItemsCloseOverlay onClickHandler={onClickHandler} />
         </>
