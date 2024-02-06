@@ -15,7 +15,7 @@ interface SearchBarContentProps {
 const SearchBarContent = ({ value, setData }: SearchBarContentProps) => {
     return (
         <div className="w-full relative flex items-center">
-            <SearchIcon className="absolute pointer-events-none left-3 text-base text-grey cursor-auto" />
+            <SearchIcon className="absolute z-[1] pointer-events-none left-3 text-base text-grey cursor-auto" />
             <Input
                 name={"search"}
                 value={value}
