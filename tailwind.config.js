@@ -44,6 +44,7 @@ export default {
             },
             colors: {
                 brand: "#F37335",
+                dark: "#111111",
                 grey: "#5F5F61",
                 green: "#689B5B",
                 red: "#A61C1E",
