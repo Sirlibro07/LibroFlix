@@ -51,6 +51,13 @@ const AuthLayout = ({
             >
                 {children}
             </AuthForm>
+            <style>{`
+                    #app {
+                        min-height: 100vh;
+                        display: flex;
+                        align-items: end;
+                    }
+                `}</style>
         </>
     );
 };
