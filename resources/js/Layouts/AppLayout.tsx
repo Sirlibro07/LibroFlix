@@ -46,24 +46,24 @@ const AppLayout = ({
         );
     };
 
-    const onClickHandler = () => {
-        setIsMenuVisible(false);
-        setIsSearchbarVisible(false);
-    };
+    const body_padding_style = body_padding ? "body-padding" : "";
+    const low_brightness_style =
+        isMenuVisible || isSearchbarVisible ? "brightness-[30%]" : "";
 
     return (
         <>
             {renderWithProviders(
                 <>
-                    <Navbar border={border} onClickHandler={onClickHandler} />
-                    <AppLayoutChildren
-                        className={className}
-                        body_padding={body_padding}
-                    >
-                        {children}
-                    </AppLayoutChildren>
+                    <Navbar border={border} />
                     {bg_image}
-                    <Footer className={footer_className} />
+                    <div
+                        className={`${body_padding_style} ${low_brightness_style} relative h-fit min-h-[calc(100vh-90px)] flex flex-col justify-between`}
+                    >
+                        <AppLayoutChildren className={className}>
+                            {children}
+                        </AppLayoutChildren>
+                        <Footer className={footer_className} />
+                    </div>
                 </>
             )}
         </>

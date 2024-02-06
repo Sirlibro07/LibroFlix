@@ -8,11 +8,10 @@ import NavbarAuthLinks from "./NavbarAuthLinks";
 import UserContext from "@/Contexts/UserContext";
 
 interface NavbarProps {
-    onClickHandler: () => void;
     border: boolean;
 }
 
-const Navbar = ({ border, onClickHandler }: NavbarProps) => {
+const Navbar = ({ border }: NavbarProps) => {
     const { isLoggedIn } = useContext(UserContext);
 
     return (
@@ -32,7 +31,7 @@ const Navbar = ({ border, onClickHandler }: NavbarProps) => {
                 </div>
                 {!isLoggedIn && <NavbarAuthLinks className="hidden lg:flex" />}
             </nav>
-            <NavbarItemsCloseOverlay onClickHandler={onClickHandler} />
+            <NavbarItemsCloseOverlay />
         </>
     );
 };
