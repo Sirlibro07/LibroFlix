@@ -40,6 +40,10 @@ input:-webkit-autofill {
     @apply text-grey text-sm font-medium lg:text-[0.938rem];
 }
 
+.bg_brand {
+    @apply bg-gradient-to-r from-[#f58f5d] to-brand;
+}
+
 /* *::-webkit-scrollbar {
     display: none;
 } */

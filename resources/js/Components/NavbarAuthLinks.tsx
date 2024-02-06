@@ -9,7 +9,7 @@ const NavbarAuthLinks = ({ className = "" }) => {
             <NavbarAuthLink route_name="login" link_className="lg:px-4">
                 Log in
             </NavbarAuthLink>
-            <NavbarAuthLink route_name="register" button_className="bg-brand">
+            <NavbarAuthLink route_name="register" button_className="bg_brand">
                 Sign up
             </NavbarAuthLink>
         </div>

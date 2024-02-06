@@ -26,7 +26,7 @@ const FormInputField = ({
             <InputLabel
                 htmlFor={name}
                 value={capitalizeFirstLetter(name)}
-                className="mt-5"
+                className="mt-6"
             />
             <div className="relative flex  items-center">
                 <Input
@@ -34,7 +34,7 @@ const FormInputField = ({
                     name={name}
                     value={value}
                     setData={setData}
-                    className="pl-10"
+                    className="px-12"
                     state_name={state_name}
                 />
 

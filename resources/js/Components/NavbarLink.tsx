@@ -25,7 +25,7 @@ const NavbarLink = ({ link }: NavbarLinkProps) => {
     }, []);
     return (
         <li className=" ml-[-0.5rem] flex items-center lg:ml-0 ">
-            <div className="w-4 h-4 mr-3 rounded-full bg-brand lg:hidden"></div>
+            <div className="w-4 h-4 mr-3 rounded-full bg_brand lg:hidden"></div>
             <GeneralLink
                 route_name={link.route}
                 className={

@@ -43,7 +43,7 @@ export default {
                 navbar_height: "5.625rem",
             },
             colors: {
-                brand: "#A2663E",
+                brand: "#F37335",
                 grey: "#5F5F61",
                 green: "#689B5B",
                 red: "#A61C1E",

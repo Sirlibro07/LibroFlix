@@ -41,7 +41,7 @@ export default function AuthForm({
 
             {children}
 
-            <Button className="w-full mb-4 mt-8 bg-brand" disabled={processing}>
+            <Button className="w-full mb-4 mt-8 bg_brand" disabled={processing}>
                 {button_title}
             </Button>
 

@@ -20,7 +20,7 @@ const ProfileForm = ({
     processing = false,
     recentlySuccessful = false,
     button_title = "Update",
-    button_bg_color = "bg-brand",
+    button_bg_color = "bg_brand",
 }: ProfileFormProps) => {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

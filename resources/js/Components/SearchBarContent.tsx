@@ -25,7 +25,7 @@ const SearchBarContent = ({ value, setData }: SearchBarContentProps) => {
                 setData={setData}
             />
 
-            <Button className="absolute right-0 h-full px-4 rounded-10  transitions bg-white text-black hover:bg-brand hover:text-white">
+            <Button className="absolute right-0 h-full px-4 rounded-10  transitions bg-white text-black hover:bg_brand hover:text-white">
                 Search
             </Button>
         </div>

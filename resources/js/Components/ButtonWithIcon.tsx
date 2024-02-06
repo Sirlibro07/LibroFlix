@@ -9,7 +9,7 @@ const ButtonWithIcon = ({
     icon_full_classname = "",
 }) => {
     return (
-        <Button className={`bg-brand pl-3 pr-4 ${className}`}>
+        <Button className={`bg_brand pl-3 pr-4 ${className}`}>
             <Icon
                 icon={icon}
                 icon_full_classname={icon_full_classname}
