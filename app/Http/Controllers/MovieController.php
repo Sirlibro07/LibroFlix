@@ -11,20 +11,23 @@ use Inertia\Response;
 class MovieController extends Controller
 {
 
-    public function index(string $title)
+    public function index(string $title): Response
     {
-        return $title;
+        return $this->renderAppPage('App/SearchPage', [
+            'movies' => MovieResource::collection(Movie::where('title', 'like', '%' . $title . '%')->get()),
+            'title' => $title,
+        ]);
     }
-
 
     public function show(string $title): Response
     {
-        return Inertia::render(
-            'App/Movie',
-            [
-                'isLoggedIn' => Auth::check(),
-                'movie' => MovieResource::make(Movie::where("title", $title)->firstOrFail())
-            ]
-        );
+        return $this->renderAppPage('App/Movie', [
+            'movie' => MovieResource::make(Movie::where("title", $title)->firstOrFail()),
+        ]);
+    }
+
+    private function renderAppPage(string $page, array $fields = []): Response
+    {
+        return Inertia::render($page, array_merge(['isLoggedIn' => Auth::check()], $fields));
     }
 }
