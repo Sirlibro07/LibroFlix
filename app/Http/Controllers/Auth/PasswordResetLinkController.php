@@ -43,9 +43,9 @@ class PasswordResetLinkController extends Controller
                 return back()->with('status', __($status));
             }
 
-            throw ValidationException::class;
+            throw new \Exception("We're sorry something went wrong, please try again in a few minutes");
         } catch (\Exception $e) {
-            return back()->withErrors(['email' => "We're sorry something went wrong, please try again in a few minutes"]);
+            return back()->withErrors(['email' => $e->getMessage()]);
         }
     }
 }
