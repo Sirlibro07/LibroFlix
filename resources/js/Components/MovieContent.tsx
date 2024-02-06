@@ -32,7 +32,7 @@ const MovieContent = () => {
                         Watch Now
                     </Button>
                     <ButtonWithIcon icon="play" className="hidden md:block">
-                        Play
+                        Watch Now
                     </ButtonWithIcon>
                     <MovieDescription
                         description={movie.description}
