@@ -33,7 +33,7 @@ Route::get('/', HomeController::class)->name("home");
 
 
 Route::prefix("movies")->group(function () {
-    Route::get("search/{title}", [MovieController::class, 'index'])->name("movies.index");
+    Route::get("search/{title?}", [MovieController::class, 'index'])->name("movies.index");
     Route::get("{title}", [MovieController::class, 'show'])->name("movies.show");
 });
 
