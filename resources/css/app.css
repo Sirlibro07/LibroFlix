@@ -16,7 +16,7 @@ body,
     overflow-x: hidden;
     width: 100%;
     position: relative;
-    filter: saturate(105%);
+    filter: saturate(110%);
 }
 
 html::before,
