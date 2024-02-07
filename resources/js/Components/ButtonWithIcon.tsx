@@ -5,14 +5,14 @@ import Icon from "./Icon";
 const ButtonWithIcon = ({
     className = "",
     children,
-    icon = "",
-    icon_full_classname = "",
+    icon_type,
+    icon_name = "",
 }) => {
     return (
         <Button className={`bg_brand pl-3 pr-4 ${className}`}>
             <Icon
-                icon={icon}
-                icon_full_classname={icon_full_classname}
+                icon_type={icon_type}
+                icon_name={icon_name}
                 className="mr-3  text-[1.125rem]"
             />
             {children}

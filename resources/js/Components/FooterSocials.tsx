@@ -6,9 +6,10 @@ const FooterSocials = () => {
         <>
             <FooterSocial
                 className="mr-3"
-                icon_full_classname="fa-brands fa-linkedin"
+                icon_type="brands"
+                icon_name="linkedin"
             />
-            <FooterSocial icon_full_classname="fa-brands fa-discord" />
+            <FooterSocial icon_type="brands" icon_name="discord" />
         </>
     );
 };

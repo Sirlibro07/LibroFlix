@@ -6,7 +6,11 @@ const MovieButtons = () => {
     return (
         <>
             <Button className="bg-brand w-full md:hidden">Watch Now</Button>
-            <ButtonWithIcon icon="play" className="hidden md:block">
+            <ButtonWithIcon
+                icon_type={"solid"}
+                icon_name="play"
+                className="hidden md:block"
+            >
                 Watch Now
             </ButtonWithIcon>
         </>

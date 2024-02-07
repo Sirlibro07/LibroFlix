@@ -1,19 +1,15 @@
 import React from "react";
 
 const Icon = ({
-    icon_full_classname = "",
-    icon = "",
+    icon_type,
+    icon_name = "",
     className = "",
     onClick = null,
 }) => {
     return (
         <i
             onClick={onClick}
-            className={`${
-                icon_full_classname
-                    ? icon_full_classname
-                    : `fa-solid fa-${icon}`
-            }  ${className}`}
+            className={`fa-${icon_type} fa-${icon_name} ${className}`}
         ></i>
     );
 };
