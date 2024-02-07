@@ -30,14 +30,6 @@ export default function ResetPassword({ token, email }) {
             processing={processing}
         >
             <FormInputField
-                name={"email"}
-                value={data.email}
-                setData={setData}
-                errors_field={errors.email}
-                icon_name="envelope"
-            />
-
-            <FormInputField
                 name={"new password"}
                 value={data.password}
                 type="password"
