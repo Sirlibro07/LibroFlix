@@ -1,13 +1,19 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Button from "./Button";
 import Icon from "./Icon";
+import IconType from "@/Shared/interfaces/IconType";
+
+interface ButtonWithIconProps extends IconType {
+    className?: string;
+    children: ReactNode;
+}
 
 const ButtonWithIcon = ({
     className = "",
     children,
     icon_type,
     icon_name = "",
-}) => {
+}: ButtonWithIconProps) => {
     return (
         <Button className={`bg_brand pl-3 pr-4 ${className}`}>
             <Icon
