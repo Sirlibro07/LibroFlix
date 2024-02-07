@@ -8,7 +8,7 @@ interface IconProps extends IconType {
 
 const Icon = ({
     icon_type,
-    icon_name = "",
+    icon_name,
     className = "",
     onClick = null,
 }: IconProps) => {
