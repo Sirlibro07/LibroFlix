@@ -11,7 +11,6 @@ import Footer from "@/Components/Footer";
 
 const AppLayout = ({
     user,
-    isLoggedIn,
     children,
     className = "",
     border = true,
@@ -22,13 +21,15 @@ const AppLayout = ({
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
 
+    console.log(user);
+
     const renderWithProviders = (children: ReactNode) => {
         return (
             <UserContext.Provider
                 value={{
-                    isLoggedIn: isLoggedIn,
-                    name: isLoggedIn ? user.name : "",
-                    email: isLoggedIn ? user.email : "",
+                    isLoggedIn: user,
+                    name: user && user.name,
+                    email: user && user.email,
                 }}
             >
                 <Menu_Searchbar_Context.Provider

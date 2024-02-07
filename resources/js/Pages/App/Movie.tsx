@@ -5,12 +5,11 @@ import underscoreToSpace from "@/Shared/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 
-const Show = ({ auth, isLoggedIn, movie }) => {
+const Show = ({ auth, movie }) => {
     const renderMovieContent = (children: ReactNode) => {
         return (
             <AppLayout
                 user={auth.user}
-                isLoggedIn={isLoggedIn}
                 border={false}
                 bg_image={
                     <BackgroundImage

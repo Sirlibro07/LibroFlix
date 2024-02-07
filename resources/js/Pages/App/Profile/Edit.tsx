@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import OptionsList from "@/Components/OptionsList";
 import LogoutForm from "@/Components/LogoutForm";
 
-export default function Edit({ auth, isLoggedIn }) {
+export default function Edit({ auth }) {
     const [currentOption, setCurrentOption] = useState("Profile");
 
     const renderCurrentOption = () => {
@@ -29,7 +29,6 @@ export default function Edit({ auth, isLoggedIn }) {
     return (
         <AppLayout
             user={auth.user}
-            isLoggedIn={isLoggedIn}
             className="pt-8"
             footer_className="mt-[25rem]"
         >
