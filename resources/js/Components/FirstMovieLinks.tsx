@@ -5,8 +5,8 @@ import ButtonOptionalIcon from "./ButtonOptionalIcon";
 const FirstMovieLinks = ({ title }) => {
     return (
         <Link href={route("movies.show", title)}>
-            <ButtonOptionalIcon icon_type="solid" icon_name="plus">
-                Learn More
+            <ButtonOptionalIcon icon_type="solid" icon_name="play">
+                Watch Now
             </ButtonOptionalIcon>
         </Link>
     );
