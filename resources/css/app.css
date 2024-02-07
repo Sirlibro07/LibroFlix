@@ -59,7 +59,7 @@ input:-webkit-autofill {
 }
 
 .bg_brand {
-    @apply bg-gradient-to-r from-[#f58f5d] to-brand;
+    @apply bg-gradient-to-r text-black from-[#f58f5d] to-brand;
 }
 
 /* *::-webkit-scrollbar {
