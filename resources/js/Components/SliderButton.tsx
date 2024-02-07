@@ -1,5 +1,5 @@
 import React from "react";
-import ArrowIcon from "./ArrowIcon";
+import SliderButtonIcon from "./SliderButtonIcon";
 
 interface SliderButtonProps {
     className: string;
@@ -24,7 +24,7 @@ const SliderButton = ({
             <div
                 className={`w-[4.5rem] aspect-square bg-white rounded-full flex justify-center items-center`}
             >
-                <ArrowIcon direction={direction} />
+                <SliderButtonIcon direction={direction} />
             </div>
         </button>
     );
