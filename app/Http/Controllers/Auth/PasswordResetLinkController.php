@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
@@ -30,8 +32,8 @@ class PasswordResetLinkController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'email' => 'required|email',
-        ]);
+            'email' => 'required|email|exists:users,email',
+        ], ['email.exists' => 'Invalid email',]);
 
         try {
 
@@ -43,8 +45,10 @@ class PasswordResetLinkController extends Controller
                 return back()->with('status', __($status));
             }
 
-            throw new \Exception();
+            // if for some reason the email doesn't get sent
+            throw new Exception();
         } catch (\Exception $e) {
+            Log::error("Error sending password reset link: {$e->getMessage()}\n\n");
             return back()->withErrors(['email' => "We're sorry something went wrong, please try again in a few minutes"]);
         }
     }
