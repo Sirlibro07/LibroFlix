@@ -1,18 +1,12 @@
 import React from "react";
-import ButtonWithIcon from "./ButtonWithIcon";
-import Button from "./Button";
+import ButtonOptionalIcon from "./ButtonOptionalIcon";
 
 const MovieButtons = () => {
     return (
         <>
-            <Button className="bg-brand w-full md:hidden">Watch Now</Button>
-            <ButtonWithIcon
-                icon_type={"solid"}
-                icon_name="play"
-                className="hidden md:block"
-            >
+            <ButtonOptionalIcon icon_type="solid" icon_name="play">
                 Watch Now
-            </ButtonWithIcon>
+            </ButtonOptionalIcon>
         </>
     );
 };

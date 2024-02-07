@@ -1,19 +1,13 @@
 import React from "react";
-import ButtonWithIcon from "./ButtonWithIcon";
 import { Link } from "@inertiajs/react";
-import Button from "./Button";
+import ButtonOptionalIcon from "./ButtonOptionalIcon";
 
 const FirstMovieLinks = ({ title }) => {
     return (
         <Link href={route("movies.show", title)}>
-            <Button className="w-full bg_brand md:hidden">Watch Now</Button>
-            <ButtonWithIcon
-                icon_type="solid"
-                icon_name="plus"
-                className="hidden bg_brand md:block"
-            >
+            <ButtonOptionalIcon icon_type="solid" icon_name="plus">
                 Learn More
-            </ButtonWithIcon>
+            </ButtonOptionalIcon>
         </Link>
     );
 };
