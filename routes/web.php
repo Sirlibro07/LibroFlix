@@ -20,18 +20,18 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// Profile
+Route::middleware('auth')->prefix("profile")->group(function () {
+    Route::get('', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 
-
+// Home
 Route::get('/', HomeController::class)->name("home");
 
-
+// Movies
 Route::prefix("movies")->group(function () {
     Route::get("search/{title?}", [MovieController::class, 'index'])->name("movies.index");
     Route::get("{title}", [MovieController::class, 'show'])->name("movies.show");
