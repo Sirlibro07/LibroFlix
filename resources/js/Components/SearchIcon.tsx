@@ -3,11 +3,7 @@ import React, { useContext } from "react";
 import NavbarIconsOnClickhandler from "@/Shared/NavbarIconsOnClickhandler";
 import Icon from "./Icon";
 
-interface SearchIconProps {
-    className?: string;
-}
-
-const SearchIcon = ({ className }: SearchIconProps) => {
+const SearchIcon = () => {
     const { setIsMenuVisible } = useContext(Menu_Searchbar_Context);
     const { setIsSearchbarVisible } = useContext(Menu_Searchbar_Context);
 
@@ -17,9 +13,10 @@ const SearchIcon = ({ className }: SearchIconProps) => {
 
     return (
         <Icon
-            icon="magnifying-glass"
-            className={`text-[1.563rem] mr-4 ${className}`}
             onClick={handleOnclick}
+            icon_type={"solid"}
+            icon_name="magnifying-glass"
+            className="cursor-pointer text-[1.563rem] mr-4 lg:hidden"
         />
     );
 };

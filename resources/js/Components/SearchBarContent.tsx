@@ -1,7 +1,7 @@
 import React from "react";
-import SearchIcon from "./SearchIcon";
 import Input from "./Input";
 import Button from "./Button";
+import Icon from "./Icon";
 
 interface SearchBarContentProps {
     value: string;
@@ -15,7 +15,11 @@ interface SearchBarContentProps {
 const SearchBarContent = ({ value, setData }: SearchBarContentProps) => {
     return (
         <div className="w-full relative flex items-center">
-            <SearchIcon className="absolute z-[1] pointer-events-none left-3 text-base text-grey cursor-auto" />
+            <Icon
+                icon_type={"solid"}
+                icon_name="search"
+                className="absolute z-[1] pointer-events-none left-3 text-base text-grey cursor-auto"
+            />
             <Input
                 name={"search"}
                 value={value}
