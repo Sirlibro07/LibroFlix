@@ -6,9 +6,9 @@ namespace App\Traits;
 use Inertia\Inertia;
 use Inertia\Response;
 
-trait RenderPage
+trait ViewRenderer
 {
-    public function renderAppPage(string $page, array $fields = []): Response
+    public function renderAppView(string $page, array $fields = []): Response
     {
         return Inertia::render('App/' . $page, $fields);
     }

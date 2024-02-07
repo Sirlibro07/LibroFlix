@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Traits\RenderPage;
+use App\Traits\ViewRenderer;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, ValidatesRequests, RenderPage;
+    use AuthorizesRequests, ValidatesRequests, ViewRenderer;
 }

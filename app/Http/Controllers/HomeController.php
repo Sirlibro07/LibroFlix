@@ -11,6 +11,6 @@ class HomeController extends Controller
 
     public function __invoke(): Response
     {
-        return $this->renderAppPage("Home", ['movies' => MovieResource::collection(Movie::all())]);
+        return $this->renderAppView("Home", ['movies' => MovieResource::collection(Movie::all())]);
     }
 }
