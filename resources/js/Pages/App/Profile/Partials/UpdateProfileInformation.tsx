@@ -27,7 +27,7 @@ const UpdateProfileInformation = () => {
                         value={data.name}
                         type={"text"}
                         errors_field={errors.name}
-                        icon="lock"
+                        icon_name="lock"
                         setData={setData}
                     />
 
@@ -35,7 +35,7 @@ const UpdateProfileInformation = () => {
                         name={"email"}
                         value={data.email}
                         errors_field={errors.email}
-                        icon="envelope"
+                        icon_name="envelope"
                         setData={setData}
                     />
                 </ProfileForm>

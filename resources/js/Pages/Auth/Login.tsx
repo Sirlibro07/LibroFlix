@@ -37,14 +37,14 @@ export default function Login({ status, canResetPassword }) {
                 value={data.email}
                 setData={setData}
                 errors_field={errors.email}
-                icon="envelope"
+                icon_name="envelope"
             />
             <FormInputField
                 name={"password"}
                 value={data.password}
                 setData={setData}
                 errors_field={errors.password}
-                icon="lock"
+                icon_name="lock"
             />
             <AuthSuccessMessage status={status} />
 

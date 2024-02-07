@@ -27,7 +27,7 @@ export default function DeleteUserForm() {
                     name={"password"}
                     value={data.password}
                     errors_field={errors.password}
-                    icon="lock"
+                    icon_name="lock"
                     setData={setData}
                 />
             </ProfileForm>

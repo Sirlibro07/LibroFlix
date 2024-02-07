@@ -34,7 +34,7 @@ export default function ResetPassword({ token, email }) {
                 value={data.email}
                 setData={setData}
                 errors_field={errors.email}
-                icon="envelope"
+                icon_name="envelope"
             />
 
             <FormInputField
@@ -43,7 +43,7 @@ export default function ResetPassword({ token, email }) {
                 type="password"
                 setData={setData}
                 errors_field={errors.password}
-                icon="lock"
+                icon_name="lock"
                 state_name="password"
             />
 
@@ -53,7 +53,7 @@ export default function ResetPassword({ token, email }) {
                 type={"password"}
                 state_name={"password_confirmation"}
                 errors_field={errors.password_confirmation}
-                icon="lock"
+                icon_name="lock"
                 setData={setData}
             />
         </AuthLayout>

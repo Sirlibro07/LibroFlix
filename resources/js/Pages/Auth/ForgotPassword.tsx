@@ -25,7 +25,7 @@ export default function ForgotPassword({ status }) {
                 value={data.email}
                 setData={setData}
                 errors_field={errors.email}
-                icon="envelope"
+                icon_name="envelope"
             />
 
             <AuthSuccessMessage status={status} />

@@ -9,7 +9,7 @@ import InputType from "@/Shared/interfaces/InputType";
 interface FormInputFieldProps extends InputType {
     name: string;
     errors_field: string;
-    icon: string;
+    icon_name: string;
 }
 
 const FormInputField = ({
@@ -19,7 +19,7 @@ const FormInputField = ({
     state_name = "",
     setData,
     errors_field,
-    icon,
+    icon_name,
 }: FormInputFieldProps) => {
     return (
         <>
@@ -38,7 +38,7 @@ const FormInputField = ({
                     state_name={state_name}
                 />
 
-                <FormInputIcon icon={icon} />
+                <FormInputIcon icon_name={icon_name} />
             </div>
 
             <InputError message={errors_field} />

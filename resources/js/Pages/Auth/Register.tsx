@@ -35,7 +35,7 @@ export default function Register() {
                 type={"text"}
                 value={data.name}
                 errors_field={errors.name}
-                icon="user"
+                icon_name="user"
                 setData={setData}
             />
 
@@ -43,7 +43,7 @@ export default function Register() {
                 name={"email"}
                 value={data.email}
                 errors_field={errors.email}
-                icon="envelope"
+                icon_name="envelope"
                 setData={setData}
             />
 
@@ -51,7 +51,7 @@ export default function Register() {
                 name={"password"}
                 value={data.password}
                 errors_field={errors.password}
-                icon="lock"
+                icon_name="lock"
                 setData={setData}
             />
 
@@ -61,7 +61,7 @@ export default function Register() {
                 type={"password"}
                 state_name={"password_confirmation"}
                 errors_field={errors.password_confirmation}
-                icon="lock"
+                icon_name="lock"
                 setData={setData}
             />
         </AuthLayout>
