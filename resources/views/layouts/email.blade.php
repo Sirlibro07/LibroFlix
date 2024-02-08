@@ -13,9 +13,6 @@
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            font-family: Inter, sans-serif;
-            font-size: 16px;
-            font-weight: normal;
             color:white;
             
             
@@ -39,7 +36,7 @@
             width: clamp(250px, 100%, 500px);
             background-color: black;
             border-radius: 30px;
-            padding: 50px;
+            padding: 20px;
             
         }
 
@@ -53,7 +50,18 @@
 
         p
         {
-            line-height: 1.5rem
+            line-height: 1.5rem;
+            font-size: 16px;
+            font-family: Inter, sans-serif;
+            font-weight: normal;
+        }
+
+        @media(min-width: 1024px)
+        {
+            main
+            {
+                padding: 50px
+            }
         }
     </style>
 </head>
