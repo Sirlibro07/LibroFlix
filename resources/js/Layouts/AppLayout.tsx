@@ -8,21 +8,29 @@ import UserContext from "@/Contexts/UserContext";
 import Navbar from "@/Components/Navbar";
 import AppLayoutChildren from "@/Components/AppLayoutChildren";
 import Footer from "@/Components/Footer";
+import { usePage } from "@inertiajs/react";
+
+interface AppLayoutProps {
+    children: ReactNode;
+    className?: string;
+    border?: boolean;
+    bg_image?: ReactNode;
+    body_padding?: boolean;
+    footer_className?: string;
+}
 
 const AppLayout = ({
-    user,
     children,
     className = "",
     border = true,
     bg_image = <></>,
     body_padding = true,
     footer_className = "",
-}) => {
+}: AppLayoutProps) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
 
-    console.log(user);
-
+    const { user } = usePage().props.auth;
     const renderWithProviders = (children: ReactNode) => {
         return (
             <UserContext.Provider

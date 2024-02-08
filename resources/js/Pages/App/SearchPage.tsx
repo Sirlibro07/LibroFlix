@@ -3,10 +3,10 @@ import React, { ReactNode } from "react";
 import MoviesContext from "@/Contexts/MoviesContext";
 import SearchPageContent from "@/Components/SearchPageContent";
 
-const Index = ({ auth, movies, title }) => {
+const Index = ({ movies, title }) => {
     const renderSearchPageContent = (children: ReactNode) => {
         return (
-            <AppLayout user={auth.user}>
+            <AppLayout>
                 <MoviesContext.Provider value={movies}>
                     {children}
                 </MoviesContext.Provider>

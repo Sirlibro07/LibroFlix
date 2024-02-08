@@ -1,11 +1,10 @@
 import { createContext } from "react";
+import { User } from "vendor/laravel/breeze/stubs/inertia-react-ts/resources/js/types";
 
-interface UserContextType {
-    isLoggedIn: boolean;
-    name: string;
-    email: string;
+interface UserContextProps extends User {
+    isLoggedIn: User | boolean;
 }
 
-const UserContext = createContext<UserContextType | undefined>(undefined);
+const UserContext = createContext<UserContextProps | undefined>(undefined);
 
 export default UserContext;

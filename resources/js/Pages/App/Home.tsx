@@ -4,16 +4,12 @@ import MoviesContext from "@/Contexts/MoviesContext";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 
-const Home = ({ auth, movies }) => {
+const Home = ({ movies }) => {
     console.log(movies);
 
     const renderHomeContent = (children: ReactNode) => {
         return (
-            <AppLayout
-                user={auth.user}
-                bg_image={<FirstMovieBackgroundImage />}
-                border={false}
-            >
+            <AppLayout bg_image={<FirstMovieBackgroundImage />} border={false}>
                 <MoviesContext.Provider value={movies}>
                     {children}
                 </MoviesContext.Provider>
