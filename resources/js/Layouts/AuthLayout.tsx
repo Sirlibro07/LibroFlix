@@ -40,24 +40,19 @@ const AuthLayout = ({
                 folder_name={folder_name}
                 img_classes={`object-top lg:object-bottom ${img_classes}`}
             />
-            <AuthForm
-                name={name}
-                method_function={method_function}
-                route_name={route_name}
-                button_title={button_title}
-                processing={processing}
-                link_route_name={link_route_name}
-                link_title={link_title}
-            >
-                {children}
-            </AuthForm>
-            <style>{`
-                    #app {
-                        min-height: 100vh;
-                        display: flex;
-                        align-items: end;
-                    }
-                `}</style>
+            <main className=" min-h-screen flex items-end">
+                <AuthForm
+                    name={name}
+                    method_function={method_function}
+                    route_name={route_name}
+                    button_title={button_title}
+                    processing={processing}
+                    link_route_name={link_route_name}
+                    link_title={link_title}
+                >
+                    {children}
+                </AuthForm>
+            </main>
         </>
     );
 };
