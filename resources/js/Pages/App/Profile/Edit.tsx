@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import OptionsList from "@/Components/OptionsList";
 import LogoutForm from "@/Components/LogoutForm";
 
-export default function Edit({ auth }) {
+export default function Edit() {
     const [currentOption, setCurrentOption] = useState("Profile");
 
     const renderCurrentOption = () => {
@@ -27,11 +27,7 @@ export default function Edit({ auth }) {
     };
 
     return (
-        <AppLayout
-            user={auth.user}
-            className="pt-8"
-            footer_className="mt-[25rem]"
-        >
+        <AppLayout className="pt-8" footer_className="mt-[25rem]">
             <Head title="Profile" />
             <header className="font-display text-typescale_38px ">
                 Account
