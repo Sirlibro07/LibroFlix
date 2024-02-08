@@ -2,6 +2,5 @@
 
 
 @section('content')
-    <h1>Thanks for joining us {{$user->name}} with your email: {{$user->email}}></h1>
-    
+    <p>Thank you {{$user->name}} for interacting with my portfolio at <a href="{{asset("")}}">{{asset("")}}</a>.<br><br>  if this wasn't you someone used your email, here's the link to delete the account: <a href="{{asset("")}}">{{asset("")}}</a></p>
 @endsection

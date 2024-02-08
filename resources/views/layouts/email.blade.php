@@ -12,7 +12,13 @@
         {
             padding: 0;
             margin: 0;
-            box-sizing: border-box
+            box-sizing: border-box;
+            font-family: Inter, sans-serif;
+            font-size: 16px;
+            font-weight: normal;
+            color:white;
+            
+            
         }
 
         html,body
@@ -20,7 +26,7 @@
             height: 100%;
         }
 
-        .center
+        body
         {
             display: flex;
             justify-content: center;
@@ -29,16 +35,31 @@
 
         main
         {
-            height: 50%;
+            height: fit-content;
             width: clamp(250px, 100%, 500px);
-            background-color: red;
+            background-color: black;
             border-radius: 30px;
+            padding: 50px;
+            
+        }
 
+        #logo
+        {
+            font-family: Reggae One, Inter, sans-serif;
+            font-size: 33px;
+            color: #F37335;
+            margin-bottom: 20px;
+        }
+
+        p
+        {
+            line-height: 1.5rem
         }
     </style>
 </head>
-<body class="center">
+<body>
     <main class="center">
+        <h1 id="logo">Librone</h1>
         @yield('content')
     </main>
 </body>
