@@ -4,7 +4,7 @@ import { useForm } from "@inertiajs/react";
 import React from "react";
 import FormInputField from "@/Components/FormInputField";
 
-export default function ResetPassword({ token, email }) {
+const ResetPassword = ({ token, email }) => {
     const { data, setData, post, processing, errors, reset } = useForm({
         token: token,
         email: email,
@@ -50,4 +50,6 @@ export default function ResetPassword({ token, email }) {
             />
         </AuthLayout>
     );
-}
+};
+
+export default ResetPassword;
