@@ -14,8 +14,7 @@
             margin: 0;
             box-sizing: border-box;
             color:white;
-            
-            
+            font-weight: normal;
         }
 
         html,body
@@ -53,7 +52,7 @@
             line-height: 1.5rem;
             font-size: 16px;
             font-family: Inter, sans-serif;
-            font-weight: normal;
+            
         }
 
         @media(min-width: 1024px)
