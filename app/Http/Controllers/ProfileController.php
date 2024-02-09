@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Response;
+use Illuminate\Support\Str;
 
 class ProfileController extends Controller
 {
@@ -28,6 +29,7 @@ class ProfileController extends Controller
 
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
+            $request->user()->email_verification_token = base64_encode(Str::random(60));
         }
 
         $request->user()->save();

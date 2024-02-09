@@ -39,11 +39,15 @@
             
         }
 
+        .text-brand-class
+        {
+            color: #F37335;
+        }
+
         #logo
         {
             font-family: Reggae One, Inter, sans-serif;
             font-size: 33px;
-            color: #F37335;
             margin-bottom: 20px;
         }
 
@@ -66,7 +70,7 @@
 </head>
 <body>
     <main class="center">
-        <h1 id="logo">Librone</h1>
+        <h1 id="logo" class="text-brand-class">Librone</h1>
         @yield('content')
     </main>
 </body>

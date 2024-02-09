@@ -3,26 +3,29 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Verified;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class VerifyEmailController extends Controller
 {
     /**
      * Mark the authenticated user's email address as verified.
      */
-    public function __invoke(EmailVerificationRequest $request): RedirectResponse
+    public function __invoke($id, $hash)
     {
-        if ($request->user()->hasVerifiedEmail()) {
-            return redirect()->intended(RouteServiceProvider::HOME.'?verified=1');
-        }
+        try {
+            $user = User::findOrFail($id);
 
-        if ($request->user()->markEmailAsVerified()) {
-            event(new Verified($request->user()));
-        }
+            if (!$user->hasVerifiedEmail() && $user->email_verification_token == $hash) {
+                $user->markEmailAsVerified();
+                $user->email_verification_token = null;
+                $user->save();
+            }
 
-        return redirect()->intended(RouteServiceProvider::HOME.'?verified=1');
+            return redirect()->intended(RouteServiceProvider::HOME);
+        } catch (ModelNotFoundException $e) {
+            abort(404);
+        }
     }
 }
