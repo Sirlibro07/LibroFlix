@@ -33,7 +33,7 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "app/Helpers/temporaryEmailVerificationSignedRoute.php"
+            "app/Helpers/helper.php"
         ]
     },
     "autoload-dev": {
