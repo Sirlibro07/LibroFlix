@@ -32,7 +32,7 @@ class WelcomeEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            to: "test@gmail.com",
+            to: $this->user->email,
             subject: 'Welcome Email',
         );
     }
