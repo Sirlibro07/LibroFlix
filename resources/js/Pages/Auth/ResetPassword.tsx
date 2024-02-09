@@ -4,10 +4,10 @@ import { useForm } from "@inertiajs/react";
 import React from "react";
 import FormInputField from "@/Components/FormInputField";
 
-const ResetPassword = ({ token, email }) => {
+const ResetPassword = ({ id, token }) => {
     const { data, setData, post, processing, errors, reset } = useForm({
         token: token,
-        email: email,
+        id: id,
         password: "",
         password_confirmation: "",
     });

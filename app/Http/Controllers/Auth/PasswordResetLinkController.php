@@ -3,14 +3,18 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\PasswordResetEmail;
+use App\Models\User;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Support\Str;
 
 class PasswordResetLinkController extends Controller
 {
@@ -29,29 +33,20 @@ class PasswordResetLinkController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         $request->validate([
-            'email' => 'required|email|exists:users,email',
-        ], ['email.exists' => 'Invalid email',]);
+            'email' => 'required|email',
+        ]);
 
+        $user = User::where("email", $request->get("email"))->first();
+        $user->password_reset_token =  base64_encode(Str::random(60));
+        $user->save();
 
+        $url = SignedRoute('password.reset', 5, $user, $user->password_reset_token);
 
+        Mail::send(new PasswordResetEmail($user, $url));
 
-        try {
-            $status = Password::sendResetLink(
-                $request->only('email')
-            );
-
-            if ($status == Password::RESET_THROTTLED) {
-                return back()->withErrors(['email' => trans($status)]);
-            }
-
-            if ($status == Password::RESET_LINK_SENT) {
-                return back()->with('status', trans($status));
-            }
-        } catch (Exception $e) {
-            return back()->withErrors(['email' => "Something went wrong, please try again in a few minutes"]);
-        }
+        return back()->with("status", "password reset email sent");
     }
 }
