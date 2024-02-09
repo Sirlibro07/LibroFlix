@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -29,6 +30,8 @@ class NewPasswordController extends Controller
                     'token' => $hash,
                 ]);
             }
+
+            return redirect(RouteServiceProvider::HOME);
         } catch (ModelNotFoundException $e) {
             abort(404);
         }
