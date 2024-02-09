@@ -32,7 +32,7 @@ class SendWelcomeEmail implements ShouldQueue
         try {
             $user = $event->user;
 
-            $url = URL::temporarySignedRoute('verification.verify', now()->addMinutes(30), ['id' => $user->id, 'hash' => $user->email_verification_token]);
+            $url = temporaryEmailVerificationSignedRoute($user);
 
             Mail::send(new WelcomeEmail($user, $url));
         } catch (Exception $e) {
