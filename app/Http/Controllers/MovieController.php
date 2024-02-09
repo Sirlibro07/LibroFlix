@@ -19,7 +19,7 @@ class MovieController extends Controller
 
     public function show(string $title): Response
     {
-        return $this->renderAppPage('Movie', [
+        return $this->renderAppView('Movie', [
             'movie' => MovieResource::make(Movie::where("title", $title)->firstOrFail()),
         ]);
     }
