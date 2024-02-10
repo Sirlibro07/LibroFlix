@@ -8,7 +8,15 @@ import AuthSuccessMessage from "@/Components/AuthSuccessMessage";
 import GeneralLink from "@/Components/GeneralLink";
 
 export default function Login({ status, canResetPassword }) {
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const {
+        data,
+        setData,
+        post,
+        processing,
+        errors,
+        recentlySuccessful,
+        reset,
+    } = useForm({
         email: "",
         password: "",
         remember: false,
@@ -32,6 +40,10 @@ export default function Login({ status, canResetPassword }) {
             link_title="Don't have an account? Sign up"
             processing={processing}
         >
+            <AuthSuccessMessage
+                message={status}
+                recentlySuccessful={recentlySuccessful}
+            />
             <FormInputField
                 name={"email"}
                 value={data.email}
@@ -46,7 +58,6 @@ export default function Login({ status, canResetPassword }) {
                 errors_field={errors.password}
                 icon_name="lock"
             />
-            <AuthSuccessMessage status={status} />
 
             <div className="flex items-center justify-between mt-6 ">
                 <FormCheckboxField
