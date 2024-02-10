@@ -2,13 +2,9 @@ import React from "react";
 
 interface AuthSuccessMessageProps {
     status: string;
-    setMessage: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const AuthSuccessMessage = ({
-    status,
-    setMessage,
-}: AuthSuccessMessageProps) => {
+const AuthSuccessMessage = ({ status }: AuthSuccessMessageProps) => {
     return (
         <>
             {status && (

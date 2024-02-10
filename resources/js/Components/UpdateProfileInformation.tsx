@@ -1,11 +1,11 @@
-import { router, useForm, usePage } from "@inertiajs/react";
+import { router, useForm } from "@inertiajs/react";
 import ProfileForm from "@/Components/ProfileForm";
 import FormInputField from "@/Components/FormInputField";
 import React, { useContext } from "react";
 import UserContext from "@/Contexts/UserContext";
 import Button from "@/Components/Button";
 
-const UpdateProfileInformation = ({ status, setMessage }) => {
+const UpdateProfileInformation = ({ status }) => {
     {
         const user = useContext(UserContext);
 
@@ -25,7 +25,6 @@ const UpdateProfileInformation = ({ status, setMessage }) => {
                     route_name="profile.update"
                     processing={processing}
                     status={status}
-                    setMessage={setMessage}
                 >
                     <FormInputField
                         name={"name"}

@@ -12,7 +12,6 @@ interface ProfileFormProps {
     status?: string;
     button_title?: string;
     button_bg_color?: string;
-    setMessage: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const ProfileForm = ({
@@ -23,7 +22,6 @@ const ProfileForm = ({
     status = "",
     button_title = "Update",
     button_bg_color = "bg_brand",
-    setMessage,
 }: ProfileFormProps) => {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -32,7 +30,7 @@ const ProfileForm = ({
     };
     return (
         <form onSubmit={submitHandler} className="max-w-[41.25rem] relative">
-            <AuthSuccessMessage status={status} setMessage={setMessage} />
+            <AuthSuccessMessage status={status} />
 
             {children}
             <Button
