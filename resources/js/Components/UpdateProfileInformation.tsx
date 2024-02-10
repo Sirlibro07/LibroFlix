@@ -5,14 +5,15 @@ import React, { useContext } from "react";
 import UserContext from "@/Contexts/UserContext";
 import Button from "@/Components/Button";
 
-const UpdateProfileInformation = ({ status }) => {
+const UpdateProfileInformation = () => {
     {
         const user = useContext(UserContext);
 
-        const { data, setData, patch, errors, processing } = useForm({
-            name: user.name,
-            email: user.email,
-        });
+        const { data, setData, patch, errors, recentlySuccessful, processing } =
+            useForm({
+                name: user.name,
+                email: user.email,
+            });
 
         const buttonOnClickhandler = () => {
             router.post(route("verification.send"));
@@ -24,7 +25,8 @@ const UpdateProfileInformation = ({ status }) => {
                     method_function={patch}
                     route_name="profile.update"
                     processing={processing}
-                    status={status}
+                    recentlySuccessful={recentlySuccessful}
+                    message="Profile info updated"
                 >
                     <FormInputField
                         name={"name"}

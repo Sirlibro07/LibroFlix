@@ -8,19 +8,17 @@ import AccountHeader from "@/Components/AccountHeader";
 const Account = ({ status }) => {
     const [currentOption, setCurrentOption] = useState("Profile");
 
-    const [message, setMessage] = useState<string>(status);
-
     return (
         <AppLayout className="pt-8" footer_className="mt-[25rem]">
             <Head title="Profile" />
             <AccountHeader />
             <AccountOptionsList
-                currentOption={currentOption}
+                currentOption={status}
                 setCurrentOption={setCurrentOption}
             />
             <AccountCurrentOption
                 currentOption={currentOption}
-                message={message}
+                status={status}
             />
         </AppLayout>
     );

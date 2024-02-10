@@ -9,7 +9,8 @@ interface ProfileFormProps {
     method_function: any;
     route_name: string;
     processing?: boolean;
-    status?: string;
+    recentlySuccessful?: boolean;
+    message?: string;
     button_title?: string;
     button_bg_color?: string;
 }
@@ -19,7 +20,8 @@ const ProfileForm = ({
     method_function,
     route_name,
     processing = false,
-    status = "",
+    recentlySuccessful = false,
+    message = "",
     button_title = "Update",
     button_bg_color = "bg_brand",
 }: ProfileFormProps) => {
@@ -30,7 +32,10 @@ const ProfileForm = ({
     };
     return (
         <form onSubmit={submitHandler} className="max-w-[41.25rem] relative">
-            <AuthSuccessMessage status={status} />
+            <AuthSuccessMessage
+                recentlySuccessful={recentlySuccessful}
+                message={message}
+            />
 
             {children}
             <Button
