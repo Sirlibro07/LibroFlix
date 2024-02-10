@@ -5,7 +5,7 @@ import React, { useContext } from "react";
 import UserContext from "@/Contexts/UserContext";
 import Button from "@/Components/Button";
 
-const UpdateProfileInformation = () => {
+const UpdateProfileInformation = ({ status }) => {
     {
         const user = useContext(UserContext);
 
@@ -26,7 +26,7 @@ const UpdateProfileInformation = () => {
                     route_name="profile.update"
                     processing={processing}
                     recentlySuccessful={recentlySuccessful}
-                    message="Profile info updated"
+                    message={status}
                 >
                     <FormInputField
                         name={"name"}

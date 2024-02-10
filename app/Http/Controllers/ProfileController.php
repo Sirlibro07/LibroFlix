@@ -18,7 +18,7 @@ class ProfileController extends Controller
      */
     public function edit(): Response
     {
-        return $this->renderAppView('Account');
+        return $this->renderAppView('Account', ['status' => session('status'),]);
     }
 
     /**
@@ -35,7 +35,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return back();
+        return back()->with("status", "Profile info updated");
     }
 
     /**

@@ -4,18 +4,18 @@ import UpdatePasswordForm from "@/Components/UpdatePasswordForm";
 import UpdateProfileInformationForm from "@/Components/UpdateProfileInformation";
 import LogoutForm from "@/Components/LogoutForm";
 
-const AccountCurrentOption = ({ currentOption }) => {
+const AccountCurrentOption = ({ currentOption, status }) => {
     const renderCurrentOption = () => {
         switch (currentOption) {
             case "Profile":
                 return (
                     <>
-                        <UpdateProfileInformationForm />
+                        <UpdateProfileInformationForm status={status} />
                         <LogoutForm />
                     </>
                 );
             case "Password":
-                return <UpdatePasswordForm />;
+                return <UpdatePasswordForm status={status} />;
             case "Other":
                 return <DeleteUserForm />;
         }

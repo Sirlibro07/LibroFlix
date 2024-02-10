@@ -4,10 +4,11 @@ import React from "react";
 import FormInputField from "@/Components/FormInputField";
 import AuthSuccessMessage from "@/Components/AuthSuccessMessage";
 
-export default function ForgotPassword({ status }) {
-    const { data, setData, post, processing, errors } = useForm({
-        email: "",
-    });
+export default function ForgotPassword({ status }: { status: string }) {
+    const { data, setData, post, processing, recentlySuccessful, errors } =
+        useForm({
+            email: "",
+        });
 
     return (
         <AuthLayout
@@ -28,7 +29,10 @@ export default function ForgotPassword({ status }) {
                 icon_name="envelope"
             />
 
-            <AuthSuccessMessage status={status} />
+            <AuthSuccessMessage
+                recentlySuccessful={recentlySuccessful}
+                message={status}
+            />
         </AuthLayout>
     );
 }
