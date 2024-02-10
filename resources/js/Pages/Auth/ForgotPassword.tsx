@@ -21,17 +21,16 @@ export default function ForgotPassword({ status }: { status: string }) {
             button_title="Send Recovery Email"
             processing={processing}
         >
+            <AuthSuccessMessage
+                recentlySuccessful={recentlySuccessful}
+                message={status}
+            />
             <FormInputField
                 name={"email"}
                 value={data.email}
                 setData={setData}
                 errors_field={errors.email}
                 icon_name="envelope"
-            />
-
-            <AuthSuccessMessage
-                recentlySuccessful={recentlySuccessful}
-                message={status}
             />
         </AuthLayout>
     );
