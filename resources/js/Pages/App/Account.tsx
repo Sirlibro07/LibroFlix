@@ -13,7 +13,7 @@ const Account = () => {
             <Head title="Profile" />
             <AccountHeader />
             <AccountOptionsList
-                currentOption={status}
+                currentOption={currentOption}
                 setCurrentOption={setCurrentOption}
             />
             <AccountCurrentOption currentOption={currentOption} />
