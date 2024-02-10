@@ -2,25 +2,27 @@
 
 namespace App\Mail;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Auth;
 
 class VerificationEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public User $user;
     public string $email_verification_route;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($email_verification_route)
+    public function __construct($user, $email_verification_route)
     {
+        $this->user = $user;
         $this->email_verification_route = $email_verification_route;
     }
 
@@ -30,7 +32,7 @@ class VerificationEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            to: Auth::user()->email,
+            to: $this->user->email,
             subject: 'Verification Email',
         );
     }
