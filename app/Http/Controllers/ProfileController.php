@@ -18,7 +18,7 @@ class ProfileController extends Controller
      */
     public function edit(): Response
     {
-        return $this->renderAppView('Profile/Account');
+        return $this->renderAppView('Account');
     }
 
     /**
