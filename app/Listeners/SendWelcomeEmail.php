@@ -27,16 +27,10 @@ class SendWelcomeEmail implements ShouldQueue
      * Handle the event.
      */
     public function handle(UserRegistered $event): void
-
     {
-        try {
-            $user = $event->user;
+        $user = $event->user;
+        $url = temporaryEmailVerificationSignedRoute($user);
 
-            $url = temporaryEmailVerificationSignedRoute($user);
-
-            Mail::send(new WelcomeEmail($user, $url));
-        } catch (Exception $e) {
-            Log::error($e->getMessage());
-        }
+        sendEmail(new WelcomeEmail($user, $url));
     }
 }
