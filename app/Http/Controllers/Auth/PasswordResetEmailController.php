@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\PasswordResetRequested;
 use App\Http\Controllers\Controller;
-use App\Mail\PasswordResetEmail;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 use Inertia\Response;
-use Illuminate\Support\Str;
 
 class PasswordResetEmailController extends Controller
 {
     /**
-     * Display the password reset link request view.
+     * Display the password reset email request view.
      */
     public function create(): Response
     {
@@ -24,7 +22,7 @@ class PasswordResetEmailController extends Controller
     }
 
     /**
-     * Handle an incoming password reset link request.
+     * Handle an incoming password reset email request.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -35,13 +33,9 @@ class PasswordResetEmailController extends Controller
         ]);
 
         $user = User::where("email", $request->get("email"))->first();
-        $user->password_reset_token =  base64_encode(Str::random(60));
-        $user->save();
 
-        $url = SignedRoute('password.reset', 5, $user, $user->password_reset_token);
+        PasswordResetRequested::dispatch($user);
 
-        Mail::send(new PasswordResetEmail($user, $url));
-
-        return back()->with("status", "password reset email sent");
+        return back()->with("status", "password reset email sent, it could take some seconds for the email to arrive.");
     }
 }
