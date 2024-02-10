@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import formSubmit from "@/Shared/formSubmit";
 import Button from "./Button";
+import AuthSuccessMessage from "./AuthSuccessMessage";
 
 interface ProfileFormProps {
     children: ReactNode;
@@ -8,9 +9,10 @@ interface ProfileFormProps {
     method_function: any;
     route_name: string;
     processing?: boolean;
-    recentlySuccessful?: boolean;
+    status?: string;
     button_title?: string;
     button_bg_color?: string;
+    setMessage: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const ProfileForm = ({
@@ -18,9 +20,10 @@ const ProfileForm = ({
     method_function,
     route_name,
     processing = false,
-    recentlySuccessful = false,
+    status = "",
     button_title = "Update",
     button_bg_color = "bg_brand",
+    setMessage,
 }: ProfileFormProps) => {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -28,12 +31,8 @@ const ProfileForm = ({
         formSubmit(e, method_function, route_name);
     };
     return (
-        <form onSubmit={submitHandler} className="max-w-[41.25rem]">
-            {recentlySuccessful && (
-                <div className="w-full flex justify-center bg-green rounded-10">
-                    <p className="text-white py-3">Updated</p>
-                </div>
-            )}
+        <form onSubmit={submitHandler} className="max-w-[41.25rem] relative">
+            <AuthSuccessMessage status={status} setMessage={setMessage} />
 
             {children}
             <Button

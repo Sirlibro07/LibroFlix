@@ -7,20 +7,25 @@ import React, { useState } from "react";
 import OptionsList from "@/Components/OptionsList";
 import LogoutForm from "@/Components/LogoutForm";
 
-export default function Edit() {
+export default function Edit({ status }) {
     const [currentOption, setCurrentOption] = useState("Profile");
+
+    const [message, setMessage] = useState<string>(status);
 
     const renderCurrentOption = () => {
         switch (currentOption) {
             case "Profile":
                 return (
                     <>
-                        <UpdateProfileInformationForm />
+                        <UpdateProfileInformationForm
+                            status={message}
+                            setMessage={setMessage}
+                        />
                         <LogoutForm />
                     </>
                 );
             case "Password":
-                return <UpdatePasswordForm />;
+                return <UpdatePasswordForm status={message} />;
             case "Other":
                 return <DeleteUserForm />;
         }

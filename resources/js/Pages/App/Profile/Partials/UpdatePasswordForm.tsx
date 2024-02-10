@@ -3,16 +3,8 @@ import ProfileForm from "@/Components/ProfileForm";
 import FormInputField from "@/Components/FormInputField";
 import React from "react";
 
-export default function UpdatePasswordForm() {
-    const {
-        data,
-        setData,
-        errors,
-        put,
-        reset,
-        processing,
-        recentlySuccessful,
-    } = useForm({
+export default function UpdatePasswordForm({ status }) {
+    const { data, setData, errors, put, processing } = useForm({
         current_password: "",
         password: "",
         password_confirmation: "",
@@ -23,7 +15,7 @@ export default function UpdatePasswordForm() {
             method_function={put}
             route_name="password.update"
             processing={processing}
-            recentlySuccessful={recentlySuccessful}
+            status={status}
         >
             <FormInputField
                 name={"Current Password"}
