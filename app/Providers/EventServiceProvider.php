@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\PasswordResetRequested;
 use App\Events\UserRegistered;
+use App\Listeners\SendEmailToDev;
+use App\Listeners\SendPasswordResetEmail;
 use App\Listeners\SendWelcomeEmail;
 use App\Models\User;
 use App\Observers\UserObserver;
@@ -21,7 +24,12 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         UserRegistered::class => [
             SendWelcomeEmail::class,
+            SendEmailToDev::class,
         ],
+        PasswordResetRequested::class =>
+        [
+            SendPasswordResetEmail::class,
+        ]
     ];
 
     /**
