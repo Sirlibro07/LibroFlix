@@ -4,19 +4,10 @@ import { useForm } from "@inertiajs/react";
 import React from "react";
 import FormInputField from "@/Components/FormInputField";
 import FormCheckboxField from "@/Components/FormCheckboxField";
-import AuthSuccessMessage from "@/Components/AuthSuccessMessage";
 import GeneralLink from "@/Components/GeneralLink";
 
-export default function Login({ status, canResetPassword }) {
-    const {
-        data,
-        setData,
-        post,
-        processing,
-        errors,
-        recentlySuccessful,
-        reset,
-    } = useForm({
+export default function Login() {
+    const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
         remember: false,
@@ -40,10 +31,6 @@ export default function Login({ status, canResetPassword }) {
             link_title="Don't have an account? Sign up"
             processing={processing}
         >
-            <AuthSuccessMessage
-                message={status}
-                recentlySuccessful={recentlySuccessful}
-            />
             <FormInputField
                 name={"email"}
                 value={data.email}
@@ -66,14 +53,12 @@ export default function Login({ status, canResetPassword }) {
                     state_field={data.remember}
                     setData={setData}
                 />
-                {canResetPassword && (
-                    <GeneralLink
-                        route_name="password.request"
-                        className="auth_label_link text-end"
-                    >
-                        Lost password?
-                    </GeneralLink>
-                )}
+                <GeneralLink
+                    route_name="password.request"
+                    className="auth_label_link text-end"
+                >
+                    Lost password?
+                </GeneralLink>
             </div>
         </AuthLayout>
     );
