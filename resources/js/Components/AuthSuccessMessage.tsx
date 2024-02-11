@@ -1,19 +1,15 @@
 import React from "react";
 
 interface AuthSuccessMessageProps {
-    recentlySuccessful: boolean;
-    message: string;
+    status: string;
 }
 
-const AuthSuccessMessage = ({
-    recentlySuccessful,
-    message,
-}: AuthSuccessMessageProps) => {
+const AuthSuccessMessage = ({ status }: AuthSuccessMessageProps) => {
     return (
         <>
-            {recentlySuccessful && (
+            {status && (
                 <p className="w-full flex justify-center bg-green rounded-10 p-3">
-                    {message}
+                    {status}
                 </p>
             )}
         </>

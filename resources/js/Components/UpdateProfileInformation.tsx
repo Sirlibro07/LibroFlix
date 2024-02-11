@@ -9,11 +9,10 @@ const UpdateProfileInformation = ({ status }) => {
     {
         const user = useContext(UserContext);
 
-        const { data, setData, patch, errors, recentlySuccessful, processing } =
-            useForm({
-                name: user.name,
-                email: user.email,
-            });
+        const { data, setData, patch, errors, processing } = useForm({
+            name: user.name,
+            email: user.email,
+        });
 
         const buttonOnClickhandler = () => {
             router.post(route("verification.send"));
@@ -25,8 +24,7 @@ const UpdateProfileInformation = ({ status }) => {
                     method_function={patch}
                     route_name="profile.update"
                     processing={processing}
-                    recentlySuccessful={recentlySuccessful}
-                    message={status}
+                    status={status}
                 >
                     <FormInputField
                         name={"name"}

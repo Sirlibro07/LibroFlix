@@ -21,10 +21,7 @@ export default function ForgotPassword({ status }: { status: string }) {
             button_title="Send Recovery Email"
             processing={processing}
         >
-            <AuthSuccessMessage
-                recentlySuccessful={recentlySuccessful}
-                message={status}
-            />
+            <AuthSuccessMessage status={status} />
             <FormInputField
                 name={"email"}
                 value={data.email}

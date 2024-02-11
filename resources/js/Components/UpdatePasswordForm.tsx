@@ -4,20 +4,18 @@ import FormInputField from "@/Components/FormInputField";
 import React from "react";
 
 export default function UpdatePasswordForm({ status }) {
-    const { data, setData, errors, put, recentlySuccessful, processing } =
-        useForm({
-            current_password: "",
-            password: "",
-            password_confirmation: "",
-        });
+    const { data, setData, errors, put, processing } = useForm({
+        current_password: "",
+        password: "",
+        password_confirmation: "",
+    });
 
     return (
         <ProfileForm
             method_function={put}
             route_name="password.update"
             processing={processing}
-            recentlySuccessful={recentlySuccessful}
-            message={status}
+            status={status}
         >
             <FormInputField
                 name={"Current Password"}
