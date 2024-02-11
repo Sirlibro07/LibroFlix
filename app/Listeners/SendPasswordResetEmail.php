@@ -6,7 +6,6 @@ use App\Events\PasswordResetEmailRequested;
 use App\Mail\PasswordResetEmail;
 use App\Models\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Support\Str;
 
 class SendPasswordResetEmail implements ShouldQueue
 {
@@ -25,9 +24,8 @@ class SendPasswordResetEmail implements ShouldQueue
     {
         $user = User::where("email", $event->email)->first();
         if ($user) {
-            $user->password_reset_token =  base64_encode(Str::random(60));
-            $user->save();
-            $url = SignedRoute('password.reset', 5, $user, $user->password_reset_token);
+            generatePasswordResetToken($user);
+            $url = temporaryPasswordResetSignedRoute($user);
 
             sendEmail(new PasswordResetEmail($user, $url));
         }

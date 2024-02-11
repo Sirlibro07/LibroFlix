@@ -5,8 +5,6 @@ namespace App\Listeners;
 use App\Events\PasswordUpdateRequested;
 use App\Mail\PasswordUpdatedEmail;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 
 class SendPasswordUpdatedEmail implements ShouldQueue
 {
@@ -25,9 +23,8 @@ class SendPasswordUpdatedEmail implements ShouldQueue
     {
         $user = $event->user;
 
-        $user->password_reset_token =  base64_encode(Str::random(60));
-        $user->save();
-        $url = SignedRoute('password.reset', 5, $user, $user->password_reset_token);
+        generatePasswordResetToken($user);
+        $url = temporaryPasswordResetSignedRoute($user);
         sendEmail(new PasswordUpdatedEmail($url, $user->email));
     }
 }
