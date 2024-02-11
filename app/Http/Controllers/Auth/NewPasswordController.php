@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\PasswordChangeRequested;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -48,10 +49,9 @@ class NewPasswordController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = User::find($request->get("id"));
-        $user->password = Hash::make($request->get('password'));
-        $user->password_reset_token = null;
-        $user->save();
+        $id = $request->get("id");
+        $password = $request->get('password');
+        PasswordChangeRequested::dispatch($id, $password);
 
         return redirect()->route('login')->with('status', "password updated");
     }

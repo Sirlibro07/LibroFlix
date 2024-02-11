@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Events\ChangeUserPassword;
+use App\Events\PasswordChangeRequested;
 use App\Events\PasswordResetEmailRequested;
 use App\Events\UserRegistered;
+use App\Listeners\ChangePassword;
 use App\Listeners\SendEmailToDev;
 use App\Listeners\SendPasswordResetEmail;
 use App\Listeners\SendWelcomeEmail;
@@ -27,7 +29,11 @@ class EventServiceProvider extends ServiceProvider
         PasswordResetEmailRequested::class =>
         [
             SendPasswordResetEmail::class,
-        ]
+        ],
+        PasswordChangeRequested::class =>
+        [
+            ChangePassword::class,
+        ],
     ];
 
     /**

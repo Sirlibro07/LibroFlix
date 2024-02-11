@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Listeners;
+
+use App\Events\PasswordChangeRequested;
+use App\Models\User;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Hash;
+
+class ChangePassword
+{
+    /**
+     * Create the event listener.
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Handle the event.
+     */
+    public function handle(PasswordChangeRequested $event): void
+    {
+        $user = User::find($event->id);;
+        $user->password = Hash::make($event->password);
+        $user->password_reset_token = null;
+        $user->save();
+    }
+}
