@@ -6,6 +6,7 @@ use App\Events\EmailVerificationNotificationRequested;
 use App\Events\LogoutRequested;
 use App\Events\PasswordChangeRequested;
 use App\Events\PasswordResetEmailRequested;
+use App\Events\PasswordUpdateRequested;
 use App\Events\ProfileUpdateRequested;
 use App\Events\Registered;
 use App\Listeners\ChangePassword;
@@ -14,6 +15,7 @@ use App\Listeners\SendEmailToDev;
 use App\Listeners\SendEmailVerificationNotification;
 use App\Listeners\SendPasswordResetEmail;
 use App\Listeners\SendWelcomeEmail;
+use App\Listeners\UpdatePassword;
 use App\Listeners\UpdateProfile;
 use App\Models\User;
 use App\Observers\UserObserver;
@@ -49,7 +51,11 @@ class EventServiceProvider extends ServiceProvider
         ],
         ProfileUpdateRequested::class => [
             UpdateProfile::class
-        ]
+        ],
+        PasswordUpdateRequested::class => [
+            UpdatePassword::class
+        ],
+
 
     ];
 
