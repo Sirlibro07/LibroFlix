@@ -5,8 +5,9 @@ import React from "react";
 import FormInputField from "@/Components/FormInputField";
 import FormCheckboxField from "@/Components/FormCheckboxField";
 import GeneralLink from "@/Components/GeneralLink";
+import AuthSuccessMessage from "@/Components/AuthSuccessMessage";
 
-export default function Login() {
+export default function Login({ status }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
@@ -31,6 +32,7 @@ export default function Login() {
             link_title="Don't have an account? Sign up"
             processing={processing}
         >
+            <AuthSuccessMessage status={status} />
             <FormInputField
                 name={"email"}
                 value={data.email}
