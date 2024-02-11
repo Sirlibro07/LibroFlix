@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Events\EmailVerificationNotificationRequested;
 use App\Events\LogoutRequested;
 use App\Events\PasswordChangeRequested;
 use App\Events\PasswordResetEmailRequested;
@@ -9,6 +10,7 @@ use App\Events\Registered;
 use App\Listeners\ChangePassword;
 use App\Listeners\LogoutUser;
 use App\Listeners\SendEmailToDev;
+use App\Listeners\SendEmailVerificationNotification;
 use App\Listeners\SendPasswordResetEmail;
 use App\Listeners\SendWelcomeEmail;
 use App\Models\User;
@@ -38,6 +40,10 @@ class EventServiceProvider extends ServiceProvider
         LogoutRequested::class =>
         [
             LogoutUser::class
+        ],
+        EmailVerificationNotificationRequested::class =>
+        [
+            SendEmailVerificationNotification::class
         ],
     ];
 

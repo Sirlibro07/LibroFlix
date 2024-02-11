@@ -2,23 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\EmailVerificationNotificationRequested;
 use App\Http\Controllers\Controller;
-use App\Jobs\SendEmailJob;
-use App\Mail\VerificationEmail;
 use Illuminate\Http\Request;
 
 class EmailVerificationNotificationController extends Controller
 {
     public function store(Request $request)
     {
-        $user = $request->user();
-        if (!$user->hasVerifiedEmail()) {
+        EmailVerificationNotificationRequested::dispatch($request->user());
 
-            $url = temporaryEmailVerificationSignedRoute($request->user());
-
-            SendEmailJob::dispatch(new VerificationEmail($user, $url));
-
-            return back()->with("status", "email verification sent, it could take some seconds for it to arrive");
-        }
+        return back()->with("status", "email verification sent, it could take some seconds for it to arrive");
     }
 }
