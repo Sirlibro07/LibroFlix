@@ -5,9 +5,7 @@ import AccountOptionsList from "@/Components/AccountOptionsList";
 import AccountCurrentOption from "@/Components/AccountCurrentOption";
 import AccountHeader from "@/Components/AccountHeader";
 
-const Account = ({ status }) => {
-    console.log(status);
-
+const Account = ({ status, has_verified_email }) => {
     const [currentOption, setCurrentOption] = useState("Profile");
 
     return (
@@ -21,6 +19,7 @@ const Account = ({ status }) => {
             <AccountCurrentOption
                 currentOption={currentOption}
                 status={status}
+                has_verified_email={has_verified_email}
             />
         </AppLayout>
     );

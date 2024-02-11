@@ -5,7 +5,15 @@ import React, { useContext } from "react";
 import UserContext from "@/Contexts/UserContext";
 import EmailVerificationButton from "./EmailVerificationButton";
 
-const UpdateProfileInformation = ({ status }) => {
+interface UpdateProfileInformationProps {
+    status: string;
+    has_verified_email: boolean;
+}
+
+const UpdateProfileInformation = ({
+    status,
+    has_verified_email,
+}: UpdateProfileInformationProps) => {
     {
         const user = useContext(UserContext);
 
@@ -39,7 +47,9 @@ const UpdateProfileInformation = ({ status }) => {
                         setData={setData}
                         className="inline w-[5px]"
                     />
-                    <EmailVerificationButton />
+                    <EmailVerificationButton
+                        has_verified_email={has_verified_email}
+                    />
                 </ProfileForm>
             </>
         );

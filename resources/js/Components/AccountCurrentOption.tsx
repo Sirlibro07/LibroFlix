@@ -4,13 +4,20 @@ import UpdatePasswordForm from "@/Components/UpdatePasswordForm";
 import UpdateProfileInformationForm from "@/Components/UpdateProfileInformation";
 import LogoutForm from "@/Components/LogoutForm";
 
-const AccountCurrentOption = ({ currentOption, status }) => {
+const AccountCurrentOption = ({
+    currentOption,
+    status,
+    has_verified_email,
+}) => {
     const renderCurrentOption = () => {
         switch (currentOption) {
             case "Profile":
                 return (
                     <>
-                        <UpdateProfileInformationForm status={status} />
+                        <UpdateProfileInformationForm
+                            has_verified_email={has_verified_email}
+                            status={status}
+                        />
                         <LogoutForm />
                     </>
                 );

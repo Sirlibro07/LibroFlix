@@ -16,9 +16,15 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function edit(): Response
+    public function edit(Request $request): Response
     {
-        return $this->renderAppView('Account', ['status' => session('status'),]);
+        return $this->renderAppView(
+            'Account',
+            [
+                'status' => session('status'),
+                'has_verified_email' => !$request->user()->hasVerifiedEmail(),
+            ]
+        );
     }
 
     /**
@@ -34,6 +40,7 @@ class ProfileController extends Controller
         }
 
         $request->user()->save();
+        //TODO make this to event
 
         return back()->with("status", "Profile info updated");
     }
@@ -55,6 +62,7 @@ class ProfileController extends Controller
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        //TODO make this to event
 
         return Redirect::to(RouteServiceProvider::HOME);
     }
