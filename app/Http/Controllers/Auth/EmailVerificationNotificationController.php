@@ -18,7 +18,7 @@ class EmailVerificationNotificationController extends Controller
 
             SendEmailJob::dispatch(new VerificationEmail($user, $url));
 
-            return back()->with("status", "email sent");
+            return back()->with("status", "email verification sent, it could take some seconds for it to arrive");
         }
     }
 }
