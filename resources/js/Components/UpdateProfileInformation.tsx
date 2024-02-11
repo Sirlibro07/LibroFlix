@@ -1,9 +1,9 @@
-import { router, useForm } from "@inertiajs/react";
+import { useForm } from "@inertiajs/react";
 import ProfileForm from "@/Components/ProfileForm";
 import FormInputField from "@/Components/FormInputField";
 import React, { useContext } from "react";
 import UserContext from "@/Contexts/UserContext";
-import Button from "@/Components/Button";
+import EmailVerificationButton from "./EmailVerificationButton";
 
 const UpdateProfileInformation = ({ status }) => {
     {
@@ -13,10 +13,6 @@ const UpdateProfileInformation = ({ status }) => {
             name: user.name,
             email: user.email,
         });
-
-        const buttonOnClickhandler = () => {
-            router.post(route("verification.send"));
-        };
 
         return (
             <>
@@ -43,13 +39,7 @@ const UpdateProfileInformation = ({ status }) => {
                         setData={setData}
                         className="inline w-[5px]"
                     />
-                    <Button
-                        type="button"
-                        onClick={buttonOnClickhandler}
-                        className="bg_brand w-[70px] transitions hover:w-[90px] absolute right-0 mt-[-52px]"
-                    >
-                        Verify
-                    </Button>
+                    <EmailVerificationButton />
                 </ProfileForm>
             </>
         );
