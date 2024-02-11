@@ -2,17 +2,15 @@
 
 namespace App\Providers;
 
-use App\Events\PasswordResetRequested;
+use App\Events\ChangeUserPassword;
+use App\Events\PasswordResetEmailRequested;
 use App\Events\UserRegistered;
 use App\Listeners\SendEmailToDev;
 use App\Listeners\SendPasswordResetEmail;
 use App\Listeners\SendWelcomeEmail;
 use App\Models\User;
 use App\Observers\UserObserver;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -26,7 +24,7 @@ class EventServiceProvider extends ServiceProvider
             SendWelcomeEmail::class,
             SendEmailToDev::class,
         ],
-        PasswordResetRequested::class =>
+        PasswordResetEmailRequested::class =>
         [
             SendPasswordResetEmail::class,
         ]

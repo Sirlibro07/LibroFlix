@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\PasswordResetRequested;
+use App\Events\PasswordResetEmailRequested;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -34,7 +34,7 @@ class PasswordResetEmailController extends Controller
 
         $user = User::where("email", $request->get("email"))->first();
 
-        PasswordResetRequested::dispatch($user);
+        PasswordResetEmailRequested::dispatch($user);
 
         return back()->with("status", "password reset email sent, it could take some seconds for the email to arrive.");
     }
