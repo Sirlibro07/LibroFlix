@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ProfileDeleteRequested;
 use App\Events\ProfileUpdateRequested;
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Providers\RouteServiceProvider;
@@ -47,15 +48,7 @@ class ProfileController extends Controller
             'password' => ['required', 'current_password'],
         ]);
 
-        $user = $request->user();
-
-        Auth::logout();
-
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        //TODO make this to event
+        ProfileDeleteRequested::dispatch($request, $request->user()->id);
 
         return Redirect::to(RouteServiceProvider::HOME);
     }

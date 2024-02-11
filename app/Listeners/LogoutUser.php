@@ -19,7 +19,7 @@ class LogoutUser
     /**
      * Handle the event.
      */
-    public function handle(LogoutRequested $event): void
+    public function handle($event): void
     {
         $request = $event->request;
 
