@@ -13,6 +13,11 @@ function temporaryPasswordResetSignedRoute($user): string
     return SignedRoute('password.reset', 5, $user, $user->password_reset_token);
 }
 
+function temporaryEmailVerificationSignedRoute($user): string
+{
+    return SignedRoute("verification.verify", 30, $user, $user->email_verification_token);
+}
+
 function generatePasswordResetToken($user): void
 {
     $user->password_reset_token =  base64_encode(Str::random(60));
