@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Events\ChangeUserPassword;
+
 use App\Events\PasswordChangeRequested;
 use App\Events\PasswordResetEmailRequested;
 use App\Events\UserRegistered;

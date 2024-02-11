@@ -5,7 +5,6 @@ namespace App\Listeners;
 use App\Events\UserRegistered;
 use App\Mail\EmailToDev;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
 class SendEmailToDev implements ShouldQueue
 {
