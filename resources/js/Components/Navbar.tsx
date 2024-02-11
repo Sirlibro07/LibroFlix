@@ -26,7 +26,6 @@ const Navbar = ({ border }: NavbarProps) => {
                     <Logo />
                     <NavbarIcons />
                     <NavbarLinks />
-
                     <SearchBar />
                 </div>
                 {!isLoggedIn && <NavbarAuthLinks className="hidden lg:flex" />}
