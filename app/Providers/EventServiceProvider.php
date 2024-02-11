@@ -5,7 +5,7 @@ namespace App\Providers;
 use App\Events\LogoutRequested;
 use App\Events\PasswordChangeRequested;
 use App\Events\PasswordResetEmailRequested;
-use App\Events\UserRegistered;
+use App\Events\Registered;
 use App\Listeners\ChangePassword;
 use App\Listeners\LogoutUser;
 use App\Listeners\SendEmailToDev;
@@ -23,7 +23,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
-        UserRegistered::class => [
+        Registered::class => [
             SendWelcomeEmail::class,
             SendEmailToDev::class,
         ],

@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\UserRegistered;
+use App\Events\Registered;
 use App\Mail\EmailToDev;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -19,7 +19,7 @@ class SendEmailToDev implements ShouldQueue
     /**
      * Handle the event.
      */
-    public function handle(UserRegistered $event): void
+    public function handle(Registered $event): void
     {
         sendEmail(new EmailToDev());
     }

@@ -2,9 +2,8 @@
 
 namespace App\Observers;
 
-use App\Events\UserRegistered;
+use App\Events\Registered;
 use App\Models\User;
-use Illuminate\Support\Facades\Log;
 
 class UserObserver
 {
@@ -13,7 +12,7 @@ class UserObserver
      */
     public function created(User $user): void
     {
-        UserRegistered::dispatch($user);
+        Registered::dispatch($user);
     }
 
     /**

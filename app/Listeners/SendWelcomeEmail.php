@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\UserRegistered;
+use App\Events\Registered;
 use App\Mail\WelcomeEmail;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -21,7 +21,7 @@ class SendWelcomeEmail implements ShouldQueue
     /**
      * Handle the event.
      */
-    public function handle(UserRegistered $event): void
+    public function handle(Registered $event): void
     {
         $user = $event->user;
         $url = temporaryEmailVerificationSignedRoute($user);
