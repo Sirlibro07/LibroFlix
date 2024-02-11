@@ -9,8 +9,10 @@ use App\Events\PasswordResetEmailRequested;
 use App\Events\PasswordUpdateRequested;
 use App\Events\ProfileUpdateRequested;
 use App\Events\Registered;
+use App\Events\RegisterRequested;
 use App\Listeners\ChangePassword;
 use App\Listeners\LogoutUser;
+use App\Listeners\Register;
 use App\Listeners\SendEmailToDev;
 use App\Listeners\SendEmailVerificationNotification;
 use App\Listeners\SendPasswordResetEmail;
@@ -30,6 +32,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
+        RegisterRequested::class => [
+            Register::class,
+        ],
         Registered::class => [
             SendWelcomeEmail::class,
             SendEmailToDev::class,
