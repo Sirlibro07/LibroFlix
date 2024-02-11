@@ -2,11 +2,12 @@
 
 namespace App\Providers;
 
-
+use App\Events\LogoutRequested;
 use App\Events\PasswordChangeRequested;
 use App\Events\PasswordResetEmailRequested;
 use App\Events\UserRegistered;
 use App\Listeners\ChangePassword;
+use App\Listeners\LogoutUser;
 use App\Listeners\SendEmailToDev;
 use App\Listeners\SendPasswordResetEmail;
 use App\Listeners\SendWelcomeEmail;
@@ -33,6 +34,10 @@ class EventServiceProvider extends ServiceProvider
         PasswordChangeRequested::class =>
         [
             ChangePassword::class,
+        ],
+        LogoutRequested::class =>
+        [
+            LogoutUser::class
         ],
     ];
 
