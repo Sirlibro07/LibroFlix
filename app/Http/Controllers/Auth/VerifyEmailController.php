@@ -26,7 +26,7 @@ class VerifyEmailController extends Controller
 
             Auth::login($user);
 
-            return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->route("profile.edit")->with("status", "Email has been verified");
         } catch (ModelNotFoundException $e) {
             abort(404);
         }
