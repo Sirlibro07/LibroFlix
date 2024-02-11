@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Events\PasswordUpdateRequested;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 class UpdatePassword
 {

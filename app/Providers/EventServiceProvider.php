@@ -14,6 +14,7 @@ use App\Listeners\LogoutUser;
 use App\Listeners\SendEmailToDev;
 use App\Listeners\SendEmailVerificationNotification;
 use App\Listeners\SendPasswordResetEmail;
+use App\Listeners\SendPasswordUpdatedEmail;
 use App\Listeners\SendWelcomeEmail;
 use App\Listeners\UpdatePassword;
 use App\Listeners\UpdateProfile;
@@ -53,7 +54,8 @@ class EventServiceProvider extends ServiceProvider
             UpdateProfile::class
         ],
         PasswordUpdateRequested::class => [
-            UpdatePassword::class
+            UpdatePassword::class,
+            SendPasswordUpdatedEmail::class,
         ],
 
 
