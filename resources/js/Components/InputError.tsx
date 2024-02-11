@@ -6,6 +6,6 @@ interface InputErrorProps {
 
 export default function InputError({ message }: InputErrorProps) {
     return message ? (
-        <small className="text-sm text-red block ">{message}</small>
+        <small className="text-sm text-red block mt-1 ">{message}</small>
     ) : null;
 }
