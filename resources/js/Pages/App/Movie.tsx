@@ -15,7 +15,7 @@ const Show = ({ movie }) => {
                         folder_name={`movies/${underscoreToSpace(
                             movie.data.title
                         )}`}
-                        picture_classes="top-navbar_height brightness-50 h-[23.75rem] md:h-[25.625rem]"
+                        picture_classes="top-navbar_height opacity-[.50] h-[23.75rem] md:h-[25.625rem]"
                     />
                 }
                 body_padding={false}
