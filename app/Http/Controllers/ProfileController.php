@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ProfileUpdateRequested;
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
@@ -32,15 +33,7 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-            $request->user()->email_verification_token = base64_encode(Str::random(60));
-        }
-
-        $request->user()->save();
-        //TODO make this to event
+        ProfileUpdateRequested::dispatch($request->user(), $request->validated());
 
         return back()->with("status", "Profile info updated");
     }
