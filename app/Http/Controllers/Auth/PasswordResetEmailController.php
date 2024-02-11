@@ -32,9 +32,7 @@ class PasswordResetEmailController extends Controller
             'email' => 'required|email',
         ]);
 
-        $user = User::where("email", $request->get("email"))->first();
-
-        PasswordResetEmailRequested::dispatch($user);
+        PasswordResetEmailRequested::dispatch($request->get("email"));
 
         return back()->with("status", "password reset email sent, it could take some seconds for the email to arrive.");
     }
