@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Auth;
 
 class VerifyEmailController extends Controller
 {
@@ -23,9 +24,13 @@ class VerifyEmailController extends Controller
                 $user->save();
             }
 
+            Auth::login($user);
+
             return redirect()->intended(RouteServiceProvider::HOME);
         } catch (ModelNotFoundException $e) {
             abort(404);
         }
+
+        // TODO make this into an event
     }
 }
