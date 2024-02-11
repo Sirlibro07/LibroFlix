@@ -48,6 +48,7 @@ Route::middleware('auth')->group(function () {
 
     // Email Verification Notification
     Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
+        ->middleware("throttle:3,10")
         ->name('verification.send');
 
     // Update password 
