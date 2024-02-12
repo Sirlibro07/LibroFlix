@@ -8,6 +8,7 @@ use App\Events\LogoutRequested;
 use App\Events\PasswordChangeRequested;
 use App\Events\PasswordResetEmailRequested;
 use App\Events\PasswordUpdateRequested;
+use App\Events\ProfileDeleted;
 use App\Events\ProfileDeleteRequested;
 use App\Events\ProfileUpdateRequested;
 use App\Events\Registered;
@@ -19,6 +20,7 @@ use App\Listeners\LogoutUser;
 use App\Listeners\Register;
 use App\Listeners\SendEmailToDev;
 use App\Listeners\SendEmailVerificationNotification;
+use App\Listeners\SendGoodbyeEmail;
 use App\Listeners\SendPasswordResetEmail;
 use App\Listeners\SendPasswordUpdatedEmail;
 use App\Listeners\SendWelcomeEmail;
@@ -68,6 +70,9 @@ class EventServiceProvider extends ServiceProvider
         ProfileDeleteRequested::class => [
             LogoutUser::class,
             DeleteProfile::class
+        ],
+        ProfileDeleted::class => [
+            SendGoodbyeEmail::class
         ],
         PasswordUpdateRequested::class => [
             UpdatePassword::class,
