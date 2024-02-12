@@ -18,7 +18,7 @@ const EmailVerificationButton = ({
                 <Button
                     type="button"
                     onClick={buttonOnClickhandler}
-                    className="bg_brand w-[70px] transitions hover:w-[90px] absolute right-0 mt-[-52px]"
+                    className="bg-white text-black w-[70px] transitions hover:w-[90px] absolute right-0 mt-[-52px]"
                 >
                     Verify
                 </Button>
