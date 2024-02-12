@@ -22,7 +22,7 @@ class ProfileController extends Controller
             'Account',
             [
                 'status' => session('status'),
-                'has_verified_email' => !$request->user()->hasVerifiedEmail(),
+                'has_verified_email' => $request->user()->hasVerifiedEmail(),
             ]
         );
     }

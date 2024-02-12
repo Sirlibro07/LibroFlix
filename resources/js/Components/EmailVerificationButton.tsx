@@ -14,7 +14,7 @@ const EmailVerificationButton = ({
     };
     return (
         <>
-            {has_verified_email && (
+            {!has_verified_email && (
                 <Button
                     type="button"
                     onClick={buttonOnClickhandler}
