@@ -16,6 +16,7 @@ interface AppLayoutProps {
     navbar_border?: boolean;
     bg_image?: ReactNode;
     body_padding?: boolean;
+    footer?: boolean;
     footer_className?: string;
     footer_border?: boolean;
 }
@@ -26,6 +27,7 @@ const AppLayout = ({
     navbar_border = true,
     bg_image = <></>,
     body_padding = true,
+    footer = true,
     footer_className = "",
     footer_border = true,
 }: AppLayoutProps) => {
@@ -67,15 +69,21 @@ const AppLayout = ({
                     <Navbar border={navbar_border} />
                     {bg_image}
                     <div
-                        className={`${body_padding_style} ${low_brightness_style} relative h-fit min-h-[calc(100vh+12.5rem)] pb-[15.625rem] flex flex-col justify-between`}
+                        className={`${body_padding_style} ${low_brightness_style} relative h-fit ${
+                            footer
+                                ? "min-h-[calc(100vh+12.5rem)]"
+                                : "min-h-[calc(100vh-90px)]"
+                        } pb-[15.625rem] flex flex-col justify-between`}
                     >
                         <AppLayoutChildren className={className}>
                             {children}
                         </AppLayoutChildren>
-                        <Footer
-                            className={footer_className}
-                            border={footer_border}
-                        />
+                        {footer && (
+                            <Footer
+                                className={footer_className}
+                                border={footer_border}
+                            />
+                        )}
                     </div>
                 </>
             )}
