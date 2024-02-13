@@ -20,7 +20,8 @@ const SearchBarContent = ({ value, setData }: SearchBarContentProps) => {
             value={value}
             type={"text"}
             placeholder="Search movie"
-            className={"pl-10"}
+            className={"pl-11"}
+            icon_className="text-lg"
             setData={setData}
             button={true}
             button_title="Search"
