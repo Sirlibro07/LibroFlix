@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SliderContent from "./SliderContent";
 import SliderButtons from "./SliderButtons";
+import SliderTitle from "./SliderTitle";
 
 interface SliderProps {
     total_cards: number;
@@ -17,11 +18,10 @@ const Slider = ({
 
     return (
         <>
-            <p
-                className={`text-typescale_23_px font-medium mb-6 md:text-typescale_33_px ${slider_title_className}`}
-            >
-                {title}
-            </p>
+            <SliderTitle
+                title={title}
+                slider_title_className={slider_title_className}
+            />
             <section className="relative mb-12">
                 <SliderContent
                     translateX={translateX}
