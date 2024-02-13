@@ -1,5 +1,5 @@
-import BackgroundImage from "@/Components/BackgroundImage";
-import MovieContent from "@/Components/MovieContent";
+import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
+import MovieContent from "@/Components/Movie/MovieContent";
 import MovieContext from "@/Contexts/MovieContext";
 import underscoreToSpace from "@/Shared/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";

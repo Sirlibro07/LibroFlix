@@ -1,7 +1,7 @@
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 import MoviesContext from "@/Contexts/MoviesContext";
-import SearchPageContent from "@/Components/SearchPageContent";
+import SearchPageContent from "@/Components/Search/SearchPageContent";
 
 const Index = ({ movies, title }) => {
     const renderSearchPageContent = (children: ReactNode) => {

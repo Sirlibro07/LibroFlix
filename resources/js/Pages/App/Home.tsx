@@ -1,5 +1,5 @@
-import BackgroundImage from "@/Components/BackgroundImage";
-import HomeContent from "@/Components/HomeContent";
+import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
+import HomeContent from "@/Components/Home/HomeContent";
 import MoviesContext from "@/Contexts/MoviesContext";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";

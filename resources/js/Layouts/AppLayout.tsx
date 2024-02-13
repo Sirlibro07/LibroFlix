@@ -5,9 +5,9 @@ import "@/CSS/letter_spacing.css";
 import "@/CSS/scrollbar.css";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import UserContext from "@/Contexts/UserContext";
-import Navbar from "@/Components/Navbar";
-import AppLayoutChildren from "@/Components/AppLayoutChildren";
-import Footer from "@/Components/Footer";
+import Navbar from "@/Components/Navbar/Navbar";
+import AppLayoutChildren from "@/Components/LayoutItems/AppLayoutChildren";
+import Footer from "@/Components/Footer/Footer";
 import { usePage } from "@inertiajs/react";
 
 interface AppLayoutProps {

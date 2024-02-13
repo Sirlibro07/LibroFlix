@@ -2,8 +2,8 @@ import React, { ReactNode } from "react";
 import "@/CSS/borders.css";
 import "@/CSS/letter_spacing.css";
 import { Head } from "@inertiajs/react";
-import BackgroundImage from "@/Components/BackgroundImage";
-import AuthForm from "@/Components/AuthForm";
+import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
+import AuthForm from "@/Components/Auth/AuthForm";
 
 interface AuthLayoutProps {
     children: ReactNode;

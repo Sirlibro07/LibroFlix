@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import AuthLayout from "@/Layouts/AuthLayout";
 import { useForm } from "@inertiajs/react";
 import React from "react";
-import FormInputField from "@/Components/FormInputField";
+import FormInputField from "@/Components/FormItems/FormInputField";
 
 const ResetPassword = ({ id, token }) => {
     const { data, setData, post, processing, errors, reset } = useForm({

@@ -1,5 +1,5 @@
-import BackgroundImage from "@/Components/BackgroundImage";
-import WatchContent from "@/Components/WatchContent";
+import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
+import WatchContent from "@/Components/Watch/WatchContent";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 
