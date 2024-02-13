@@ -4,6 +4,7 @@ import "@/CSS/letter_spacing.css";
 import { Head } from "@inertiajs/react";
 import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
 import AuthForm from "@/Components/Auth/AuthForm";
+import AuthLayoutChildren from "@/Components/LayoutItems/AuthLayoutChildren";
 
 interface AuthLayoutProps {
     children: ReactNode;
@@ -40,19 +41,17 @@ const AuthLayout = ({
                 folder_name={folder_name}
                 img_classes={`object-top lg:object-bottom ${img_classes}`}
             />
-            <main className="min-h-svh flex items-end">
-                <AuthForm
-                    name={name}
-                    method_function={method_function}
-                    route_name={route_name}
-                    button_title={button_title}
-                    processing={processing}
-                    link_route_name={link_route_name}
-                    link_title={link_title}
-                >
-                    {children}
-                </AuthForm>
-            </main>
+            <AuthLayoutChildren
+                name={name}
+                method_function={method_function}
+                route_name={route_name}
+                button_title={button_title}
+                link_route_name={link_route_name}
+                link_title={link_title}
+                processing={processing}
+            >
+                {children}
+            </AuthLayoutChildren>
         </>
     );
 };
