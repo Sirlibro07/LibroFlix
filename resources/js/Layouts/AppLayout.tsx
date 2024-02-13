@@ -17,6 +17,7 @@ interface AppLayoutProps {
     bg_image?: ReactNode;
     body_padding?: boolean;
     footer_className?: string;
+    footer_border?: boolean;
 }
 
 const AppLayout = ({
@@ -26,6 +27,7 @@ const AppLayout = ({
     bg_image = <></>,
     body_padding = true,
     footer_className = "",
+    footer_border = true,
 }: AppLayoutProps) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
@@ -70,7 +72,10 @@ const AppLayout = ({
                         <AppLayoutChildren className={className}>
                             {children}
                         </AppLayoutChildren>
-                        <Footer className={footer_className} />
+                        <Footer
+                            className={footer_className}
+                            border={footer_border}
+                        />
                     </div>
                 </>
             )}
