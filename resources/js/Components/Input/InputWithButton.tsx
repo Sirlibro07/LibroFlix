@@ -1,8 +1,8 @@
 import React from "react";
-import Input, { InputProps } from "./Input";
 import Button from "../Button/Button";
+import InputWithIcon, { InputWithIconProps } from "./InputWithIcon";
 
-export interface InputWithButtonProps extends InputProps {
+export interface InputWithButtonProps extends InputWithIconProps {
     button?: boolean;
     button_title?: string;
     button_onClickHandler?: () => void;
@@ -18,24 +18,30 @@ const InputWithButton = ({
     className = "",
     setData,
     state_name,
+    icon_className = "",
+    icon_name,
+    icon_type,
     button = false,
     button_title = "",
     button_type = "button",
     button_onClickHandler = null,
 }: InputWithButtonProps) => {
     return (
-        <>
-            <Input
+        <div className="flex">
+            <InputWithIcon
                 type={type}
                 name={name}
                 value={value}
                 setData={setData}
-                className={`${className} ${
+                className={`${className}  ${
                     button && "rounded-r-none border-r-0"
                 }`}
                 state_name={state_name}
                 placeholder={placeholder}
                 autoComplete={autoComplete}
+                icon_className={icon_className}
+                icon_name={icon_name}
+                icon_type={icon_type}
             />
             {button && (
                 <Button
@@ -46,7 +52,7 @@ const InputWithButton = ({
                     {button_title}
                 </Button>
             )}
-        </>
+        </div>
     );
 };
 

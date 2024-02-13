@@ -2,15 +2,11 @@ import React from "react";
 import InputLabel from "../Input/InputLabel";
 import InputError, { InputErrorProps } from "../Input/InputError";
 import capitalizeFirstLetter from "@/Shared/functions/capitalizeFirstLetter";
-import FormInputIcon, { FormInputIconProps } from "./FormInputIcon";
 import InputWithButton, {
     InputWithButtonProps,
 } from "../Input/InputWithButton";
 
-interface FormInputFieldProps
-    extends InputWithButtonProps,
-        InputErrorProps,
-        FormInputIconProps {
+interface FormInputFieldProps extends InputWithButtonProps, InputErrorProps {
     name: string;
 }
 
@@ -22,6 +18,7 @@ const FormInputField = ({
     setData,
     message,
     icon_name,
+    icon_type = "solid",
     button = false,
     button_title = "",
     button_type = "button",
@@ -34,22 +31,21 @@ const FormInputField = ({
                 value={capitalizeFirstLetter(name)}
                 className="mt-6"
             />
-            <div className="relative flex  items-center">
-                <InputWithButton
-                    type={type ? type : name}
-                    name={name}
-                    value={value}
-                    setData={setData}
-                    className="pl-12 pr-4"
-                    state_name={state_name}
-                    button={button}
-                    button_title={button_title}
-                    button_type={button_type}
-                    button_onClickHandler={button_onClickHandler}
-                />
-
-                <FormInputIcon icon_name={icon_name} />
-            </div>
+            <InputWithButton
+                type={type ? type : name}
+                name={name}
+                value={value}
+                setData={setData}
+                className="pl-12"
+                state_name={state_name}
+                icon_className="text-xl"
+                icon_name={icon_name}
+                icon_type={icon_type}
+                button={button}
+                button_title={button_title}
+                button_type={button_type}
+                button_onClickHandler={button_onClickHandler}
+            />
 
             <InputError message={message} />
         </>
