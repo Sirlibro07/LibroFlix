@@ -16,7 +16,6 @@ body,
     overflow-x: hidden;
     width: 100%;
     position: relative;
-    filter: saturate(110%);
 }
 
 html::before,
@@ -40,6 +39,12 @@ input:-webkit-autofill:active {
 }
 input:-webkit-autofill {
     -webkit-text-fill-color: white !important;
+}
+
+@media (min-width: 768px) {
+    #app {
+        filter: saturate(110%);
+    }
 }
 
 .body-padding {
