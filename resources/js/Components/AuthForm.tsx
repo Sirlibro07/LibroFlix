@@ -34,7 +34,7 @@ export default function AuthForm({
             onSubmit={(e) => {
                 submitHandler(e);
             }}
-            className="auth_form w-full h-fit bg-black px-4 py-8 rounded-t-[1.875rem] lg:rounded-none lg:flex lg:flex-col lg:justify-center lg:px-12 lg:h-full lg:min-h-screen lg:w-[37.5rem]"
+            className="auth_form w-full h-fit bg-black px-4 py-8 rounded-t-[1.875rem] lg:rounded-none lg:flex lg:flex-col lg:justify-center lg:px-12 lg:h-full lg:min-h-svh lg:w-[37.5rem]"
         >
             <AuthFormName name={name} />
 

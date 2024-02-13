@@ -71,8 +71,8 @@ const AppLayout = ({
                     <div
                         className={`${body_padding_style} ${low_brightness_style} relative h-fit ${
                             footer
-                                ? "min-h-[calc(100vh+12.5rem)]"
-                                : "min-h-[calc(100vh-90px)]"
+                                ? "min-h-[calc(100svh+12.5rem)]"
+                                : "min-h-[calc(100svh-90px)]"
                         } pb-[15.625rem] flex flex-col justify-between`}
                     >
                         <AppLayoutChildren className={className}>
