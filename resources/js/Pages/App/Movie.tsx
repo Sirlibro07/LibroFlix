@@ -1,7 +1,7 @@
 import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
 import MovieContent from "@/Components/Movie/MovieContent";
 import MovieContext from "@/Contexts/MovieContext";
-import underscoreToSpace from "@/Shared/underscoreToSpace";
+import underscoreToSpace from "@/Shared/functions/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 

@@ -1,5 +1,5 @@
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
-import NavbarIconsOnClickhandler from "@/Shared/NavbarIconsOnClickhandler";
+import NavbarIconsOnClickhandler from "@/Shared/functions/NavbarIconsOnClickhandler";
 import React, { useContext } from "react";
 import "@/CSS/menu_icon.css";
 

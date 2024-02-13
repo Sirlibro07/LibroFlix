@@ -2,7 +2,7 @@ import React from "react";
 import InputLabel from "../Input/InputLabel";
 import Input, { InputProps } from "../Input/Input";
 import InputError, { InputErrorProps } from "../Input/InputError";
-import capitalizeFirstLetter from "@/Shared/capitalizeFirstLetter";
+import capitalizeFirstLetter from "@/Shared/functions/capitalizeFirstLetter";
 import FormInputIcon, { FormInputIconProps } from "./FormInputIcon";
 
 interface FormInputFieldProps

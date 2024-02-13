@@ -1,4 +1,4 @@
-import imgStoragePath from "@/Shared/imgStoragePath";
+import imgStoragePath from "@/Shared/functions/imgStoragePath";
 import React from "react";
 
 export interface SliderCardImageProps {

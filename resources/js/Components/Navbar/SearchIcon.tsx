@@ -1,6 +1,6 @@
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import React, { useContext } from "react";
-import NavbarIconsOnClickhandler from "@/Shared/NavbarIconsOnClickhandler";
+import NavbarIconsOnClickhandler from "@/Shared/functions/NavbarIconsOnClickhandler";
 import Icon from "../Global/Icon";
 
 const SearchIcon = () => {

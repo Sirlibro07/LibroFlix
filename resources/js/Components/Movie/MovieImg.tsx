@@ -1,5 +1,5 @@
-import imgStoragePath from "@/Shared/imgStoragePath";
-import underscoreToSpace from "@/Shared/underscoreToSpace";
+import imgStoragePath from "@/Shared/functions/imgStoragePath";
+import underscoreToSpace from "@/Shared/functions/underscoreToSpace";
 import React from "react";
 
 interface MovieImgProps {

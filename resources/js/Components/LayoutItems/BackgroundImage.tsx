@@ -1,4 +1,4 @@
-import getBackgroundImg from "@/Shared/getBackgroundImg";
+import getBackgroundImg from "@/Shared/functions/getBackgroundImg";
 import React from "react";
 
 export interface BackgroundImageProps {
