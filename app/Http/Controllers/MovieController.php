@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\MovieResource;
 use App\Models\Movie;
+use Illuminate\Http\Request;
 use Inertia\Response;
 
 class MovieController extends Controller
@@ -21,6 +22,16 @@ class MovieController extends Controller
     {
         return $this->renderAppView('Movie', [
             'movie' => MovieResource::make(Movie::where("title", $title)->firstOrFail()),
+        ]);
+    }
+
+    public function watch(string $title, Request $request)
+    {
+        $movie = Movie::where("title", $title)->firstOrFail();
+
+        return $this->renderAppView("Watch", [
+            'has_verified_email' => $request->user()->hasVerifiedEmail(),
+            'title' => $movie->title
         ]);
     }
 }

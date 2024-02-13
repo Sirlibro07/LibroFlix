@@ -40,7 +40,7 @@ const AuthLayout = ({
                 folder_name={folder_name}
                 img_classes={`object-top lg:object-bottom ${img_classes}`}
             />
-            <main className=" min-h-screen flex items-end">
+            <main className="min-h-svh flex items-end">
                 <AuthForm
                     name={name}
                     method_function={method_function}

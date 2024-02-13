@@ -20,7 +20,7 @@ const MovieDetails = ({
             />
             <MovieInfo date={year} />
             <MovieRating rating={rating} className={"mb-6 md:mb-5"} />
-            <MovieButtons />
+            <MovieButtons title={title} />
             <MovieDescription
                 description={description}
                 className="max-w-[90ch]"

@@ -35,7 +35,9 @@ Route::get('/', HomeController::class)->name("home");
 Route::prefix("movies")->group(function () {
     Route::get("search/{title?}", [MovieController::class, 'index'])->name("movies.index");
     Route::get("{title}", [MovieController::class, 'show'])->name("movies.show");
+    Route::get("watch/{title}", [MovieController::class, "watch"])->middleware("auth")->name("movies.watch");
 });
+
 
 
 require __DIR__ . '/auth.php';
