@@ -23,7 +23,7 @@ class UserObserver
      */
     public function updated(User $user): void
     {
-        ProfileUpdated::dispatch($user->email);
+        // ProfileUpdated::dispatch($user->email);
     }
 
     /**
