@@ -16,7 +16,7 @@ const Home = ({ movies }) => {
                         picture_classes="w-full h-[44rem] opacity-[.85] z-[-1] top-navbar_height md:h-[48.75rem]"
                     />
                 }
-                border={false}
+                navbar_border={false}
             >
                 <MoviesContext.Provider value={movies}>
                     {children}

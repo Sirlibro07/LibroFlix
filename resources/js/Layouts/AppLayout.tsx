@@ -13,7 +13,7 @@ import { usePage } from "@inertiajs/react";
 interface AppLayoutProps {
     children: ReactNode;
     className?: string;
-    border?: boolean;
+    navbar_border?: boolean;
     bg_image?: ReactNode;
     body_padding?: boolean;
     footer_className?: string;
@@ -23,7 +23,7 @@ interface AppLayoutProps {
 const AppLayout = ({
     children,
     className = "",
-    border = true,
+    navbar_border = true,
     bg_image = <></>,
     body_padding = true,
     footer_className = "",
@@ -64,7 +64,7 @@ const AppLayout = ({
         <>
             {renderWithProviders(
                 <>
-                    <Navbar border={border} />
+                    <Navbar border={navbar_border} />
                     {bg_image}
                     <div
                         className={`${body_padding_style} ${low_brightness_style} relative h-fit min-h-[calc(100vh+12.5rem)] pb-[15.625rem] flex flex-col justify-between`}

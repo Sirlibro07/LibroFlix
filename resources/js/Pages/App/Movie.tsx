@@ -9,7 +9,7 @@ const Show = ({ movie }) => {
     const renderMovieContent = (children: ReactNode) => {
         return (
             <AppLayout
-                border={false}
+                navbar_border={false}
                 bg_image={
                     <BackgroundImage
                         folder_name={`movies/${underscoreToSpace(
