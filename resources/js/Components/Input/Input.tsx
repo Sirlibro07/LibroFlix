@@ -1,6 +1,16 @@
 import React from "react";
 import formElementsOnChangeHandler from "@/Shared/formElementsOnChangeHandler";
-import InputType from "@/Shared/interfaces/InputType";
+
+export interface InputProps {
+    type?: string;
+    name: string;
+    placeholder?: string;
+    autoComplete?: string;
+    value: string;
+    className?: string;
+    setData: (PrevState: object) => void;
+    state_name?: string;
+}
 
 const Input = ({
     type = "",
@@ -11,7 +21,7 @@ const Input = ({
     className = "",
     setData,
     state_name,
-}: InputType) => {
+}: InputProps) => {
     const state_to_change = state_name ? state_name : name;
 
     return (

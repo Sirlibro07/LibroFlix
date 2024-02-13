@@ -5,7 +5,7 @@ interface ButtonProps {
     disabled?: boolean;
     children: ReactNode;
     onClick?: () => void;
-    type?: string;
+    type?: "button" | "submit" | "reset";
 }
 
 const Button = ({
@@ -13,7 +13,7 @@ const Button = ({
     disabled = null,
     children,
     onClick = null,
-    type = "",
+    type = "button",
 }: ButtonProps) => {
     return (
         <button

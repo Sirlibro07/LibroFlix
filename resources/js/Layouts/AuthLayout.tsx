@@ -1,23 +1,18 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import "@/CSS/borders.css";
 import "@/CSS/letter_spacing.css";
 import { Head } from "@inertiajs/react";
-import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
-import AuthForm from "@/Components/Auth/AuthForm";
-import AuthLayoutChildren from "@/Components/LayoutItems/AuthLayoutChildren";
+import BackgroundImage, {
+    BackgroundImageProps,
+} from "@/Components/LayoutItems/BackgroundImage";
+import AuthLayoutChildren, {
+    AuthLayoutChildrenProps,
+} from "@/Components/LayoutItems/AuthLayoutChildren";
 
-interface AuthLayoutProps {
-    children: ReactNode;
-    folder_name: string;
-    img_classes?: string;
+interface AuthLayoutProps
+    extends AuthLayoutChildrenProps,
+        Omit<BackgroundImageProps, "picture_classes"> {
     title: string;
-    name: string;
-    method_function: (url: string) => void;
-    route_name: string;
-    button_title: string;
-    link_route_name?: string;
-    link_title?: string;
-    processing: boolean;
 }
 
 const AuthLayout = ({

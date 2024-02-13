@@ -1,6 +1,6 @@
 import React from "react";
 
-interface MovieDescriptionProps {
+export interface MovieDescriptionProps {
     description: string;
     className?: string;
     description_p?: boolean;

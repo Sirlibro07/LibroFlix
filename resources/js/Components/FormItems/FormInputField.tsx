@@ -1,15 +1,15 @@
 import React from "react";
 import InputLabel from "../Input/InputLabel";
-import Input from "../Input/Input";
-import InputError from "../Input/InputError";
+import Input, { InputProps } from "../Input/Input";
+import InputError, { InputErrorProps } from "../Input/InputError";
 import capitalizeFirstLetter from "@/Shared/capitalizeFirstLetter";
-import FormInputIcon from "./FormInputIcon";
-import InputType from "@/Shared/interfaces/InputType";
+import FormInputIcon, { FormInputIconProps } from "./FormInputIcon";
 
-interface FormInputFieldProps extends InputType {
+interface FormInputFieldProps
+    extends InputProps,
+        InputErrorProps,
+        FormInputIconProps {
     name: string;
-    errors_field: string;
-    icon_name: string;
 }
 
 const FormInputField = ({
@@ -18,7 +18,7 @@ const FormInputField = ({
     type = "",
     state_name = "",
     setData,
-    errors_field,
+    message,
     icon_name,
 }: FormInputFieldProps) => {
     return (
@@ -41,7 +41,7 @@ const FormInputField = ({
                 <FormInputIcon icon_name={icon_name} />
             </div>
 
-            <InputError message={errors_field} />
+            <InputError message={message} />
         </>
     );
 };

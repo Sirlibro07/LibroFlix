@@ -1,13 +1,9 @@
 import React from "react";
-import Option from "./Option";
+import Option, { OptionProps } from "./Option";
 
-type option = { name: string };
-
-interface OptionsListProps {
-    options: option[];
+export interface OptionsListProps extends Omit<OptionProps, "option_name"> {
+    options: string[];
     ul_className?: string;
-    currentOption: string;
-    setCurrentOption: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const OptionsList = ({
@@ -18,11 +14,11 @@ const OptionsList = ({
 }: OptionsListProps) => {
     return (
         <ul className={`flex gap-6 ${ul_className}`}>
-            {options.map((option: option, index: React.Key) => (
+            {options.map((option: string, index: React.Key) => (
                 <Option
                     currentOption={currentOption}
                     setCurrentOption={setCurrentOption}
-                    option_name={option.name}
+                    option_name={option}
                     key={index}
                 />
             ))}

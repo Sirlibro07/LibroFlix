@@ -1,5 +1,7 @@
 import React from "react";
-import AuthForm from "../Auth/AuthForm";
+import AuthForm, { AuthFormProps } from "../Auth/AuthForm";
+
+export interface AuthLayoutChildrenProps extends AuthFormProps {}
 
 const AuthLayoutChildren = ({
     children,
@@ -10,7 +12,7 @@ const AuthLayoutChildren = ({
     link_route_name = "",
     link_title = "",
     processing = false,
-}) => {
+}: AuthLayoutChildrenProps) => {
     return (
         <main className="min-h-svh flex items-end">
             <AuthForm

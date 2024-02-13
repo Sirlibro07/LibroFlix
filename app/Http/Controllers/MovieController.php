@@ -31,7 +31,7 @@ class MovieController extends Controller
 
         return $this->renderAppView("Watch", [
             'has_verified_email' => $request->user()->hasVerifiedEmail(),
-            'title' => $movie->title
+            'film_title' => $movie->title
         ]);
     }
 }

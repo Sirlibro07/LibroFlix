@@ -26,7 +26,7 @@ export default function ForgotPassword({ status }: { status: string }) {
                 name={"email"}
                 value={data.email}
                 setData={setData}
-                errors_field={errors.email}
+                message={errors.email}
                 icon_name="envelope"
             />
         </AuthLayout>

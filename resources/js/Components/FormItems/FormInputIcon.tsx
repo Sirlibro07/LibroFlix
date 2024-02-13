@@ -1,7 +1,10 @@
 import React from "react";
-import Icon from "../Global/Icon";
+import Icon, { IconProps } from "../Global/Icon";
 
-const FormInputIcon = ({ icon_name }) => {
+export interface FormInputIconProps
+    extends Omit<IconProps, "onClick" | "icon_type" | "className"> {}
+
+const FormInputIcon = ({ icon_name }: FormInputIconProps) => {
     return (
         <Icon
             icon_name={icon_name}

@@ -1,6 +1,6 @@
 import React from "react";
 
-interface InputLabelProps {
+export interface InputLabelProps {
     value: string;
     className?: string;
     htmlFor: string;

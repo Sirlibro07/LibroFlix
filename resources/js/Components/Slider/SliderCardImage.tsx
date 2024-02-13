@@ -1,7 +1,7 @@
 import imgStoragePath from "@/Shared/imgStoragePath";
 import React from "react";
 
-interface SliderCardImageProps {
+export interface SliderCardImageProps {
     thumbnail_path: string;
 }
 

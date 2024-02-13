@@ -1,15 +1,15 @@
 import React, { ReactNode } from "react";
 import formSubmit from "@/Shared/formSubmit";
 import Button from "../Button/Button";
-import AuthSuccessMessage from "../Auth/AuthSuccessMessage";
+import AuthSuccessMessage, {
+    AuthSuccessMessageProps,
+} from "../Auth/AuthSuccessMessage";
 
-interface ProfileFormProps {
+interface ProfileFormProps extends AuthSuccessMessageProps {
     children: ReactNode;
-    button_styles?: string;
     method_function: any;
     route_name: string;
     processing?: boolean;
-    status?: string;
     button_title?: string;
     button_bg_color?: string;
 }
@@ -36,6 +36,7 @@ const ProfileForm = ({
             <Button
                 className={`w-full mt-9 mb-5 ${button_bg_color}`}
                 disabled={processing}
+                type="submit"
             >
                 {button_title}
             </Button>

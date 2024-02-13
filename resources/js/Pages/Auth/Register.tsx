@@ -34,7 +34,7 @@ export default function Register() {
                 name={"name"}
                 type={"text"}
                 value={data.name}
-                errors_field={errors.name}
+                message={errors.name}
                 icon_name="user"
                 setData={setData}
             />
@@ -42,7 +42,7 @@ export default function Register() {
             <FormInputField
                 name={"email"}
                 value={data.email}
-                errors_field={errors.email}
+                message={errors.email}
                 icon_name="envelope"
                 setData={setData}
             />
@@ -50,7 +50,7 @@ export default function Register() {
             <FormInputField
                 name={"password"}
                 value={data.password}
-                errors_field={errors.password}
+                message={errors.password}
                 icon_name="lock"
                 setData={setData}
             />
@@ -60,7 +60,7 @@ export default function Register() {
                 value={data.password_confirmation}
                 type={"password"}
                 state_name={"password_confirmation"}
-                errors_field={errors.password_confirmation}
+                message={errors.password_confirmation}
                 icon_name="lock"
                 setData={setData}
             />

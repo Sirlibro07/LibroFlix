@@ -1,6 +1,6 @@
 import React from "react";
 
-interface OptionProps {
+export interface OptionProps {
     currentOption: string;
     setCurrentOption: React.Dispatch<React.SetStateAction<string>>;
     option_name: string;

@@ -1,7 +1,11 @@
 import React from "react";
 import NavbarAuthLink from "./NavbarAuthLink";
 
-const NavbarAuthLinks = ({ className = "" }) => {
+interface NavbarAuthLinksProps {
+    className?: string;
+}
+
+const NavbarAuthLinks = ({ className = "" }: NavbarAuthLinksProps) => {
     return (
         <div
             className={`text-base w-full flex gap-3 px-4 lg:static lg:top-0 lg:right-4 lg:flex lg:items-center lg:h-full lg:w-fit ${className}`}

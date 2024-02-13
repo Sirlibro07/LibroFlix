@@ -34,7 +34,7 @@ const ResetPassword = ({ id, token }) => {
                 value={data.password}
                 type="password"
                 setData={setData}
-                errors_field={errors.password}
+                message={errors.password}
                 icon_name="lock"
                 state_name="password"
             />
@@ -44,7 +44,7 @@ const ResetPassword = ({ id, token }) => {
                 value={data.password_confirmation}
                 type={"password"}
                 state_name={"password_confirmation"}
-                errors_field={errors.password_confirmation}
+                message={errors.password_confirmation}
                 icon_name="lock"
                 setData={setData}
             />

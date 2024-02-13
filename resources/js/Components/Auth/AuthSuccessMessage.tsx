@@ -1,10 +1,10 @@
 import React from "react";
 
-interface AuthSuccessMessageProps {
-    status: string;
+export interface AuthSuccessMessageProps {
+    status?: string;
 }
 
-const AuthSuccessMessage = ({ status }: AuthSuccessMessageProps) => {
+const AuthSuccessMessage = ({ status = "" }: AuthSuccessMessageProps) => {
     return (
         <>
             {status && (

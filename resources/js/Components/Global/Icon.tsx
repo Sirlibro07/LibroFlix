@@ -1,7 +1,8 @@
-import IconType from "@/Shared/interfaces/IconType";
 import React from "react";
 
-interface IconProps extends IconType {
+export interface IconProps {
+    icon_type: string;
+    icon_name: string;
     className?: string;
     onClick?: () => void;
 }

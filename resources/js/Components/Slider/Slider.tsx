@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import SliderContent from "./SliderContent";
 import SliderButtons from "./SliderButtons";
-import SliderTitle from "./SliderTitle";
+import SliderTitle, { SliderTitleProps } from "./SliderTitle";
 
-interface SliderProps {
+interface SliderProps extends SliderTitleProps {
     total_cards: number;
-    title: string;
-    slider_title_className?: string;
 }
 
 const Slider = ({

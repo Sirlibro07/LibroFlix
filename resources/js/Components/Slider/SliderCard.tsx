@@ -1,11 +1,10 @@
 import React from "react";
 import "@/CSS/slider_card.css";
-import SliderCardImage from "./SliderCardImage";
+import SliderCardImage, { SliderCardImageProps } from "./SliderCardImage";
 import SliderCardPlayIcon from "./SliderCardPlayIcon";
 import { Link } from "@inertiajs/react";
 
-interface SliderCardProps {
-    thumbnail_path: string;
+interface SliderCardProps extends SliderCardImageProps {
     title: string;
 }
 

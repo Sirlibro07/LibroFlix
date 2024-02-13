@@ -1,7 +1,7 @@
 import React from "react";
 import Icon from "../Global/Icon";
 
-interface SliderButtonIconProps {
+export interface SliderButtonIconProps {
     direction: string;
 }
 

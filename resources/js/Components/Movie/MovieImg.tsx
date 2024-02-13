@@ -2,7 +2,11 @@ import imgStoragePath from "@/Shared/imgStoragePath";
 import underscoreToSpace from "@/Shared/underscoreToSpace";
 import React from "react";
 
-const MovieImg = ({ title }) => {
+interface MovieImgProps {
+    title: string;
+}
+
+const MovieImg = ({ title }: MovieImgProps) => {
     return (
         <img
             src={imgStoragePath(`cards/movies/${underscoreToSpace(title)}`)}

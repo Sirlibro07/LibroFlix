@@ -1,24 +1,28 @@
 import React from "react";
 import MovieTitle from "./MovieTitle";
-import MovieInfo from "./MovieInfo";
-import MovieRating from "./MovieRating";
-import MovieButtons from "./MovieButtons";
-import MovieDescription from "./MovieDescription";
-import MovieType from "@/Shared/interfaces/MovieType";
+import MovieInfo, { MovieInfoProps } from "./MovieInfo";
+import MovieRating, { MovieRatingProps } from "./MovieRating";
+import MovieButtons, { MovieButtonsProps } from "./MovieButtons";
+import MovieDescription, { MovieDescriptionProps } from "./MovieDescription";
 
+interface MovieDetailsProps
+    extends MovieDescriptionProps,
+        MovieButtonsProps,
+        Omit<MovieRatingProps, "className">,
+        Omit<MovieInfoProps, "className"> {}
 const MovieDetails = ({
     title,
-    year,
+    date,
     rating,
     description,
-}: Omit<MovieType, "id">) => {
+}: MovieDetailsProps) => {
     return (
         <div>
             <MovieTitle
                 title={title}
                 className="text-typescale_33_px md:text-typescale-50px md:whitespace-normal"
             />
-            <MovieInfo date={year} />
+            <MovieInfo date={date} />
             <MovieRating rating={rating} className={"mb-6 md:mb-5"} />
             <MovieButtons title={title} />
             <MovieDescription

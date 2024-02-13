@@ -1,6 +1,6 @@
 import React from "react";
 
-interface AuthFormNameProps {
+export interface AuthFormNameProps {
     name: string;
 }
 

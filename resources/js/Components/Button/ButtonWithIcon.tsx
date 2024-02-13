@@ -1,9 +1,8 @@
 import React, { ReactNode } from "react";
 import Button from "./Button";
-import Icon from "../Global/Icon";
-import IconType from "@/Shared/interfaces/IconType";
+import Icon, { IconProps } from "../Global/Icon";
 
-interface ButtonWithIconProps extends IconType {
+interface ButtonWithIconProps extends Omit<IconProps, "className" | "onClick"> {
     className?: string;
     icon_className?: string;
     children: ReactNode;

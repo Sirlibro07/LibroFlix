@@ -1,14 +1,16 @@
 import React from "react";
-import OptionsList from "../Option/OptionsList";
+import OptionsList, { OptionsListProps } from "../Option/OptionsList";
 
-const AccountOptionsList = ({ currentOption, setCurrentOption }) => {
+interface AccountOptionsListProps
+    extends Omit<OptionsListProps, "ul_className" | "options"> {}
+
+const AccountOptionsList = ({
+    currentOption,
+    setCurrentOption,
+}: AccountOptionsListProps) => {
     return (
         <OptionsList
-            options={[
-                { name: "Profile" },
-                { name: "Password" },
-                { name: "Other" },
-            ]}
+            options={["Profile", "Password", "Other"]}
             currentOption={currentOption}
             setCurrentOption={setCurrentOption}
             ul_className="mt-8 mb-16"

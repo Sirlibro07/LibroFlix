@@ -1,14 +1,20 @@
 import React from "react";
 import DeleteUserForm from "@/Components/Account/DeleteUserForm";
 import UpdatePasswordForm from "@/Components/Account/UpdatePasswordForm";
-import UpdateProfileInformationForm from "@/Components/Account/UpdateProfileInformation";
+import UpdateProfileInformationForm, {
+    UpdateProfileInformationProps,
+} from "@/Components/Account/UpdateProfileInformation";
 import LogoutForm from "@/Components/Account/LogoutForm";
+
+interface AccountCurrentOptionProps extends UpdateProfileInformationProps {
+    currentOption: string;
+}
 
 const AccountCurrentOption = ({
     currentOption,
     status,
     has_verified_email,
-}) => {
+}: AccountCurrentOptionProps) => {
     const renderCurrentOption = () => {
         switch (currentOption) {
             case "Profile":

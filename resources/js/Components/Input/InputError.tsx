@@ -1,6 +1,6 @@
 import React from "react";
 
-interface InputErrorProps {
+export interface InputErrorProps {
     message: string;
 }
 

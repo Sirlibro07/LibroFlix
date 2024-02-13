@@ -1,11 +1,9 @@
 import React from "react";
-import Checkbox from "./Checkbox";
+import Checkbox, { CheckboxProps } from "./Checkbox";
 
-interface FormCheckboxFieldProps {
-    name: string;
+interface FormCheckboxFieldProps extends Omit<CheckboxProps, "className"> {
     label: string;
     state_field: string | boolean;
-    setData: (PrevState: object) => void;
 }
 
 const FormCheckboxField = ({

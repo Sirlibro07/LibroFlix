@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SliderButton from "./SliderButton";
 
-interface RightSliderButtonProps {
+export interface RightSliderButtonProps {
     translateX: number;
     setTranslateX: React.Dispatch<React.SetStateAction<number>>;
     total_cards: number;

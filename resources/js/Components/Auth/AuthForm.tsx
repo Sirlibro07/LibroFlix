@@ -2,11 +2,10 @@ import formSubmit from "@/Shared/formSubmit";
 import React, { ReactNode } from "react";
 import GeneralLink from "../Global/GeneralLink";
 import Button from "../Button/Button";
-import AuthFormName from "./AuthFormName";
+import AuthFormName, { AuthFormNameProps } from "./AuthFormName";
 
-interface AuthFormProps {
+export interface AuthFormProps extends AuthFormNameProps {
     children: ReactNode;
-    name: string;
     method_function: (url: string) => void;
     route_name: string;
     button_title: string;
@@ -40,7 +39,11 @@ export default function AuthForm({
 
             {children}
 
-            <Button className="w-full mb-4 mt-8 bg_brand" disabled={processing}>
+            <Button
+                className="w-full mb-4 mt-8 bg_brand"
+                disabled={processing}
+                type="submit"
+            >
                 {button_title}
             </Button>
 

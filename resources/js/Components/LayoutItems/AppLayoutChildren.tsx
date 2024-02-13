@@ -6,7 +6,7 @@ interface AppLayoutChildrenProps {
 }
 
 const AppLayoutChildren = ({ className, children }: AppLayoutChildrenProps) => {
-    return <section className={` ${className}`}>{children}</section>;
+    return <section className={`${className}`}>{children}</section>;
 };
 
 export default AppLayoutChildren;

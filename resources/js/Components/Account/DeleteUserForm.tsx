@@ -26,7 +26,7 @@ export default function DeleteUserForm() {
                 <FormInputField
                     name={"password"}
                     value={data.password}
-                    errors_field={errors.password}
+                    message={errors.password}
                     icon_name="lock"
                     setData={setData}
                 />

@@ -1,7 +1,7 @@
 import getBackgroundImg from "@/Shared/getBackgroundImg";
 import React from "react";
 
-interface BackgroundImageProps {
+export interface BackgroundImageProps {
     folder_name: string;
     picture_classes?: string;
     img_classes?: string;

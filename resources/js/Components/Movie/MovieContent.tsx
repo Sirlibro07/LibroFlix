@@ -17,7 +17,7 @@ const MovieContent = () => {
                     title={movie.title}
                     description={movie.description}
                     rating={movie.rating}
-                    year={movie.year}
+                    date={movie.year}
                 />
             </div>
         </>

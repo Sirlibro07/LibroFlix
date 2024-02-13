@@ -1,6 +1,6 @@
 import React from "react";
 
-interface MovieRatingProps {
+export interface MovieRatingProps {
     rating: number;
     className: string;
 }

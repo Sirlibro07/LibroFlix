@@ -21,7 +21,7 @@ export default function UpdatePasswordForm({ status }) {
                 name={"Current Password"}
                 value={data.current_password}
                 type="password"
-                errors_field={errors.current_password}
+                message={errors.current_password}
                 icon_name="lock"
                 setData={setData}
                 state_name={"current_password"}
@@ -29,7 +29,7 @@ export default function UpdatePasswordForm({ status }) {
             <FormInputField
                 name={"password"}
                 value={data.password}
-                errors_field={errors.password}
+                message={errors.password}
                 icon_name="lock"
                 setData={setData}
             />
@@ -37,7 +37,7 @@ export default function UpdatePasswordForm({ status }) {
                 name={"Password Confirmation"}
                 value={data.password_confirmation}
                 type="password"
-                errors_field={errors.password_confirmation}
+                message={errors.password_confirmation}
                 icon_name="lock"
                 setData={setData}
                 state_name={"password_confirmation"}

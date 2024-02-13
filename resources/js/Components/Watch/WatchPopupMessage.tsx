@@ -1,6 +1,10 @@
 import React from "react";
 
-const WatchPopupMessage = ({ message }) => {
+export interface WatchPopupMessageProps {
+    message: string;
+}
+
+const WatchPopupMessage = ({ message }: WatchPopupMessageProps) => {
     return <p className="text-light_grey mb-4">{message}</p>;
 };
 

@@ -1,19 +1,14 @@
 import React from "react";
-import { Link } from "@inertiajs/react";
-import Button from "../Button/Button";
-import WatchPopupIcon from "./WatchPopupIcon";
-import WatchPopupTitle from "./WatchPopupTitle";
-import WatchPopupMessage from "./WatchPopupMessage";
-import WatchPopupLink from "./WatchPopupLink";
+import WatchPopupIcon, { WatchPopupIconProps } from "./WatchPopupIcon";
+import WatchPopupTitle, { WatchPopupTitleProps } from "./WatchPopupTitle";
+import WatchPopupMessage, { WatchPopupMessageProps } from "./WatchPopupMessage";
+import WatchPopupLink, { WatchPopupLinkProps } from "./WatchPopupLink";
 
-interface WatchPopupProps {
-    icon_name: string;
-    icon_className?: string;
-    title: string;
-    message: string;
-    link_title: string;
-    link_route_name: string;
-}
+interface WatchPopupProps
+    extends WatchPopupIconProps,
+        WatchPopupTitleProps,
+        WatchPopupMessageProps,
+        WatchPopupLinkProps {}
 
 const WatchPopup = ({
     icon_name,

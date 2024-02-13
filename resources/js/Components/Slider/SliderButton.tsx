@@ -1,10 +1,9 @@
 import React from "react";
-import SliderButtonIcon from "./SliderButtonIcon";
+import SliderButtonIcon, { SliderButtonIconProps } from "./SliderButtonIcon";
 
-interface SliderButtonProps {
+interface SliderButtonProps extends SliderButtonIconProps {
     className: string;
     onClickHandler: () => void;
-    direction: string;
     visible: boolean;
 }
 

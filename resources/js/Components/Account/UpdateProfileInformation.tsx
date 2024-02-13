@@ -5,7 +5,7 @@ import React, { useContext } from "react";
 import UserContext from "@/Contexts/UserContext";
 import EmailVerificationButton from "./EmailVerificationButton";
 
-interface UpdateProfileInformationProps {
+export interface UpdateProfileInformationProps {
     status: string;
     has_verified_email: boolean;
 }
@@ -34,7 +34,7 @@ const UpdateProfileInformation = ({
                         name={"name"}
                         value={data.name}
                         type={"text"}
-                        errors_field={errors.name}
+                        message={errors.name}
                         icon_name="lock"
                         setData={setData}
                     />
@@ -42,7 +42,7 @@ const UpdateProfileInformation = ({
                     <FormInputField
                         name={"email"}
                         value={data.email}
-                        errors_field={errors.email}
+                        message={errors.email}
                         icon_name="envelope"
                         setData={setData}
                         className="inline w-[5px]"

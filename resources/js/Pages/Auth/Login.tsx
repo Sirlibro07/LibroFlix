@@ -37,14 +37,14 @@ export default function Login({ status }) {
                 name={"email"}
                 value={data.email}
                 setData={setData}
-                errors_field={errors.email}
+                message={errors.email}
                 icon_name="envelope"
             />
             <FormInputField
                 name={"password"}
                 value={data.password}
                 setData={setData}
-                errors_field={errors.password}
+                message={errors.password}
                 icon_name="lock"
             />
 

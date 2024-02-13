@@ -1,6 +1,6 @@
 import React from "react";
 
-interface MovieInfoProps {
+export interface MovieInfoProps {
     date: number;
     className?: string;
 }

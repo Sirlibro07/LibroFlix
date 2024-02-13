@@ -2,7 +2,11 @@ import MoviesContext from "@/Contexts/MoviesContext";
 import React, { useContext } from "react";
 import Slider from "../Slider/Slider";
 
-const SearchPageContent = ({ title }) => {
+interface SearchPageContentProps {
+    title: string;
+}
+
+const SearchPageContent = ({ title }: SearchPageContentProps) => {
     const movies = useContext(MoviesContext).data;
     const name = movies.length
         ? `Results for "${title}"`

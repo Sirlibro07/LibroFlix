@@ -1,12 +1,8 @@
 import React from "react";
 import LeftSliderbutton from "./LeftSliderbutton";
-import RightSliderButton from "./RightSliderButton";
+import RightSliderButton, { RightSliderButtonProps } from "./RightSliderButton";
 
-interface SliderButtonsProps {
-    translateX: number;
-    setTranslateX: React.Dispatch<React.SetStateAction<number>>;
-    total_cards: number;
-}
+interface SliderButtonsProps extends RightSliderButtonProps {}
 
 const SliderButtons = ({
     translateX,

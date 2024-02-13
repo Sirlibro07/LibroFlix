@@ -1,7 +1,11 @@
 import React from "react";
 import FooterSocialsSection from "./FooterSocialsSection";
 
-const Footer = ({ className = "", border = true }) => {
+interface FooterProps {
+    className?: string;
+    border?: boolean;
+}
+const Footer = ({ className = "", border = true }: FooterProps) => {
     return (
         <footer
             className={`body-padding absolute bottom-0 left-0 w-full flex flex-col items-center gap-y-6 py-11  ${
