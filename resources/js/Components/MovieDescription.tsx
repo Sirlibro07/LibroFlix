@@ -16,7 +16,7 @@ const MovieDescription = ({
             {description_p && (
                 <p className="mt-10 mb-4 font-medium">Description:</p>
             )}
-            <p className={` text-[#BBBBBB] overflow-hidden ${className}`}>
+            <p className={`text-light_grey overflow-hidden ${className}`}>
                 {description}
             </p>
         </>
