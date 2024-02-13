@@ -2,6 +2,7 @@ import React from "react";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Icon from "../Global/Icon";
+import InputWithButton from "../Input/InputWithButton";
 
 interface SearchBarContentProps {
     value: string;
@@ -20,18 +21,18 @@ const SearchBarContent = ({ value, setData }: SearchBarContentProps) => {
                 icon_name="search"
                 className="absolute z-[1] pointer-events-none left-3 text-base text-grey cursor-auto"
             />
-            <Input
+
+            <InputWithButton
                 name={"search"}
                 value={value}
                 type={"text"}
                 placeholder="Search movie"
-                className={"px-9 lg:h-10"}
+                className={"px-9 pr-4"}
                 setData={setData}
+                button={true}
+                button_title="Search"
+                button_type="submit"
             />
-
-            <Button className="absolute right-0 h-full px-4 rounded-10  transitions bg-white text-black">
-                Search
-            </Button>
         </div>
     );
 };

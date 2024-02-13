@@ -11,7 +11,9 @@ const LogoutForm = () => {
 
     return (
         <form onSubmit={submitHandler} className="max-w-[41.25rem]">
-            <Button className="bg-red w-full">Logout</Button>
+            <Button className="bg-red w-full" type="submit">
+                Logout
+            </Button>
         </form>
     );
 };

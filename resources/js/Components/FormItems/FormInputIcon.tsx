@@ -9,7 +9,7 @@ const FormInputIcon = ({ icon_name }: FormInputIconProps) => {
         <Icon
             icon_name={icon_name}
             icon_type="solid"
-            className="absolute left-4 pointer-events-none text-xl opacity-50"
+            className="absolute left-4 text-grey pointer-events-none text-xl "
         />
     );
 };
