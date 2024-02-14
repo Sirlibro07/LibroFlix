@@ -1,7 +1,8 @@
 import React from "react";
 import Checkbox, { CheckboxProps } from "./Checkbox";
 
-interface FormCheckboxFieldProps extends Omit<CheckboxProps, "className"> {
+interface FormCheckboxFieldProps
+    extends Omit<CheckboxProps, "className" | "checked"> {
     label: string;
     state_field: string | boolean;
 }
