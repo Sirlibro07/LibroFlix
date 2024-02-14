@@ -6,8 +6,11 @@ import InputWithButton, {
     InputWithButtonProps,
 } from "../Input/InputWithButton";
 
-interface FormInputFieldProps extends InputWithButtonProps, InputErrorProps {
+interface FormInputFieldProps
+    extends Omit<InputWithButtonProps, "icon_type">,
+        InputErrorProps {
     name: string;
+    icon_type?: string;
 }
 
 const FormInputField = ({
