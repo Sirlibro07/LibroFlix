@@ -12,4 +12,9 @@ trait ViewRenderer
     {
         return Inertia::render('App/' . $page, $fields);
     }
+
+    public function renderAuthView(string $page, array $fields = []): Response
+    {
+        return Inertia::render('Auth/' . $page, $fields);
+    }
 }

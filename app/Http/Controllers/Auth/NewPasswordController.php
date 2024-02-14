@@ -9,7 +9,6 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
-use Inertia\Inertia;
 use Inertia\Response;
 
 class NewPasswordController extends Controller
@@ -24,10 +23,13 @@ class NewPasswordController extends Controller
             $user = User::findOrFail($id);
 
             if ($user->password_reset_token == $hash) {
-                return Inertia::render('Auth/ResetPassword', [
-                    'id' => $user->id,
-                    'token' => $hash,
-                ]);
+                return $this->renderAuthView(
+                    'ResetPassword',
+                    [
+                        'id' => $user->id,
+                        'token' => $hash,
+                    ]
+                );
             }
 
             return redirect(RouteServiceProvider::HOME);

@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Events\PasswordResetEmailRequested;
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 use Inertia\Response;
 
 class PasswordResetEmailController extends Controller
@@ -16,7 +14,7 @@ class PasswordResetEmailController extends Controller
      */
     public function create(): Response
     {
-        return Inertia::render('Auth/ForgotPassword', [
+        return $this->renderAuthView('ForgotPassword', [
             'status' => session('status'),
         ]);
     }

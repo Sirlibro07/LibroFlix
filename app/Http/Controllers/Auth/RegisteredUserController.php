@@ -9,7 +9,6 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
-use Inertia\Inertia;
 use Inertia\Response;
 
 class RegisteredUserController extends Controller
@@ -19,7 +18,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): Response
     {
-        return Inertia::render('Auth/Register');
+        return $this->renderAuthView("Register");
     }
 
     /**
