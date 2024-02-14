@@ -12,7 +12,7 @@ class MovieController extends Controller
 
     public function index(string $title = ""): Response
     {
-        return $this->renderAppView('SearchPage', [
+        return $this->renderAppView('Search', [
             'movies' => MovieResource::collection(Movie::where('title', 'like', '%' . $title . '%')->get()),
             'title' => $title,
         ]);

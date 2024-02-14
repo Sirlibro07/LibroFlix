@@ -3,7 +3,7 @@ import CardImage, { CardImageProps } from "./CardImage";
 import CardPlayIcon from "./CardPlayIcon";
 import { Link } from "@inertiajs/react";
 
-interface CardProps extends CardImageProps {
+export interface CardProps extends CardImageProps {
     title: string;
     className?: string;
 }

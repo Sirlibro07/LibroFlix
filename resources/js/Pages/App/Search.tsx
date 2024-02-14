@@ -1,7 +1,7 @@
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 import MoviesContext from "@/Contexts/MoviesContext";
-import SearchPageContent from "@/Components/Search/SearchPageContent";
+import SearchContent from "@/Components/Search/SearchContent";
 
 const Index = ({ movies, title }) => {
     const renderSearchPageContent = (children: ReactNode) => {
@@ -14,6 +14,6 @@ const Index = ({ movies, title }) => {
         );
     };
 
-    return <>{renderSearchPageContent(<SearchPageContent title={title} />)}</>;
+    return <>{renderSearchPageContent(<SearchContent title={title} />)}</>;
 };
 export default Index;
