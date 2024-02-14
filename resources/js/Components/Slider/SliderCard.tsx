@@ -2,9 +2,7 @@ import React from "react";
 import "@/CSS/slider_card.css";
 import Card, { CardProps } from "../Card/Card";
 
-interface SliderCardProps extends Omit<CardProps, "className"> {
-    title: string;
-}
+interface SliderCardProps extends Omit<CardProps, "className"> {}
 
 const SliderCard = ({ thumbnail_path, title }: SliderCardProps) => {
     return (
