@@ -1,9 +1,8 @@
 import React from "react";
 import "@/CSS/slider_card.css";
-import Card from "../Card/Card";
-import { CardImageProps } from "../Card/CardImage";
+import Card, { CardProps } from "../Card/Card";
 
-interface SliderCardProps extends CardImageProps {
+interface SliderCardProps extends Omit<CardProps, "className"> {
     title: string;
 }
 
