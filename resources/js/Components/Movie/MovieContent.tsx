@@ -3,7 +3,7 @@ import MovieImg from "./MovieImg";
 import MovieBlur from "./MovieBlur";
 import MovieDetails from "./MovieDetails";
 import MoviesContext from "@/Contexts/MoviesContext";
-import MovieType from "@/Shared/Interfaces/MovieType";
+import MovieType from "@/Shared/Types/MovieType";
 
 const MovieContent = () => {
     const movie: MovieType = useContext(MoviesContext).data;
