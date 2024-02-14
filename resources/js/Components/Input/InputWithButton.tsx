@@ -27,7 +27,7 @@ const InputWithButton = ({
     button_onClickHandler = null,
 }: InputWithButtonProps) => {
     return (
-        <div className="flex">
+        <div className="flex w-full">
             <InputWithIcon
                 type={type}
                 name={name}
