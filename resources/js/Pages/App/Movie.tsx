@@ -1,9 +1,9 @@
 import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
 import MovieContent from "@/Components/Movie/MovieContent";
-import MovieContext from "@/Contexts/MovieContext";
 import underscoreToSpace from "@/Shared/functions/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
+import MoviesContext from "@/Contexts/MoviesContext";
 
 const Show = ({ movie }) => {
     const renderMovieContent = (children: ReactNode) => {
@@ -20,9 +20,9 @@ const Show = ({ movie }) => {
                 }
                 body_padding={false}
             >
-                <MovieContext.Provider value={movie}>
+                <MoviesContext.Provider value={movie}>
                     {children}
-                </MovieContext.Provider>
+                </MoviesContext.Provider>
             </AppLayout>
         );
     };

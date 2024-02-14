@@ -1,10 +1,10 @@
 import { createContext } from "react";
-import MovieType from "@/Shared/Types/MovieType";
+import MovieType from "@/Shared/Interfaces/MovieType";
 
-interface MoviesContextType {
+interface MoviesContextProps {
     data: MovieType[];
 }
 
-const MoviesContext = createContext<MoviesContextType | undefined>(undefined);
+const MoviesContext = createContext<MoviesContextProps | undefined>(undefined);
 
 export default MoviesContext;

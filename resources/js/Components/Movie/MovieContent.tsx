@@ -1,11 +1,12 @@
-import MovieContext from "@/Contexts/MovieContext";
 import React, { useContext } from "react";
 import MovieImg from "./MovieImg";
 import MovieBlur from "./MovieBlur";
 import MovieDetails from "./MovieDetails";
+import MoviesContext from "@/Contexts/MoviesContext";
+import MovieType from "@/Shared/Interfaces/MovieType";
 
 const MovieContent = () => {
-    const movie = useContext(MovieContext).data;
+    const movie: MovieType = useContext(MoviesContext).data;
 
     return (
         <>
