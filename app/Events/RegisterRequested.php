@@ -12,14 +12,18 @@ class RegisterRequested
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public Request $request;
+    public string $name;
+    public string $email;
+    public string $password;
 
     /**
      * Create a new event instance.
      */
-    public function __construct($request)
+    public function __construct($name, $email, $password)
     {
-        $this->request = $request;
+        $this->name = $name;
+        $this->email = $email;
+        $this->password = $password;
     }
 
     /**

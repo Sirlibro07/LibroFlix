@@ -25,12 +25,11 @@ class Register
     public function handle(RegisterRequested $event): void
     {
         Log::info("register lisetener reached");
-        $request = $event->request;
 
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'name' => $event->name,
+            'email' => $event->email,
+            'password' => Hash::make($event->password),
             'email_verification_token' => base64_encode(Str::random(60)),
 
         ]);
