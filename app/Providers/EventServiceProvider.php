@@ -15,6 +15,7 @@ use App\Events\ProfileUpdateRequested;
 use App\Events\Registered;
 use App\Events\RegisterRequested;
 use App\Listeners\ChangePassword;
+use App\Listeners\CreateWatchlist;
 use App\Listeners\DeleteProfile;
 use App\Listeners\LoginUser;
 use App\Listeners\LogoutUser;
@@ -42,6 +43,8 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         RegisterRequested::class => [
             Register::class,
+            CreateWatchlist::class
+
         ],
         Registered::class => [
             SendWelcomeEmail::class,
