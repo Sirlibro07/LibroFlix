@@ -1,18 +1,19 @@
 import React from "react";
-import ButtonOptionalIcon from "../Button/ButtonOptionalIcon";
-import { Link } from "@inertiajs/react";
+import MovieWatchNow, { MovieWatchNowProps } from "./MovieWatchNow";
+import MovieWatchlistButton, {
+    MovieWatchlistButtonProps,
+} from "./MovieWatchlistButton";
 
-export interface MovieButtonsProps {
-    title: string;
-}
+export interface MovieButtonsProps
+    extends MovieWatchNowProps,
+        MovieWatchlistButtonProps {}
 
-const MovieButtons = ({ title }: MovieButtonsProps) => {
+const MovieButtons = ({ title, id, watchlisted }: MovieButtonsProps) => {
     return (
-        <Link href={route("movies.watch", title)}>
-            <ButtonOptionalIcon icon_type="solid" icon_name="play">
-                Watch Now
-            </ButtonOptionalIcon>
-        </Link>
+        <div className="flex gap-3">
+            <MovieWatchNow title={title} />
+            <MovieWatchlistButton watchlisted={watchlisted} id={id} />
+        </div>
     );
 };
 

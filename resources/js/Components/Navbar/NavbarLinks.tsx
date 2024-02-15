@@ -10,7 +10,7 @@ const NavbarLinks = () => {
 
     const routes: { name: string; route: string; pathname: string }[] = [
         { name: "Home", route: "home", pathname: "" },
-        { name: "Watchlist", route: "watchlist.index", pathname: "watchlist" },
+        { name: "Watchlist", route: "watchlist.show", pathname: "watchlist" },
     ];
 
     isLoggedIn &&

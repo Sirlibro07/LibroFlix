@@ -5,16 +5,18 @@ import MovieRating, { MovieRatingProps } from "./MovieRating";
 import MovieButtons, { MovieButtonsProps } from "./MovieButtons";
 import MovieDescription, { MovieDescriptionProps } from "./MovieDescription";
 
-interface MovieDetailsProps
+export interface MovieDetailsProps
     extends MovieDescriptionProps,
         MovieButtonsProps,
         Omit<MovieRatingProps, "className">,
         Omit<MovieInfoProps, "className"> {}
 const MovieDetails = ({
+    id,
     title,
     date,
     rating,
     description,
+    watchlisted,
 }: MovieDetailsProps) => {
     return (
         <div>
@@ -24,7 +26,7 @@ const MovieDetails = ({
             />
             <MovieInfo date={date} />
             <MovieRating rating={rating} className={"mb-6 md:mb-5"} />
-            <MovieButtons title={title} />
+            <MovieButtons watchlisted={watchlisted} id={id} title={title} />
             <MovieDescription
                 description={description}
                 className="max-w-[90ch]"

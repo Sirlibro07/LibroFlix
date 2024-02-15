@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import MovieImg from "./MovieImg";
 import MovieBlur from "./MovieBlur";
-import MovieDetails from "./MovieDetails";
+import MovieDetails, { MovieDetailsProps } from "./MovieDetails";
 import MoviesContext from "@/Contexts/MoviesContext";
 import MovieType from "@/Shared/Types/MovieType";
 
-const MovieContent = () => {
+interface MovieContentProps extends Pick<MovieDetailsProps, "watchlisted"> {}
+
+const MovieContent = ({ watchlisted }: MovieContentProps) => {
     const movie: MovieType = useContext(MoviesContext).data;
 
     return (
@@ -15,6 +17,8 @@ const MovieContent = () => {
                 <MovieImg title={movie.title} />
 
                 <MovieDetails
+                    watchlisted={watchlisted}
+                    id={movie.id}
                     title={movie.title}
                     description={movie.description}
                     rating={movie.rating}

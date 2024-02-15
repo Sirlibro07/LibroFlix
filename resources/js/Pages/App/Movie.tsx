@@ -5,7 +5,9 @@ import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 import MoviesContext from "@/Contexts/MoviesContext";
 
-const Show = ({ movie }) => {
+const Show = ({ movie, watchlisted }) => {
+    console.log(watchlisted);
+
     const renderMovieContent = (children: ReactNode) => {
         return (
             <AppLayout
@@ -27,6 +29,8 @@ const Show = ({ movie }) => {
         );
     };
 
-    return <>{renderMovieContent(<MovieContent />)}</>;
+    return (
+        <>{renderMovieContent(<MovieContent watchlisted={watchlisted} />)}</>
+    );
 };
 export default Show;
