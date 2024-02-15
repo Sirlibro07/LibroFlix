@@ -10,15 +10,21 @@ const NavbarLinks = () => {
 
     const routes: { name: string; route: string; pathname: string }[] = [
         { name: "Home", route: "home", pathname: "" },
-        { name: "Watchlist", route: "watchlist.show", pathname: "watchlist" },
     ];
 
     isLoggedIn &&
-        routes.push({
-            name: "Account",
-            route: "profile.edit",
-            pathname: "profile",
-        });
+        routes.push(
+            {
+                name: "Account",
+                route: "profile.edit",
+                pathname: "profile",
+            },
+            {
+                name: "Watchlist",
+                route: "watchlist.show",
+                pathname: "watchlist",
+            }
+        );
 
     return (
         <ul
