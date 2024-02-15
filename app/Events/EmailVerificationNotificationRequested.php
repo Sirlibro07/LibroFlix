@@ -12,14 +12,14 @@ class EmailVerificationNotificationRequested
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public User $user;
+    public string $email;
 
     /**
      * Create a new event instance.
      */
-    public function __construct($user)
+    public function __construct($email)
     {
-        $this->user = $user;
+        $this->email = $email;
     }
 
     /**

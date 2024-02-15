@@ -8,6 +8,7 @@ use App\Http\Requests\ProfileUpdateRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Response;
 
@@ -32,7 +33,7 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        ProfileUpdateRequested::dispatch($request->user(), $request->validated());
+        ProfileUpdateRequested::dispatch($request->user()->email, $request->validated());
 
         return back()->with("status", "Profile info updated");
     }
@@ -46,7 +47,7 @@ class ProfileController extends Controller
             'password' => ['required', 'current_password'],
         ]);
 
-        ProfileDeleteRequested::dispatch($request, $request->user()->id);
+        ProfileDeleteRequested::dispatch($request->user()->id);
 
         return Redirect::to(RouteServiceProvider::HOME);
     }

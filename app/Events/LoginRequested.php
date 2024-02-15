@@ -2,26 +2,24 @@
 
 namespace App\Events;
 
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
-use Illuminate\Http\Request;
 use Illuminate\Queue\SerializesModels;
 
 class LoginRequested
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public Request $request;
+    public string $email;
+    public string $password;
     /**
      * Create a new event instance.
      */
-    public function __construct($request)
+    public function __construct($email, $password)
     {
-        $this->request = $request;
+        $this->email = $email;
+        $this->password = $password;
     }
 
     /**

@@ -21,7 +21,7 @@ class PasswordController extends Controller
         ]);
 
 
-        PasswordUpdateRequested::dispatch($request->user(), $validated['password']);
+        PasswordUpdateRequested::dispatch($request->user()->email, $validated['password']);
 
         return back()->with("status", "Password updated");
     }

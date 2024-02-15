@@ -77,6 +77,7 @@ class EventServiceProvider extends ServiceProvider
             SendProfileUpdatedEmail::class
         ],
         ProfileDeleteRequested::class => [
+            // TODO delete watchlist
             LogoutUser::class,
             DeleteProfile::class
         ],

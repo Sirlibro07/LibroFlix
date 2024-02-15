@@ -12,14 +12,12 @@ class LogoutRequested
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public Request $request;
 
     /**
      * Create a new event instance.
      */
-    public function __construct($request)
+    public function __construct()
     {
-        $this->request = $request;
     }
 
     /**

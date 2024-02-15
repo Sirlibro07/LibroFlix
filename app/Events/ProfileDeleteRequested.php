@@ -2,27 +2,21 @@
 
 namespace App\Events;
 
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
-use Illuminate\Http\Request;
 use Illuminate\Queue\SerializesModels;
 
 class ProfileDeleteRequested
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public Request $request;
     public int $id;
     /**
      * Create a new event instance.
      */
-    public function __construct($request, $id)
+    public function __construct($id)
     {
-        $this->request = $request;
         $this->id = $id;
     }
 

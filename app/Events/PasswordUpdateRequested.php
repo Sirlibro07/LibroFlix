@@ -2,7 +2,6 @@
 
 namespace App\Events;
 
-use App\Models\User;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -12,14 +11,14 @@ class PasswordUpdateRequested
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public User $user;
+    public string $email;
     public string $validated_password;
     /**
      * Create a new event instance.
      */
-    public function __construct($user, $validated_password)
+    public function __construct($email, $validated_password)
     {
-        $this->user = $user;
+        $this->email = $email;
         $this->validated_password  = $validated_password;
     }
 

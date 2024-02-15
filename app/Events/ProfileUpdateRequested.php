@@ -12,15 +12,15 @@ class ProfileUpdateRequested
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public User $user;
+    public string $email;
     public mixed $data;
 
     /**
      * Create a new event instance.
      */
-    public function __construct($user, $data)
+    public function __construct($email, $data)
     {
-        $this->user = $user;
+        $this->email = $email;
         $this->data = $data;
     }
 

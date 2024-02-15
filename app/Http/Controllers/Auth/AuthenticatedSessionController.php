@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Inertia\Response;
 
 class AuthenticatedSessionController extends Controller
@@ -24,21 +23,17 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(LoginRequest $request)
     {
-
-        LoginRequested::dispatch($request);
-
-
-        return redirect()->intended(RouteServiceProvider::HOME);
+        LoginRequested::dispatch($request->input("email"), $request->input("password"));
     }
 
     /**
      * Destroy an authenticated session.
      */
-    public function destroy(Request $request): RedirectResponse
+    public function destroy(): RedirectResponse
     {
-        LogoutRequested::dispatch($request);
+        LogoutRequested::dispatch();
 
         return redirect(RouteServiceProvider::HOME);
     }

@@ -24,8 +24,6 @@ class Register
      */
     public function handle(RegisterRequested $event): void
     {
-        Log::info("register lisetener reached");
-
         $user = User::create([
             'name' => $event->name,
             'email' => $event->email,

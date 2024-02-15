@@ -4,8 +4,8 @@ namespace App\Listeners;
 
 use App\Events\EmailVerificationNotificationRequested;
 use App\Mail\VerificationEmail;
+use App\Models\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Support\Facades\Log;
 
 class SendEmailVerificationNotification implements ShouldQueue
 {
@@ -22,12 +22,9 @@ class SendEmailVerificationNotification implements ShouldQueue
      */
     public function handle(EmailVerificationNotificationRequested $event): void
     {
-        Log::info("reacher here");
-        $user = $event->user;
+        $user = User::where("email", $event->email)->first();
         if (!$user->hasVerifiedEmail()) {
-
             $url = temporaryEmailVerificationSignedRoute($user);
-
             sendEmail(new VerificationEmail($user, $url));
         }
     }

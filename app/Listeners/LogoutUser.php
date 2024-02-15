@@ -2,9 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\LogoutRequested;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class LogoutUser
 {
@@ -19,12 +17,10 @@ class LogoutUser
     /**
      * Handle the event.
      */
-    public function handle($event): void
+    public function handle(): void
     {
-        $request = $event->request;
-
         Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        session()->invalidate();
+        session()->regenerateToken();
     }
 }

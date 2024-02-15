@@ -22,8 +22,6 @@ class SendGoodbyeEmail implements ShouldQueue
      */
     public function handle(ProfileDeleted $event): void
     {
-        Log::info("tried to send goodbye email");
-
         sendEmail(new GoodbyeEmail($event->email));
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\ProfileUpdateRequested;
+use App\Models\User;
 use Illuminate\Support\Str;
 
 class UpdateProfile
@@ -20,7 +21,7 @@ class UpdateProfile
      */
     public function handle(ProfileUpdateRequested $event): void
     {
-        $user = $event->user;
+        $user = User::where("email", $event->email)->first();
 
         $user->fill($event->data);
 
