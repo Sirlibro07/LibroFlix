@@ -25,7 +25,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        LoginRequested::dispatch($request->input("email"), $request->input("password"));
+        LoginRequested::dispatch($request->input("email"), $request->input("password"), $request->input("remember"));
     }
 
     /**

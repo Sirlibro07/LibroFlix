@@ -13,13 +13,15 @@ class LoginRequested
 
     public string $email;
     public string $password;
+    public string $remember;
     /**
      * Create a new event instance.
      */
-    public function __construct($email, $password)
+    public function __construct($email, $password, $remember)
     {
         $this->email = $email;
         $this->password = $password;
+        $this->remember = $remember;
     }
 
     /**

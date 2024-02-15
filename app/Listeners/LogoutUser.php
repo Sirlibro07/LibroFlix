@@ -19,6 +19,10 @@ class LogoutUser
      */
     public function handle(): void
     {
+        $user = Auth::user();
+        $user->remember_token = null;
+        $user->save();
+
         Auth::logout();
         session()->invalidate();
         session()->regenerateToken();
