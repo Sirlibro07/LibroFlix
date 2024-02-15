@@ -17,6 +17,7 @@ use App\Events\RegisterRequested;
 use App\Listeners\ChangePassword;
 use App\Listeners\CreateWatchlist;
 use App\Listeners\DeleteProfile;
+use App\Listeners\DeleteWatchlist;
 use App\Listeners\LoginUser;
 use App\Listeners\LogoutUser;
 use App\Listeners\Register;
@@ -77,7 +78,7 @@ class EventServiceProvider extends ServiceProvider
             SendProfileUpdatedEmail::class
         ],
         ProfileDeleteRequested::class => [
-            // TODO delete watchlist
+            DeleteWatchlist::class,
             LogoutUser::class,
             DeleteProfile::class
         ],
