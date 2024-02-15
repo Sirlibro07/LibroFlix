@@ -9,9 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class WatchlistController extends Controller
 {
-    public function index()
+    public function show()
     {
         return $this->renderAppView("Watchlist", ["watchlist" => WatchlistResource::make(Watchlist::where("user_id", Auth::id())->first())]);
-        // return WatchlistResource::make(Watchlist::where("user_id", Auth::id())->first());
     }
 }
