@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-interface ButtonProps {
+export interface ButtonProps {
     className?: string;
     disabled?: boolean;
     children: ReactNode;

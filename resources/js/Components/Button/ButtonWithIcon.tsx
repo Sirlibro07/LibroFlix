@@ -1,8 +1,10 @@
 import React, { ReactNode } from "react";
-import Button from "./Button";
+import Button, { ButtonProps } from "./Button";
 import Icon, { IconProps } from "../Global/Icon";
 
-interface ButtonWithIconProps extends Omit<IconProps, "className" | "onClick"> {
+export interface ButtonWithIconProps
+    extends ButtonProps,
+        Omit<IconProps, "className" | "onClick"> {
     className?: string;
     icon_className?: string;
     children: ReactNode;
@@ -14,9 +16,10 @@ const ButtonWithIcon = ({
     icon_type,
     icon_name = "",
     icon_className = "",
+    type = "button",
 }: ButtonWithIconProps) => {
     return (
-        <Button className={`bg_brand pl-3 pr-4 ${className}`}>
+        <Button type={type} className={`pl-3 pr-4 ${className}`}>
             <Icon
                 icon_type={icon_type}
                 icon_name={icon_name}
