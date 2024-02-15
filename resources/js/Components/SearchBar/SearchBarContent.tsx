@@ -2,7 +2,7 @@ import React from "react";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Icon from "../Global/Icon";
-import InputWithButton from "../Input/InputWithButton";
+import InputWithOptionalButton from "../Input/InputWithOptionalButton";
 
 interface SearchBarContentProps {
     value: string;
@@ -15,7 +15,7 @@ interface SearchBarContentProps {
 
 const SearchBarContent = ({ value, setData }: SearchBarContentProps) => {
     return (
-        <InputWithButton
+        <InputWithOptionalButton
             name={"search"}
             value={value}
             type={"text"}

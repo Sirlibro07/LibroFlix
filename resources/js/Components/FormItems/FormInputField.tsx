@@ -2,12 +2,12 @@ import React from "react";
 import InputLabel from "../Input/InputLabel";
 import InputError, { InputErrorProps } from "../Input/InputError";
 import capitalizeFirstLetter from "@/Shared/functions/capitalizeFirstLetter";
-import InputWithButton, {
-    InputWithButtonProps,
-} from "../Input/InputWithButton";
+import InputWithOptionalButton, {
+    InputWithOptionalButtonProps,
+} from "../Input/InputWithOptionalButton";
 
 interface FormInputFieldProps
-    extends Omit<InputWithButtonProps, "icon_type">,
+    extends Omit<InputWithOptionalButtonProps, "icon_type">,
         InputErrorProps {
     name: string;
     icon_type?: string;
@@ -34,7 +34,7 @@ const FormInputField = ({
                 value={capitalizeFirstLetter(name)}
                 className="mt-6"
             />
-            <InputWithButton
+            <InputWithOptionalButton
                 type={type ? type : name}
                 name={name}
                 value={value}

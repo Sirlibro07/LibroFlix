@@ -2,14 +2,14 @@ import React from "react";
 import Button from "../Button/Button";
 import InputWithIcon, { InputWithIconProps } from "./InputWithIcon";
 
-export interface InputWithButtonProps extends InputWithIconProps {
+export interface InputWithOptionalButtonProps extends InputWithIconProps {
     button?: boolean;
     button_title?: string;
     button_onClickHandler?: () => void;
     button_type?: "submit" | "button";
 }
 
-const InputWithButton = ({
+const InputWithOptionalButton = ({
     type = "",
     name,
     placeholder = "",
@@ -25,7 +25,7 @@ const InputWithButton = ({
     button_title = "",
     button_type = "button",
     button_onClickHandler = null,
-}: InputWithButtonProps) => {
+}: InputWithOptionalButtonProps) => {
     return (
         <div className="flex w-full">
             <InputWithIcon
@@ -56,4 +56,4 @@ const InputWithButton = ({
     );
 };
 
-export default InputWithButton;
+export default InputWithOptionalButton;
