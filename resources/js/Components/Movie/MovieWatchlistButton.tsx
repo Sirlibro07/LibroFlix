@@ -1,6 +1,7 @@
 import React from "react";
 import ButtonWithIcon from "../Button/ButtonWithIcon";
 import { router } from "@inertiajs/react";
+import scrollToTop from "@/Shared/functions/scrollToTop";
 
 export interface MovieWatchlistButtonProps {
     watchlisted: boolean;
@@ -11,16 +12,14 @@ const MovieWatchlistButton = ({
     watchlisted,
     id,
 }: MovieWatchlistButtonProps) => {
-    const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         watchlisted
-            ? router.delete(route("watchlist_items.destroy", id), {
-                  preserveScroll: true,
-              })
-            : router.post(route("watchlist_items.store", id), {
-                  preserveScroll: true,
-              });
+            ? router.delete(route("watchlist_items.destroy", id))
+            : router.post(route("watchlist_items.store", id));
+
+        scrollToTop(400);
     };
 
     return (
@@ -29,9 +28,9 @@ const MovieWatchlistButton = ({
                 type="submit"
                 className="bg-dark"
                 icon_type="solid"
-                icon_name="plus"
+                icon_name={watchlisted ? "bookmark" : "plus"}
             >
-                Add to Watchlist
+                {watchlisted ? "Added to Watchlist" : "Add to Watchlist"}
             </ButtonWithIcon>
         </form>
     );
