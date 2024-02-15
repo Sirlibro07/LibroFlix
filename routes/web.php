@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WatchlistController;
+use App\Http\Controllers\WatchlistItemController;
 use App\Http\Resources\WatchlistResource;
 use App\Models\User;
 use App\Models\Watchlist;
@@ -45,8 +46,13 @@ Route::prefix("movies")->group(function () {
 
 
 // Watchlist
-Route::middleware("auth")->prefix("watchlist")->group(function () {
-    Route::get("", [WatchlistController::class, "index"])->name("watchlist.index");
+Route::get("/watchlist", [WatchlistController::class, "show"])->name("watchlist.show");
+
+// Watchlist Items
+Route::middleware("auth")->prefix("watchlist_item")->group(function () {
+    Route::post("{id}", [WatchlistItemController::class, "store"])->name("watchlist_items.store");
+    Route::delete("{id}", [WatchlistItemController::class, "destroy"])->name("watchlist_items.destroy");
 });
+
 
 require __DIR__ . '/auth.php';
