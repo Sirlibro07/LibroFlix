@@ -27,7 +27,7 @@ class MovieController extends Controller
         $watchlist = Watchlist::where("user_id", Auth::id())->first();
         return $this->renderAppView('Movie', [
             'movie' => MovieResource::make($movie),
-            'watchlisted' => (bool) WatchlistItem::where("watchlist_id", $watchlist->id)->where("movie_id", $movie->id)->first(),
+            'watchlisted' => (bool) Auth::check() && WatchlistItem::where("watchlist_id", $watchlist->id)->where("movie_id", $movie->id)->first(),
         ]);
     }
 
