@@ -1,36 +1,23 @@
-import React, { useState } from "react";
-import SliderContent from "./SliderContent";
-import SliderButtons from "./SliderButtons";
+import React from "react";
 import SliderTitle, { SliderTitleProps } from "./SliderTitle";
+import "swiper/css";
+import "swiper/css/pagination";
+import SliderContent, { SliderContentProps } from "./SliderContent";
 
-interface SliderProps extends SliderTitleProps {
-    total_cards: number;
-}
+interface SliderProps extends SliderTitleProps, SliderContentProps {}
 
 const Slider = ({
-    total_cards,
-    title,
+    movies,
+    slider_title,
     slider_title_className = "",
 }: SliderProps) => {
-    const [translateX, setTranslateX] = useState(0);
-
     return (
         <>
             <SliderTitle
-                title={title}
+                slider_title={slider_title}
                 slider_title_className={slider_title_className}
             />
-            <section className="relative mb-12">
-                <SliderContent
-                    translateX={translateX}
-                    setTranslateX={setTranslateX}
-                ></SliderContent>
-                <SliderButtons
-                    translateX={translateX}
-                    setTranslateX={setTranslateX}
-                    total_cards={total_cards}
-                />
-            </section>
+            <SliderContent movies={movies} />
         </>
     );
 };
