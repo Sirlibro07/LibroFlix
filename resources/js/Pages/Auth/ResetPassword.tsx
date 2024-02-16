@@ -12,12 +12,6 @@ const ResetPassword = ({ email, token }) => {
         password_confirmation: "",
     });
 
-    useEffect(() => {
-        return () => {
-            reset("password", "password_confirmation");
-        };
-    }, []);
-
     return (
         <AuthLayout
             folder_name={"forgot_reset_password"}

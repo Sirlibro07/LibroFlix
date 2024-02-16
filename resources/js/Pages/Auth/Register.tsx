@@ -12,12 +12,6 @@ export default function Register() {
         password_confirmation: "",
     });
 
-    useEffect(() => {
-        return () => {
-            reset("password", "password_confirmation");
-        };
-    }, []);
-
     return (
         <AuthLayout
             folder_name={"login_register"}

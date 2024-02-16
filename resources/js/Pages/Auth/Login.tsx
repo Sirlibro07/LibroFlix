@@ -14,12 +14,6 @@ export default function Login({ status }) {
         remember: false,
     });
 
-    useEffect(() => {
-        return () => {
-            reset("password");
-        };
-    }, []);
-
     return (
         <AuthLayout
             folder_name={"login_register"}
