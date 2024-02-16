@@ -3,10 +3,8 @@
 namespace App\Observers;
 
 use App\Events\ProfileDeleted;
-use App\Events\ProfileUpdated;
 use App\Events\Registered;
 use App\Models\User;
-use Illuminate\Support\Facades\Log;
 
 class UserObserver
 {
