@@ -25,7 +25,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        LoginRequested::dispatch($request->input("email"), $request->input("password"), $request->input("remember"));
+        event(new LoginRequested($request->input("email"), $request->input("password"), $request->input("remember")));
     }
 
     /**
@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(): RedirectResponse
     {
-        LogoutRequested::dispatch();
+        event(new LogoutRequested());
 
         return redirect(RouteServiceProvider::HOME);
     }

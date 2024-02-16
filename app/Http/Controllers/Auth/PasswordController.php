@@ -20,8 +20,7 @@ class PasswordController extends Controller
             'password' => ['required', Password::defaults(), 'confirmed'],
         ]);
 
-
-        PasswordUpdateRequested::dispatch($request->user()->email, $validated['password']);
+        event(new PasswordUpdateRequested($request->user()->email, $validated['password']));
 
         return back()->with("status", "Password updated");
     }

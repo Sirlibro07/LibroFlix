@@ -10,7 +10,7 @@ class EmailVerificationNotificationController extends Controller
 {
     public function store(Request $request)
     {
-        EmailVerificationNotificationRequested::dispatch($request->user()->email);
+        event(new EmailVerificationNotificationRequested($request->user()->email));
 
         return back()->with("status", "email verification sent, it could take some seconds for it to arrive");
     }

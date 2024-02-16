@@ -51,7 +51,8 @@ class NewPasswordController extends Controller
 
         $email = $request->get("email");
         $password = $request->get('password');
-        PasswordChangeRequested::dispatch($email, $password);
+
+        event(new PasswordChangeRequested($email, $password));
 
         return redirect()->route('login')->with('status', "password updated");
     }

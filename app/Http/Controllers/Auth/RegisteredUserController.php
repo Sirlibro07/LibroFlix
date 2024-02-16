@@ -34,7 +34,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        RegisterRequested::dispatch($request->name, $request->email, $request->password);
+        event(new RegisterRequested($request->name, $request->email, $request->password));
 
         return redirect(RouteServiceProvider::HOME);
     }

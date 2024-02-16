@@ -33,7 +33,7 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        ProfileUpdateRequested::dispatch($request->user()->email, $request->validated());
+        event(new ProfileUpdateRequested($request->user()->email, $request->validated()));
 
         return back()->with("status", "Profile info updated");
     }
@@ -47,7 +47,7 @@ class ProfileController extends Controller
             'password' => ['required', 'current_password'],
         ]);
 
-        ProfileDeleteRequested::dispatch($request->user()->id);
+        event(new ProfileDeleteRequested($request->user()->id));
 
         return Redirect::to(RouteServiceProvider::HOME);
     }

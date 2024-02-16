@@ -13,7 +13,7 @@ class UserObserver
      */
     public function created(User $user): void
     {
-        Registered::dispatch($user);
+        event(new Registered($user));
     }
 
     /**
@@ -21,7 +21,7 @@ class UserObserver
      */
     public function updated(User $user): void
     {
-        // ProfileUpdated::dispatch($user->email);
+        // event(new ProfileUpdated($user->email));
     }
 
     /**
@@ -29,7 +29,7 @@ class UserObserver
      */
     public function deleted(User $user): void
     {
-        ProfileDeleted::dispatch($user->email);
+        event(new ProfileDeleted($user->email));
     }
 
     /**
