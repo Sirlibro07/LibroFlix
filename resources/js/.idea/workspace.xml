@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbdc4861-1913-4abb-bad3-a4b73a709a5e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../app/Http/Controllers/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/Http/Controllers/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Navbar/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Search/SearchPageContent.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/SearchBar/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/SearchBar/SearchBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/App/SearchPage.tsx" beforeDir="false" />
-    </list>
+    <list default="true" id="fbdc4861-1913-4abb-bad3-a4b73a709a5e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +40,7 @@
       <updated>1707781562885</updated>
       <workItem from="1707781563890" duration="189000" />
       <workItem from="1707950785307" duration="14000" />
+      <workItem from="1708043104177" duration="3000" />
     </task>
     <servers />
   </component>
