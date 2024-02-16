@@ -5,7 +5,7 @@ import SearchContent from "@/Components/Search/SearchContent";
 
 const Index = ({ movies, title }) => {
     const renderSearchPageContent = (children: ReactNode) => {
-        const name = movies.length
+        const name = movies.data.length
             ? `Results for "${title}"`
             : `No Results found for "${title}"`;
         return (
