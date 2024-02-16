@@ -15,14 +15,14 @@ const NavbarLinks = () => {
     isLoggedIn &&
         routes.push(
             {
-                name: "Account",
-                route: "profile.edit",
-                pathname: "profile",
-            },
-            {
                 name: "Watchlist",
                 route: "watchlist.show",
                 pathname: "watchlist",
+            },
+            {
+                name: "Account",
+                route: "profile.edit",
+                pathname: "profile",
             }
         );
 
