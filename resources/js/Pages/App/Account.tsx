@@ -8,6 +8,7 @@ const Account = ({ status, has_verified_email }) => {
 
     return (
         <AppLayout
+            header_title="Account"
             className="pt-8"
             footer_className="mt-[25rem]"
             header_name="Account"

@@ -10,6 +10,7 @@ const Index = ({ movies, title }) => {
             : `No Results found for "${title}"`;
         return (
             <AppLayout
+                header_title="Search"
                 header_className="text-center mt-[70px] mb-[60px] lg:mt-[90px] lg:mb-[70px] lg:text-typescale_67px "
                 header_name={name}
             >

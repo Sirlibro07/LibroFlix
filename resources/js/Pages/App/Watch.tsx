@@ -7,6 +7,7 @@ const Watch = ({ has_verified_email, film_title }) => {
     const renderWatchContent = (children: ReactNode) => {
         return (
             <AppLayout
+                header_title="Watch"
                 footer={false}
                 navbar_border={false}
                 bg_image={

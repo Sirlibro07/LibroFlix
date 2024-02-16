@@ -14,7 +14,7 @@ export default function ForgotPassword({ status }: { status: string }) {
         <AuthLayout
             folder_name={"forgot_reset_password"}
             img_classes="object-right"
-            title="Forgot Password"
+            header_title="Forgot Password"
             name="Recover Password"
             method_function={post}
             route_name="password.email"

@@ -15,7 +15,11 @@ const Watchlist = ({ watchlist }) => {
     }, [watchlist]);
 
     return (
-        <AppLayout header_name="Watchlist" header_className="mt-8 mb-5">
+        <AppLayout
+            header_title="Watchlist"
+            header_name="Watchlist"
+            header_className="mt-8 mb-5"
+        >
             <Grid movies={movies}></Grid>
         </AppLayout>
     );

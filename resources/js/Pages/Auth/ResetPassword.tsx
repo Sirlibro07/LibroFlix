@@ -22,7 +22,7 @@ const ResetPassword = ({ id, token }) => {
         <AuthLayout
             folder_name={"forgot_reset_password"}
             img_classes="object-right"
-            title="Reset Password"
+            header_title="Reset Password"
             name="Reset Password"
             method_function={post}
             route_name="password.store"

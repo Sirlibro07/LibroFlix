@@ -10,6 +10,7 @@ const Home = ({ movies }) => {
     const renderHomeContent = (children: ReactNode) => {
         return (
             <AppLayout
+                header_title="Home"
                 bg_image={
                     <BackgroundImage
                         folder_name="first_movie"

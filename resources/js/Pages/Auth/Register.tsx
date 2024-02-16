@@ -21,7 +21,7 @@ export default function Register() {
     return (
         <AuthLayout
             folder_name={"login_register"}
-            title="Sign Up"
+            header_title="Sign Up"
             name="Sign Up"
             method_function={post}
             route_name="register"

@@ -11,6 +11,7 @@ const Show = ({ movie, watchlisted }) => {
     const renderMovieContent = (children: ReactNode) => {
         return (
             <AppLayout
+                header_title="Movie"
                 navbar_border={false}
                 bg_image={
                     <BackgroundImage
