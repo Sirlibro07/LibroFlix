@@ -31,7 +31,7 @@ Route::middleware('guest')->group(function () {
         ->name('password.email');
 
     // Reset Password
-    Route::get('reset-password/{id}/{hash}', [NewPasswordController::class, 'create'])
+    Route::get('reset-password/{email}/{hash}', [NewPasswordController::class, 'create'])
         ->middleware("signed")
         ->name('password.reset');
 
@@ -40,8 +40,8 @@ Route::middleware('guest')->group(function () {
 });
 
 // Email Verification
-Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
-    ->middleware(['signed', 'throttle:3,10'])
+Route::get('verify-email/{email}/{hash}', VerifyEmailController::class)
+    ->middleware(['signed'])
     ->name('verification.verify');
 
 Route::middleware('auth')->group(function () {

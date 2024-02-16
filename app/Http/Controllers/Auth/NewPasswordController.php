@@ -16,17 +16,17 @@ class NewPasswordController extends Controller
     /**
      * Display the password reset view.
      */
-    public function create($id, $hash): Response
+    public function create($email, $hash): Response
     {
 
         try {
-            $user = User::findOrFail($id);
+            $user = User::where("email", $email)->firstOrFail();
 
             if ($user->password_reset_token == $hash) {
                 return $this->renderAuthView(
                     'ResetPassword',
                     [
-                        'id' => $user->id,
+                        'email' => $user->email,
                         'token' => $hash,
                     ]
                 );
@@ -49,9 +49,9 @@ class NewPasswordController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $id = $request->get("id");
+        $email = $request->get("email");
         $password = $request->get('password');
-        PasswordChangeRequested::dispatch($id, $password);
+        PasswordChangeRequested::dispatch($email, $password);
 
         return redirect()->route('login')->with('status', "password updated");
     }

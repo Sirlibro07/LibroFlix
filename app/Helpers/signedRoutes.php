@@ -15,5 +15,5 @@ function temporaryEmailVerificationSignedRoute($user): string
 
 function SignedRoute(string $route, int $minutes, object $user, string $hash): string
 {
-    return URL::temporarySignedRoute($route, now()->addMinutes($minutes), ['id' => $user->id, 'hash' => $hash]);
+    return URL::temporarySignedRoute($route, now()->addMinutes($minutes), ['email' => $user->email, 'hash' => $hash]);
 }

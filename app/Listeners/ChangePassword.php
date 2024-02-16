@@ -21,7 +21,7 @@ class ChangePassword
      */
     public function handle(PasswordChangeRequested $event): void
     {
-        $user = User::find($event->id);;
+        $user = User::where("email", $event->email)->first();
         $user->password = Hash::make($event->password);
         $user->password_reset_token = null;
         $user->save();

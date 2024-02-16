@@ -14,15 +14,15 @@ class PasswordChangeRequested
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
 
-    public int $id;
+    public string $email;
     public string $password;
 
     /**
      * Create a new event instance.
      */
-    public function __construct($id, $password)
+    public function __construct($email, $password)
     {
-        $this->id = $id;
+        $this->email = $email;
         $this->password = $password;
     }
 

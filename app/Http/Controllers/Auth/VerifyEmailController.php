@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,10 +12,10 @@ class VerifyEmailController extends Controller
     /**
      * Mark the authenticated user's email address as verified.
      */
-    public function __invoke($id, $hash)
+    public function __invoke($email, $hash)
     {
         try {
-            $user = User::findOrFail($id);
+            $user = User::where("email", $email)->firstOrFail();
 
             if (!$user->hasVerifiedEmail() && $user->email_verification_token == $hash) {
                 $user->markEmailAsVerified();
