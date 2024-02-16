@@ -15,10 +15,7 @@ const Watchlist = ({ watchlist }) => {
     }, [watchlist]);
 
     return (
-        <AppLayout>
-            <h1 className="font-medium text-typescale_38px font-display mt-8 mb-5">
-                WatchList
-            </h1>
+        <AppLayout header_name="Watchlist" header_className="mt-8 mb-5">
             <Grid movies={movies}></Grid>
         </AppLayout>
     );

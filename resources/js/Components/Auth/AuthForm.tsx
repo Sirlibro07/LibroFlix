@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 import GeneralLink from "../Global/GeneralLink";
 import Button from "../Button/Button";
 import AuthFormName, { AuthFormNameProps } from "./AuthFormName";
+import Header from "../Global/Header";
 
 export interface AuthFormProps extends AuthFormNameProps {
     children: ReactNode;
@@ -35,7 +36,10 @@ export default function AuthForm({
             }}
             className="auth_form w-full h-fit bg-black px-4 py-8 rounded-t-[1.875rem] lg:rounded-none lg:flex lg:flex-col lg:justify-center lg:px-12 lg:h-full lg:min-h-svh lg:w-[37.5rem]"
         >
-            <AuthFormName name={name} />
+            <Header
+                name={name}
+                className="text-center lg:text-typescale_67px"
+            />
 
             {children}
 

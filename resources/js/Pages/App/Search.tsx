@@ -5,8 +5,14 @@ import SearchContent from "@/Components/Search/SearchContent";
 
 const Index = ({ movies, title }) => {
     const renderSearchPageContent = (children: ReactNode) => {
+        const name = movies.length
+            ? `Results for "${title}"`
+            : `No Results found for "${title}"`;
         return (
-            <AppLayout>
+            <AppLayout
+                header_className="text-center mt-[70px] mb-[60px] lg:mt-[90px] lg:mb-[70px] lg:text-typescale_67px "
+                header_name={name}
+            >
                 <MoviesContext.Provider value={movies}>
                     {children}
                 </MoviesContext.Provider>
@@ -14,6 +20,6 @@ const Index = ({ movies, title }) => {
         );
     };
 
-    return <>{renderSearchPageContent(<SearchContent title={title} />)}</>;
+    return <>{renderSearchPageContent(<SearchContent />)}</>;
 };
 export default Index;

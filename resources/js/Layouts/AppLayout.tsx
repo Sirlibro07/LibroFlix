@@ -6,13 +6,13 @@ import "@/CSS/scrollbar.css";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
 import UserContext from "@/Contexts/UserContext";
 import Navbar from "@/Components/Navbar/Navbar";
-import AppLayoutChildren from "@/Components/LayoutItems/AppLayoutChildren";
+import AppLayoutChildren, {
+    AppLayoutChildrenProps,
+} from "@/Components/LayoutItems/AppLayoutChildren";
 import Footer from "@/Components/Footer/Footer";
 import { usePage } from "@inertiajs/react";
 
-interface AppLayoutProps {
-    children: ReactNode;
-    className?: string;
+interface AppLayoutProps extends AppLayoutChildrenProps {
     navbar_border?: boolean;
     bg_image?: ReactNode;
     body_padding?: boolean;
@@ -30,6 +30,8 @@ const AppLayout = ({
     footer = true,
     footer_className = "",
     footer_border = true,
+    header_name = "",
+    header_className = "",
 }: AppLayoutProps) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
@@ -75,7 +77,11 @@ const AppLayout = ({
                                 : "min-h-[calc(100svh-90px)]"
                         } flex flex-col justify-between`}
                     >
-                        <AppLayoutChildren className={className}>
+                        <AppLayoutChildren
+                            className={className}
+                            header_className={header_className}
+                            header_name={header_name}
+                        >
                             {children}
                         </AppLayoutChildren>
                         {footer && (
