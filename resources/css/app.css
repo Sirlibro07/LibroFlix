@@ -31,6 +31,13 @@ body::before {
     z-index: -1;
 }
 
+@media (min-width: 768px) {
+    #app {
+        filter: saturate(110%);
+    }
+}
+
+/* Input auto-fill */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -41,10 +48,24 @@ input:-webkit-autofill {
     -webkit-text-fill-color: white !important;
 }
 
-@media (min-width: 768px) {
-    #app {
-        filter: saturate(110%);
-    }
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5f5f61;
+    width: 2px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+    width: 2px;
 }
 
 .body-padding {
