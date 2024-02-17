@@ -14,10 +14,13 @@ use App\Events\ProfileUpdated;
 use App\Events\ProfileUpdateRequested;
 use App\Events\Registered;
 use App\Events\RegisterRequested;
+use App\Events\WatchlistItemDeleteRequested;
+use App\Events\WatchlistItemStoreRequested;
 use App\Listeners\ChangePassword;
 use App\Listeners\CreateWatchlist;
 use App\Listeners\DeleteProfile;
 use App\Listeners\DeleteWatchlist;
+use App\Listeners\DeleteWatchlistItem;
 use App\Listeners\LoginUser;
 use App\Listeners\LogoutUser;
 use App\Listeners\Register;
@@ -28,6 +31,7 @@ use App\Listeners\SendPasswordResetEmail;
 use App\Listeners\SendPasswordUpdatedEmail;
 use App\Listeners\SendProfileUpdatedEmail;
 use App\Listeners\SendWelcomeEmail;
+use App\Listeners\StoreWatchlistItem;
 use App\Listeners\UpdatePassword;
 use App\Listeners\UpdateProfile;
 use App\Models\User;
@@ -88,6 +92,12 @@ class EventServiceProvider extends ServiceProvider
             UpdatePassword::class,
             SendPasswordUpdatedEmail::class,
         ],
+        WatchlistItemStoreRequested::class => [
+            StoreWatchlistItem::class
+        ],
+        WatchlistItemDeleteRequested::class => [
+            DeleteWatchlistItem::class
+        ]
 
 
     ];

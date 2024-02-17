@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\WatchlistItemDeleteRequested;
+use App\Events\WatchlistItemStoreRequested;
 use App\Http\Resources\WatchlistItemResource;
 use App\Models\WatchlistItem;
 use Illuminate\Http\RedirectResponse;
@@ -21,19 +23,14 @@ class WatchlistItemController extends Controller
     public function store(int $id): RedirectResponse
     {
 
-        $watchlist_item = new WatchlistItem();
-        $watchlist_item->user_id = Auth::id();
-        $watchlist_item->movie_id = $id;
-
-        $watchlist_item->save();
+        event(new WatchlistItemStoreRequested($id));
 
         return back();
     }
 
     public function destroy(): RedirectResponse
     {
-        $watchlist_item = WatchlistItem::where("user_id", Auth::id())->first();
-        $watchlist_item->delete();
+        event(new WatchlistItemDeleteRequested);
 
         return back();
     }
