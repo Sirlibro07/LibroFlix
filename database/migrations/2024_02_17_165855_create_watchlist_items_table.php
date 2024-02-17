@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('watchlist_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("watchlist_id")->constrained("watchlists");
+            $table->foreignId("user_id")->constrained("users");
             $table->foreignId("movie_id")->constrained("movies");
             $table->timestamps();
         });

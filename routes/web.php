@@ -45,11 +45,10 @@ Route::prefix("movies")->group(function () {
 });
 
 
-// Watchlist
-Route::get("/watchlist", [WatchlistController::class, "show"])->name("watchlist.show");
 
 // Watchlist Items
-Route::middleware("auth")->prefix("watchlist_item")->group(function () {
+Route::middleware("auth")->prefix("watchlist")->group(function () {
+    Route::get("", [WatchlistItemController::class, "index"])->name("watchlists_items.index");
     Route::post("{id}", [WatchlistItemController::class, "store"])->name("watchlist_items.store");
     Route::delete("{id}", [WatchlistItemController::class, "destroy"])->name("watchlist_items.destroy");
 });

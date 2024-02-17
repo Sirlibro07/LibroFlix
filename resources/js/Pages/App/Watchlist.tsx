@@ -2,17 +2,17 @@ import Grid from "@/Components/Grid/Grid";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { useMemo } from "react";
 
-const Watchlist = ({ watchlist }) => {
+const Watchlist = ({ watchlist_items }) => {
     const movies = useMemo(() => {
-        const { watchlist_items } = watchlist.data;
+        const { data } = watchlist_items;
         const movies = [];
 
-        for (let i = 0; i < watchlist_items.length; i++) {
-            movies[i] = watchlist_items[i].movie;
+        for (let i = 0; i < data.length; i++) {
+            movies[i] = data[i].movie;
         }
 
         return movies;
-    }, [watchlist]);
+    }, [watchlist_items]);
 
     return (
         <AppLayout

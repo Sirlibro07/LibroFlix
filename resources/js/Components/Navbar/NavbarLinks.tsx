@@ -16,7 +16,7 @@ const NavbarLinks = () => {
         routes.push(
             {
                 name: "Watchlist",
-                route: "watchlist.show",
+                route: "watchlists_items.index",
                 pathname: "watchlist",
             },
             {

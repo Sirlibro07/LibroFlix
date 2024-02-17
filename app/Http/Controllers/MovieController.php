@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\MovieResource;
 use App\Models\Movie;
-use App\Models\Watchlist;
 use App\Models\WatchlistItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,10 +23,9 @@ class MovieController extends Controller
     public function show(string $title): Response
     {
         $movie = Movie::where("title", $title)->firstOrFail();
-        $watchlist = Watchlist::where("user_id", Auth::id())->first();
         return $this->renderAppView('Movie', [
             'movie' => MovieResource::make($movie),
-            'watchlisted' => (bool) Auth::check() && WatchlistItem::where("watchlist_id", $watchlist->id)->where("movie_id", $movie->id)->first(),
+            'watchlisted' => (bool) Auth::check() && WatchlistItem::where("user_id", Auth::id())->where("movie_id", $movie->id)->first(),
         ]);
     }
 
