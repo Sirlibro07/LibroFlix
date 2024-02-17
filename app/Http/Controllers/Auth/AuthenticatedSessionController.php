@@ -7,6 +7,7 @@ use App\Events\LogoutRequested;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Response;
 
@@ -25,7 +26,12 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        event(new LoginRequested($request->input("email"), $request->input("password"), $request->input("remember")));
+        try {
+            event(new LoginRequested($request->input("email"), $request->input("password"), $request->input("remember")));
+            return redirect(RouteServiceProvider::HOME);
+        } catch (AuthenticationException $e) {
+            return redirect()->back()->withErrors(['email' => 'Credentials not valid']);
+        }
     }
 
     /**

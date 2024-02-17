@@ -22,17 +22,13 @@ class LoginUser
     /**
      * Handle the event.
      */
-    public function handle(LoginRequested $event): RedirectResponse
+    public function handle(LoginRequested $event): void
     {
-        try {
-            if (!Auth::attempt(['email' => $event->email, 'password' => $event->password], (bool) $event->remember)) {
-                throw new AuthenticationException();
-            }
 
-            session()->regenerate();
-            return redirect(RouteServiceProvider::HOME);
-        } catch (AuthenticationException $e) {
-            return redirect()->back()->withErrors(['email' => 'Credentials not valid']);
+        if (!Auth::attempt(['email' => $event->email, 'password' => $event->password], (bool) $event->remember)) {
+            throw new AuthenticationException();
         }
+
+        session()->regenerate();
     }
 }
