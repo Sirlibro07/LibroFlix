@@ -44,7 +44,6 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         RegisterRequested::class => [
             Register::class,
-            CreateWatchlist::class
 
         ],
         Registered::class => [
