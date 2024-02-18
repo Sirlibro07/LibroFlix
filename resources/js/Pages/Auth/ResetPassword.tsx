@@ -50,7 +50,7 @@ const ResetPassword = ({ email, token, isTokenValid }) => {
                     />
                 </AuthLayout>
             ) : (
-                <AppLayout header_title={"ciao"}>
+                <AppLayout header_title={"Reset Password"}>
                     <main className="w-full h-[calc(100svh-5.625rem)] min-h-[25rem] pb-4 flex  justify-center items-end  md:items-center">
                         <WatchPopup
                             icon_name="hand"
