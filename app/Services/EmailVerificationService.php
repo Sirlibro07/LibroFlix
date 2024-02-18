@@ -17,11 +17,11 @@ class EmailVerificationService extends SendEmailService
         }
     }
 
-    public function verifyEmail(string $email, string $hash)
+    public function verifyEmail(string $email, string $token)
     {
         $user = User::where("email", $email)->firstOrFail();
 
-        if (!$user->hasVerifiedEmail() && $user->email_verification_token == $hash) {
+        if (!$user->hasVerifiedEmail() && $user->email_verification_token == $token) {
             $user->markEmailAsVerified();
             $user->email_verification_token = null;
             $user->save();

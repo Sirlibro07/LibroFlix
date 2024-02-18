@@ -16,7 +16,7 @@ class NewPasswordController extends Controller
     /**
      * Display the password reset view.
      */
-    public function create($email, $hash): Response
+    public function create($email, $token): Response
     {
 
         try {
@@ -26,8 +26,8 @@ class NewPasswordController extends Controller
                 'ResetPassword',
                 [
                     'email' => $user->email,
-                    'isTokenValid' => $user->password_reset_token == $hash && !Session::get('errors')?->first('token'),
-                    'token' => $hash,
+                    'isTokenValid' => $user->password_reset_token == $token && !Session::get('errors')?->first('token'),
+                    'token' => $token,
                 ]
             );
         } catch (ModelNotFoundException $e) {

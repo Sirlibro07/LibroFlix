@@ -13,10 +13,10 @@ class VerifyEmailController extends Controller
     /**
      * Mark the authenticated user's email address as verified.
      */
-    public function __invoke($email, $hash, EmailVerificationService $emailVerificationService)
+    public function __invoke($email, $token, EmailVerificationService $emailVerificationService)
     {
         try {
-            $emailVerificationService->verifyEmail($email, $hash);
+            $emailVerificationService->verifyEmail($email, $token);
 
             return redirect()->route("profile.edit")->with("status", "Email has been verified");
         } catch (ModelNotFoundException $e) {
