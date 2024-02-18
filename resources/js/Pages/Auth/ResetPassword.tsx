@@ -4,6 +4,7 @@ import React from "react";
 import FormInputField from "@/Components/FormItems/FormInputField";
 import AppLayout from "@/Layouts/AppLayout";
 import Popup from "@/Components/Popup/Popup";
+import PopupAppLayout from "@/Layouts/PopupAppLayout";
 
 const ResetPassword = ({ email, token, isTokenValid }) => {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -17,7 +18,7 @@ const ResetPassword = ({ email, token, isTokenValid }) => {
 
     return (
         <>
-            {isTokenValid ? (
+            {!isTokenValid ? (
                 <AuthLayout
                     folder_name={"forgot_reset_password"}
                     img_classes="object-right"
@@ -49,18 +50,16 @@ const ResetPassword = ({ email, token, isTokenValid }) => {
                     />
                 </AuthLayout>
             ) : (
-                <AppLayout head_title={"Reset Password"}>
-                    <main className="w-full h-[calc(100svh-5.625rem)] min-h-[25rem] pb-4 flex  justify-center items-end  md:items-center">
-                        <Popup
-                            icon_name="hand"
-                            icon_className="ml-[-0.063rem]"
-                            title={"Token Invalid"}
-                            message={`the token could be invalid or expired time ago, please try again`}
-                            link_title={"Try again"}
-                            link_route_name={"password.request"}
-                        />
-                    </main>
-                </AppLayout>
+                <PopupAppLayout head_title={"Invalid Token"}>
+                    <Popup
+                        icon_name="hand"
+                        icon_className="ml-[-0.063rem]"
+                        title={"Token Invalid"}
+                        message={`the token could be invalid or expired time ago, please try again`}
+                        link_title={"Try again"}
+                        link_route_name={"password.request"}
+                    />
+                </PopupAppLayout>
             )}
         </>
     );

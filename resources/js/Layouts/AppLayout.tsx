@@ -11,7 +11,7 @@ import AppLayoutChildren, {
 import Footer from "@/Components/Footer/Footer";
 import { Head, usePage } from "@inertiajs/react";
 
-interface AppLayoutProps extends AppLayoutChildrenProps {
+export interface AppLayoutProps extends AppLayoutChildrenProps {
     navbar_border?: boolean;
     bg_image?: ReactNode;
     body_padding?: boolean;
