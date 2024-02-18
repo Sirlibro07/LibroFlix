@@ -14,7 +14,7 @@ const GridCards = ({ movies }: GridCardsProps) => {
             {movies.map((movie) => (
                 <GridCard
                     key={movie.id}
-                    title={movie.title}
+                    slug={movie.slug}
                     thumbnail_path={underscoreToSpace(movie.title)}
                 />
             ))}

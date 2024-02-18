@@ -8,10 +8,10 @@ export interface MovieButtonsProps
     extends MovieWatchNowProps,
         MovieWatchlistButtonProps {}
 
-const MovieButtons = ({ title, id, watchlisted }: MovieButtonsProps) => {
+const MovieButtons = ({ slug, id, watchlisted }: MovieButtonsProps) => {
     return (
         <div className="flex gap-3">
-            <MovieWatchNow title={title} />
+            <MovieWatchNow slug={slug} />
             <MovieWatchlistButton watchlisted={watchlisted} id={id} />
         </div>
     );

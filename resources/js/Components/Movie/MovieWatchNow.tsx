@@ -3,12 +3,12 @@ import ButtonOptionalIcon from "../Button/ButtonOptionalIcon";
 import React from "react";
 
 export interface MovieWatchNowProps {
-    title: string;
+    slug: string;
 }
 
-const MovieWatchNow = ({ title }: MovieWatchNowProps) => {
+const MovieWatchNow = ({ slug }: MovieWatchNowProps) => {
     return (
-        <Link href={route("movies.watch", title)}>
+        <Link href={route("movies.watch", slug)}>
             <ButtonOptionalIcon icon_type="solid" icon_name="play">
                 Watch Now
             </ButtonOptionalIcon>

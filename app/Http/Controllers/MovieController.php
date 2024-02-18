@@ -20,18 +20,18 @@ class MovieController extends Controller
         ]);
     }
 
-    public function show(string $title): Response
+    public function show(string $slug): Response
     {
-        $movie = Movie::where("title", $title)->firstOrFail();
+        $movie = Movie::where("slug", $slug)->firstOrFail();
         return $this->renderAppView('Movie', [
             'movie' => MovieResource::make($movie),
             'watchlisted' => (bool) Auth::check() && WatchlistItem::where("user_id", Auth::id())->where("movie_id", $movie->id)->first(),
         ]);
     }
 
-    public function watch(string $title, Request $request)
+    public function watch(string $slug, Request $request)
     {
-        $movie = Movie::where("title", $title)->firstOrFail();
+        $movie = Movie::where("slug", $slug)->firstOrFail();
 
         return $this->renderAppView("Watch", [
             'has_verified_email' => $request->user()->hasVerifiedEmail(),

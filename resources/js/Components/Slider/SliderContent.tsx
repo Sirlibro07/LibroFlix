@@ -87,7 +87,7 @@ const SliderContent = ({ movies }: SliderContentProps) => {
                 <SwiperSlide key={movie.id}>
                     <SliderCard
                         thumbnail_path={underscoreToSpace(movie.title)}
-                        title={movie.title}
+                        slug={movie.slug}
                     />
                 </SwiperSlide>
             ))}

@@ -6,11 +6,13 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WatchlistController;
 use App\Http\Controllers\WatchlistItemController;
 use App\Http\Resources\WatchlistResource;
+use App\Models\Movie;
 use App\Models\User;
 use App\Models\Watchlist;
 use App\Models\WatchlistItem;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,8 +42,8 @@ Route::middleware('auth')->prefix("profile")->group(function () {
 // Movies
 Route::prefix("movies")->group(function () {
     Route::get("search/{title?}", [MovieController::class, 'index'])->name("movies.index");
-    Route::get("{title}", [MovieController::class, 'show'])->name("movies.show");
-    Route::get("watch/{title}", [MovieController::class, "watch"])->middleware("auth")->name("movies.watch");
+    Route::get("{slug}", [MovieController::class, 'show'])->name("movies.show");
+    Route::get("watch/{slug}", [MovieController::class, "watch"])->middleware("auth")->name("movies.watch");
 });
 
 

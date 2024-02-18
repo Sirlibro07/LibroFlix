@@ -22,7 +22,7 @@ const MovieDetails = ({ movie, watchlisted }: MovieDetailsProps) => {
             <MovieButtons
                 watchlisted={watchlisted}
                 id={movie.id}
-                title={movie.title}
+                slug={movie.slug}
             />
             <MovieDescription
                 description={movie.description}
