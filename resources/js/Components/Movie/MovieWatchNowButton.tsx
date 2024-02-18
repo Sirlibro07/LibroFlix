@@ -2,11 +2,11 @@ import { Link } from "@inertiajs/react";
 import ButtonOptionalIcon from "../Button/ButtonOptionalIcon";
 import React from "react";
 
-export interface MovieWatchNowProps {
+export interface MovieWatchNowButtonProps {
     slug: string;
 }
 
-const MovieWatchNow = ({ slug }: MovieWatchNowProps) => {
+const MovieWatchNowButton = ({ slug }: MovieWatchNowButtonProps) => {
     return (
         <Link href={route("movies.watch", slug)}>
             <ButtonOptionalIcon icon_type="solid" icon_name="play">
@@ -16,4 +16,4 @@ const MovieWatchNow = ({ slug }: MovieWatchNowProps) => {
     );
 };
 
-export default MovieWatchNow;
+export default MovieWatchNowButton;

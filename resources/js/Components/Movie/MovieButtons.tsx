@@ -1,17 +1,19 @@
 import React from "react";
-import MovieWatchNow, { MovieWatchNowProps } from "./MovieWatchNow";
+import MovieWatchNowButton, {
+    MovieWatchNowButtonProps,
+} from "./MovieWatchNowButton";
 import MovieWatchlistButton, {
     MovieWatchlistButtonProps,
 } from "./MovieWatchlistButton";
 
 export interface MovieButtonsProps
-    extends MovieWatchNowProps,
+    extends MovieWatchNowButtonProps,
         MovieWatchlistButtonProps {}
 
 const MovieButtons = ({ slug, id, watchlisted }: MovieButtonsProps) => {
     return (
         <div className="flex gap-3">
-            <MovieWatchNow slug={slug} />
+            <MovieWatchNowButton slug={slug} />
             <MovieWatchlistButton watchlisted={watchlisted} id={id} />
         </div>
     );
