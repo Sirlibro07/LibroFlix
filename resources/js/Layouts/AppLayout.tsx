@@ -18,7 +18,7 @@ interface AppLayoutProps extends AppLayoutChildrenProps {
     footer?: boolean;
     footer_className?: string;
     footer_border?: boolean;
-    header_title: string;
+    head_title: string;
 }
 
 const AppLayout = ({
@@ -32,7 +32,7 @@ const AppLayout = ({
     footer_border = true,
     header_name = "",
     header_className = "",
-    header_title,
+    head_title,
 }: AppLayoutProps) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
@@ -70,7 +70,7 @@ const AppLayout = ({
             {renderWithProviders(
                 <>
                     <Navbar border={navbar_border} />
-                    <Head title={header_title} />
+                    <Head title={head_title} />
                     {bg_image}
                     <div
                         className={`${body_padding_style} ${low_brightness_style} relative h-fit ${

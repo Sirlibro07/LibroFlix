@@ -22,7 +22,7 @@ const ResetPassword = ({ email, token, isTokenValid }) => {
                 <AuthLayout
                     folder_name={"forgot_reset_password"}
                     img_classes="object-right"
-                    header_title="Reset Password"
+                    head_title="Reset Password"
                     name="Reset Password"
                     method_function={post}
                     route_name="password.store"
@@ -50,7 +50,7 @@ const ResetPassword = ({ email, token, isTokenValid }) => {
                     />
                 </AuthLayout>
             ) : (
-                <AppLayout header_title={"Reset Password"}>
+                <AppLayout head_title={"Reset Password"}>
                     <main className="w-full h-[calc(100svh-5.625rem)] min-h-[25rem] pb-4 flex  justify-center items-end  md:items-center">
                         <WatchPopup
                             icon_name="hand"

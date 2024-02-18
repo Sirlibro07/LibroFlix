@@ -17,7 +17,7 @@ export default function Login({ status }) {
     return (
         <AuthLayout
             folder_name={"login_register"}
-            header_title="Log In"
+            head_title="Log In"
             name="Log In"
             method_function={post}
             route_name="login"

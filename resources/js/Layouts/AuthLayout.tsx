@@ -12,14 +12,14 @@ import AuthLayoutChildren, {
 interface AuthLayoutProps
     extends AuthLayoutChildrenProps,
         Omit<BackgroundImageProps, "picture_classes"> {
-    header_title: string;
+    head_title: string;
 }
 
 const AuthLayout = ({
     children,
     folder_name,
     img_classes = "",
-    header_title,
+    head_title,
     name,
     method_function,
     route_name,
@@ -30,7 +30,7 @@ const AuthLayout = ({
 }: AuthLayoutProps) => {
     return (
         <>
-            <Head title={header_title} />
+            <Head title={head_title} />
             <BackgroundImage
                 picture_classes="h-full"
                 folder_name={folder_name}

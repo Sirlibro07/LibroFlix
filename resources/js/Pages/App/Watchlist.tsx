@@ -16,7 +16,7 @@ const Watchlist = ({ watchlist_items }) => {
 
     return (
         <AppLayout
-            header_title="Watchlist"
+            head_title="Watchlist"
             header_name="Watchlist"
             header_className="mt-8 mb-5"
         >
