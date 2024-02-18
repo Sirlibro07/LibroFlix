@@ -28,7 +28,7 @@ class SendPasswordUpdatedEmail implements ShouldQueue
         $user = User::where("email", $event->email)->first();
 
 
-        (new PasswordResetService)->generatePasswordResetToken($user);
+        (new PasswordResetService)->generateAndStorePasswordResetToken($user);
         $signed_route = (new SignedRouteService)->SignedRoute('password.reset', 5, $user->email, $user->password_reset_token);
         (new SendEmailService)->sendEmailAsJob(new PasswordUpdatedEmail($signed_route, $user->email));
     }
