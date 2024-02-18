@@ -22,15 +22,11 @@ class NewPasswordController extends Controller
         try {
             $user = User::where("email", $email)->firstOrFail();
 
-            $session_errors = null;
-            if (Session::has('errors')) {
-                $session_errors = Session::get('errors')->first('token');
-            }
             return $this->renderAuthView(
                 'ResetPassword',
                 [
                     'email' => $user->email,
-                    'isTokenValid' => $user->password_reset_token == $hash && !$session_errors,
+                    'isTokenValid' => $user->password_reset_token == $hash && !Session::get('errors')?->first('token'),
                     'token' => $hash,
                 ]
             );
