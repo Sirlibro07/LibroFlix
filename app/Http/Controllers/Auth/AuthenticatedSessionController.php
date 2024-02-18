@@ -7,6 +7,7 @@ use App\Events\LogoutRequested;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
+use App\Services\AuthenticatedSessionService;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Response;
@@ -24,10 +25,10 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request)
+    public function store(LoginRequest $request, AuthenticatedSessionService $authenticatedSessionService)
     {
         try {
-            event(new LoginRequested($request->input("email"), $request->input("password"), $request->input("remember")));
+            $authenticatedSessionService->store($request->validated(), $request->input("remember"));
             return redirect(RouteServiceProvider::HOME);
         } catch (AuthenticationException $e) {
             return redirect()->back()->withErrors(['email' => 'Credentials not valid']);
@@ -37,10 +38,8 @@ class AuthenticatedSessionController extends Controller
     /**
      * Destroy an authenticated session.
      */
-    public function destroy(): RedirectResponse
+    public function destroy(AuthenticatedSessionService $authenticatedSessionService)
     {
-        event(new LogoutRequested());
-
-        return redirect(RouteServiceProvider::HOME);
+        $authenticatedSessionService->destroy();
     }
 }

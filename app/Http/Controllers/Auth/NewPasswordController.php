@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\PasswordChangeRequested;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NewPasswordRequest;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
+use App\Services\PasswordResetService;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rules;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Session;
 use Inertia\Response;
 
 class NewPasswordController extends Controller
@@ -22,17 +22,18 @@ class NewPasswordController extends Controller
         try {
             $user = User::where("email", $email)->firstOrFail();
 
-            if ($user->password_reset_token == $hash) {
-                return $this->renderAuthView(
-                    'ResetPassword',
-                    [
-                        'email' => $user->email,
-                        'token' => $hash,
-                    ]
-                );
+            $session_errors = null;
+            if (Session::has('errors')) {
+                $session_errors = Session::get('errors')->first('token');
             }
-
-            return redirect(RouteServiceProvider::HOME);
+            return $this->renderAuthView(
+                'ResetPassword',
+                [
+                    'email' => $user->email,
+                    'isTokenValid' => $user->password_reset_token == $hash && !$session_errors,
+                    'token' => $hash,
+                ]
+            );
         } catch (ModelNotFoundException $e) {
             abort(404);
         }
@@ -43,17 +44,15 @@ class NewPasswordController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+    public function store(NewPasswordRequest $request,  PasswordResetService $passwordResetService): RedirectResponse
     {
-        $request->validate([
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        $user = User::where("email", $request->input("email"))->first();
 
-        $email = $request->get("email");
-        $password = $request->get('password');
+        if ($user->password_reset_token == $request->input("token")) {
+            $passwordResetService->resetPassword($request->input("email"), $request->input("password"));
+            return redirect()->route('login')->with('status', "password updated");
+        }
 
-        event(new PasswordChangeRequested($email, $password));
-
-        return redirect()->route('login')->with('status', "password updated");
+        return redirect()->back()->withErrors("token", "the token is not valid anymore");
     }
 }

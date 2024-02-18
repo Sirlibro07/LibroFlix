@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\ProfileDeleteRequested;
-use App\Events\ProfileUpdateRequested;
+use App\Http\Requests\ProfileDestroyRequest;
 use App\Http\Requests\ProfileUpdateRequest;
-use App\Providers\RouteServiceProvider;
+use App\Services\UserService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Response;
 
 class ProfileController extends Controller
@@ -17,13 +14,13 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): Response
+    public function edit(): Response
     {
         return $this->renderAppView(
             'Account',
             [
                 'status' => session('status'),
-                'has_verified_email' => $request->user()->hasVerifiedEmail(),
+                'has_verified_email' => Auth::user()->hasVerifiedEmail(),
             ]
         );
     }
@@ -31,9 +28,9 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(ProfileUpdateRequest $request, UserService $userService): RedirectResponse
     {
-        event(new ProfileUpdateRequested($request->user()->email, $request->validated()));
+        $userService->update($request->validated());
 
         return back()->with("status", "Profile info updated");
     }
@@ -41,14 +38,8 @@ class ProfileController extends Controller
     /**
      * Delete the user's account.
      */
-    public function destroy(Request $request): RedirectResponse
+    public function destroy(ProfileDestroyRequest $request, UserService $userService)
     {
-        $request->validate([
-            'password' => ['required', 'current_password'],
-        ]);
-
-        event(new ProfileDeleteRequested($request->user()->id));
-
-        return Redirect::to(RouteServiceProvider::HOME);
+        $userService->destroy();
     }
 }

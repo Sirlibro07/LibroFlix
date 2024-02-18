@@ -2,7 +2,6 @@
 
 namespace App\Events;
 
-use App\Models\User;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -12,14 +11,14 @@ class Registered
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public User $user;
+    public string $email;
 
     /**
      * Create a new event instance.
      */
-    public function __construct($user)
+    public function __construct($email)
     {
-        $this->user = $user;
+        $this->email = $email;
     }
 
     /**

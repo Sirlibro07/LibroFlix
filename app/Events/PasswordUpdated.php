@@ -7,21 +7,17 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class LoginRequested
+class PasswordUpdated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public string $email;
-    public string $password;
-    public string $remember;
     /**
      * Create a new event instance.
      */
-    public function __construct($email, $password, $remember)
+    public function __construct($email)
     {
         $this->email = $email;
-        $this->password = $password;
-        $this->remember = $remember;
     }
 
     /**

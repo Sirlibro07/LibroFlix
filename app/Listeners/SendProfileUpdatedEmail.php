@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Events\ProfileUpdated;
 use App\Mail\ProfileUpdatedMail;
+use App\Services\SendEmailService;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class SendProfileUpdatedEmail implements ShouldQueue
@@ -21,6 +22,6 @@ class SendProfileUpdatedEmail implements ShouldQueue
      */
     public function handle(ProfileUpdated $event): void
     {
-        sendEmail(new ProfileUpdatedMail($event->email));
+        (new SendEmailService)->sendEmailAsJob(new ProfileUpdatedMail($event->email));
     }
 }

@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Auth;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules;
 
-class LoginRequest extends FormRequest
+class NewPasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -17,13 +18,12 @@ class LoginRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
         return [
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ];
     }
 }

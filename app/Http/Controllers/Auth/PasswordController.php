@@ -2,25 +2,23 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\PasswordUpdateRequested;
+use App\Events\PasswordUpdated;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PasswordUpdateRequest;
+use App\Services\PasswordService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Auth;
 
 class PasswordController extends Controller
 {
     /**
      * Update the user's password.
      */
-    public function update(Request $request): RedirectResponse
+    public function update(PasswordUpdateRequest $request, PasswordService $passwordService): RedirectResponse
     {
-        $validated = $request->validate([
-            'current_password' => ['required', 'current_password'],
-            'password' => ['required', Password::defaults(), 'confirmed'],
-        ]);
+        $passwordService->update($request->input("password"));
 
-        event(new PasswordUpdateRequested($request->user()->email, $validated['password']));
+        event(new PasswordUpdated(Auth::user()->email));
 
         return back()->with("status", "Password updated");
     }

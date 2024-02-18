@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Events\Registered;
 use App\Mail\EmailToDev;
+use App\Services\SendEmailService;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class SendEmailToDev implements ShouldQueue
@@ -21,6 +22,6 @@ class SendEmailToDev implements ShouldQueue
      */
     public function handle(Registered $event): void
     {
-        sendEmail(new EmailToDev());
+        (new SendEmailService)->sendEmailAsJob(new EmailToDev());
     }
 }

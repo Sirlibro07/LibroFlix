@@ -4,6 +4,9 @@ namespace App\Listeners;
 
 use App\Events\Registered;
 use App\Mail\WelcomeEmail;
+use App\Models\User;
+use App\Services\EmailVerificationService;
+use App\Services\SendEmailService;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Log;
 
@@ -25,9 +28,9 @@ class SendWelcomeEmail implements ShouldQueue
     public function handle(Registered $event): void
     {
         Log::info("reached send welcome email");
-        $user = $event->user;
-        $url = temporaryEmailVerificationSignedRoute($user);
+        $user = User::where("email", $event->email)->first();
+        $url = (new EmailVerificationService)->signedEmailVerificationRoute($user);
 
-        sendEmail(new WelcomeEmail($user, $url));
+        (new SendEmailService)->sendEmailAsJob(new WelcomeEmail($user, $url));
     }
 }

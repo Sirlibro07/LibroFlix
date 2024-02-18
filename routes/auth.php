@@ -5,16 +5,16 @@ use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetEmailController;
-use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\RegisterUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
     // Register
-    Route::get('register', [RegisteredUserController::class, 'create'])
+    Route::get('register', [RegisterUserController::class, 'create'])
         ->name('register');
 
-    Route::post('register', [RegisteredUserController::class, 'store']);
+    Route::post('register', [RegisterUserController::class, 'store']);
 
     // Login
     Route::get('login', [AuthenticatedSessionController::class, 'create'])

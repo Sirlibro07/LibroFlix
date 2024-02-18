@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\PasswordResetEmailRequested;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\PasswordResetEmailRequest;
+use App\Services\PasswordResetService;
 use Inertia\Response;
 
 class PasswordResetEmailController extends Controller
@@ -24,13 +24,9 @@ class PasswordResetEmailController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+    public function store(PasswordResetEmailRequest $request, PasswordResetService $passwordResetService)
     {
-        $request->validate([
-            'email' => 'required|email',
-        ]);
-
-        event(new PasswordResetEmailRequested($request->get("email")));
+        $passwordResetService->sendEmail($request->input("email"));
 
         return back()->with("status", "password reset email sent, it could take some seconds for the email to arrive.");
     }

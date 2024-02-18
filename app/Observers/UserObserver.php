@@ -13,7 +13,7 @@ class UserObserver
      */
     public function created(User $user): void
     {
-        event(new Registered($user));
+        event(new Registered($user->email));
     }
 
     /**
