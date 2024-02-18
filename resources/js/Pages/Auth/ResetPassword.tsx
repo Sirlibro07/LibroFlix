@@ -18,7 +18,7 @@ const ResetPassword = ({ email, token, isTokenValid }) => {
 
     return (
         <>
-            {!isTokenValid ? (
+            {isTokenValid ? (
                 <AuthLayout
                     folder_name={"forgot_reset_password"}
                     img_classes="object-right"
