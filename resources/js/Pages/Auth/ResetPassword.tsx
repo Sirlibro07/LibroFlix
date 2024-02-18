@@ -1,10 +1,9 @@
-import { useEffect } from "react";
 import AuthLayout from "@/Layouts/AuthLayout";
 import { useForm } from "@inertiajs/react";
 import React from "react";
 import FormInputField from "@/Components/FormItems/FormInputField";
 import AppLayout from "@/Layouts/AppLayout";
-import WatchPopup from "@/Components/Watch/WatchPopup";
+import Popup from "@/Components/Popup/Popup";
 
 const ResetPassword = ({ email, token, isTokenValid }) => {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -52,7 +51,7 @@ const ResetPassword = ({ email, token, isTokenValid }) => {
             ) : (
                 <AppLayout head_title={"Reset Password"}>
                     <main className="w-full h-[calc(100svh-5.625rem)] min-h-[25rem] pb-4 flex  justify-center items-end  md:items-center">
-                        <WatchPopup
+                        <Popup
                             icon_name="hand"
                             icon_className="ml-[-0.063rem]"
                             title={"Token Invalid"}

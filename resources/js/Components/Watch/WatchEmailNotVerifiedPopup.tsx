@@ -1,9 +1,9 @@
 import React from "react";
-import WatchPopup from "./WatchPopup";
+import Popup from "../Popup/Popup";
 
 const WatchEmailNotVerifiedPopup = () => {
     return (
-        <WatchPopup
+        <Popup
             icon_name="hand"
             icon_className="ml-[-0.063rem]"
             title="Email Not Verified"

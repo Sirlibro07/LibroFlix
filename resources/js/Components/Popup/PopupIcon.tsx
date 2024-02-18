@@ -1,15 +1,12 @@
 import React from "react";
 import Icon from "../Global/Icon";
 
-export interface WatchPopupIconProps {
+export interface PopupIconProps {
     icon_name: string;
     icon_className?: string;
 }
 
-const WatchPopupIcon = ({
-    icon_name,
-    icon_className = "",
-}: WatchPopupIconProps) => {
+const PopupIcon = ({ icon_name, icon_className = "" }: PopupIconProps) => {
     return (
         <div className="w-[5.313rem] h-[5.313rem] mb-4 mt-[-2.813rem] bg-white rounded-full flex justify-center items-center">
             <Icon
@@ -21,4 +18,4 @@ const WatchPopupIcon = ({
     );
 };
 
-export default WatchPopupIcon;
+export default PopupIcon;

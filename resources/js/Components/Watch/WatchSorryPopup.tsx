@@ -1,5 +1,5 @@
 import React from "react";
-import WatchPopup from "./WatchPopup";
+import Popup from "../Popup/Popup";
 
 export interface WatchSorryPopupProps {
     film_title: string;
@@ -7,7 +7,7 @@ export interface WatchSorryPopupProps {
 
 const WatchSorryPopup = ({ film_title }: WatchSorryPopupProps) => {
     return (
-        <WatchPopup
+        <Popup
             icon_name={"film"}
             title={"I'm Sorry"}
             message={`As this is only a portfolio to demonstrate my full-stack web dev skills, I do not have the legal rights to actually stream the "${film_title}" film, thanks for your understanding.`}
