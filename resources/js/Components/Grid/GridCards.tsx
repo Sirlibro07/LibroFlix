@@ -4,7 +4,7 @@ import GridCard, { GridCardProps } from "./GridCard";
 import underscoreToSpace from "@/Shared/functions/underscoreToSpace";
 
 export interface GridCardsProps
-    extends Omit<GridCardProps, "thumbnail_path" | "title"> {
+    extends Omit<GridCardProps, "thumbnail_path" | "title" | "slug"> {
     movies: MovieType[];
 }
 
