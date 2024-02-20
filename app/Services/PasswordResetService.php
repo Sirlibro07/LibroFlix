@@ -9,7 +9,14 @@ use Illuminate\Support\Facades\Session;
 
 class PasswordResetService extends SendEmailService
 {
-    // metter services in construct
+    public TokenService $token_service;
+    public SignedRouteService $signed_route_service;
+
+    public function __construct(TokenService $token_service, SignedRouteService $signed_route_service)
+    {
+        $this->token_service = $token_service;
+        $this->signed_route_service = $signed_route_service;
+    }
 
     public function sendEmail(string $email): void
     {
@@ -28,13 +35,13 @@ class PasswordResetService extends SendEmailService
 
     public function generateAndStorePasswordResetToken(User $user): void
     {
-        $user->password_reset_token =  (new TokenService)->generateToken();
+        $user->password_reset_token =  $this->token_service->generateToken();
         $user->save();
     }
 
     public function signedPasswordResetRoute(User $user): string
     {
-        return (new SignedRouteService)->signedRoute('password.reset', now()->addHour(), $user->email, $user->password_reset_token);
+        return $this->signed_route_service->signedRoute('password.reset', now()->addHour(), $user->email, $user->password_reset_token);
     }
 
     public function isTokenValid(string $user_password_reset_token = null, string $token): bool
