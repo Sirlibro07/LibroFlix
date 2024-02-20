@@ -5,10 +5,18 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PasswordResetEmailRequest;
 use App\Services\PasswordResetService;
+use Illuminate\Http\RedirectResponse;
 use Inertia\Response;
 
 class PasswordResetEmailController extends Controller
 {
+    public PasswordResetService $password_reset_service;
+
+    public function __construct(PasswordResetService $password_reset_service)
+    {
+        $this->password_reset_service = $password_reset_service;
+    }
+
     /**
      * Display the password reset email request view.
      */
@@ -24,10 +32,10 @@ class PasswordResetEmailController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(PasswordResetEmailRequest $request, PasswordResetService $passwordResetService)
+    public function store(PasswordResetEmailRequest $request): RedirectResponse
     {
-        $passwordResetService->sendEmail($request->input("email"));
+        $this->password_reset_service->sendEmail($request->input('email'));
 
-        return back()->with("status", "password reset email sent, it could take some seconds for the email to arrive.");
+        return back()->with('status', 'password reset email sent, it could take some seconds for the email to arrive.');
     }
 }

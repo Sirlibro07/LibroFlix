@@ -27,11 +27,11 @@ Route::middleware('guest')->group(function () {
         ->name('password.request');
 
     Route::post('forgot-password', [PasswordResetEmailController::class, 'store'])
-        ->middleware("throttle:3,10")
+        ->middleware("throttle:1,60")
         ->name('password.email');
 
     // Reset Password
-    Route::get('reset-password/{email}/{token}', [NewPasswordController::class, 'create'])
+    Route::get('reset-password/{user:email}/{token}', [NewPasswordController::class, 'create'])
         ->middleware("signed")
         ->name('password.reset');
 
@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function () {
 
     // Email Verification Notification
     Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-        ->middleware("throttle:3,10")
+        ->middleware("throttle:1,60")
         ->name('verification.send');
 
     // Update password 

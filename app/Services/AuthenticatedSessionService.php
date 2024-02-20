@@ -7,16 +7,16 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthenticatedSessionService
 {
-    public function store(array $data, $remember_bool)
+    public function store(array $data, $rememberBool): void
     {
-        if (!Auth::attempt($data, (bool) $remember_bool)) {
+        if (!Auth::attempt($data, (bool) $rememberBool)) {
             throw new AuthenticationException();
         }
 
         session()->regenerate();
     }
 
-    public function destroy()
+    public function destroy(): void
     {
         $user = Auth::user();
         $user->remember_token = null;

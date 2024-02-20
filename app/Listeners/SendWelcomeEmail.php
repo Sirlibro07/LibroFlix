@@ -12,14 +12,13 @@ use Illuminate\Support\Facades\Log;
 
 class SendWelcomeEmail implements ShouldQueue
 {
-    /**
-     * Create the event listener.
-     */
+    public SendEmailService $send_email_service;
+    public EmailVerificationService $email_verification_service;
 
-
-    public function __construct()
+    public function __construct(SendEmailService $send_email_service, EmailVerificationService $email_verification_service)
     {
-        //
+        $this->send_email_service = $send_email_service;
+        $this->email_verification_service = $email_verification_service;
     }
 
     /**
@@ -29,8 +28,8 @@ class SendWelcomeEmail implements ShouldQueue
     {
         Log::info("reached send welcome email");
         $user = User::where("email", $event->email)->first();
-        $url = (new EmailVerificationService)->signedEmailVerificationRoute($user);
+        $url = $this->email_verification_service->signedEmailVerificationRoute($user);
 
-        (new SendEmailService)->sendEmailAsJob(new WelcomeEmail($user, $url));
+        $this->send_email_service->sendEmailAsJob(new WelcomeEmail($user, $url));
     }
 }

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
-    public function store(array $data)
+    public function store(array $data): void
     {
         $user = User::create([
             'name' => $data['name'],
@@ -23,7 +23,7 @@ class UserService
     }
 
 
-    public function update(array $data)
+    public function update(array $data): void
     {
         $user = Auth::user();
 
@@ -37,7 +37,7 @@ class UserService
         $user->save();
     }
 
-    public function destroy()
+    public function destroy(): void
     {
         $user = User::find(Auth::id());
         $user->delete();

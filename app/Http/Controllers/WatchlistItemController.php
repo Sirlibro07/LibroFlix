@@ -2,32 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\WatchlistItemResource;
-use App\Models\WatchlistItem;
+use App\Models\Movie;
 use App\Services\WatchlistItemService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Auth;
+use Inertia\Response;
 
 class WatchlistItemController extends Controller
 {
 
-    public function index()
-    {
-        $watchlist_items = WatchlistItem::where("user_id", Auth::id())->get();
+    public WatchlistItemService $watchlist_item_service;
 
-        return $this->renderAppView("Watchlist", ['watchlist_items' => WatchlistItemResource::collection($watchlist_items)]);
+    public function __construct(WatchlistItemService $watchlist_item_service)
+    {
+        $this->watchlist_item_service = $watchlist_item_service;
     }
 
-    public function store(int $id, WatchlistItemService $watchlistItemService): RedirectResponse
+    public function index(): Response
     {
-        $watchlistItemService->store($id);
+
+        return $this->renderAppView("Watchlist", ['watchlist_items' => $this->watchlist_item_service->getWatchlistItems()]);
+    }
+
+    public function store(Movie $movie): RedirectResponse
+    {
+        $this->watchlist_item_service->store($movie);
 
         return back();
     }
 
-    public function destroy(int $id, WatchlistItemService $watchlistItemService): RedirectResponse
+    public function destroy(Movie $movie): RedirectResponse
     {
-        $watchlistItemService->destroy($id);
+        $this->watchlist_item_service->destroy($movie);
 
         return back();
     }

@@ -2,7 +2,7 @@ import { Link } from "@inertiajs/react";
 import ButtonOptionalIcon from "../Button/ButtonOptionalIcon";
 import React from "react";
 
-export interface MovieWatchNowButtonProps {
+interface MovieWatchNowButtonProps {
     slug: string;
 }
 

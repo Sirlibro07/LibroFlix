@@ -5,19 +5,19 @@ import scrollToTop from "@/Shared/functions/scrollToTop";
 
 export interface MovieWatchlistButtonProps {
     watchlisted: boolean;
-    id: number;
+    slug: string;
 }
 
 const MovieWatchlistButton = ({
     watchlisted,
-    id,
+    slug,
 }: MovieWatchlistButtonProps) => {
     const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         watchlisted
-            ? router.delete(route("watchlist_items.destroy", id))
-            : router.post(route("watchlist_items.store", id));
+            ? router.delete(route("watchlist_items.destroy", slug))
+            : router.post(route("watchlist_items.store", slug));
 
         scrollToTop(400);
     };

@@ -3,6 +3,8 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\Log;
+use Inertia\Inertia;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -27,4 +29,29 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    // public function render($request, Throwable $e)
+    // {
+    //     $response = parent::render($request, $e);
+
+    //     $http_status_code = $response->status();
+    //     Log::info($http_status_code);
+
+    //     if (in_array($http_status_code, [500, 404, 403, 429, 419])) {
+    //         $message = match ($http_status_code) {
+    //             404 => "Are you sure this is the right place ?",
+    //             403 => "Please go back, you are not allowed in here",
+    //             429 => "Too many requests, please don't spam and try again in a few minutes",
+    //             419 => "Page expired, please refresh the page",
+    //             500 => "Something went wrong, please try again later",
+    //             default => "ciap"
+    //         };
+
+    //         return Inertia::render("Error/ErrorPage", ["message" => $message])
+    //             ->toResponse($request)
+    //             ->setStatusCode($http_status_code);
+    //     }
+
+    //     return $response;
+    // }
 }

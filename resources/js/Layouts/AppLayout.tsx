@@ -10,6 +10,7 @@ import AppLayoutChildren, {
 } from "@/Components/LayoutItems/AppLayoutChildren";
 import Footer from "@/Components/Footer/Footer";
 import { Head, usePage } from "@inertiajs/react";
+import { User } from "vendor/laravel/breeze/stubs/inertia-react-ts/resources/js/types";
 
 export interface AppLayoutProps extends AppLayoutChildrenProps {
     navbar_border?: boolean;
@@ -37,7 +38,10 @@ const AppLayout = ({
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
 
-    const { user } = usePage().props.auth;
+    let user: User;
+    if (usePage().props.auth) {
+        user = usePage().props.auth.user;
+    }
     const renderWithProviders = (children: ReactNode) => {
         return (
             <UserContext.Provider

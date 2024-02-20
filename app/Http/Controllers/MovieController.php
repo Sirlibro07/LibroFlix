@@ -2,40 +2,44 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\MovieResource;
 use App\Models\Movie;
-use App\Models\WatchlistItem;
-use Illuminate\Http\Request;
+use App\Services\MovieService;
+use App\Services\WatchlistItemService;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Response;
 
 class MovieController extends Controller
 {
+    public MovieService $movie_service;
+    public WatchlistItemService $watchlist_item_service;
 
-    public function index(string $title = ""): Response
+    public function __construct(MovieService $movie_service, WatchlistItemService $watchlist_item_service)
+    {
+        $this->movie_service = $movie_service;
+        $this->watchlist_item_service = $watchlist_item_service;
+    }
+
+    public function index(string $title = ''): Response
     {
         return $this->renderAppView('Search', [
-            'movies' => MovieResource::collection(Movie::where('title', 'like', '%' . $title . '%')->get()),
+            'movies' => $this->movie_service->getMoviesBySearch($title),
             'title' => $title,
         ]);
     }
 
-    public function show(string $slug): Response
+    public function show(Movie $movie): Response
     {
-        $movie = Movie::where("slug", $slug)->firstOrFail();
         return $this->renderAppView('Movie', [
-            'movie' => MovieResource::make($movie),
-            'watchlisted' => (bool) Auth::check() && WatchlistItem::where("user_id", Auth::id())->where("movie_id", $movie->id)->first(),
+            'movie' => $this->movie_service->movieSingleResource($movie),
+            'watchlisted' => $this->watchlist_item_service->isWatchlisted($movie),
         ]);
     }
 
-    public function watch(string $slug, Request $request)
+    public function watch(Movie $movie): Response
     {
-        $movie = Movie::where("slug", $slug)->firstOrFail();
-
-        return $this->renderAppView("Watch", [
-            'has_verified_email' => $request->user()->hasVerifiedEmail(),
-            'film_title' => $movie->title
+        return $this->renderAppView('Watch', [
+            'has_verified_email' => Auth::user()->hasVerifiedEmail(),
+            'movie_title' => $movie->title
         ]);
     }
 }

@@ -6,16 +6,14 @@ use App\Events\ProfileDeleted;
 use App\Mail\GoodbyeEmail;
 use App\Services\SendEmailService;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Support\Facades\Log;
 
 class SendGoodbyeEmail implements ShouldQueue
 {
-    /**
-     * Create the event listener.
-     */
-    public function __construct()
+    public SendEmailService $send_email_service;
+
+    public function __construct(SendEmailService $send_email_service)
     {
-        //
+        $this->send_email_service = $send_email_service;
     }
 
     /**
@@ -23,6 +21,6 @@ class SendGoodbyeEmail implements ShouldQueue
      */
     public function handle(ProfileDeleted $event): void
     {
-        (new SendEmailService)->sendEmailAsJob(new GoodbyeEmail($event->email));
+        $this->send_email_service->sendEmailAsJob(new GoodbyeEmail($event->email));
     }
 }

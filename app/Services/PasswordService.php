@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 class PasswordService
 {
-    public function update($password)
+    public function update($password): void
     {
         Log::info("sup");
         $user = Auth::user();

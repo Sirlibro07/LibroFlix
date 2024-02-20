@@ -19,11 +19,7 @@ const MovieDetails = ({ movie, watchlisted }: MovieDetailsProps) => {
             />
             <MovieInfo date={movie.year} />
             <MovieRating rating={movie.rating} className={"mb-6 md:mb-5"} />
-            <MovieButtons
-                watchlisted={watchlisted}
-                id={movie.id}
-                slug={movie.slug}
-            />
+            <MovieButtons watchlisted={watchlisted} slug={movie.slug} />
             <MovieDescription
                 description={movie.description}
                 className="max-w-[90ch]"

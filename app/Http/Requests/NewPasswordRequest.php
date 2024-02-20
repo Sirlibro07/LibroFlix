@@ -23,6 +23,8 @@ class NewPasswordRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'token' => ['required', 'string'],
+            'email' => ['required', 'string', 'email', 'exists:users,email'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ];
     }

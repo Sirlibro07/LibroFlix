@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class EmailVerificationService extends SendEmailService
 {
-    public function SendEmail(string $email)
+    public function SendEmail(string $email): void
     {
         $user = User::where("email", $email)->first();
         if (!$user->hasVerifiedEmail()) {
@@ -17,7 +17,7 @@ class EmailVerificationService extends SendEmailService
         }
     }
 
-    public function verifyEmail(string $email, string $token)
+    public function verifyEmail(string $email, string $token): void
     {
         $user = User::where("email", $email)->firstOrFail();
 
@@ -30,8 +30,8 @@ class EmailVerificationService extends SendEmailService
         Auth::login($user);
     }
 
-    public function signedEmailVerificationRoute(User $user)
+    public function signedEmailVerificationRoute(User $user): string
     {
-        return (new SignedRouteService)->SignedRoute("verification.verify", 10, $user->email, $user->email_verification_token);
+        return (new SignedRouteService)->signedRoute("verification.verify", now()->addHour(), $user->email, $user->email_verification_token);
     }
 }

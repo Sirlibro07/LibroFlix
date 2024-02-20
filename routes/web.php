@@ -3,16 +3,8 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\WatchlistController;
 use App\Http\Controllers\WatchlistItemController;
-use App\Http\Resources\WatchlistResource;
-use App\Models\Movie;
-use App\Models\User;
-use App\Models\Watchlist;
-use App\Models\WatchlistItem;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +20,7 @@ use Illuminate\Support\Str;
 
 
 // Home
-Route::get('/', HomeController::class)->name("home");
-
+Route::get('/', HomeController::class)->name('home');
 
 // Profile
 Route::middleware('auth')->prefix("profile")->group(function () {
@@ -38,22 +29,21 @@ Route::middleware('auth')->prefix("profile")->group(function () {
     Route::delete('', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
 // Movies
-Route::prefix("movies")->group(function () {
-    Route::get("search/{title?}", [MovieController::class, 'index'])->name("movies.index");
-    Route::get("{slug}", [MovieController::class, 'show'])->name("movies.show");
-    Route::get("watch/{slug}", [MovieController::class, "watch"])->middleware("auth")->name("movies.watch");
+Route::prefix('movies')->group(function () {
+    Route::get('search/{title?}', [MovieController::class, 'index'])->name('movies.index');
+    Route::get('{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
+    Route::get('watch/{movie:slug}', [MovieController::class, 'watch'])->middleware('auth')->name('movies.watch');
 });
-
-
 
 // Watchlist Items
-Route::middleware("auth")->prefix("watchlist")->group(function () {
-    Route::get("", [WatchlistItemController::class, "index"])->name("watchlists_items.index");
-    Route::post("{id}", [WatchlistItemController::class, "store"])->name("watchlist_items.store");
-    Route::delete("{id}", [WatchlistItemController::class, "destroy"])->name("watchlist_items.destroy");
+Route::middleware('auth')->prefix('watchlist')->group(function () {
+    Route::get('', [WatchlistItemController::class, 'index'])->name('watchlists_items.index');
+    Route::post('{movie:slug}', [WatchlistItemController::class, 'store'])->name('watchlist_items.store');
+    Route::delete('{movie:slug}', [WatchlistItemController::class, 'destroy'])->name('watchlist_items.destroy');
 });
 
 
-require __DIR__ . '/auth.php';
+
+
+// "" -> ''

@@ -5,10 +5,11 @@ import React, { useMemo } from "react";
 const Watchlist = ({ watchlist_items }) => {
     const movies = useMemo(() => {
         const { data } = watchlist_items;
+
         const movies = [];
 
         for (let i = 0; i < data.length; i++) {
-            movies[i] = data[i].movie;
+            movies[i] = data[i];
         }
 
         return movies;

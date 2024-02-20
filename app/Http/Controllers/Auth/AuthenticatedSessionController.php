@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\LoginRequested;
-use App\Events\LogoutRequested;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Providers\RouteServiceProvider;
 use App\Services\AuthenticatedSessionService;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\RedirectResponse;
@@ -14,6 +11,13 @@ use Inertia\Response;
 
 class AuthenticatedSessionController extends Controller
 {
+    public AuthenticatedSessionService $authenticated_session_service;
+
+    public function __construct(AuthenticatedSessionService $authenticated_session_service)
+    {
+        $this->authenticated_session_service = $authenticated_session_service;
+    }
+
     /**
      * Display the login view.
      */
@@ -25,11 +29,11 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request, AuthenticatedSessionService $authenticatedSessionService)
+    public function store(LoginRequest $request): RedirectResponse
     {
         try {
-            $authenticatedSessionService->store($request->validated(), $request->input("remember"));
-            return redirect(RouteServiceProvider::HOME);
+            $this->authenticated_session_service->store($request->validated(), $request->input('remember'));
+            return redirect()->route('home');
         } catch (AuthenticationException $e) {
             return redirect()->back()->withErrors(['email' => 'Credentials not valid']);
         }
@@ -38,8 +42,9 @@ class AuthenticatedSessionController extends Controller
     /**
      * Destroy an authenticated session.
      */
-    public function destroy(AuthenticatedSessionService $authenticatedSessionService)
+    public function destroy(): RedirectResponse
     {
-        $authenticatedSessionService->destroy();
+        $this->authenticated_session_service->destroy();
+        return redirect()->route('home');
     }
 }

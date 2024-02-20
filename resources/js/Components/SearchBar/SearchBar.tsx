@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { router } from "@inertiajs/react";
+import React from "react";
+import { useForm } from "@inertiajs/react";
 import SearchBarContent from "./SearchBarContent";
 
 const SearchBar = ({ className = "" }) => {
-    const [data, setData] = useState({
+    const { data, setData, get } = useForm({
         search: "",
     });
 
@@ -11,7 +11,7 @@ const SearchBar = ({ className = "" }) => {
         <form
             onSubmit={(e) => {
                 e.preventDefault();
-                router.get(route("movies.index", data.search));
+                get(route("movies.index", data.search));
             }}
             className={`w-full ${className}`}
         >

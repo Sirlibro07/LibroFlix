@@ -8,12 +8,12 @@ interface WatchContentProps extends WatchSorryPopupProps {
 
 const WatchContent = ({
     has_verified_email,
-    film_title,
+    movie_title,
 }: WatchContentProps) => {
     return (
         <>
             {has_verified_email ? (
-                <WatchSorryPopup film_title={film_title} />
+                <WatchSorryPopup movie_title={movie_title} />
             ) : (
                 <WatchEmailNotVerifiedPopup />
             )}

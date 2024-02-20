@@ -9,12 +9,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class SendProfileUpdatedEmail implements ShouldQueue
 {
-    /**
-     * Create the event listener.
-     */
-    public function __construct()
+    public SendEmailService $send_email_service;
+
+    public function __construct(SendEmailService $send_email_service)
     {
-        //
+        $this->send_email_service = $send_email_service;
     }
 
     /**
@@ -22,6 +21,6 @@ class SendProfileUpdatedEmail implements ShouldQueue
      */
     public function handle(ProfileUpdated $event): void
     {
-        (new SendEmailService)->sendEmailAsJob(new ProfileUpdatedMail($event->email));
+        $this->send_email_service->sendEmailAsJob(new ProfileUpdatedMail($event->email));
     }
 }

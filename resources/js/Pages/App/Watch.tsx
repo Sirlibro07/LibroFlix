@@ -3,7 +3,7 @@ import WatchContent from "@/Components/Watch/WatchContent";
 import PopupAppLayout from "@/Layouts/PopupAppLayout";
 import React, { ReactNode } from "react";
 
-const Watch = ({ has_verified_email, film_title }) => {
+const Watch = ({ has_verified_email, movie_title }) => {
     const renderWatchContent = (children: ReactNode) => {
         return (
             <PopupAppLayout
@@ -24,7 +24,7 @@ const Watch = ({ has_verified_email, film_title }) => {
             {renderWatchContent(
                 <WatchContent
                     has_verified_email={has_verified_email}
-                    film_title={film_title}
+                    movie_title={movie_title}
                 />
             )}
         </>

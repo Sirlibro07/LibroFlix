@@ -3,17 +3,16 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Services\EmailVerificationService;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 
 class VerifyEmailController extends Controller
 {
     /**
      * Mark the authenticated user's email address as verified.
      */
-    public function __invoke($email, $token, EmailVerificationService $emailVerificationService)
+    public function __invoke($email, $token, EmailVerificationService $emailVerificationService): RedirectResponse
     {
         try {
             $emailVerificationService->verifyEmail($email, $token);

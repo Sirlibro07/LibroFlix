@@ -2,25 +2,30 @@
 
 namespace App\Services;
 
-use App\Models\WatchlistItem;
+use App\Http\Resources\MovieResource;
+use App\Models\Movie;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class WatchlistItemService
 {
-    public function store(int $movie_id)
-    {
-        Log::info("hello");
-        $watchlist_item = new WatchlistItem();
-        $watchlist_item->user_id = Auth::id();
-        $watchlist_item->movie_id = $movie_id;
 
-        $watchlist_item->save();
+    public function getWatchlistItems()
+    {
+        return MovieResource::collection(Auth::user()->movies);
     }
 
-    public function destroy(int $movie_id)
+    public function isWatchlisted(Movie $movie): bool
     {
-        $watchlist_item = WatchlistItem::where("user_id", Auth::id())->where("movie_id", $movie_id)->first();
-        $watchlist_item->delete();
+        return Auth::check() && (bool) $movie->users()->where('id', Auth::id())->first();
+    }
+
+    public function store(Movie $movie)
+    {
+        $movie->users()->attach(Auth::id());
+    }
+
+    public function destroy(Movie $movie)
+    {
+        $movie->users()->detach(Auth::id());
     }
 }
