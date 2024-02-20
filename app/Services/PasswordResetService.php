@@ -19,9 +19,8 @@ class PasswordResetService extends SendEmailService
         $this->sendEmailAsJob(new PasswordResetEmail($user, $signed_route));
     }
 
-    public function resetPassword(string $email, string $password): void
+    public function resetPassword(User $user, string $password): void
     {
-        $user = User::where("email", $email)->first();
         $user->password = Hash::make($password);
         $user->password_reset_token = null;
         $user->save();

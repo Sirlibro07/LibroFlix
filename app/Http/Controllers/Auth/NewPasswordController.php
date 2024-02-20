@@ -44,7 +44,7 @@ class NewPasswordController extends Controller
         $user = User::where('email', $request->input('email'))->first();
 
         if ($user->password_reset_token == $request->input('token')) {
-            $this->password_reset_service->resetPassword($request->input('email'), $request->input('password'));
+            $this->password_reset_service->resetPassword($user, $request->input('password'));
             return redirect()->route('login')->with('status', 'password updated');
         }
 
