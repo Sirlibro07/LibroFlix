@@ -8,18 +8,17 @@ interface NavbarProps {
 
 const Navbar = ({ border }: NavbarProps) => {
     return (
-        <header
-            className={`body-padding ${
-                border && "border-b border-grey border-solid"
-            }`}
-        >
+        <>
             <nav
-                className={`relative h-navbar_height flex  items-center justify-between`}
+                className={`body-padding relative h-navbar_height flex  items-center justify-between ${
+                    border &&
+                    "border-b border-grey border-solid lg:justify-between "
+                }`}
             >
                 <NavbarContent />
             </nav>
             <NavbarItemsCloseOverlay />
-        </header>
+        </>
     );
 };
 
