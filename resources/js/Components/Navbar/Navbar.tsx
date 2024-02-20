@@ -8,11 +8,10 @@ interface NavbarProps {
 
 const Navbar = ({ border }: NavbarProps) => {
     return (
-        <header className="body-padding">
+        <header className="body-padding border-b border-grey border-solid">
             <nav
                 className={`relative h-navbar_height flex  items-center justify-between ${
-                    border &&
-                    "border-b border-grey border-solid lg:justify-between "
+                    border && " lg:justify-between "
                 }`}
             >
                 <NavbarContent />
