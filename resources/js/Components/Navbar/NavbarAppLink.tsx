@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import GeneralLink from "../Global/GeneralLink";
 
-interface NavbarLinkProps {
+interface NavbarAppLinkProps {
     link: {
         name: string;
         route: string;
@@ -9,7 +9,7 @@ interface NavbarLinkProps {
     };
 }
 
-const NavbarLink = ({ link }: NavbarLinkProps) => {
+const NavbarAppLink = ({ link }: NavbarAppLinkProps) => {
     const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -39,4 +39,4 @@ const NavbarLink = ({ link }: NavbarLinkProps) => {
         </li>
     );
 };
-export default NavbarLink;
+export default NavbarAppLink;

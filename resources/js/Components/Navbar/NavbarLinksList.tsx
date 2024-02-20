@@ -1,30 +1,12 @@
 import React, { useContext } from "react";
 import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
-import NavbarLink from "./NavbarLink";
 import UserContext from "@/Contexts/UserContext";
 import NavbarAuthLinks from "./NavbarAuthLinks";
+import NavbarAppLinks from "./NavbarAppLinks";
 
-const NavbarLinks = () => {
+const NavbarLinksList = () => {
     const { isMenuVisible } = useContext(Menu_Searchbar_Context);
     const { isLoggedIn } = useContext(UserContext);
-
-    const routes: { name: string; route: string; pathname: string }[] = [
-        { name: "Home", route: "home", pathname: "" },
-    ];
-
-    isLoggedIn &&
-        routes.push(
-            {
-                name: "Watchlist",
-                route: "watchlists_items.index",
-                pathname: "watchlist",
-            },
-            {
-                name: "Account",
-                route: "profile.edit",
-                pathname: "profile",
-            }
-        );
 
     return (
         <ul
@@ -34,13 +16,11 @@ const NavbarLinks = () => {
                 isLoggedIn ? "pb-12" : "pb-4"
             } bg-body lg:flex lg:text-base lg:flex-row lg:gap-y-0 lg:gap-x-6 lg:w-fit lg:h-fit lg:py-0 lg:static lg:mx-12 lg:border-0  lg:font-normal `}
         >
-            {routes.map((link, index) => (
-                <NavbarLink link={link} key={index} />
-            ))}
+            <NavbarAppLinks isLoggedIn={isLoggedIn} />
 
-            {!isLoggedIn && <NavbarAuthLinks className="lg:hidden" />}
+            {!isLoggedIn && <NavbarAuthLinks />}
         </ul>
     );
 };
 
-export default NavbarLinks;
+export default NavbarLinksList;

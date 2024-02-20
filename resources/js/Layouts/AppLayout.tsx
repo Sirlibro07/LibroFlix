@@ -46,7 +46,7 @@ const AppLayout = ({
         return (
             <UserContext.Provider
                 value={{
-                    isLoggedIn: user,
+                    isLoggedIn: Boolean(user),
                     name: user && user.name,
                     email: user && user.email,
                 }}
