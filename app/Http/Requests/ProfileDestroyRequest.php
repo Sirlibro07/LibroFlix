@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules;
 
 class ProfileDestroyRequest extends FormRequest
 {
@@ -22,7 +23,7 @@ class ProfileDestroyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'password' => ['required', 'current_password'],
+            'password' => ['required', 'current_password', Rules\Password::defaults()],
         ];
     }
 }
