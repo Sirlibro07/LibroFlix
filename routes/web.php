@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the 'web' middleware group. Now create something great!
 |
 */
 
@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('home');
 
 // Profile
-Route::middleware('auth')->prefix("profile")->group(function () {
+Route::middleware('auth')->prefix('profile')->group(function () {
     Route::get('', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -42,8 +42,3 @@ Route::middleware('auth')->prefix('watchlist')->group(function () {
     Route::post('{movie:slug}', [WatchlistItemController::class, 'store'])->name('watchlist_items.store');
     Route::delete('{movie:slug}', [WatchlistItemController::class, 'destroy'])->name('watchlist_items.destroy');
 });
-
-
-
-
-// "" -> ''
