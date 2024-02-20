@@ -38,7 +38,7 @@ class MovieService
 
         return Movie::where(function (Builder $query) use ($tokens) {
             foreach ($tokens as $token) {
-                $query->orWhere('title', 'like', "$token%");
+                $query->orWhere('title', 'like', $token . '%');
             }
         })->get();
     }

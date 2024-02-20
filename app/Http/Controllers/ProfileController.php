@@ -39,7 +39,7 @@ class ProfileController extends Controller
     {
         $this->user_service->update($request->validated());
 
-        return back()->with("status", "Profile info updated");
+        return back()->with('status', 'Profile info updated');
     }
 
     /**

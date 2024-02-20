@@ -20,7 +20,7 @@ class PasswordResetService extends SendEmailService
 
     public function sendEmail(string $email): void
     {
-        $user = User::where("email", $email)->firstOrFail();
+        $user = User::where('email', $email)->firstOrFail();
         $this->generateAndStorePasswordResetToken($user);
         $signed_route = $this->signedPasswordResetRoute($user);
         $this->sendEmailAsJob(new PasswordResetEmail($user, $signed_route));

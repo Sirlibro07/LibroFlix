@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -27,7 +26,7 @@ class EmailToDev extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            to: "libronewebdev@gmail.com",
+            to: 'libronewebdev@gmail.com',
             subject: 'Email To Dev',
         );
     }

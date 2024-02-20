@@ -10,7 +10,7 @@ class EmailVerificationService extends SendEmailService
 {
     public function SendEmail(string $email): void
     {
-        $user = User::where("email", $email)->first();
+        $user = User::where('email', $email)->first();
         if (!$user->hasVerifiedEmail()) {
             $signed_route = $this->signedEmailVerificationRoute($user);
             $this->sendEmailAsJob(new VerificationEmail($user, $signed_route));
@@ -19,7 +19,7 @@ class EmailVerificationService extends SendEmailService
 
     public function verifyEmail(string $email, string $token): void
     {
-        $user = User::where("email", $email)->firstOrFail();
+        $user = User::where('email', $email)->firstOrFail();
 
         if (!$user->hasVerifiedEmail() && $user->email_verification_token == $token) {
             $user->markEmailAsVerified();
@@ -32,6 +32,6 @@ class EmailVerificationService extends SendEmailService
 
     public function signedEmailVerificationRoute(User $user): string
     {
-        return (new SignedRouteService)->signedRoute("verification.verify", now()->addHour(), $user->email, $user->email_verification_token);
+        return (new SignedRouteService)->signedRoute('verification.verify', now()->addHour(), $user->email, $user->email_verification_token);
     }
 }

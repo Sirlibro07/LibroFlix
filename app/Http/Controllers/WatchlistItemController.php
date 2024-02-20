@@ -20,7 +20,7 @@ class WatchlistItemController extends Controller
     public function index(): Response
     {
 
-        return $this->renderAppView("Watchlist", ['watchlist_items' => $this->watchlist_item_service->getWatchlistItems()]);
+        return $this->renderAppView('Watchlist', ['watchlist_items' => $this->watchlist_item_service->getWatchlistItems()]);
     }
 
     public function store(Movie $movie): RedirectResponse
