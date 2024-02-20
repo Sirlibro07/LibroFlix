@@ -6,20 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\NewPasswordRequest;
 use App\Models\User;
 use App\Services\PasswordResetService;
-use App\Services\TokenService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Session;
 use Inertia\Response;
 
 class NewPasswordController extends Controller
 {
-
-    public TokenService $token_service;
     public PasswordResetService $password_reset_service;
 
-    public function __construct(TokenService $token_service, PasswordResetService $password_reset_service)
+    public function __construct(PasswordResetService $password_reset_service)
     {
-        $this->token_service = $token_service;
         $this->password_reset_service = $password_reset_service;
     }
 
@@ -28,13 +23,12 @@ class NewPasswordController extends Controller
      */
     public function create(User $user, $token): Response
     {
-        $is_token_valid = $this->token_service->isUserPasswordResetTokenValid($user->password_reset_token, $token) && !Session::get('errors')?->first('token');
 
         return $this->renderAuthView(
             'ResetPassword',
             [
                 'email' => $user->email,
-                'is_token_valid' => $is_token_valid,
+                'is_token_valid' => $this->password_reset_service->isTokenValid($user->password_reset_token, $token),
                 'token' => $token,
             ]
         );

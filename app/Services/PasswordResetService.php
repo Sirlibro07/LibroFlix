@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Mail\PasswordResetEmail;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class PasswordResetService extends SendEmailService
 {
@@ -35,5 +36,10 @@ class PasswordResetService extends SendEmailService
     public function signedPasswordResetRoute(User $user): string
     {
         return (new SignedRouteService)->signedRoute('password.reset', now()->addHour(), $user->email, $user->password_reset_token);
+    }
+
+    public function isTokenValid(string $user_password_reset_token = null, string $token): bool
+    {
+        return $user_password_reset_token == $token && !Session::get('errors')?->first('token');
     }
 }

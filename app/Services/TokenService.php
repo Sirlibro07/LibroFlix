@@ -10,9 +10,4 @@ class TokenService
     {
         return base64_encode(Str::random(60));
     }
-
-    public function isUserPasswordResetTokenValid(string $user_password_reset_token, string $token): bool
-    {
-        return $user_password_reset_token == $token;
-    }
 }
