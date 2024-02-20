@@ -3,11 +3,8 @@ import MovieContent from "@/Components/Movie/MovieContent";
 import underscoreToSpace from "@/Shared/functions/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
-import MoviesContext from "@/Contexts/MoviesContext";
 
 const Show = ({ movie, watchlisted }) => {
-    console.log(watchlisted);
-
     const renderMovieContent = (children: ReactNode) => {
         return (
             <AppLayout
@@ -23,15 +20,17 @@ const Show = ({ movie, watchlisted }) => {
                 }
                 body_padding={false}
             >
-                <MoviesContext.Provider value={movie}>
-                    {children}
-                </MoviesContext.Provider>
+                {children}
             </AppLayout>
         );
     };
 
     return (
-        <>{renderMovieContent(<MovieContent watchlisted={watchlisted} />)}</>
+        <>
+            {renderMovieContent(
+                <MovieContent watchlisted={watchlisted} movie={movie.data} />
+            )}
+        </>
     );
 };
 export default Show;
