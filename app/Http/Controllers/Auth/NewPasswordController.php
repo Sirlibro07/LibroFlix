@@ -47,8 +47,13 @@ class NewPasswordController extends Controller
      */
     public function store(NewPasswordRequest $request): RedirectResponse
     {
-        $this->password_reset_service->resetPassword($request->input('email'), $request->input('password'));
+        $user = User::where('email', $request->input('email'))->first();
 
-        return redirect()->route('login')->with('status', 'password updated');
+        if ($user->password_reset_token == $request->input('token')) {
+            $this->password_reset_service->resetPassword($request->input('email'), $request->input('password'));
+            return redirect()->route('login')->with('status', 'password updated');
+        }
+
+        return redirect()->back()->withErrors('token', 'the token is not valid anymore');
     }
 }
