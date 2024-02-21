@@ -9,7 +9,7 @@ const ErrorPage = ({ http_status_code }) => {
             head_title={http_status_code}
             bg_image={
                 <BackgroundImage
-                    folder_name="watch"
+                    folder_name="error"
                     picture_classes="height-full brightness-50 opacity-[.70]"
                 />
             }
