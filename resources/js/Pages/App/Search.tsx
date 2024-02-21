@@ -11,7 +11,7 @@ const Index = ({ movies, title }) => {
         return (
             <AppLayout
                 head_title="Search"
-                header_className="text-center mt-[4.375rem] mb-[3.75rem] lg:mt-[5.625rem] lg:mb-[4.375rem] lg:text-typescale_67px "
+                header_className="text-center mt-[2.375rem] mb-[3.75rem] lg:mt-[3.625rem] lg:mb-[4.375rem] lg:text-typescale_67px "
                 header_name={name}
             >
                 <MoviesContext.Provider value={movies}>

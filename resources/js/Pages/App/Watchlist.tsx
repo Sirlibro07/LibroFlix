@@ -19,7 +19,7 @@ const Watchlist = ({ watchlist_items }) => {
         <AppLayout
             head_title="Watchlist"
             header_name="Watchlist"
-            header_className="mt-8 mb-5"
+            header_className="mb-5"
         >
             <Grid movies={movies}></Grid>
         </AppLayout>

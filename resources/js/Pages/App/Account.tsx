@@ -7,12 +7,7 @@ const Account = ({ status, has_verified_email }) => {
     const [currentOption, setCurrentOption] = useState("Profile");
 
     return (
-        <AppLayout
-            head_title="Account"
-            className="pt-8"
-            footer_className="mt-[25rem]"
-            header_name="Account"
-        >
+        <AppLayout head_title="Account" header_name="Account">
             <AccountOptionsList
                 currentOption={currentOption}
                 setCurrentOption={setCurrentOption}

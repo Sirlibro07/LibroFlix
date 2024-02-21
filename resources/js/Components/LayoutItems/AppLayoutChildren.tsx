@@ -30,7 +30,10 @@ const AppLayoutChildren = ({
         >
             <section className={`${className}`}>
                 {header_name && (
-                    <Header name={header_name} className={header_className} />
+                    <Header
+                        name={header_name}
+                        className={`pt-8 ${header_className}`}
+                    />
                 )}
                 {children}
             </section>
