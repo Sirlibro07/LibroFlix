@@ -51,16 +51,21 @@ const SliderContent = ({ movies }: SliderContentProps) => {
 
     function getSlidesPerView() {
         const screenWidth = window.innerWidth;
-        switch (true) {
-            case screenWidth >= 1536:
-                return 4.5;
-            case screenWidth >= 1024:
-                return 3.5;
-            case screenWidth >= 640:
-                return 2.5;
-            default:
-                return 1.5;
+
+        const breakpoints = [
+            { minWidth: 1536, slidesPerView: 4.5 },
+            { minWidth: 1024, slidesPerView: 3.5 },
+            { minWidth: 640, slidesPerView: 2.5 },
+            { minWidth: 0, slidesPerView: 1.5 },
+        ];
+
+        for (let i = 0; i < breakpoints.length; i++) {
+            if (screenWidth >= breakpoints[i].minWidth) {
+                return breakpoints[i].slidesPerView;
+            }
         }
+
+        return 1.5;
     }
 
     useEffect(() => {

@@ -49,10 +49,12 @@ const ErrorPopup = ({ http_status_code }: ErrorPopup) => {
     ];
 
     const getError = () => {
-        const error = errors.find(
-            (error) => http_status_code === error.http_status_code
-        );
-        return error ? error : errors[errors.length - 1];
+        for (let i = 0; i < errors.length; i++) {
+            if (http_status_code === errors[i].http_status_code) {
+                return errors[i];
+            }
+        }
+        return errors[errors.length - 1];
     };
 
     const error = getError();
