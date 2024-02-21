@@ -26,7 +26,7 @@ const AppLayoutChildren = ({
 
     return (
         <div
-            className={`${body_padding_style} ${low_brightness_style} relative full-height`}
+            className={`${body_padding_style} ${low_brightness_style} relative min-height-full`}
         >
             <section className={`${className}`}>
                 {header_name && (

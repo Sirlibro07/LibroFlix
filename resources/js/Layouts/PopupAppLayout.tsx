@@ -16,7 +16,7 @@ const PopupAppLayout = ({
             footer={false}
             navbar_border={false}
         >
-            <main className="w-full full-height pt-[8.125rem]  pb-4 flex justify-center items-end  md:items-center lg:min-h-[calc(100svh-5.625rem-8.125rem)] ">
+            <main className="w-full min-height-full pt-[8.125rem]  pb-4 flex justify-center items-end  md:items-center lg:min-h-[calc(100svh-5.625rem-8.125rem)] ">
                 {children}
             </main>
         </AppLayout>
