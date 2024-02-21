@@ -15,11 +15,8 @@ import { User } from "vendor/laravel/breeze/stubs/inertia-react-ts/resources/js/
 export interface AppLayoutProps extends AppLayoutChildrenProps {
     navbar_border?: boolean;
     bg_image?: ReactNode;
-    body_padding?: boolean;
-    footer?: boolean;
-    footer_className?: string;
-    footer_border?: boolean;
     head_title: string;
+    footer?: boolean;
 }
 
 const AppLayout = ({
@@ -29,8 +26,6 @@ const AppLayout = ({
     bg_image = <></>,
     body_padding = true,
     footer = true,
-    footer_className = "",
-    footer_border = true,
     header_name = "",
     header_className = "",
     head_title,
@@ -65,10 +60,6 @@ const AppLayout = ({
         );
     };
 
-    const body_padding_style = body_padding ? "body-padding" : "";
-    const low_brightness_style =
-        isMenuVisible || isSearchbarVisible ? "brightness-[30%]" : "";
-
     return (
         <>
             {renderWithProviders(
@@ -76,27 +67,15 @@ const AppLayout = ({
                     <Navbar border={navbar_border} />
                     <Head title={head_title} />
                     {bg_image}
-                    <div
-                        className={`${body_padding_style} ${low_brightness_style} relative h-fit ${
-                            footer
-                                ? "min-h-[calc(100svh+12.5rem)] pb-[15.625rem]"
-                                : "min-h-[calc(100svh-90px)]"
-                        } flex flex-col justify-between`}
+                    <AppLayoutChildren
+                        className={className}
+                        header_className={header_className}
+                        header_name={header_name}
+                        body_padding={body_padding}
                     >
-                        <AppLayoutChildren
-                            className={className}
-                            header_className={header_className}
-                            header_name={header_name}
-                        >
-                            {children}
-                        </AppLayoutChildren>
-                        {footer && (
-                            <Footer
-                                className={footer_className}
-                                border={footer_border}
-                            />
-                        )}
-                    </div>
+                        {children}
+                    </AppLayoutChildren>
+                    {footer && <Footer />}
                 </>
             )}
         </>
