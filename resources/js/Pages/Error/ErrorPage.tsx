@@ -1,3 +1,4 @@
+import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
 import AppLayout from "@/Layouts/AppLayout";
 import React from "react";
 
@@ -21,7 +22,12 @@ const ErrorPage = ({ http_status_code }) => {
         <AppLayout
             head_title={http_status_code}
             header_name={http_status_code}
-            header_className="text-center mt-[70px] mb-[60px] lg:mt-[90px] lg:mb-[70px] lg:text-typescale_67px "
+            header_className=""
+            bg_image={
+                <>
+                    <BackgroundImage folder_name="watch" picture_classes="h-" />
+                </>
+            }
         >
             {getErrorMessage()}
         </AppLayout>

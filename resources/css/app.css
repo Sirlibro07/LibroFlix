@@ -88,6 +88,10 @@ input:-webkit-autofill {
     @apply bg-gradient-to-r text-black from-[#f58f5d] to-brand;
 }
 
+.full-height {
+    @apply min-h-[calc(100svh-5.625rem)];
+}
+
 /* *::-webkit-scrollbar {
     display: none;
 } */
