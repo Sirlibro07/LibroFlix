@@ -8,11 +8,11 @@ import Navbar from "@/Components/Navbar/Navbar";
 import AppLayoutChildren, {
     AppLayoutChildrenProps,
 } from "@/Components/LayoutItems/AppLayoutChildren";
-import Footer from "@/Components/Footer/Footer";
+import Footer, { FooterProps } from "@/Components/Footer/Footer";
 import { Head, usePage } from "@inertiajs/react";
 import { User } from "vendor/laravel/breeze/stubs/inertia-react-ts/resources/js/types";
 
-export interface AppLayoutProps extends AppLayoutChildrenProps {
+export interface AppLayoutProps extends AppLayoutChildrenProps, FooterProps {
     navbar_border?: boolean;
     bg_image?: ReactNode;
     head_title: string;
@@ -29,6 +29,8 @@ const AppLayout = ({
     header_name = "",
     header_className = "",
     head_title,
+    footer_border = true,
+    footer_margin_top = true,
 }: AppLayoutProps) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
@@ -75,7 +77,12 @@ const AppLayout = ({
                     >
                         {children}
                     </AppLayoutChildren>
-                    {footer && <Footer />}
+                    {footer && (
+                        <Footer
+                            footer_border={footer_border}
+                            footer_margin_top={footer_margin_top}
+                        />
+                    )}
                 </>
             )}
         </>
