@@ -1,36 +1,21 @@
+import ErrorPopup from "@/Components/Error/ErrorPopup";
 import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
-import AppLayout from "@/Layouts/AppLayout";
+import PopupAppLayout from "@/Layouts/PopupAppLayout";
 import React from "react";
 
 const ErrorPage = ({ http_status_code }) => {
-    const getErrorMessage = () => {
-        switch (http_status_code) {
-            case 404:
-                return "Are you sure this is the right place ?";
-            case 403:
-                return "Please go back, you are not allowed in here";
-            case 429:
-                return "Too many requests, please don't spam and try again in a few minutes";
-            case 419:
-                return "Page expired, please refresh the page";
-            default:
-                return "Something went wrong, please try again later";
-        }
-    };
-
     return (
-        <AppLayout
+        <PopupAppLayout
             head_title={http_status_code}
-            header_name={http_status_code}
-            header_className=""
             bg_image={
-                <>
-                    <BackgroundImage folder_name="watch" picture_classes="h-" />
-                </>
+                <BackgroundImage
+                    folder_name="watch"
+                    picture_classes="height-full brightness-50 opacity-[.70]"
+                />
             }
         >
-            {getErrorMessage()}
-        </AppLayout>
+            <ErrorPopup http_status_code={http_status_code} />
+        </PopupAppLayout>
     );
 };
 

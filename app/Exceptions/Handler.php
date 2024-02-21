@@ -37,7 +37,7 @@ class Handler extends ExceptionHandler
         $http_status_code = $response->status();
         Log::info($http_status_code);
 
-        if (app()->environment(['local', 'testing']) && in_array($http_status_code, [500, 404, 403, 429, 419])) {
+        if (!app()->environment(['local', 'testing']) && in_array($http_status_code, [500, 404, 403, 429, 419])) {
             return Inertia::render("Error/ErrorPage", ["http_status_code" => $http_status_code])
                 ->toResponse($request)
                 ->setStatusCode($http_status_code);
