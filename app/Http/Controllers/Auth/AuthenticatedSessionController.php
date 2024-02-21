@@ -11,7 +11,7 @@ use Inertia\Response;
 
 class AuthenticatedSessionController extends Controller
 {
-    public AuthenticatedSessionService $authenticated_session_service;
+    private AuthenticatedSessionService $authenticated_session_service;
 
     public function __construct(AuthenticatedSessionService $authenticated_session_service)
     {

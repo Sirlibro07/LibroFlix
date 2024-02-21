@@ -10,7 +10,7 @@ use Inertia\Response;
 class WatchlistItemController extends Controller
 {
 
-    public WatchlistItemService $watchlist_item_service;
+    private WatchlistItemService $watchlist_item_service;
 
     public function __construct(WatchlistItemService $watchlist_item_service)
     {

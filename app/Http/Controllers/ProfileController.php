@@ -11,7 +11,7 @@ use Inertia\Response;
 
 class ProfileController extends Controller
 {
-    public UserService $user_service;
+    private UserService $user_service;
 
     public function __construct(UserService $user_service)
     {

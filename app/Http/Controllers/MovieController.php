@@ -10,8 +10,8 @@ use Inertia\Response;
 
 class MovieController extends Controller
 {
-    public MovieService $movie_service;
-    public WatchlistItemService $watchlist_item_service;
+    private MovieService $movie_service;
+    private WatchlistItemService $watchlist_item_service;
 
     public function __construct(MovieService $movie_service, WatchlistItemService $watchlist_item_service)
     {

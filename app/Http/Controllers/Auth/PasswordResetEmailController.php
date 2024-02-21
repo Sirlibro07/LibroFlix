@@ -10,7 +10,7 @@ use Inertia\Response;
 
 class PasswordResetEmailController extends Controller
 {
-    public PasswordResetService $password_reset_service;
+    private PasswordResetService $password_reset_service;
 
     public function __construct(PasswordResetService $password_reset_service)
     {

@@ -7,7 +7,7 @@ use Inertia\Response;
 
 class HomeController extends Controller
 {
-    public MovieService $movie_service;
+    private MovieService $movie_service;
 
     public function __construct(MovieService $movie_service)
     {

@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Session;
 
 class PasswordResetService extends SendEmailService
 {
-    public TokenService $token_service;
-    public SignedRouteService $signed_route_service;
+    private TokenService $token_service;
+    private SignedRouteService $signed_route_service;
 
     public function __construct(TokenService $token_service, SignedRouteService $signed_route_service)
     {

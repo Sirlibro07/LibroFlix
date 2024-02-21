@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class EmailVerificationNotificationController extends Controller
 {
-    public EmailVerificationService $email_verification_service;
+    private EmailVerificationService $email_verification_service;
 
     public function __construct(EmailVerificationService $email_verification_service)
     {
