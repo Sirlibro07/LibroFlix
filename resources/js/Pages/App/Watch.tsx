@@ -11,7 +11,7 @@ const Watch = ({ has_verified_email, movie_title }) => {
                 bg_image={
                     <BackgroundImage
                         folder_name={"watch"}
-                        picture_classes="h-[calc(100%-5.625rem)] brightness-[50%] md:opacity-[.75] "
+                        picture_classes="height-full brightness-[50%] md:opacity-[.75] "
                     />
                 }
             >

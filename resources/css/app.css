@@ -92,6 +92,10 @@ input:-webkit-autofill {
     @apply min-h-[calc(100svh-5.625rem)];
 }
 
+.height-full {
+    @apply h-[calc(100svh-5.625rem)];
+}
+
 /* *::-webkit-scrollbar {
     display: none;
 } */
