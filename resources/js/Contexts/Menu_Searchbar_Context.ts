@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-interface Menu_Searchbar_ContextType {
+interface Menu_Searchbar_ContextProps {
     isMenuVisible: boolean;
     setIsMenuVisible: React.Dispatch<React.SetStateAction<boolean>>;
     isSearchbarVisible: boolean;
@@ -8,7 +8,7 @@ interface Menu_Searchbar_ContextType {
 }
 
 const Menu_Searchbar_Context = createContext<
-    Menu_Searchbar_ContextType | undefined
+    Menu_Searchbar_ContextProps | undefined
 >(undefined);
 
 export default Menu_Searchbar_Context;
