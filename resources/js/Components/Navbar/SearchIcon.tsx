@@ -4,8 +4,9 @@ import NavbarIconsOnClickhandler from "@/Helpers/functions/navbar/NavbarIconsOnC
 import Icon from "../Global/Icon";
 
 const SearchIcon = () => {
-    const { setIsMenuVisible } = useContext(NavbarContext);
-    const { setIsSearchbarVisible } = useContext(NavbarContext);
+    const Context = useContext(NavbarContext);
+    const { setIsMenuVisible } = Context;
+    const { setIsSearchbarVisible } = Context;
 
     const handleOnclick = () => {
         NavbarIconsOnClickhandler(setIsSearchbarVisible, setIsMenuVisible);

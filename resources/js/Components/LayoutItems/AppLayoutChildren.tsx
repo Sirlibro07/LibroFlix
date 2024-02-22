@@ -17,8 +17,9 @@ const AppLayoutChildren = ({
     header_className = "",
     body_padding = true,
 }: AppLayoutChildrenProps) => {
-    const { isMenuVisible } = useContext(NavbarContext);
-    const { isSearchbarVisible } = useContext(NavbarContext);
+    const Context = useContext(NavbarContext);
+    const { isMenuVisible } = Context;
+    const { isSearchbarVisible } = Context;
 
     const body_padding_style = body_padding ? "body-padding" : "";
     const low_brightness_style =
