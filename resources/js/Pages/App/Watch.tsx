@@ -14,8 +14,8 @@ const Watch = ({ has_verified_email, movie_title }: WatchProps) => {
                 head_title="Watch"
                 bg_image={
                     <BackgroundImage
-                        folder_name={"watch"}
-                        picture_classes="height-full brightness-[50%] md:opacity-[.75] "
+                        folder_name="error"
+                        picture_classes="error_page_picture_styles"
                     />
                 }
             >

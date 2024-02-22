@@ -96,6 +96,10 @@ input:-webkit-autofill {
     @apply h-[calc(100svh-5.625rem)];
 }
 
+.error_page_picture_styles {
+    @apply height-full md:opacity-[.75] brightness-[40%] md:brightness-[35%];
+}
+
 /* *::-webkit-scrollbar {
     display: none;
 } */

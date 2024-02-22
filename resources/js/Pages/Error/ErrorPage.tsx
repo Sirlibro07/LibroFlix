@@ -12,7 +12,7 @@ const ErrorPage = ({ http_status_code }: ErrorPageProps) => {
             bg_image={
                 <BackgroundImage
                     folder_name="error"
-                    picture_classes="height-full brightness-50 opacity-[.70]"
+                    picture_classes="error_page_picture_styles"
                 />
             }
         >
