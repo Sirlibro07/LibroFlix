@@ -1,7 +1,7 @@
 import React from "react";
 import Popup from "../Popup/Popup";
-import getError from "./getError";
-import getErrorList from "./getErrorList";
+import getError from "../../Helpers/functions/error/getError";
+import getErrorList from "../../Helpers/functions/error/getErrorList";
 
 export type ErrorInfoType = {
     http_status_code: number;
@@ -25,7 +25,6 @@ const ErrorPopup = ({ http_status_code }: ErrorPopupProps) => {
             icon_className="ml-[-0.063rem]"
             title={error.title}
             message={error.message}
-            popup_link={error.popup_link}
             link_route_name={
                 error.popup_link_route_name
                     ? error.popup_link_route_name

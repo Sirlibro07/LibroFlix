@@ -1,7 +1,7 @@
 import React from "react";
 import PopupLayout from "@/Layouts/PopupLayout";
-import getError from "@/Components/Error/getError";
-import getErrorList from "@/Components/Error/getErrorList";
+import getError from "@/Helpers/functions/error/getError";
+import getErrorList from "@/Helpers/functions/error/getErrorList";
 
 interface ErrorPageProps {
     http_status_code: number;
