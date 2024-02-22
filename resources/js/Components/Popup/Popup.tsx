@@ -8,9 +8,7 @@ export interface PopupProps
     extends PopupIconProps,
         PopupTitleProps,
         PopupMessageProps,
-        PopupLinkProps {
-    popup_link?: boolean;
-}
+        PopupLinkProps {}
 
 const Popup = ({
     icon_name,
