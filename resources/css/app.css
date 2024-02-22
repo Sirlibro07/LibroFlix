@@ -97,7 +97,7 @@ input:-webkit-autofill {
 }
 
 .error_page_picture_styles {
-    @apply height-full md:opacity-[.75] brightness-[40%] md:brightness-[35%];
+    @apply h-full md:opacity-[.75] brightness-[40%] md:brightness-[35%];
 }
 
 /* *::-webkit-scrollbar {
