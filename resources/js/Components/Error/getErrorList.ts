@@ -13,6 +13,11 @@ const getErrorList = (): ErrorInfoType[] => {
             message: "Are you sure this is the right place ?",
         },
         {
+            http_status_code: 405,
+            title: "Method not allowed",
+            message: "something broke on the page, please go back",
+        },
+        {
             http_status_code: 419,
             title: "Page expired",
             message: "Please refresh the page and everything will work again",
