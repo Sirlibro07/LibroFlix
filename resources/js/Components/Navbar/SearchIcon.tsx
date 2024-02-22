@@ -1,11 +1,11 @@
-import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
+import NavbarContext from "@/Contexts/NavbarContext";
 import React, { useContext } from "react";
 import NavbarIconsOnClickhandler from "@/Helpers/functions/navbar/NavbarIconsOnClickhandler";
 import Icon from "../Global/Icon";
 
 const SearchIcon = () => {
-    const { setIsMenuVisible } = useContext(Menu_Searchbar_Context);
-    const { setIsSearchbarVisible } = useContext(Menu_Searchbar_Context);
+    const { setIsMenuVisible } = useContext(NavbarContext);
+    const { setIsSearchbarVisible } = useContext(NavbarContext);
 
     const handleOnclick = () => {
         NavbarIconsOnClickhandler(setIsSearchbarVisible, setIsMenuVisible);

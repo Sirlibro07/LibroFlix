@@ -1,11 +1,11 @@
-import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
+import NavbarContext from "@/Contexts/NavbarContext";
 import React, { useContext } from "react";
 
 const NavbarItemsCloseOverlay = () => {
-    const { isMenuVisible } = useContext(Menu_Searchbar_Context);
-    const { isSearchbarVisible } = useContext(Menu_Searchbar_Context);
-    const { setIsMenuVisible } = useContext(Menu_Searchbar_Context);
-    const { setIsSearchbarVisible } = useContext(Menu_Searchbar_Context);
+    const { isMenuVisible } = useContext(NavbarContext);
+    const { isSearchbarVisible } = useContext(NavbarContext);
+    const { setIsMenuVisible } = useContext(NavbarContext);
+    const { setIsSearchbarVisible } = useContext(NavbarContext);
 
     const onClickHandler = () => {
         setIsMenuVisible(false);

@@ -3,10 +3,10 @@ import Logo from "./Logo";
 import NavbarIcons from "./NavbarIcons";
 import NavbarLinksList from "./NavbarLinksList";
 import SearchBar from "../SearchBar/SearchBar";
-import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
+import NavbarContext from "@/Contexts/NavbarContext";
 
 const NavbarContent = () => {
-    const { isSearchbarVisible } = useContext(Menu_Searchbar_Context);
+    const { isSearchbarVisible } = useContext(NavbarContext);
 
     const visibility_styles = isSearchbarVisible
         ? "navbar_item_visible"

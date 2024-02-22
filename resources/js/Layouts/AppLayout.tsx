@@ -2,7 +2,7 @@ import React, { ReactNode, useState } from "react";
 import "@/CSS/borders.css";
 import "@/CSS/navbar_visibility.css";
 import "@/CSS/letter_spacing.css";
-import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
+import NavbarContext from "@/Contexts/NavbarContext";
 import UserContext from "@/Contexts/UserContext";
 import Navbar from "@/Components/Navbar/Navbar";
 import AppLayoutChildren, {
@@ -48,7 +48,7 @@ const AppLayout = ({
                     email: user?.email,
                 }}
             >
-                <Menu_Searchbar_Context.Provider
+                <NavbarContext.Provider
                     value={{
                         isMenuVisible: isMenuVisible,
                         setIsMenuVisible: setIsMenuVisible,
@@ -57,7 +57,7 @@ const AppLayout = ({
                     }}
                 >
                     {children}
-                </Menu_Searchbar_Context.Provider>
+                </NavbarContext.Provider>
             </UserContext.Provider>
         );
     };

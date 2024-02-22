@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
+import NavbarContext from "@/Contexts/NavbarContext";
 import UserContext from "@/Contexts/UserContext";
 import NavbarAuthLinks from "./NavbarAuthLinks";
 import NavbarAppLinks from "./NavbarAppLinks";
 
 const NavbarLinksList = () => {
-    const { isMenuVisible } = useContext(Menu_Searchbar_Context);
+    const { isMenuVisible } = useContext(NavbarContext);
     const { isLoggedIn } = useContext(UserContext);
 
     return (

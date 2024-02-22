@@ -1,6 +1,6 @@
 import React, { ReactNode, useContext } from "react";
 import Header from "../Global/Header";
-import Menu_Searchbar_Context from "@/Contexts/Menu_Searchbar_Context";
+import NavbarContext from "@/Contexts/NavbarContext";
 
 export interface AppLayoutChildrenProps {
     className?: string;
@@ -17,8 +17,8 @@ const AppLayoutChildren = ({
     header_className = "",
     body_padding = true,
 }: AppLayoutChildrenProps) => {
-    const { isMenuVisible } = useContext(Menu_Searchbar_Context);
-    const { isSearchbarVisible } = useContext(Menu_Searchbar_Context);
+    const { isMenuVisible } = useContext(NavbarContext);
+    const { isSearchbarVisible } = useContext(NavbarContext);
 
     const body_padding_style = body_padding ? "body-padding" : "";
     const low_brightness_style =
