@@ -1,7 +1,7 @@
-import MovieType from "@/Shared/Types/MovieType";
+import MovieType from "@/Helpers/Types/MovieType";
 import React from "react";
 import GridCard, { GridCardProps } from "./GridCard";
-import underscoreToSpace from "@/Shared/functions/underscoreToSpace";
+import underscoreToSpace from "@/Helpers/functions/global/underscoreToSpace";
 
 export interface GridCardsProps
     extends Omit<GridCardProps, "thumbnail_path" | "title" | "slug"> {

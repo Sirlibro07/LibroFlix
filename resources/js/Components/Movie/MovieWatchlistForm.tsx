@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonWithIcon from "../Button/ButtonWithIcon";
 import { router } from "@inertiajs/react";
-import scrollToTop from "@/Shared/functions/scrollToTop";
+import scrollToTop from "@/Helpers/functions/global/scrollToTop";
 
 export interface MovieWatchlistFormProps {
     watchlisted: boolean;

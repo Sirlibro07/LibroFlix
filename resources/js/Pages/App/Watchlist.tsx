@@ -1,6 +1,6 @@
 import Grid from "@/Components/Grid/Grid";
 import AppLayout from "@/Layouts/AppLayout";
-import MoviesResourceType from "@/Shared/Types/MoviesResourceType";
+import MoviesResourceType from "@/Helpers/Types/MoviesResourceType";
 import React, { useMemo } from "react";
 
 interface WatchlistProps {

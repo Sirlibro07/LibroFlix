@@ -4,7 +4,7 @@ import MovieInfo from "./MovieInfo";
 import MovieRating from "./MovieRating";
 import MovieLinks, { MovieLinksProps } from "./MovieLinks";
 import MovieDescription from "./MovieDescription";
-import MovieType from "@/Shared/Types/MovieType";
+import MovieType from "@/Helpers/Types/MovieType";
 
 export interface MovieDetailsProps
     extends Pick<MovieLinksProps, "watchlisted"> {

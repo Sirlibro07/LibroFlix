@@ -1,5 +1,5 @@
 import React from "react";
-import formElementsOnChangeHandler from "@/Shared/functions/formElementsOnChangeHandler";
+import formElementsOnChangeHandler from "@/Helpers/functions/form/formElementsOnChangeHandler";
 
 export interface InputProps {
     type?: string;

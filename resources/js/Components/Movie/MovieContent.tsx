@@ -2,7 +2,7 @@ import React from "react";
 import MovieImg from "./MovieImg";
 import MovieBlur from "./MovieBlur";
 import MovieDetails, { MovieDetailsProps } from "./MovieDetails";
-import MovieType from "@/Shared/Types/MovieType";
+import MovieType from "@/Helpers/Types/MovieType";
 
 export interface MovieContentProps
     extends Pick<MovieDetailsProps, "watchlisted"> {

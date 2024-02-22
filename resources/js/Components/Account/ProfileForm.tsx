@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import formSubmit from "@/Shared/functions/formSubmit";
+import formSubmit from "@/Helpers/functions/form/formSubmit";
 import Button from "../Button/Button";
 import AuthSuccessMessage, {
     AuthSuccessMessageProps,

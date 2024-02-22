@@ -2,10 +2,10 @@ import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
 import MovieContent, {
     MovieContentProps,
 } from "@/Components/Movie/MovieContent";
-import underscoreToSpace from "@/Shared/functions/underscoreToSpace";
+import underscoreToSpace from "@/Helpers/functions/global/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
-import MovieResourceType from "@/Shared/Types/MovieResourceType";
+import MovieResourceType from "@/Helpers/Types/MovieResourceType";
 
 interface ShowProps extends Pick<MovieContentProps, "watchlisted"> {
     movie: MovieResourceType;

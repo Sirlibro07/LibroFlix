@@ -1,7 +1,7 @@
 import React from "react";
 import InputLabel from "../Input/InputLabel";
 import InputError, { InputErrorProps } from "../Input/InputError";
-import capitalizeFirstLetter from "@/Shared/functions/capitalizeFirstLetter";
+import capitalizeFirstLetter from "@/Helpers/functions/global/capitalizeFirstLetter";
 import InputWithOptionalButton, {
     InputWithOptionalButtonProps,
 } from "../Input/InputWithOptionalButton";

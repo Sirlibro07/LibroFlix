@@ -2,7 +2,7 @@ import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 import MoviesContext from "@/Contexts/MoviesContext";
 import SearchContent from "@/Components/Search/SearchContent";
-import MoviesResourceType from "@/Shared/Types/MoviesResourceType";
+import MoviesResourceType from "@/Helpers/Types/MoviesResourceType";
 
 interface SearchProps {
     movies: MoviesResourceType;

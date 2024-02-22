@@ -1,4 +1,4 @@
-import imgStoragePath from "@/Shared/functions/imgStoragePath";
+import imgStoragePath from "@/Helpers/functions/img/imgStoragePath";
 import React from "react";
 
 const CardPlayIcon = () => {

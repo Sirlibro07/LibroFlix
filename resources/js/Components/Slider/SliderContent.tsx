@@ -4,8 +4,8 @@
 // import "swiper/css/pagination";
 // import { Pagination } from "swiper/modules";
 // import SliderCard from "./SliderCard";
-// import underscoreToSpace from "@/Shared/functions/underscoreToSpace";
-// import MovieType from "@/Shared/Types/MovieType";
+// import underscoreToSpace from "@/Helpers/functions/underscoreToSpace";
+// import MovieType from "@/Helpers/Types/MovieType";
 
 // export interface SliderContentProps {
 //     movies: MovieType[];
@@ -39,8 +39,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import SliderCard from "./SliderCard";
-import underscoreToSpace from "@/Shared/functions/underscoreToSpace";
-import MovieType from "@/Shared/Types/MovieType";
+import underscoreToSpace from "@/Helpers/functions/global/underscoreToSpace";
+import MovieType from "@/Helpers/Types/MovieType";
 
 export interface SliderContentProps {
     movies: MovieType[];

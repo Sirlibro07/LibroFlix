@@ -3,7 +3,7 @@ import HomeContent from "@/Components/Home/HomeContent";
 import MoviesContext from "@/Contexts/MoviesContext";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
-import MoviesResourceType from "@/Shared/Types/MoviesResourceType";
+import MoviesResourceType from "@/Helpers/Types/MoviesResourceType";
 
 interface HomeProps {
     movies: MoviesResourceType;
