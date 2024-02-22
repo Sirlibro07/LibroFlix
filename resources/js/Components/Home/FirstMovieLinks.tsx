@@ -3,12 +3,12 @@ import { Link } from "@inertiajs/react";
 import ButtonOptionalIcon from "../Button/ButtonOptionalIcon";
 
 interface FirstMovieLinksProps {
-    title: string;
+    slug: string;
 }
 
-const FirstMovieLinks = ({ title }: FirstMovieLinksProps) => {
+const FirstMovieLinks = ({ slug }: FirstMovieLinksProps) => {
     return (
-        <Link href={route("movies.show", title)}>
+        <Link href={route("movies.show", slug)}>
             <ButtonOptionalIcon icon_type="solid" icon_name="play">
                 Watch Now
             </ButtonOptionalIcon>

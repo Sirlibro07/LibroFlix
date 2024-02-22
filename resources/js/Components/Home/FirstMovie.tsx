@@ -30,7 +30,7 @@ const FirstMovie = () => {
                 description_p={false}
             />
 
-            <FirstMovieLinks title={forth_movie.title} />
+            <FirstMovieLinks slug={forth_movie.slug} />
         </div>
     );
 };
