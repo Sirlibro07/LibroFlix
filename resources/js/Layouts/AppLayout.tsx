@@ -44,8 +44,8 @@ const AppLayout = ({
             <UserContext.Provider
                 value={{
                     isLoggedIn: Boolean(user),
-                    name: user && user.name,
-                    email: user && user.email,
+                    name: user?.name,
+                    email: user?.email,
                 }}
             >
                 <Menu_Searchbar_Context.Provider
