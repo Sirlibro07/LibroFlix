@@ -7,7 +7,7 @@ interface MovieTitleProps {
 
 const MovieTitle = ({ title, className }: MovieTitleProps) => {
     return (
-        <h1 className={`font-semibold whitespace-pre-line ${className}`}>
+        <h1 className={` whitespace-pre-line font-display ${className}`}>
             {title}
         </h1>
     );
