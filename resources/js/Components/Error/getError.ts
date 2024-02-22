@@ -1,4 +1,4 @@
-import { ErrorInfoType } from "./ErrorPopup";
+import { ErrorInfoType } from "@/Pages/Error/ErrorPage";
 
 const getError = (http_status_code: number, errors: ErrorInfoType[]) => {
     for (let i = 0; i < errors.length; i++) {

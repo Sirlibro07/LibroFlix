@@ -1,37 +1,47 @@
-import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
-import WatchContent, {
-    WatchContentProps,
-} from "@/Components/Watch/WatchContent";
-import PopupAppLayout from "@/Layouts/PopupAppLayout";
-import React, { ReactNode } from "react";
+import React from "react";
+import PopupLayout from "@/Layouts/PopupLayout";
+import { PopupProps } from "@/Components/Popup/Popup";
 
-interface WatchProps extends WatchContentProps {}
+interface WatchProps {
+    has_verified_email: boolean;
+    movie_title: string;
+}
 
 const Watch = ({ has_verified_email, movie_title }: WatchProps) => {
-    const renderWatchContent = (children: ReactNode) => {
-        return (
-            <PopupAppLayout
-                head_title="Watch"
-                bg_image={
-                    <BackgroundImage
-                        folder_name="error"
-                        picture_classes="error_page_picture_styles"
-                    />
-                }
-            >
-                {children}
-            </PopupAppLayout>
-        );
-    };
+    let popup_props: PopupProps;
+    let message: string;
+    if (has_verified_email) {
+        message = `As this is only a portfolio to demonstrate my full-stack web dev skills, I do not have the legal rights to actually stream the "${movie_title}" film, thanks for your understanding.`;
+
+        popup_props = {
+            icon_name: "film",
+            title: "I'm sorry",
+            message: message,
+        };
+    } else {
+        message =
+            "It seems like your account email is not verified, to watch movies you will need to verify it";
+
+        popup_props = {
+            icon_name: "hand",
+            title: "Email not verified",
+            message: message,
+            icon_className: "ml-[-0.063rem]",
+            link_title: "Verify email",
+            link_route_name: "profile.edit",
+        };
+    }
+
     return (
-        <>
-            {renderWatchContent(
-                <WatchContent
-                    has_verified_email={has_verified_email}
-                    movie_title={movie_title}
-                />
-            )}
-        </>
+        <PopupLayout
+            head_title="Watch"
+            icon_name={popup_props.icon_name}
+            title={popup_props.title}
+            message={popup_props.message}
+            icon_className={popup_props.icon_className}
+            link_route_name={popup_props.link_route_name}
+            link_title={popup_props.link_title}
+        />
     );
 };
 

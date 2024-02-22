@@ -1,23 +1,38 @@
-import ErrorPopup, { ErrorPopupProps } from "@/Components/Error/ErrorPopup";
-import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
-import PopupAppLayout from "@/Layouts/PopupAppLayout";
 import React from "react";
+import PopupLayout from "@/Layouts/PopupLayout";
+import getError from "@/Components/Error/getError";
+import getErrorList from "@/Components/Error/getErrorList";
 
-interface ErrorPageProps extends ErrorPopupProps {}
+interface ErrorPageProps {
+    http_status_code: number;
+}
+
+export type ErrorInfoType = {
+    http_status_code: number;
+    title: string;
+    message: string;
+    popup_link_title?: string;
+    popup_link_route_name?: string;
+};
 
 const ErrorPage = ({ http_status_code }: ErrorPageProps) => {
+    const error = getError(http_status_code, getErrorList());
     return (
-        <PopupAppLayout
+        <PopupLayout
             head_title={String(http_status_code)}
-            bg_image={
-                <BackgroundImage
-                    folder_name="error"
-                    picture_classes="error_page_picture_styles"
-                />
+            icon_name="hand"
+            icon_className="ml-[-0.063rem]"
+            title={error.title}
+            message={error.message}
+            link_route_name={
+                error.popup_link_route_name
+                    ? error.popup_link_route_name
+                    : "home"
             }
-        >
-            <ErrorPopup http_status_code={http_status_code} />
-        </PopupAppLayout>
+            link_title={
+                error.popup_link_title ? error.popup_link_title : "Go back"
+            }
+        />
     );
 };
 

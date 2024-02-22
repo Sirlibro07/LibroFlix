@@ -8,7 +8,6 @@ export interface AppLayoutChildrenProps {
     header_name?: string;
     header_className?: string;
     body_padding?: boolean;
-    navbar?: boolean;
 }
 
 const AppLayoutChildren = ({
@@ -17,7 +16,6 @@ const AppLayoutChildren = ({
     header_name = "",
     header_className = "",
     body_padding = true,
-    navbar = true,
 }: AppLayoutChildrenProps) => {
     const { isMenuVisible } = useContext(Menu_Searchbar_Context);
     const { isSearchbarVisible } = useContext(Menu_Searchbar_Context);
@@ -28,9 +26,7 @@ const AppLayoutChildren = ({
 
     return (
         <div
-            className={`${body_padding_style} ${low_brightness_style}  relative   ${
-                navbar ? "min-height-full" : "min-h-svh"
-            }`}
+            className={`${body_padding_style} ${low_brightness_style} relative min-height-full`}
         >
             <section className={`${className}`}>
                 {header_name && (

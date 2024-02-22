@@ -31,7 +31,6 @@ const AppLayout = ({
     head_title,
     footer_border = true,
     footer_margin_top = true,
-    navbar = true,
 }: AppLayoutProps) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isSearchbarVisible, setIsSearchbarVisible] = useState(false);
@@ -67,7 +66,7 @@ const AppLayout = ({
         <>
             {renderWithProviders(
                 <>
-                    {navbar && <Navbar border={navbar_border} />}
+                    <Navbar border={navbar_border} />
                     <Head title={head_title} />
                     {bg_image}
                     <AppLayoutChildren
@@ -75,7 +74,6 @@ const AppLayout = ({
                         header_className={header_className}
                         header_name={header_name}
                         body_padding={body_padding}
-                        navbar={navbar}
                     >
                         {children}
                     </AppLayoutChildren>

@@ -4,7 +4,7 @@ import PopupTitle, { PopupTitleProps } from "./PopupTitle";
 import PopupMessage, { PopupMessageProps } from "./PopupMessage";
 import PopupLink, { PopupLinkProps } from "./PopupLink";
 
-interface PopupProps
+export interface PopupProps
     extends PopupIconProps,
         PopupTitleProps,
         PopupMessageProps,
@@ -17,7 +17,6 @@ const Popup = ({
     icon_className,
     title,
     message,
-    popup_link = true,
     link_title = "Go back",
     link_route_name = "home",
 }: PopupProps) => {
@@ -26,12 +25,10 @@ const Popup = ({
             <PopupIcon icon_name={icon_name} icon_className={icon_className} />
             <PopupTitle title={title} />
             <PopupMessage message={message} />
-            {popup_link && (
-                <PopupLink
-                    link_route_name={link_route_name}
-                    link_title={link_title}
-                />
-            )}
+            <PopupLink
+                link_route_name={link_route_name}
+                link_title={link_title}
+            />
         </div>
     );
 };
