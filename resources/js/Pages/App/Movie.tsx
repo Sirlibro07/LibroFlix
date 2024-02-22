@@ -1,10 +1,17 @@
 import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
-import MovieContent from "@/Components/Movie/MovieContent";
+import MovieContent, {
+    MovieContentProps,
+} from "@/Components/Movie/MovieContent";
 import underscoreToSpace from "@/Shared/functions/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
+import MovieResourceType from "@/Shared/Types/MovieResourceType";
 
-const Show = ({ movie, watchlisted }) => {
+interface ShowProps extends Pick<MovieContentProps, "watchlisted"> {
+    movie: MovieResourceType;
+}
+
+const Show = ({ movie, watchlisted }: ShowProps) => {
     const renderMovieContent = (children: ReactNode) => {
         return (
             <AppLayout

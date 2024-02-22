@@ -1,11 +1,10 @@
-import { useEffect } from "react";
 import AuthLayout from "@/Layouts/AuthLayout";
 import { useForm } from "@inertiajs/react";
 import React from "react";
 import FormInputField from "@/Components/FormItems/FormInputField";
 
 export default function Register() {
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const { data, setData, post, processing, errors } = useForm({
         name: "",
         email: "",
         password: "",

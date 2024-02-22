@@ -4,7 +4,8 @@ import MovieBlur from "./MovieBlur";
 import MovieDetails, { MovieDetailsProps } from "./MovieDetails";
 import MovieType from "@/Shared/Types/MovieType";
 
-interface MovieContentProps extends Pick<MovieDetailsProps, "watchlisted"> {
+export interface MovieContentProps
+    extends Pick<MovieDetailsProps, "watchlisted"> {
     movie: MovieType;
 }
 

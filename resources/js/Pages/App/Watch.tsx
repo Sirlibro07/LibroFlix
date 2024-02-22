@@ -1,9 +1,13 @@
 import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
-import WatchContent from "@/Components/Watch/WatchContent";
+import WatchContent, {
+    WatchContentProps,
+} from "@/Components/Watch/WatchContent";
 import PopupAppLayout from "@/Layouts/PopupAppLayout";
 import React, { ReactNode } from "react";
 
-const Watch = ({ has_verified_email, movie_title }) => {
+interface WatchProps extends WatchContentProps {}
+
+const Watch = ({ has_verified_email, movie_title }: WatchProps) => {
     const renderWatchContent = (children: ReactNode) => {
         return (
             <PopupAppLayout

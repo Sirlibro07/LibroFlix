@@ -3,10 +3,13 @@ import HomeContent from "@/Components/Home/HomeContent";
 import MoviesContext from "@/Contexts/MoviesContext";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
+import MoviesResourceType from "@/Shared/Types/MoviesResourceType";
 
-const Home = ({ movies }) => {
-    console.log(movies);
+interface HomeProps {
+    movies: MoviesResourceType;
+}
 
+const Home = ({ movies }: HomeProps) => {
     const renderHomeContent = (children: ReactNode) => {
         return (
             <AppLayout

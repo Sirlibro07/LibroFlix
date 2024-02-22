@@ -6,7 +6,8 @@ import UpdateProfileInformationForm, {
 } from "@/Components/Account/UpdateProfileInformation";
 import LogoutForm from "@/Components/Account/LogoutForm";
 
-interface AccountCurrentOptionProps extends UpdateProfileInformationProps {
+export interface AccountCurrentOptionProps
+    extends UpdateProfileInformationProps {
     currentOption: string;
 }
 

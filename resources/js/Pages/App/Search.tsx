@@ -2,8 +2,14 @@ import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 import MoviesContext from "@/Contexts/MoviesContext";
 import SearchContent from "@/Components/Search/SearchContent";
+import MoviesResourceType from "@/Shared/Types/MoviesResourceType";
 
-const Index = ({ movies, title }) => {
+interface SearchProps {
+    movies: MoviesResourceType;
+    title: string;
+}
+
+const Search = ({ movies, title }: SearchProps) => {
     const renderSearchPageContent = (children: ReactNode) => {
         const name = movies.data.length
             ? `Results for "${title}"`
@@ -23,4 +29,4 @@ const Index = ({ movies, title }) => {
 
     return <>{renderSearchPageContent(<SearchContent />)}</>;
 };
-export default Index;
+export default Search;

@@ -1,12 +1,14 @@
-import ErrorPopup from "@/Components/Error/ErrorPopup";
+import ErrorPopup, { ErrorPopupProps } from "@/Components/Error/ErrorPopup";
 import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
 import PopupAppLayout from "@/Layouts/PopupAppLayout";
 import React from "react";
 
-const ErrorPage = ({ http_status_code }) => {
+interface ErrorPageProps extends ErrorPopupProps {}
+
+const ErrorPage = ({ http_status_code }: ErrorPageProps) => {
     return (
         <PopupAppLayout
-            head_title={http_status_code}
+            head_title={String(http_status_code)}
             bg_image={
                 <BackgroundImage
                     folder_name="error"

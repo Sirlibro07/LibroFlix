@@ -1,8 +1,13 @@
 import Grid from "@/Components/Grid/Grid";
 import AppLayout from "@/Layouts/AppLayout";
+import MoviesResourceType from "@/Shared/Types/MoviesResourceType";
 import React, { useMemo } from "react";
 
-const Watchlist = ({ watchlist_items }) => {
+interface WatchlistProps {
+    watchlist_items: MoviesResourceType;
+}
+
+const Watchlist = ({ watchlist_items }: WatchlistProps) => {
     const movies = useMemo(() => {
         const { data } = watchlist_items;
 

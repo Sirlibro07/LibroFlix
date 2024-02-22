@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import AppLayout from "@/Layouts/AppLayout";
 import AccountOptionsList from "@/Components/Account/AccountOptionsList";
-import AccountCurrentOption from "@/Components/Account/AccountCurrentOption";
+import AccountCurrentOption, {
+    AccountCurrentOptionProps,
+} from "@/Components/Account/AccountCurrentOption";
 
-const Account = ({ status, has_verified_email }) => {
+interface AccountProps extends AccountCurrentOptionProps {}
+
+const Account = ({ status, has_verified_email }: AccountProps) => {
     const [currentOption, setCurrentOption] = useState("Profile");
 
     return (

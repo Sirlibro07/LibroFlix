@@ -10,11 +10,11 @@ type ErrorInfoType = {
     popup_link_route_name?: string;
 };
 
-interface ErrorPopup {
+export interface ErrorPopupProps {
     http_status_code: number;
 }
 
-const ErrorPopup = ({ http_status_code }: ErrorPopup) => {
+const ErrorPopup = ({ http_status_code }: ErrorPopupProps) => {
     const errors: ErrorInfoType[] = [
         {
             http_status_code: 403,

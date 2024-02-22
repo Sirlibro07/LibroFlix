@@ -1,14 +1,17 @@
-import { useEffect } from "react";
 import AuthLayout from "@/Layouts/AuthLayout";
 import { useForm } from "@inertiajs/react";
 import React from "react";
 import FormInputField from "@/Components/FormItems/FormInputField";
 import FormCheckboxField from "@/Components/FormItems/FormCheckboxField";
 import GeneralLink from "@/Components/Global/GeneralLink";
-import AuthSuccessMessage from "@/Components/Auth/AuthSuccessMessage";
+import AuthSuccessMessage, {
+    AuthSuccessMessageProps,
+} from "@/Components/Auth/AuthSuccessMessage";
 
-export default function Login({ status }) {
-    const { data, setData, post, processing, errors, reset } = useForm({
+interface LoginProps extends AuthSuccessMessageProps {}
+
+export default function Login({ status }: LoginProps) {
+    const { data, setData, post, processing, errors } = useForm({
         email: "",
         password: "",
         remember: false,

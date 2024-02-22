@@ -2,7 +2,7 @@ import React from "react";
 import WatchEmailNotVerifiedPopup from "./WatchEmailNotVerifiedPopup";
 import WatchSorryPopup, { WatchSorryPopupProps } from "./WatchSorryPopup";
 
-interface WatchContentProps extends WatchSorryPopupProps {
+export interface WatchContentProps extends WatchSorryPopupProps {
     has_verified_email: boolean;
 }
 

@@ -3,7 +3,7 @@ import AuthLayout from "@/Layouts/AuthLayout";
 import { useForm } from "@inertiajs/react";
 import FormInputField from "@/Components/FormItems/FormInputField";
 
-interface ResetPasswordContentProps {
+export interface ResetPasswordContentProps {
     token: string;
     email: string;
 }

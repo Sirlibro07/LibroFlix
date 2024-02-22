@@ -2,13 +2,16 @@ import AuthLayout from "@/Layouts/AuthLayout";
 import { useForm } from "@inertiajs/react";
 import React from "react";
 import FormInputField from "@/Components/FormItems/FormInputField";
-import AuthSuccessMessage from "@/Components/Auth/AuthSuccessMessage";
+import AuthSuccessMessage, {
+    AuthSuccessMessageProps,
+} from "@/Components/Auth/AuthSuccessMessage";
 
-export default function ForgotPassword({ status }: { status: string }) {
-    const { data, setData, post, processing, recentlySuccessful, errors } =
-        useForm({
-            email: "",
-        });
+interface ForgotPasswordProps extends AuthSuccessMessageProps {}
+
+export default function ForgotPassword({ status }: ForgotPasswordProps) {
+    const { data, setData, post, processing, errors } = useForm({
+        email: "",
+    });
 
     return (
         <AuthLayout
