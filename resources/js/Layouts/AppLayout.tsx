@@ -54,6 +54,7 @@ const AppLayout = ({
                         setIsMenuVisible: setIsMenuVisible,
                         isSearchbarVisible: isSearchbarVisible,
                         setIsSearchbarVisible: setIsSearchbarVisible,
+                        border: navbar_border,
                     }}
                 >
                     {children}
@@ -66,7 +67,7 @@ const AppLayout = ({
         <>
             {renderWithProviders(
                 <>
-                    <Navbar border={navbar_border} />
+                    <Navbar />
                     <Head title={head_title} />
                     {bg_image}
                     <AppLayoutChildren

@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavbarItemsCloseOverlay from "./NavbarItemsCloseOverlay";
 import NavbarContent from "./NavbarContent";
+import NavbarContext from "@/Contexts/NavbarContext";
 
-interface NavbarProps {
-    border: boolean;
-}
+const Navbar = () => {
+    const { border } = useContext(NavbarContext);
 
-const Navbar = ({ border }: NavbarProps) => {
     return (
         <>
             <nav

@@ -5,6 +5,7 @@ interface NavbarContextProps {
     setIsMenuVisible: React.Dispatch<React.SetStateAction<boolean>>;
     isSearchbarVisible: boolean;
     setIsSearchbarVisible: React.Dispatch<React.SetStateAction<boolean>>;
+    border?: boolean;
 }
 
 const NavbarContext = createContext<NavbarContextProps | undefined>(undefined);
