@@ -3,15 +3,12 @@ import ButtonWithIcon from "../Button/ButtonWithIcon";
 import { router } from "@inertiajs/react";
 import scrollToTop from "@/Shared/functions/scrollToTop";
 
-export interface MovieWatchlistButtonProps {
+export interface MovieWatchlistFormProps {
     watchlisted: boolean;
     slug: string;
 }
 
-const MovieWatchlistButton = ({
-    watchlisted,
-    slug,
-}: MovieWatchlistButtonProps) => {
+const MovieWatchlistForm = ({ watchlisted, slug }: MovieWatchlistFormProps) => {
     const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -36,4 +33,4 @@ const MovieWatchlistButton = ({
     );
 };
 
-export default MovieWatchlistButton;
+export default MovieWatchlistForm;
