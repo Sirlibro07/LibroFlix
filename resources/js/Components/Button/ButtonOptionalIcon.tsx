@@ -1,6 +1,5 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import ButtonWithIcon, { ButtonWithIconProps } from "./ButtonWithIcon";
-import { IconProps } from "../Global/Icon";
 
 interface ButtonOptionalIconProps extends ButtonWithIconProps {}
 
