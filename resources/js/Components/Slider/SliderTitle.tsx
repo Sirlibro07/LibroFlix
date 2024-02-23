@@ -10,11 +10,11 @@ const SliderTitle = ({
     slider_title_className = "",
 }: SliderTitleProps) => {
     return (
-        <p
+        <h2
             className={`text-typescale_23_px font-medium mb-6 md:text-typescale_33_px ${slider_title_className}`}
         >
             {slider_title}
-        </p>
+        </h2>
     );
 };
 

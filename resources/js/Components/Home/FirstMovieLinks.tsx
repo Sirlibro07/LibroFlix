@@ -8,7 +8,7 @@ interface FirstMovieLinksProps {
 
 const FirstMovieLinks = ({ slug }: FirstMovieLinksProps) => {
     return (
-        <Link href={route("movies.show", slug)}>
+        <Link href={route("movies.show", slug)} className="md:inline-block">
             <ButtonOptionalIcon icon_type="solid" icon_name="play">
                 Watch Now
             </ButtonOptionalIcon>

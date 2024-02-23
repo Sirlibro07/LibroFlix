@@ -14,11 +14,11 @@ const MovieDescription = ({
     return (
         <>
             {description_p && (
-                <p className="mt-10 mb-4 font-medium">Description:</p>
+                <h2 className="mt-10 mb-4 font-medium">Description:</h2>
             )}
-            <p className={`text-light_grey overflow-hidden ${className}`}>
+            <h3 className={`text-light_grey overflow-hidden ${className}`}>
                 {description}
-            </p>
+            </h3>
         </>
     );
 };
