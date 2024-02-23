@@ -1,20 +1,20 @@
 import React, { ReactNode, useContext } from "react";
-import Header from "../Global/Header";
+import Heading from "../Global/Heading";
 import NavbarContext from "@/Contexts/NavbarContext";
 
 export interface AppLayoutChildrenProps {
     className?: string;
     children: ReactNode;
-    header_name?: string;
-    header_className?: string;
+    Heading_name?: string;
+    Heading_className?: string;
     body_padding?: boolean;
 }
 
 const AppLayoutChildren = ({
     className = "",
     children,
-    header_name = "",
-    header_className = "",
+    Heading_name = "",
+    Heading_className = "",
     body_padding = true,
 }: AppLayoutChildrenProps) => {
     const Context = useContext(NavbarContext);
@@ -30,10 +30,10 @@ const AppLayoutChildren = ({
             className={`${body_padding_style} ${low_brightness_style} relative min-height-full`}
         >
             <section className={`${className}`}>
-                {header_name && (
-                    <Header
-                        name={header_name}
-                        className={`pt-8 ${header_className}`}
+                {Heading_name && (
+                    <Heading
+                        name={Heading_name}
+                        className={`pt-8 ${Heading_className}`}
                     />
                 )}
                 {children}

@@ -26,8 +26,8 @@ const AppLayout = ({
     bg_image = <></>,
     body_padding = true,
     footer = true,
-    header_name = "",
-    header_className = "",
+    Heading_name = "",
+    Heading_className = "",
     head_title,
     footer_border = true,
     footer_margin_top = true,
@@ -72,8 +72,8 @@ const AppLayout = ({
                     {bg_image}
                     <AppLayoutChildren
                         className={className}
-                        header_className={header_className}
-                        header_name={header_name}
+                        Heading_className={Heading_className}
+                        Heading_name={Heading_name}
                         body_padding={body_padding}
                     >
                         {children}

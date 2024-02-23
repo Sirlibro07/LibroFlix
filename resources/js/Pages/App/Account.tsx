@@ -11,7 +11,7 @@ const Account = ({ status, has_verified_email }: AccountProps) => {
     const [currentOption, setCurrentOption] = useState("Profile");
 
     return (
-        <AppLayout head_title="Account" header_name="Account">
+        <AppLayout head_title="Account" Heading_name="Account">
             <AccountOptionsList
                 currentOption={currentOption}
                 setCurrentOption={setCurrentOption}

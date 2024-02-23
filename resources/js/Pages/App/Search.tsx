@@ -17,8 +17,8 @@ const Search = ({ movies, title }: SearchProps) => {
         return (
             <AppLayout
                 head_title="Search"
-                header_className="text-center mt-[2.375rem] mb-[3.75rem] lg:mt-[3.625rem] lg:mb-[4.375rem] lg:text-typescale_67px "
-                header_name={name}
+                Heading_className="text-center mt-[2.375rem] mb-[3.75rem] lg:mt-[3.625rem] lg:mb-[4.375rem] lg:text-typescale_67px "
+                Heading_name={name}
             >
                 <MoviesContext.Provider value={movies}>
                     {children}

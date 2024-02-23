@@ -2,7 +2,7 @@ import formSubmit from "@/Helpers/functions/form/formSubmit";
 import React, { useContext } from "react";
 import GeneralLink from "../Global/GeneralLink";
 import Button from "../Button/Button";
-import Header from "../Global/Header";
+import Heading from "../Global/Heading";
 import AuthLayoutContext from "@/Contexts/AuthLayoutContext";
 
 export default function AuthForm() {
@@ -21,7 +21,7 @@ export default function AuthForm() {
             }}
             className="auth_form w-full h-fit bg-black px-4 py-8 rounded-t-[1.875rem] lg:rounded-none lg:flex lg:flex-col lg:justify-center lg:px-12 lg:h-full lg:min-h-svh lg:w-[37.5rem]"
         >
-            <Header
+            <Heading
                 name={Context.name}
                 className="text-center lg:text-typescale_67px"
             />

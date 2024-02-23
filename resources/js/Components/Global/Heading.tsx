@@ -1,11 +1,11 @@
 import React from "react";
 
-interface HeaderProps {
+interface HeadingProps {
     name: string;
     className?: string;
 }
 
-const Header = ({ name, className = "" }: HeaderProps) => {
+const Heading = ({ name, className = "" }: HeadingProps) => {
     return (
         <h1
             className={`font-medium text-typescale_38px font-display ${className}`}
@@ -15,4 +15,4 @@ const Header = ({ name, className = "" }: HeaderProps) => {
     );
 };
 
-export default Header;
+export default Heading;

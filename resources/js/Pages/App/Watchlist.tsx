@@ -23,8 +23,8 @@ const Watchlist = ({ watchlist_items }: WatchlistProps) => {
     return (
         <AppLayout
             head_title="Watchlist"
-            header_name="Watchlist"
-            header_className="mb-5"
+            Heading_name="Watchlist"
+            Heading_className="mb-5"
         >
             <Grid movies={movies}></Grid>
         </AppLayout>
