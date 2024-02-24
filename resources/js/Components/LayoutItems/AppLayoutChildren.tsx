@@ -1,5 +1,5 @@
 import React, { ReactNode, useContext } from "react";
-import Heading from "../Global/Heading";
+import Heading from "./Heading";
 import NavbarContext from "@/Contexts/NavbarContext";
 
 export interface AppLayoutChildrenProps {

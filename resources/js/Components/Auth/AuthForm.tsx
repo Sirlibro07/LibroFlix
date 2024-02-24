@@ -2,7 +2,7 @@ import formSubmit from "@/Helpers/functions/form/formSubmit";
 import React, { useContext } from "react";
 import GeneralLink from "../Global/GeneralLink";
 import Button from "../Button/Button";
-import Heading from "../Global/Heading";
+import Heading from "../LayoutItems/Heading";
 import AuthLayoutContext from "@/Contexts/AuthLayoutContext";
 
 export default function AuthForm() {
