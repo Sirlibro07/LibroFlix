@@ -1,17 +1,15 @@
 import BackgroundImage from "@/Components/LayoutItems/BackgroundImage";
-import MovieContent, {
-    MovieContentProps,
-} from "@/Components/Movie/MovieContent";
+import MovieContent from "@/Components/Movie/MovieContent";
 import underscoreToSpace from "@/Helpers/functions/global/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 import MovieResourceType from "@/Helpers/Types/MovieResourceType";
 
-interface ShowProps extends Pick<MovieContentProps, "watchlisted"> {
+interface MovieProps {
     movie: MovieResourceType;
 }
 
-const Show = ({ movie, watchlisted }: ShowProps) => {
+const Movie = ({ movie }: MovieProps) => {
     const renderMovieContent = (children: ReactNode) => {
         return (
             <AppLayout
@@ -32,12 +30,6 @@ const Show = ({ movie, watchlisted }: ShowProps) => {
         );
     };
 
-    return (
-        <>
-            {renderMovieContent(
-                <MovieContent watchlisted={watchlisted} movie={movie.data} />
-            )}
-        </>
-    );
+    return <>{renderMovieContent(<MovieContent movie={movie.data} />)}</>;
 };
-export default Show;
+export default Movie;

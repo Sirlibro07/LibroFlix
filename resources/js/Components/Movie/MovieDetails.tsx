@@ -2,15 +2,14 @@ import React from "react";
 import MovieTitle from "./MovieTitle";
 import MovieInfo from "./MovieInfo";
 import MovieRating from "./MovieRating";
-import MovieLinks, { MovieLinksProps } from "./MovieLinks";
+import MovieLinks from "./MovieLinks";
 import MovieDescription from "./MovieDescription";
 import MovieType from "@/Helpers/Types/MovieType";
 
-export interface MovieDetailsProps
-    extends Pick<MovieLinksProps, "watchlisted"> {
+export interface MovieDetailsProps {
     movie: MovieType;
 }
-const MovieDetails = ({ movie, watchlisted }: MovieDetailsProps) => {
+const MovieDetails = ({ movie }: MovieDetailsProps) => {
     return (
         <div>
             <MovieTitle
@@ -19,7 +18,7 @@ const MovieDetails = ({ movie, watchlisted }: MovieDetailsProps) => {
             />
             <MovieInfo date={movie.year} />
             <MovieRating rating={movie.rating} className={"mb-6 md:mb-5"} />
-            <MovieLinks watchlisted={watchlisted} slug={movie.slug} />
+            <MovieLinks watchlisted={movie.watchlisted} slug={movie.slug} />
             <MovieDescription
                 description={movie.description}
                 className="max-w-[90ch]"

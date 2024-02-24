@@ -11,6 +11,8 @@ interface HomeProps {
 
 const Home = ({ movies }: HomeProps) => {
     const renderHomeContent = (children: ReactNode) => {
+        console.log(movies);
+
         return (
             <AppLayout
                 head_title="Home"

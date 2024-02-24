@@ -4,7 +4,7 @@ import MovieWatchlistForm, {
     MovieWatchlistFormProps,
 } from "./MovieWatchlistForm";
 
-export interface MovieLinksProps extends MovieWatchlistFormProps {}
+interface MovieLinksProps extends MovieWatchlistFormProps {}
 
 const MovieLinks = ({ slug, watchlisted }: MovieLinksProps) => {
     return (

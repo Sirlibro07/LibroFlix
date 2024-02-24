@@ -4,19 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use App\Services\MovieService;
-use App\Services\WatchlistItemService;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Response;
 
 class MovieController extends Controller
 {
     private MovieService $movie_service;
-    private WatchlistItemService $watchlist_item_service;
 
-    public function __construct(MovieService $movie_service, WatchlistItemService $watchlist_item_service)
+    public function __construct(MovieService $movie_service)
     {
         $this->movie_service = $movie_service;
-        $this->watchlist_item_service = $watchlist_item_service;
     }
 
     public function index(string $title = ''): Response
@@ -30,8 +27,7 @@ class MovieController extends Controller
     public function show(Movie $movie): Response
     {
         return $this->renderAppView('Movie', [
-            'movie' => $this->movie_service->movieSingleResource($movie),
-            'watchlisted' => $this->watchlist_item_service->isWatchlisted($movie),
+            'movie' => $this->movie_service->movieSingleResource($movie)
         ]);
     }
 

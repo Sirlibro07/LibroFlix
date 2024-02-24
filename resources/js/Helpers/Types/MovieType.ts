@@ -5,6 +5,7 @@ type MovieType = {
     description: string;
     rating: number;
     year: number;
+    watchlisted: boolean;
 };
 
 export default MovieType;
