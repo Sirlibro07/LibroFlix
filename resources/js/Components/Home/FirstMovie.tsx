@@ -6,6 +6,8 @@ import MovieTitle from "../Movie/MovieTitle";
 import MovieRating from "../Movie/MovieRating";
 import FirstMovieLinks from "./FirstMovieLinks";
 import MoviesContext from "@/Contexts/MoviesContext";
+import MoviePlayButton from "../Movie/MoviePlayButton";
+import MovieWatchlistForm from "../Movie/MovieWatchlistForm";
 
 const FirstMovie = () => {
     const forth_movie = useContext(MoviesContext).data[3];
@@ -29,8 +31,7 @@ const FirstMovie = () => {
                 description={forth_movie.description}
                 description_p={false}
             />
-
-            <FirstMovieLinks slug={forth_movie.slug} />
+            <MoviePlayButton slug={forth_movie.slug} />
         </div>
     );
 };
