@@ -5,7 +5,7 @@ import MovieDescription from "../Movie/MovieDescription";
 import MovieTitle from "../Movie/MovieTitle";
 import MovieRating from "../Movie/MovieRating";
 import MoviesContext from "@/Contexts/MoviesContext";
-import MovieActions from "../Movie/MovieActions";
+import Actions from "../Movie/Actions";
 
 const FirstMovie = () => {
     const movie = useContext(MoviesContext).data[3];
@@ -29,7 +29,11 @@ const FirstMovie = () => {
                 description={movie.description}
                 description_p={false}
             />
-            <MovieActions slug={movie.slug} watchlisted={movie.watchlisted} />
+            <Actions
+                button="learn"
+                watchlisted={movie.watchlisted}
+                slug={movie.slug}
+            />
         </div>
     );
 };

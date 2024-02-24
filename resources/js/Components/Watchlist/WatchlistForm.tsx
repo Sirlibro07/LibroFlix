@@ -1,19 +1,20 @@
-import React from "react";
-import ButtonWithIcon from "../Button/ButtonWithIcon";
-import { router } from "@inertiajs/react";
 import scrollToTop from "@/Helpers/functions/global/scrollToTop";
+import { router } from "@inertiajs/react";
+import React, { ReactNode } from "react";
 
-export interface MovieWatchlistFormProps {
+export interface WatchlistFormProps {
+    children: ReactNode;
     watchlisted: boolean;
     slug: string;
     className?: string;
 }
 
-const MovieWatchlistForm = ({
+const WatchlistForm = ({
+    children,
     watchlisted,
     slug,
     className = "",
-}: MovieWatchlistFormProps) => {
+}: WatchlistFormProps) => {
     const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -23,19 +24,11 @@ const MovieWatchlistForm = ({
 
         scrollToTop(400);
     };
-
     return (
         <form onSubmit={submitHandler} className={className}>
-            <ButtonWithIcon
-                type="submit"
-                className="bg-dark"
-                icon_type={watchlisted ? "solid" : "regular"}
-                icon_name="bookmark"
-            >
-                {watchlisted ? "in Watchlist" : "Add to Watchlist"}
-            </ButtonWithIcon>
+            {children}
         </form>
     );
 };
 
-export default MovieWatchlistForm;
+export default WatchlistForm;

@@ -15,7 +15,7 @@ const MovieLearnButton = ({ slug }: MovieLearnButtonProps) => {
             <ButtonWithIcon
                 icon_className="text-black hidden md:inline"
                 icon_type="solid"
-                icon_name="play"
+                icon_name="arrow-right"
             >
                 Learn more
             </ButtonWithIcon>

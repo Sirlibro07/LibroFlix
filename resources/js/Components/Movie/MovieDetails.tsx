@@ -2,10 +2,10 @@ import React from "react";
 import MovieTitle from "./MovieTitle";
 import MovieInfo from "./MovieInfo";
 import MovieRating from "./MovieRating";
-import MovieLinks from "./MovieLinks";
 import MovieDescription from "./MovieDescription";
 import MovieType from "@/Helpers/Types/MovieType";
-import MovieActions from "./MovieActions";
+import Actions from "./Actions";
+import WatchlistIconAction from "../Watchlist/WatchlistIconAction";
 
 export interface MovieDetailsProps {
     movie: MovieType;
@@ -13,13 +13,19 @@ export interface MovieDetailsProps {
 const MovieDetails = ({ movie }: MovieDetailsProps) => {
     return (
         <div>
-            <MovieTitle
-                title={movie.title}
-                className="text-typescale_33_px md:text-typescale-50px md:whitespace-normal"
-            />
+            <div className=" flex justify-between">
+                <MovieTitle
+                    title={movie.title}
+                    className="mr-4 text-typescale_33_px md:text-typescale-50px md:whitespace-normal"
+                />
+                <WatchlistIconAction
+                    slug={movie.slug}
+                    watchlisted={movie.watchlisted}
+                />
+            </div>
             <MovieInfo date={movie.year} />
             <MovieRating rating={movie.rating} className={"mb-6 md:mb-5"} />
-            <MovieActions
+            <Actions
                 button="play"
                 slug={movie.slug}
                 watchlisted={movie.watchlisted}

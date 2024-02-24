@@ -1,15 +1,15 @@
 import React from "react";
 import MoviePlayButton from "./MoviePlayButton";
-import MovieWatchlistForm, {
-    MovieWatchlistFormProps,
-} from "./MovieWatchlistForm";
+import WatchlistActionButton, {
+    WatchlistActionButtonProps,
+} from "../Watchlist/WatchlistActionButton";
 import MovieLearnButton from "./MovieLearnButton";
 
-interface MovieActionsProps extends MovieWatchlistFormProps {
+interface ActionsProps extends WatchlistActionButtonProps {
     button: "learn" | "play";
 }
 
-const MovieActions = ({ button, slug, watchlisted }: MovieActionsProps) => {
+const Actions = ({ button, slug, watchlisted }: ActionsProps) => {
     return (
         <div className="flex gap-2 lg:gap-3">
             {button == "play" ? (
@@ -21,7 +21,7 @@ const MovieActions = ({ button, slug, watchlisted }: MovieActionsProps) => {
             ) : (
                 <MovieLearnButton slug={slug} />
             )}
-            <MovieWatchlistForm
+            <WatchlistActionButton
                 watchlisted={watchlisted}
                 slug={slug}
                 className="hidden md:block"
@@ -30,4 +30,4 @@ const MovieActions = ({ button, slug, watchlisted }: MovieActionsProps) => {
     );
 };
 
-export default MovieActions;
+export default Actions;
