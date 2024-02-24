@@ -6,9 +6,14 @@ import scrollToTop from "@/Helpers/functions/global/scrollToTop";
 export interface MovieWatchlistFormProps {
     watchlisted: boolean;
     slug: string;
+    className?: string;
 }
 
-const MovieWatchlistForm = ({ watchlisted, slug }: MovieWatchlistFormProps) => {
+const MovieWatchlistForm = ({
+    watchlisted,
+    slug,
+    className = "",
+}: MovieWatchlistFormProps) => {
     const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -20,14 +25,14 @@ const MovieWatchlistForm = ({ watchlisted, slug }: MovieWatchlistFormProps) => {
     };
 
     return (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className={className}>
             <ButtonWithIcon
                 type="submit"
                 className="bg-dark"
                 icon_type={watchlisted ? "solid" : "regular"}
                 icon_name="bookmark"
             >
-                {watchlisted ? "Added to Watchlist" : "Add to Watchlist"}
+                {watchlisted ? "in Watchlist" : "Add to Watchlist"}
             </ButtonWithIcon>
         </form>
     );
