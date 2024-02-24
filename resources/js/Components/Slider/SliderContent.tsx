@@ -1,38 +1,3 @@
-// import React from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import { Pagination } from "swiper/modules";
-// import SliderCard from "./SliderCard";
-// import underscoreToSpace from "@/Helpers/functions/underscoreToSpace";
-// import MovieType from "@/Helpers/Types/MovieType";
-
-// export interface SliderContentProps {
-//     movies: MovieType[];
-// }
-
-// const SliderContent = ({ movies }: SliderContentProps) => {
-//     return (
-//         <Swiper
-//             slidesPerView={4.5}
-//             spaceBetween={16}
-//             modules={[Pagination]}
-//             className="cursor-grab"
-//         >
-//             {movies.map((movie) => (
-//                 <SwiperSlide key={movie.id}>
-//                     <SliderCard
-//                         thumbnail_path={underscoreToSpace(movie.title)}
-//                         title={movie.title}
-//                     />
-//                 </SwiperSlide>
-//             ))}
-//         </Swiper>
-//     );
-// };
-
-// export default SliderContent;
-
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
