@@ -24,8 +24,8 @@ const MovieWatchlistForm = ({ watchlisted, slug }: MovieWatchlistFormProps) => {
             <ButtonWithIcon
                 type="submit"
                 className="bg-dark"
-                icon_type="solid"
-                icon_name={watchlisted ? "bookmark" : "plus"}
+                icon_type={watchlisted ? "solid" : "regular"}
+                icon_name="bookmark"
             >
                 {watchlisted ? "Added to Watchlist" : "Add to Watchlist"}
             </ButtonWithIcon>
