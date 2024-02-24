@@ -1,4 +1,3 @@
-import scrollToTop from "@/Helpers/functions/global/scrollToTop";
 import { router } from "@inertiajs/react";
 import React, { ReactNode } from "react";
 
@@ -21,11 +20,14 @@ const WatchlistForm = ({
         watchlisted
             ? router.delete(route("watchlist_items.destroy", slug))
             : router.post(route("watchlist_items.store", slug));
-
-        scrollToTop(400);
     };
+
     return (
-        <form onSubmit={submitHandler} className={className}>
+        <form
+            id="watchlist-form"
+            onSubmit={submitHandler}
+            className={className}
+        >
             {children}
         </form>
     );
