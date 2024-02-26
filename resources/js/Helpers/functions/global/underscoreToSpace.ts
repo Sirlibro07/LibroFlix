@@ -1,4 +1,4 @@
-const underscoreToSpace = (title: string) => {
+const underscoreToSpace = (title: string): string => {
     return title.replace(/ /g, "_");
 };
 

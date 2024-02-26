@@ -1,6 +1,9 @@
 import { ErrorInfoType } from "@/Pages/Error/ErrorPage";
 
-const getError = (http_status_code: number, errors: ErrorInfoType[]) => {
+const getError = (
+    http_status_code: number,
+    errors: ErrorInfoType[]
+): ErrorInfoType => {
     const error_found = errors.find(
         (error) => error.http_status_code === http_status_code
     );

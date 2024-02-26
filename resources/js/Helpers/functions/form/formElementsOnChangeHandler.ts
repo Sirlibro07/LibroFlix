@@ -4,7 +4,7 @@ const formElementsOnChangeHandler = (
     e: ChangeEvent<HTMLInputElement>,
     property: string,
     setData: (PrevState: object) => void
-) => {
+): void => {
     setData((PrevState: object) => {
         const state =
             property === "remember"

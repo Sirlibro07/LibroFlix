@@ -1,4 +1,4 @@
-const imgStoragePath = (path: string) => {
+const imgStoragePath = (path: string): string => {
     return `/storage/images/${path}.webp`;
 };
 
