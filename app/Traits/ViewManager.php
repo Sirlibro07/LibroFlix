@@ -24,7 +24,7 @@ trait ViewManager
         $view_file_path = base_path('resources/js/Pages/' . $path . ".tsx");
 
         if (!File::exists($view_file_path)) {
-            abort(500);
+            abort(404);
         }
 
         return Inertia::render($path, $fields);
