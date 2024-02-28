@@ -5,8 +5,9 @@ Hi, thanks for visiting this project of mine. It's a Full Stack movie website ba
 ## Functionalities
 
 - Authentication such as login, register, email verification, and reset password.
-- Search
-- Watchlist
+- Movie Search
+- Dedicated Movie page
+- Watchlist store and delete
 - Account Crud
 
 
