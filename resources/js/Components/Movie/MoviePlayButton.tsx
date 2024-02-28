@@ -16,7 +16,7 @@ const MoviePlayButton = ({
     return (
         <Link
             href={route("movies.watch", slug)}
-            className={`bg_brand rounded-10 ${className}`}
+            className={`bg_brand rounded-10 button-hover ${className}`}
         >
             <ButtonWithIcon
                 icon_type="solid"
