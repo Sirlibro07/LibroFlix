@@ -6,7 +6,7 @@ namespace App\Traits;
 use Inertia\Inertia;
 use Inertia\Response;
 
-trait ViewRenderer
+trait ViewManager
 {
     public function renderAppView(string $page, array $fields = []): Response
     {
@@ -20,6 +20,7 @@ trait ViewRenderer
 
     public function renderInertia(string $path, array $fields = []): Response
     {
+
         return Inertia::render($path, $fields);
     }
 }
