@@ -96,6 +96,10 @@ input:-webkit-autofill {
     @apply h-[calc(100svh-5.625rem)];
 }
 
+.button-hover {
+    @apply transitions hover:px-8;
+}
+
 /* *::-webkit-scrollbar {
     display: none;
 } */

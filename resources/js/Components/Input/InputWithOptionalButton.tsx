@@ -47,7 +47,7 @@ const InputWithOptionalButton = ({
                 <Button
                     type={button_type}
                     onClick={button_onClickHandler}
-                    className="text-black bg-white px-4 rounded-l-[0]  transitions hover:px-8"
+                    className="text-black bg-white px-4 rounded-l-[0] button-hover"
                 >
                     {button_title}
                 </Button>
