@@ -1,4 +1,4 @@
-# MovieWikiApp
+# LibroFlix
 
 Hi, thanks for visiting this project. It's a Full Stack movie website based on my favourite show.
 
