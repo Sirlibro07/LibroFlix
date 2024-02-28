@@ -20,7 +20,7 @@ export default function Register() {
             route_name="register"
             button_title="Sign up"
             link_route_name="login"
-            link_title="have an account? Log in"
+            link_title="Have an account? Log in"
             processing={processing}
         >
             <FormInputField
