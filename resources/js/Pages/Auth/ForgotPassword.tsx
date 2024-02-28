@@ -5,7 +5,6 @@ import FormInputField from "@/Components/FormItems/FormInputField";
 import AuthSuccessMessage, {
     AuthSuccessMessageProps,
 } from "@/Components/Auth/AuthSuccessMessage";
-import alertMessage from "@/Helpers/functions/error/alertMessage";
 
 interface ForgotPasswordProps extends AuthSuccessMessageProps {}
 
@@ -13,8 +12,6 @@ export default function ForgotPassword({ status }: ForgotPasswordProps) {
     const { data, setData, post, processing, errors } = useForm({
         email: "",
     });
-
-    alertMessage();
 
     return (
         <AuthLayout
