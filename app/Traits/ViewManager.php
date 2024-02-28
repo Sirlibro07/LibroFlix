@@ -5,6 +5,7 @@ namespace App\Traits;
 
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Support\Facades\File;
 
 trait ViewManager
 {
@@ -18,8 +19,13 @@ trait ViewManager
         return $this->renderInertia('Auth/' . $page, $fields);
     }
 
-    public function renderInertia(string $path, array $fields = []): Response
+    private function renderInertia(string $path, array $fields = []): Response
     {
+        $view_file_path = base_path('resources/js/Pages/' . $path . ".tsx");
+
+        if (!File::exists($view_file_path)) {
+            abort(500);
+        }
 
         return Inertia::render($path, $fields);
     }
