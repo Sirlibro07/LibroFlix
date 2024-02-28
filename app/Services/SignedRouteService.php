@@ -9,6 +9,6 @@ class SignedRouteService
 {
     function signedRoute(string $route, Carbon $ttl, string $email, string $token): string
     {
-        return URL::temporarySignedRoute($route, $ttl, ['email' => $email, 'token' => $token]);
+        return URL::temporarySignedRoute($route, $ttl, ['user' => $email, 'token' => $token]);
     }
 }
