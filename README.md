@@ -15,10 +15,7 @@ Hi, thanks for visiting this project of mine. It's a Full Stack movie website ba
 
 - MVC
 - Service pattern
-- Dependency injection 
-## Rename a file
-
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
+- Dependency injection
 
 ## Stack
 
