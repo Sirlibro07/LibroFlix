@@ -17,7 +17,9 @@ class MovieService
 
     public function getMoviesBySearch(string $title): AnonymousResourceCollection
     {
-        $movies = $this->queryMoviesByTokens($title);
+        $tokens = explode(' ', $title);
+        $movies = Movie::getByTokens($tokens)->get();
+
 
         return $this->movieCollection($movies);
     }
@@ -30,16 +32,5 @@ class MovieService
     public function movieCollection($movies): AnonymousResourceCollection
     {
         return MovieResource::collection($movies);
-    }
-
-    public function queryMoviesByTokens(string $title): Collection
-    {
-        $tokens = explode(' ', $title);
-
-        return Movie::where(function (Builder $query) use ($tokens) {
-            foreach ($tokens as $token) {
-                $query->orWhere('title', 'like', $token . '%');
-            }
-        })->get();
     }
 }
