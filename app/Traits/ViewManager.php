@@ -21,12 +21,17 @@ trait ViewManager
 
     private function renderInertia(string $path, array $fields = []): Response
     {
+        $this->viewFilePathCheck($path);
+
+        return Inertia::render($path, $fields);
+    }
+
+    private function viewFilePathCheck(string $path): void
+    {
         $view_file_path = base_path('resources/js/Pages/' . $path . ".tsx");
 
         if (!File::exists($view_file_path)) {
             abort(404);
         }
-
-        return Inertia::render($path, $fields);
     }
 }
