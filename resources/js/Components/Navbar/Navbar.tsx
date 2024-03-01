@@ -11,7 +11,7 @@ const Navbar = () => {
             <nav
                 className={`body-padding relative h-navbar_height flex  items-center justify-between ${
                     border &&
-                    "border-b border-grey border-solid lg:justify-between "
+                    "border-b border-grey border-solid lg:justify-between"
                 }`}
             >
                 <NavbarContent />
