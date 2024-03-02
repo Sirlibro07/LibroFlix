@@ -27,7 +27,7 @@ class MovieController extends Controller
     public function show(Movie $movie): Response
     {
         return $this->renderAppView('Movie', [
-            'movie' => $this->movie_service->movieSingleResource($movie)
+            'movie' => $this->movie_service->movieResource($movie)
         ]);
     }
 

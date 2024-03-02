@@ -10,7 +10,7 @@ class MovieService
 {
     public function getAllMovies(): AnonymousResourceCollection
     {
-        return $this->movieCollection(Movie::all());
+        return $this->movieResourceCollection(Movie::all());
     }
 
     public function getMoviesBySearch(string $title): AnonymousResourceCollection
@@ -19,15 +19,15 @@ class MovieService
         $movies = Movie::getByTokens($tokens)->get();
 
 
-        return $this->movieCollection($movies);
+        return $this->movieResourceCollection($movies);
     }
 
-    public function movieSingleResource(Movie $movie): MovieResource
+    public function movieResource(Movie $movie): MovieResource
     {
         return MovieResource::make($movie);
     }
 
-    public function movieCollection($movies): AnonymousResourceCollection
+    public function movieResourceCollection($movies): AnonymousResourceCollection
     {
         return MovieResource::collection($movies);
     }
