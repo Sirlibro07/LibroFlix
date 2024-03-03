@@ -16,7 +16,7 @@ class MovieService
     public function getMoviesBySearch(string $title): AnonymousResourceCollection
     {
         $tokens = explode(' ', $title);
-        $movies = Movie::getByTokens($tokens)->get();
+        $movies = Movie::SearchByTokens($tokens)->get();
 
 
         return $this->movieResourceCollection($movies);

@@ -15,7 +15,8 @@ class Movie extends Model
         return $this->belongsToMany(User::class, 'watchlist_items');
     }
 
-    public function scopeGetByTokens(Builder $query, array $tokens): Builder
+
+    public function scopeSearchByTokens(Builder $query, array $tokens): Builder
     {
         return $query->where(function (Builder $query) use ($tokens) {
             foreach ($tokens as $token) {
