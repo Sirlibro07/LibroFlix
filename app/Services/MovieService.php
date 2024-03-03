@@ -10,7 +10,7 @@ class MovieService
 {
     public function getAllMovies(): AnonymousResourceCollection
     {
-        return $this->movieResourceCollection(Movie::all());
+        return MovieResource::collection(Movie::all());
     }
 
     public function getMoviesBySearch(string $title): AnonymousResourceCollection
@@ -18,17 +18,6 @@ class MovieService
         $tokens = explode(' ', $title);
         $movies = Movie::SearchByTokens($tokens)->get();
 
-
-        return $this->movieResourceCollection($movies);
-    }
-
-    public function movieResource(Movie $movie): MovieResource
-    {
-        return MovieResource::make($movie);
-    }
-
-    public function movieResourceCollection($movies): AnonymousResourceCollection
-    {
         return MovieResource::collection($movies);
     }
 }

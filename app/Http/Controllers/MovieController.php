@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\MovieResource;
 use App\Models\Movie;
 use App\Services\MovieService;
 use Illuminate\Support\Facades\Auth;
@@ -27,7 +28,7 @@ class MovieController extends Controller
     public function show(Movie $movie): Response
     {
         return $this->renderAppView('Movie', [
-            'movie' => $this->movie_service->movieResource($movie)
+            'movie' => MovieResource::make($movie),
         ]);
     }
 
