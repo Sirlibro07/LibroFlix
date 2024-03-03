@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class EmailVerificationService extends SendEmailService
 {
+    private SignedRouteService $signed_route_service;
+
+    public function __construct(SignedRouteService $signed_route_service)
+    {
+        $this->signed_route_service = $signed_route_service;
+    }
+
     public function SendEmail(string $email): void
     {
         $user = User::where('email', $email)->first();
@@ -32,6 +39,6 @@ class EmailVerificationService extends SendEmailService
 
     public function signedEmailVerificationRoute(User $user): string
     {
-        return (new SignedRouteService)->signedRoute('verification.verify', now()->addHour(), $user->email, $user->email_verification_token);
+        return $this->signed_route_service->signedRoute('verification.verify', now()->addHour(), $user->email, $user->email_verification_token);
     }
 }
