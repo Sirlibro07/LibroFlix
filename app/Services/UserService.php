@@ -9,14 +9,19 @@ use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
+    private TokenService $token_service;
+
+    public function __construct(TokenService $token_service)
+    {
+        $this->token_service = $token_service;
+    }
+
     public function store(array $data): void
     {
-        $user = User::create([
+        $user = User::factory()->create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'email_verification_token' => (new TokenService)->generateToken(),
-
         ]);
 
         Auth::login($user);
@@ -31,7 +36,7 @@ class UserService
 
         if ($user->isDirty('email')) {
             $user->email_verified_at = null;
-            $user->email_verification_token = (new TokenService)->generateToken();
+            $user->email_verification_token = $this->token_service->generateToken();
         }
 
         $user->save();
