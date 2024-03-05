@@ -4,16 +4,12 @@ namespace App\Services;
 
 use App\Mail\VerificationEmail;
 use App\Models\User;
+use App\Traits\AuthSignedRoute;
 use Illuminate\Support\Facades\Auth;
 
 class EmailVerificationService extends SendEmailService
 {
-    private SignedRouteService $signed_route_service;
-
-    public function __construct(SignedRouteService $signed_route_service)
-    {
-        $this->signed_route_service = $signed_route_service;
-    }
+    use AuthSignedRoute;
 
     public function SendEmail(string $email): void
     {
@@ -39,6 +35,6 @@ class EmailVerificationService extends SendEmailService
 
     public function signedEmailVerificationRoute(User $user): string
     {
-        return $this->signed_route_service->signedRoute('verification.verify', now()->addHour(), $user->email, $user->email_verification_token);
+        return $this->getAuthSignedRoute('verification.verify', now()->addHour(), $user->email, $user->email_verification_token);
     }
 }
