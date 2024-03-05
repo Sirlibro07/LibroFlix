@@ -9,7 +9,7 @@ class AuthenticatedSessionService
 {
     public function store(array $credentials, bool $remember_me): void
     {
-        if (!Auth::attempt($credentials, (bool) $remember_me)) {
+        if (!Auth::attempt($credentials, $remember_me)) {
             throw new AuthenticationException();
         }
 
