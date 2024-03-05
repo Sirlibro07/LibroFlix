@@ -4,14 +4,15 @@ namespace App\Services;
 
 use App\Mail\PasswordResetEmail;
 use App\Models\User;
-use App\Traits\AuthSignedRoute;
-use App\Traits\AuthToken;
+use App\Traits\SignedRouteManager;
+use App\Traits\TokenManager;
+use App\Traits\EmailManager;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
-class PasswordResetService extends SendEmailService
+class PasswordResetService
 {
-    use AuthToken, AuthSignedRoute;
+    use TokenManager, SignedRouteManager, EmailManager;
 
     public function sendEmail(string $email): void
     {
@@ -36,7 +37,7 @@ class PasswordResetService extends SendEmailService
 
     public function signedPasswordResetRoute(User $user): string
     {
-        return $this->getAuthSignedRoute('password.reset', now()->addHour(), $user->email, $user->password_reset_token);
+        return $this->getSignedRouteManager('password.reset', now()->addHour(), $user->email, $user->password_reset_token);
     }
 
     public function isTokenValid(string $user_password_reset_token = null, string $token): bool

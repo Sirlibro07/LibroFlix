@@ -5,7 +5,7 @@ namespace App\Traits;
 
 use Illuminate\Support\Str;
 
-trait AuthToken
+trait TokenManager
 {
     public function getToken()
     {

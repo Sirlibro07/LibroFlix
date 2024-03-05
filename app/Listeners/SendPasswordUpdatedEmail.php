@@ -6,20 +6,18 @@ use App\Events\PasswordUpdated;
 use App\Mail\PasswordUpdatedEmail;
 use App\Models\User;
 use App\Services\PasswordResetService;
-use App\Services\SendEmailService;
-use App\Traits\AuthSignedRoute;
+use App\Traits\SignedRouteManager;
+use App\Traits\EmailManager;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class SendPasswordUpdatedEmail implements ShouldQueue
 {
-    use AuthSignedRoute;
+    use SignedRouteManager, EmailManager;
 
-    public SendEmailService $send_email_service;
     public PasswordResetService $password_reset_service;
 
-    public function __construct(SendEmailService $send_email_service, PasswordResetService $password_reset_service)
+    public function __construct(PasswordResetService $password_reset_service)
     {
-        $this->send_email_service = $send_email_service;
         $this->password_reset_service = $password_reset_service;
     }
 
@@ -32,8 +30,8 @@ class SendPasswordUpdatedEmail implements ShouldQueue
 
         $this->password_reset_service->generateAndStorePasswordResetToken($user);
 
-        $signed_route = $this->getAuthSignedRoute('password.reset', now()->addHour(), $user->email, $user->password_reset_token);
+        $signed_route = $this->getSignedRouteManager('password.reset', now()->addHour(), $user->email, $user->password_reset_token);
 
-        $this->send_email_service->sendEmailAsJob(new PasswordUpdatedEmail($signed_route, $user->email));
+        $this->sendEmailAsJob(new PasswordUpdatedEmail($signed_route, $user->email));
     }
 }

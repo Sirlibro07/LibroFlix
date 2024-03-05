@@ -3,14 +3,14 @@
 namespace App\Services;
 
 use App\Models\User;
-use App\Traits\AuthToken;
+use App\Traits\TokenManager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
 
-    use AuthToken;
+    use TokenManager;
 
     public function store(array $data): void
     {
