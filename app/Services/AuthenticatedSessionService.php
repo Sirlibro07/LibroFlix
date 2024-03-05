@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class AuthenticatedSessionService
 {
@@ -18,10 +19,6 @@ class AuthenticatedSessionService
 
     public function destroy(): void
     {
-        $user = Auth::user();
-        $user->remember_token = null;
-        $user->save();
-
         Auth::logout();
         session()->invalidate();
         session()->regenerateToken();
