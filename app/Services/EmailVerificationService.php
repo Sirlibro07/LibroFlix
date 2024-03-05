@@ -11,7 +11,7 @@ class EmailVerificationService extends SendEmailService
 {
     use AuthSignedRoute;
 
-    public function SendEmail(string $email): void
+    public function sendEmail(string $email): void
     {
         $user = User::where('email', $email)->first();
         if (!$user->hasVerifiedEmail()) {
