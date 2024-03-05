@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthenticatedSessionService
 {
-    public function store(array $data, $rememberBool): void
+    public function store(array $credentials, bool $remember_me): void
     {
-        if (!Auth::attempt($data, (bool) $rememberBool)) {
+        if (!Auth::attempt($credentials, (bool) $remember_me)) {
             throw new AuthenticationException();
         }
 
