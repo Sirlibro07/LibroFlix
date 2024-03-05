@@ -3,18 +3,14 @@
 namespace App\Services;
 
 use App\Models\User;
-use App\Services\TokenService;
+use App\Traits\AuthToken;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
-    private TokenService $token_service;
 
-    public function __construct(TokenService $token_service)
-    {
-        $this->token_service = $token_service;
-    }
+    use AuthToken;
 
     public function store(array $data): void
     {
@@ -36,7 +32,7 @@ class UserService
 
         if ($user->isDirty('email')) {
             $user->email_verified_at = null;
-            $user->email_verification_token = $this->token_service->generateToken();
+            $user->email_verification_token = $this->getToken();
         }
 
         $user->save();

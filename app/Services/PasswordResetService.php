@@ -4,17 +4,18 @@ namespace App\Services;
 
 use App\Mail\PasswordResetEmail;
 use App\Models\User;
+use App\Traits\AuthToken;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class PasswordResetService extends SendEmailService
 {
-    private TokenService $token_service;
+    use AuthToken;
+
     private SignedRouteService $signed_route_service;
 
-    public function __construct(TokenService $token_service, SignedRouteService $signed_route_service)
+    public function __construct(SignedRouteService $signed_route_service)
     {
-        $this->token_service = $token_service;
         $this->signed_route_service = $signed_route_service;
     }
 
@@ -35,7 +36,7 @@ class PasswordResetService extends SendEmailService
 
     public function generateAndStorePasswordResetToken(User $user): void
     {
-        $user->password_reset_token =  $this->token_service->generateToken();
+        $user->password_reset_token =  $this->getToken();
         $user->save();
     }
 

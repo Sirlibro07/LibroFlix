@@ -2,16 +2,16 @@
 
 namespace Database\Factories;
 
-use App\Services\TokenService;
+use App\Traits\AuthToken;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
 class UserFactory extends Factory
 {
+    use AuthToken;
 
     /**
      * The current password being used by the factory.
@@ -29,7 +29,7 @@ class UserFactory extends Factory
             'name' => $this->faker->sentence(),
             'email' => $this->faker->email(),
             'password' => static::$password ??= Hash::make('password'),
-            'email_verification_token' => (new TokenService)->generateToken(),
+            'email_verification_token' => $this->getToken(),
         ];
     }
 
