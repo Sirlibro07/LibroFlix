@@ -18,10 +18,13 @@ class Movie extends Model
 
     public function scopeSearchByTokens(Builder $query, array $tokens): Builder
     {
-        return $query->where(function (Builder $query) use ($tokens) {
-            foreach ($tokens as $token) {
-                $query->orWhere('title', 'like', $token . '%');
+        foreach ($tokens as $i => $token) {
+            if ($i === 0) {
+                $query->where('title', 'like', $token . '%');
+                continue;
             }
-        });
+            $query->orWhere('title', 'like', $token . '%');
+        }
+        return $query;
     }
 }
