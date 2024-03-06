@@ -15,7 +15,8 @@ Hi, thanks for visiting this project. It's a Full Stack movie website based on m
 ## Patterns Used
 
 - MVC
-- Service pattern
+- Factory
+- Service
 - Dependency injection
 
 ## Stack
