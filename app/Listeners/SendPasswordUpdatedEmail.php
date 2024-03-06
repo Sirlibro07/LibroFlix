@@ -30,7 +30,7 @@ class SendPasswordUpdatedEmail implements ShouldQueue
 
         $this->password_reset_service->generateAndStorePasswordResetToken($user);
 
-        $signed_route = $this->getSignedRouteManager('password.reset', now()->addHour(), $user->email, $user->password_reset_token);
+        $signed_route = $this->getAuthSignedRoute('password.reset', now()->addHour(), $user->email, $user->password_reset_token);
 
         $this->sendEmailAsJob(new PasswordUpdatedEmail($signed_route, $user->email));
     }

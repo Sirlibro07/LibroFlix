@@ -36,6 +36,6 @@ class EmailVerificationService
 
     public function signedEmailVerificationRoute(User $user): string
     {
-        return $this->getSignedRouteManager('verification.verify', now()->addHour(), $user->email, $user->email_verification_token);
+        return $this->getAuthSignedRoute('verification.verify', now()->addHour(), $user->email, $user->email_verification_token);
     }
 }

@@ -9,12 +9,8 @@ use Illuminate\Support\Facades\URL;
 
 trait SignedRouteManager
 {
-    function getSignedRouteManager(string $route, Carbon $ttl, string $email, string $token): string
+    function getAuthSignedRoute(string $route, Carbon $ttl, string $email, string $token): string
     {
-        $url = URL::temporarySignedRoute($route, $ttl, ['user' => $email, 'token' => $token]);
-        if (app()->environment(['local', 'testing'])) {
-            Log::info('signed route: ' . $url);
-        }
-        return $url;
+        return URL::temporarySignedRoute($route, $ttl, ['user' => $email, 'token' => $token]);
     }
 }
