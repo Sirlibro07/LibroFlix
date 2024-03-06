@@ -20,7 +20,7 @@ Hi, thanks for visiting this project. It's a Full Stack movie website based on m
 - Dependency injection
 
 ## Stack
-
+- Docker
 - Back End done in Laravel + MySql
 - Front End done in React SSR rendered by Laravel
 
