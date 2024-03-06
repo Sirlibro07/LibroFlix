@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Traits\AuthToken;
+use App\Traits\TokenManager;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
  */
 class UserFactory extends Factory
 {
-    use AuthToken;
+    use TokenManager;
 
     /**
      * The current password being used by the factory.
@@ -31,15 +31,5 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password'),
             'email_verification_token' => $this->getToken(),
         ];
-    }
-
-    /**
-     * Indicate that the model's email address should be unverified.
-     */
-    public function unverified(): static
-    {
-        return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
-        ]);
     }
 }
