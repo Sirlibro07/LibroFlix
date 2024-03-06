@@ -17,13 +17,13 @@ class MovieFactory extends Factory
      */
     public function definition(): array
     {
-        $title = fake()->sentence();
+        $title = $this->faker->sentence();
         return [
             'title' => $title,
             'slug' => Str::slug($title),
-            'description' => fake()->paragraph(),
-            'rating' => fake()->randomFloat(1, 0, 5),
-            'year' => fake()->year(),
+            'description' => $this->faker->paragraph(),
+            'rating' => $this->faker->randomFloat(1, 0, 5),
+            'year' => $this->faker->year(),
         ];
     }
 }
