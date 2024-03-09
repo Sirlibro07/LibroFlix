@@ -23,7 +23,7 @@ const ResetPasswordContent = ({ token, email }: ResetPasswordContentProps) => {
             head_title="Reset Password"
             name="Reset Password"
             method_function={post}
-            route_name="password.store"
+            route_name="password_reset.store"
             button_title="Reset Password"
             processing={processing}
         >

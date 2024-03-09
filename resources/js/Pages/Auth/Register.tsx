@@ -17,9 +17,9 @@ export default function Register() {
             head_title="Sign Up"
             name="Sign Up"
             method_function={post}
-            route_name="register"
+            route_name="register.store"
             button_title="Sign up"
-            link_route_name="login"
+            link_route_name="login.create"
             link_title="Have an account? Log in"
             processing={processing}
         >

@@ -10,7 +10,7 @@ const ResetPasswordInvalidToken = () => {
             title={"Token Invalid"}
             message={`the token could be invalid or expired time ago, please try again`}
             link_title={"Try again"}
-            link_route_name={"password.request"}
+            link_route_name={"password_reset_email.create"}
         />
     );
 };

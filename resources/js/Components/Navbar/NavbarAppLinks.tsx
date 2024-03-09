@@ -16,7 +16,7 @@ const NavbarAppLinks = ({ isLoggedIn }: NavbarAppLinksProps) => {
         routes.push(
             {
                 name: "Watchlist",
-                route: "watchlists_items.index",
+                route: "watchlist_items.index",
                 pathname: "watchlist",
             },
             {

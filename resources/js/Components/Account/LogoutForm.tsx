@@ -6,7 +6,7 @@ const LogoutForm = () => {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        router.post(route("logout"));
+        router.post(route("logout.store"));
     };
 
     return (

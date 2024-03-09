@@ -23,9 +23,9 @@ export default function Login({ status }: LoginProps) {
             head_title="Log In"
             name="Log In"
             method_function={post}
-            route_name="login"
+            route_name="login.store"
             button_title="Log in"
-            link_route_name="register"
+            link_route_name="register.create"
             link_title="Don't have an account? Sign up"
             processing={processing}
         >
@@ -53,7 +53,7 @@ export default function Login({ status }: LoginProps) {
                     setData={setData}
                 />
                 <GeneralLink
-                    route_name="password.request"
+                    route_name="password_reset_email.create"
                     className="auth_label_link text-end"
                 >
                     Lost password?

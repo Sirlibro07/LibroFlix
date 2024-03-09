@@ -20,7 +20,7 @@ export default function ForgotPassword({ status }: ForgotPasswordProps) {
             head_title="Forgot Password"
             name="Recover Password"
             method_function={post}
-            route_name="password.email"
+            route_name="password_reset_email.store"
             button_title="Send Recovery Email"
             processing={processing}
         >

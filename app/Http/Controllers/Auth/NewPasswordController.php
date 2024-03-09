@@ -45,7 +45,7 @@ class NewPasswordController extends Controller
 
         if ($user->password_reset_token == $request->input('token')) {
             $this->password_reset_service->resetPassword($user, $request->input('password'));
-            return redirect()->route('login')->with('status', 'password updated');
+            return redirect()->route('login.create')->with('status', 'password updated');
         }
 
         return redirect()->back()->withErrors('token', 'the token is not valid anymore');

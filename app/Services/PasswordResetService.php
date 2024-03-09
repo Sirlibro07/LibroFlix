@@ -37,7 +37,7 @@ class PasswordResetService
 
     public function signedPasswordResetRoute(User $user): string
     {
-        return $this->getAuthSignedRoute('password.reset', now()->addHour(), $user->email, $user->password_reset_token);
+        return $this->getAuthSignedRoute('password_reset.create', now()->addHour(), $user->email, $user->password_reset_token);
     }
 
     public function isTokenValid(string $user_password_reset_token = null, string $token): bool

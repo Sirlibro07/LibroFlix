@@ -22,7 +22,7 @@ const UpdateProfileInformation = ({
         });
 
         const buttonOnClickhandler = () => {
-            router.post(route("verification.send"));
+            router.post(route("email_verification_notification.store"));
         };
 
         return (
