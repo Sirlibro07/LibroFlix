@@ -41,7 +41,7 @@ class ProfileControllerTest extends TestCase
     /**
      * @dataProvider invalidNameAndEmailData
      */
-    public function test_update_redirects_back_with_error_message_for_authenticated_user_with_incorrect_form_data($invalid_data, $invalid_fields)
+    public function test_update_redirects_back_with_errors_for_authenticated_user_with_incorrect_form_data($invalid_data, $invalid_fields)
     {
         // Arrange
         $user = User::factory()->create();
@@ -87,12 +87,10 @@ class ProfileControllerTest extends TestCase
     /**
      * @dataProvider invalidPasswordData
      */
-    public function test_destroy_redirects_back_with_error_message_for_authenticated_user_with_incorrect_password($invalid_password)
+    public function test_destroy_redirects_back_with_errors_for_authenticated_user_with_incorrect_password(string $invalid_password)
     {
         // Arrange
         $user = User::factory()->create();
-
-        Log::info($invalid_password);
 
         // Act
         $response = $this->actingAs($user)
