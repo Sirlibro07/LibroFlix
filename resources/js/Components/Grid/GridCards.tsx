@@ -3,8 +3,7 @@ import React from "react";
 import GridCard, { GridCardProps } from "./GridCard";
 import underscoreToSpace from "@/Helpers/functions/global/underscoreToSpace";
 
-export interface GridCardsProps
-    extends Omit<GridCardProps, "thumbnail_path" | "title" | "slug"> {
+export interface GridCardsProps {
     movies: MovieType[];
 }
 
