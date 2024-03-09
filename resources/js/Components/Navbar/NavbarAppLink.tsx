@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GeneralLink from "../Global/GeneralLink";
+import useWindowResize from "@/Hooks/useWindowResize";
 
 interface NavbarAppLinkProps {
     link: {
@@ -10,19 +11,8 @@ interface NavbarAppLinkProps {
 }
 
 const NavbarAppLink = ({ link }: NavbarAppLinkProps) => {
-    const [width, setWidth] = useState(window.innerWidth);
+    const width = useWindowResize();
 
-    useEffect(() => {
-        const handleWindowResize = () => {
-            setWidth(window.innerWidth);
-        };
-
-        window.addEventListener("resize", handleWindowResize);
-
-        return () => {
-            window.removeEventListener("resize", handleWindowResize);
-        };
-    }, []);
     return (
         <li className=" ml-[-0.5rem] flex items-center lg:ml-0 ">
             <div className="w-4 h-4 mr-3 rounded-full bg_brand lg:hidden"></div>
