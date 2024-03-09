@@ -1,10 +1,9 @@
 <?php
 
-namespace Tests\Feature;
+namespace Auth;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Log;
 use Tests\TestCase;
 
 class RegisterUserControllerTest extends TestCase
