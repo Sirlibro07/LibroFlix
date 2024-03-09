@@ -2,16 +2,18 @@
 
 namespace App\Traits;
 
-use App\Jobs\SendEmailJob;
 use Illuminate\Mail\Mailable;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 trait EmailManager
 {
     public function sendEmailAsJob(Mailable $mail): void
     {
-        if (!app()->environment(['local', 'testing'])) {
-            abort(500); // had to do this bc I don't have an actual email infrastructure/provider/plan
+        try {
+            Mail::send($mail);
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
         }
-        SendEmailJob::dispatch($mail);
     }
 }
