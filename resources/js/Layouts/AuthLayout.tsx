@@ -56,7 +56,7 @@ const AuthLayout = ({
                     <BackgroundImage
                         picture_classes="h-full"
                         folder_name={folder_name}
-                        img_classes={`object-top lg:object-bottom ${img_classes}`}
+                        img_classes={`object-top lg:object-bottom ${img_classes} brightness-[80%]`}
                     />
                     <AuthLayoutChildren />
                 </>
