@@ -19,6 +19,6 @@ class EmailVerificationNotificationController extends Controller
     {
         $this->email_verification_service->sendEmail(Auth::user()->email);
 
-        return back()->with("status", "email verification sent, it could take some seconds for it to arrive");
+        return back()->with("status", $this->email_verification_service->getEmailSentMessage('email verification'));
     }
 }

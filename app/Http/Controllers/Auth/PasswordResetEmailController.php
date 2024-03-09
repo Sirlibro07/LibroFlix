@@ -36,6 +36,6 @@ class PasswordResetEmailController extends Controller
     {
         $this->password_reset_service->sendEmail($request->input('email'));
 
-        return back()->with('status', 'password reset email sent, it could take some seconds for the email to arrive.');
+        return back()->with('status', $this->password_reset_service->getEmailSentMessage('password reset email'));
     }
 }

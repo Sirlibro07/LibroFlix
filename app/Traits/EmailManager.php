@@ -16,4 +16,9 @@ trait EmailManager
             Log::info($e->getMessage());
         }
     }
+
+    public function getEmailSentMessage(string $email_name)
+    {
+        return $email_name . ' sent, it could take some minutes to arrive.';
+    }
 }
