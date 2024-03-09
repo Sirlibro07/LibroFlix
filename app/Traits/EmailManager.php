@@ -17,7 +17,7 @@ trait EmailManager
         }
     }
 
-    public function getEmailSentMessage(string $email_name)
+    public function getEmailSentMessage(string $email_name): string
     {
         return $email_name . ' sent, it could take some minutes to arrive.';
     }
