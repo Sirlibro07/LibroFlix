@@ -17,19 +17,11 @@ class RegisterUserController extends Controller
         $this->user_service = $user_service;
     }
 
-    /**
-     * Display the registration view.
-     */
     public function create(): Response
     {
         return $this->renderAuthView("Register");
     }
 
-    /**
-     * Handle an incoming registration request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
     public function store(RegisterRequest $request): RedirectResponse
     {
         $this->user_service->store($request->validated());
