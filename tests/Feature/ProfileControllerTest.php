@@ -79,7 +79,7 @@ class ProfileControllerTest extends TestCase
 
     public function test_destroy_redirects_to_login_for_guest_user()
     {
-        $response = $this->patch(route('profile.destroy'));
+        $response = $this->delete(route('profile.destroy'));
 
         $this->assertRedirectsToLogin($response);
     }
