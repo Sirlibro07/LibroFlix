@@ -4,23 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\MovieResource;
 use App\Models\Movie;
-use App\Services\MovieService;
+use App\Repositories\MovieRepository;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Response;
 
 class MovieController extends Controller
 {
-    private MovieService $movie_service;
+    private MovieRepository $movie_repository;
 
-    public function __construct(MovieService $movie_service)
+    public function __construct(MovieRepository $movie_repository)
     {
-        $this->movie_service = $movie_service;
+        $this->movie_repository = $movie_repository;
     }
 
     public function index(string $title = ''): Response
     {
         return $this->renderAppView('Search', [
-            'movies' => $this->movie_service->getMoviesBySearch($title),
+            'movies' => $this->movie_repository->getMoviesBySearch($title),
             'title' => $title,
         ]);
     }

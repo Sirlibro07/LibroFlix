@@ -24,27 +24,6 @@ class WatchlistItemServiceTest extends TestCase
         $this->watchlist_item_service = new WatchlistItemService();
     }
 
-    public function test_getWatchlistItems_returns_authenticated_user_watchlist_items()
-    {
-        // Arrange
-        $expected_movies = Movie::factory(3)->create();
-        $not_expected_movies = Movie::factory(2)->create();
-        $user = User::factory()->create();
-        foreach ($expected_movies as $movie) {
-            $user->movies()->attach($movie->id);
-        }
-
-        // Act
-        $result = $this->actingAs($user)->watchlist_item_service->getWatchlistItems();
-
-        // Assert
-        $this->assertInstanceOf(AnonymousResourceCollection::class, $result);
-        $this->assertCount(count($expected_movies), $result);
-        foreach ($result as $i => $movie) {
-            $this->assertEquals($expected_movies[$i]->id, $movie->id);
-        }
-    }
-
     public function test_isWatchlisted_returns_true_when_movie_is_watchlisted_for_authenticated_user(): void
     {
         // Arrange

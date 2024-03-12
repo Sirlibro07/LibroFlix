@@ -1,24 +1,24 @@
 <?php
 
-namespace Tests\Unit\Services;
+namespace Tests\Unit\Repositories;
 
 use App\Models\Movie;
-use App\Services\MovieService;
+use App\Repositories\MovieRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Illuminate\Support\Facades\Log;
 use Tests\TestCase;
 
-class MovieServiceTest extends TestCase
+class MovieRepositoryTest extends TestCase
 {
     use RefreshDatabase;
-    private MovieService $movie_service;
+    private MovieRepository $movie_repository;
 
     protected function setUp(): void
     {
         parent::setUp();
-        $this->movie_service = new MovieService();
+
+        $this->movie_repository  = new MovieRepository();
     }
 
     public function test_getAllMovies_returns_all_movies(): void
@@ -27,7 +27,7 @@ class MovieServiceTest extends TestCase
         $expected_movies = Movie::factory(5)->create();
 
         // Act
-        $result = $this->movie_service->getAllMovies($expected_movies);
+        $result = $this->movie_repository->getAllMovies($expected_movies);
 
         // Assert
         $this->assertMoviesMatchExpected($expected_movies, $result);
@@ -47,7 +47,7 @@ class MovieServiceTest extends TestCase
         $search_query = implode(' ', $tokens);
 
         // Act
-        $result = $this->movie_service->getMoviesBySearch($search_query);
+        $result = $this->movie_repository->getMoviesBySearch($search_query);
 
         // Assert
         $this->assertMoviesMatchExpected($expected_movies, $result);
@@ -60,7 +60,7 @@ class MovieServiceTest extends TestCase
         $search_query = '';
 
         // Act
-        $result = $this->movie_service->getMoviesBySearch($search_query);
+        $result = $this->movie_repository->getMoviesBySearch($search_query);
 
         // Assert
         $this->assertMoviesMatchExpected($expected_movies, $result);
@@ -102,7 +102,4 @@ class MovieServiceTest extends TestCase
      * @param Collection $expected_movies
      * @return void
      */
-
-
-
 }
