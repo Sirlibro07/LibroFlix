@@ -8,11 +8,12 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Log;
 use Inertia\Testing\AssertableInertia;
+use Tests\Helper\ViewTest;
 use Tests\TestCase;
 
 class MovieControllerTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, ViewTest;
 
     /**
      * @dataProvider titlesData
@@ -27,11 +28,7 @@ class MovieControllerTest extends TestCase
         $response = $this->get(route('movies.index', $title));
 
         // Assert
-        $response->assertOk();
-        $response->assertInertia(function (AssertableInertia $page) use ($title) {
-            $page->has('movies');
-            $page->where('title', $title);
-        });
+        $this->assertViewResponse($response);
     }
 
     public function test_show_returns_correct_view_when_slug_route_parameter_is_correct()
@@ -43,8 +40,7 @@ class MovieControllerTest extends TestCase
         $response = $this->get(route('movies.show', $expected_movie->slug));
 
         // Assert
-        $response->assertOk();
-        $response->assertInertia(fn (AssertableInertia $page) => $page->has('movie'));
+        $this->assertViewResponse($response);
     }
 
     public function test_show_returns_404_if_slug_parameter_is_incorrect()
@@ -70,11 +66,7 @@ class MovieControllerTest extends TestCase
         $response = $this->actingAs($user)->get(route('movies.watch', $expected_movie->slug));
 
         // Assert
-        $response->assertOk();
-        $response->assertInertia(function (AssertableInertia $page) use ($expected_movie) {
-            $page->has('has_verified_email');
-            $page->where('movie_title', $expected_movie->title);
-        });
+        $this->assertViewResponse($response);
     }
 
     public function test_watch_redirects_to_login_for_guest_user()

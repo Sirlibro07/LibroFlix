@@ -5,6 +5,8 @@ namespace Tests\Unit\Services;
 use App\Models\User;
 use App\Services\UserService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Tests\TestCase;
 
@@ -22,6 +24,28 @@ class UserServiceTest extends TestCase
     {
         parent::setUp();
         $this->user_service = new UserService();
+    }
+
+    public function test_store_creates_and_logs_user_in()
+    {
+        // Arrange
+        $data = ['name'=>'libro', 'email'=>'libro@gmail.com', 'password'=>'Password123'];
+
+        // Act
+        $this->user_service->store($data);
+
+        // Assert
+        $this->assertCount(1,User::all());
+        $user = User::first();
+        foreach ($data as $key => $value) {
+            if($key == 'password'){
+                $this->assertTrue(Hash::check($value, $user->$key));
+                continue;
+            }
+            $this->assertEquals($value, $user->$key);
+        };
+        $this->assertNotNull($user->email_verification_token);
+        $this->assertEquals(Auth::id(), $user->id);
     }
 
     public function test_update_with_different_name_only_updates_user_data(): void

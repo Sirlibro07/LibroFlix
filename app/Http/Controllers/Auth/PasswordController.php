@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\PasswordUpdated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PasswordUpdateRequest;
 use App\Services\PasswordService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Auth;
 
 class PasswordController extends Controller
 {
-    /**
-     * Update the user's password.
-     */
-    public function update(PasswordUpdateRequest $request, PasswordService $passwordService): RedirectResponse
+    private PasswordService $password_service;
+    public function __construct(PasswordService $password_service)
     {
-        $passwordService->update($request->input("password"));
+        $this->password_service = $password_service;
+    }
 
-        event(new PasswordUpdated(Auth::user()->email));
+    public function update(PasswordUpdateRequest $request): RedirectResponse
+    {
+       $this->password_service->update($request->input("password"));
 
         return back()->with("status", "Password updated");
     }

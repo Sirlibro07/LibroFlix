@@ -29,6 +29,6 @@ class SendWelcomeEmail implements ShouldQueue
         $user = User::where("email", $event->email)->first();
         $url = $this->email_verification_service->signedEmailVerificationRoute($user);
 
-        $this->sendEmailAsJob(new WelcomeEmail($user, $url));
+        $this->sendEmail(new WelcomeEmail($user, $url));
     }
 }

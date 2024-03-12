@@ -18,17 +18,11 @@ class AuthenticatedSessionController extends Controller
         $this->authenticated_session_service = $authenticated_session_service;
     }
 
-    /**
-     * Display the login view.
-     */
     public function create(): Response
     {
         return $this->renderAuthView("Login", ['status' => session('status'),]);
     }
 
-    /**
-     * Handle an incoming authentication request.
-     */
     public function store(LoginRequest $request): RedirectResponse
     {
         try {
@@ -39,9 +33,6 @@ class AuthenticatedSessionController extends Controller
         }
     }
 
-    /**
-     * Destroy an authenticated session.
-     */
     public function destroy(): RedirectResponse
     {
         $this->authenticated_session_service->destroy();

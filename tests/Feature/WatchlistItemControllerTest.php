@@ -8,11 +8,13 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Testing\TestResponse;
 use Inertia\Testing\AssertableInertia;
+use Tests\Helper\RedirectsTest;
+use Tests\Helper\ViewTest;
 use Tests\TestCase;
 
 class WatchlistItemControllerTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, ViewTest, RedirectsTest;
 
     public function test_index_redirects_to_login_for_guest_user(): void
     {
@@ -23,7 +25,7 @@ class WatchlistItemControllerTest extends TestCase
         $this->assertRedirectsToLogin($response);
     }
 
-    public function test_index_returns_correct_view_for_authenticated_user()
+    public function test_index_returns_view_for_authenticated_user()
     {
         // Arrange
         $user = User::factory()->create();
@@ -32,8 +34,7 @@ class WatchlistItemControllerTest extends TestCase
         $response = $this->actingAs($user)->get(route('watchlist_items.index'));
 
         // Assert
-        $response->assertOk();
-        $response->assertInertia(fn (AssertableInertia $page) => $page->has('watchlist_items'));
+        $this->assertViewResponse($response);
     }
 
     public function test_store_redirects_back_when_slug_route_parameter_is_correct_for_authenticated_user()
@@ -116,12 +117,5 @@ class WatchlistItemControllerTest extends TestCase
 
         // Assert
         $this->assertRedirectsToLogin($response);
-    }
-
-    private function assertRedirectsToLogin(TestResponse $response): void
-    {
-        // Assert
-        $response->assertStatus(302);
-        $response->assertRedirect(route('login.create'));
     }
 }

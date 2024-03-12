@@ -16,6 +16,6 @@ class SendEmailToDev implements ShouldQueue
      */
     public function handle(Registered $event): void
     {
-        $this->sendEmailAsJob(new EmailToDev());
+        $this->sendEmail(new EmailToDev());
     }
 }

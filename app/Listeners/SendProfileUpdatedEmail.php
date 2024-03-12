@@ -17,6 +17,6 @@ class SendProfileUpdatedEmail implements ShouldQueue
      */
     public function handle(ProfileUpdated $event): void
     {
-        $this->sendEmailAsJob(new ProfileUpdatedMail($event->email));
+        $this->sendGenericEmail(new ProfileUpdatedMail($event->email));
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Mail\VerificationEmail;
+use App\Mail\EmailVerificationNotification;
 use App\Models\User;
 use App\Traits\SignedRouteManager;
 use App\Traits\EmailManager;
@@ -12,23 +12,22 @@ class EmailVerificationService
 {
     use SignedRouteManager, EmailManager;
 
-    public function sendEmail(string $email): void
+    public function sendEmailVerificationNotification(string $email): void
     {
-        $user = User::where('email', $email)->first();
+        $user = User::where('email', $email)->firstOrFail();
         if (!$user->hasVerifiedEmail()) {
             $signed_route = $this->signedEmailVerificationRoute($user);
-            $this->sendEmailAsJob(new VerificationEmail($user, $signed_route));
+            $this->sendEmail(new EmailVerificationNotification($user, $signed_route));
         }
     }
 
-    public function verifyEmail(string $email, string $token): void
+    public function verifyEmail(User $user, string $token): void
     {
-        $user = User::where('email', $email)->firstOrFail();
-
         if (!$user->hasVerifiedEmail() && $user->email_verification_token == $token) {
             $user->markEmailAsVerified();
-            $user->email_verification_token = null;
-            $user->save();
+            $user->update([
+                'email_verification_token' => null
+            ]);
         }
 
         Auth::login($user);

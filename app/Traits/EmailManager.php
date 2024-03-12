@@ -8,13 +8,10 @@ use Illuminate\Support\Facades\Mail;
 
 trait EmailManager
 {
-    public function sendEmailAsJob(Mailable $mail): void
+    public function sendEmail(Mailable $mail): void
     {
-        try {
-            Mail::send($mail);
-        } catch (\Exception $e) {
-            Log::info($e->getMessage());
-        }
+        Mail::send($mail);
+        Log::info('mail has been sent now !');
     }
 
     public function getEmailSentMessage(string $email_name): string

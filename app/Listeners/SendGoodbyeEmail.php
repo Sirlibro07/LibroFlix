@@ -17,6 +17,6 @@ class SendGoodbyeEmail implements ShouldQueue
      */
     public function handle(ProfileDeleted $event): void
     {
-        $this->sendEmailAsJob(new GoodbyeEmail($event->email));
+        $this->sendEmail(new GoodbyeEmail($event->email));
     }
 }

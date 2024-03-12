@@ -9,6 +9,7 @@ use App\Services\PasswordResetService;
 use App\Traits\SignedRouteManager;
 use App\Traits\EmailManager;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Log;
 
 class SendPasswordUpdatedEmail implements ShouldQueue
 {
@@ -26,12 +27,7 @@ class SendPasswordUpdatedEmail implements ShouldQueue
      */
     public function handle(PasswordUpdated $event): void
     {
-        $user = User::where("email", $event->email)->first();
-
-        $this->password_reset_service->generateAndStorePasswordResetToken($user);
-
-        $signed_route = $this->getAuthSignedRoute('password_reset.create', now()->addHour(), $user->email, $user->password_reset_token);
-
-        $this->sendEmailAsJob(new PasswordUpdatedEmail($signed_route, $user->email));
+        $body = 'Your password has been updated. If it was not you';
+        $this->password_reset_service->sendPasswordResetEmail($event->email, $body);
     }
 }

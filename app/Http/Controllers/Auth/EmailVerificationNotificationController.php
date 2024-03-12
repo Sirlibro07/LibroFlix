@@ -17,7 +17,7 @@ class EmailVerificationNotificationController extends Controller
     }
     public function store(): RedirectResponse
     {
-        $this->email_verification_service->sendEmail(Auth::user()->email);
+        $this->email_verification_service->sendEmailVerificationNotification(Auth::user()->email);
 
         return back()->with("status", $this->email_verification_service->getEmailSentMessage('email verification'));
     }

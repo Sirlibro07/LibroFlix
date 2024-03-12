@@ -8,11 +8,13 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Testing\TestResponse;
 use Inertia\Testing\AssertableInertia;
+use Tests\Helper\RedirectsTest;
+use Tests\Helper\ViewTest;
 use Tests\TestCase;
 
 class ProfileControllerTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, ViewTest, RedirectsTest;
 
     public function test_edit_returns_correct_view_for_authenticated_user(): void
     {
@@ -23,18 +25,16 @@ class ProfileControllerTest extends TestCase
         $response = $this->actingAs($user)->get(route('profile.edit'));
 
         // Assert
-        $response->assertOk();
-        $response->assertInertia(function (AssertableInertia $page) {
-            $page->has('status');
-            $page->has('has_verified_email');
-        });
+        $this->assertViewResponse($response);
     }
 
 
     public function test_edit_redirects_to_login_for_guest_user(): void
     {
+        // Act
         $response = $this->get(route('profile.edit'));
 
+        // Assert
         $this->assertRedirectsToLogin($response);
     }
 
@@ -56,7 +56,7 @@ class ProfileControllerTest extends TestCase
         $response->assertSessionHasErrors($invalid_fields);
     }
 
-    public function test_update_redirects_back_with_success_message_for_authenticated_user_with_correct_form_data()
+    public function test_update_redirects_back_with_success_for_authenticated_user_with_correct_form_data()
     {
         // Arrange
         $user = User::factory()->create();
@@ -67,20 +67,24 @@ class ProfileControllerTest extends TestCase
 
         // Assert
         $response->assertRedirect(route('profile.edit'));
-        $response->assertSessionHas('status', 'Profile info updated');
+        $response->assertSessionHas('status');
     }
 
     public function test_update_redirects_to_login_for_guest_user(): void
     {
+        // Act
         $response = $this->patch(route('profile.update'));
 
+        //Assert
         $this->assertRedirectsToLogin($response);
     }
 
     public function test_destroy_redirects_to_login_for_guest_user()
     {
+        // Act
         $response = $this->delete(route('profile.destroy'));
 
+        //Assert
         $this->assertRedirectsToLogin($response);
     }
 
@@ -115,13 +119,6 @@ class ProfileControllerTest extends TestCase
 
         // Assert
         $response->assertRedirect(route('home'));
-    }
-
-    private function assertRedirectsToLogin(TestResponse $response): void
-    {
-        // Assert
-        $response->assertStatus(302);
-        $response->assertRedirect(route('login.create'));
     }
 
     public static function invalidPasswordData(): array

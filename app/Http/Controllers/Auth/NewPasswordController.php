@@ -7,6 +7,7 @@ use App\Http\Requests\NewPasswordRequest;
 use App\Models\User;
 use App\Services\PasswordResetService;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Validation\ValidationException;
 use Inertia\Response;
 
 class NewPasswordController extends Controller
@@ -18,12 +19,9 @@ class NewPasswordController extends Controller
         $this->password_reset_service = $password_reset_service;
     }
 
-    /**
-     * Display the password reset view.
-     */
+
     public function create(User $user, $token): Response
     {
-
         return $this->renderAuthView(
             'ResetPassword',
             [
@@ -35,9 +33,7 @@ class NewPasswordController extends Controller
     }
 
     /**
-     * Handle an incoming new password request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws ValidationException
      */
     public function store(NewPasswordRequest $request): RedirectResponse
     {
@@ -47,7 +43,9 @@ class NewPasswordController extends Controller
             $this->password_reset_service->resetPassword($user, $request->input('password'));
             return redirect()->route('login.create')->with('status', 'password updated');
         }
+        // la mail e' giusta, il token c'e' ma non e' corretto
 
-        return redirect()->back()->withErrors('token', 'the token is not valid anymore');
+        return redirect()->back()->withErrors(['token' => 'the token is not valid anymore']);
+
     }
 }

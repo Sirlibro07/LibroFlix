@@ -10,19 +10,16 @@ use Illuminate\Http\RedirectResponse;
 
 class VerifyEmailController extends Controller
 {
-    /**
-     * Mark the authenticated user's email address as verified.
-     */
-    public function __invoke(User $user, $token, EmailVerificationService $emailVerificationService): RedirectResponse
+    private EmailVerificationService $email_verification_service;
+    public function __construct(EmailVerificationService $email_verification_service)
     {
-        try {
-            $emailVerificationService->verifyEmail($user->email, $token);
+        $this->email_verification_service = $email_verification_service;
+    }
 
-            return redirect()->route("profile.edit")->with("status", "Email has been verified");
-        } catch (ModelNotFoundException $e) {
-            abort(404);
-        }
+    public function __invoke(User $user, $token): RedirectResponse
+    {
+        $this->email_verification_service->verifyEmail($user, $token);
 
-        // TODO make this into an event
+        return redirect()->route("profile.edit")->with("status", "Email has been verified");
     }
 }

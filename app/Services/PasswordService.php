@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Events\PasswordUpdated;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,5 +14,7 @@ class PasswordService
         $user->update([
             'password' => Hash::make($password),
         ]);
+
+        event(new PasswordUpdated(Auth::user()->email));
     }
 }
