@@ -11,7 +11,7 @@ const formElementsOnChangeHandler = (
                 ? { ...PrevState, [property]: e.target.checked }
                 : { ...PrevState, [property]: e.target.value };
 
-        console.log(state);
+        // console.log(state);
 
         return state;
     });
