@@ -53,10 +53,10 @@ class PasswordResetEmailControllerTest extends TestCase
     /**
      * @dataProvider invalidEmails
      */
-    public function test_store_returns_back_with_errors_when_email_is_invalid_for_guest_user($invalid_emails): void
+    public function test_store_returns_back_with_errors_when_email_is_invalid_for_guest_user(string $invalid_email): void
     {
         // Act
-        $response = $this->from(route($this->create_route_name))->post(route($this->store_route_name, ['email' => $invalid_emails]));
+        $response = $this->from(route($this->create_route_name))->post(route($this->store_route_name, ['email' => $invalid_email]));
 
         // Assert
         $this->assertRedirectCreateRoute($response);

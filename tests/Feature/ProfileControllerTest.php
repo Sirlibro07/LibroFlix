@@ -45,7 +45,7 @@ class ProfileControllerTest extends TestCase
     /**
      * @dataProvider invalidNameAndEmailData
      */
-    public function test_update_redirects_back_with_errors_for_authenticated_user_with_incorrect_form_data($invalid_data, $invalid_fields)
+    public function test_update_redirects_back_with_errors_for_authenticated_user_with_incorrect_form_data(array $invalid_data, array $invalid_fields)
     {
         // Arrange
         $user = User::factory()->create();

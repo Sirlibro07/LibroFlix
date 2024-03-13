@@ -88,7 +88,7 @@ class NewPasswordControllerTest extends TestCase
     /**
      * @dataProvider invalidFormData
      */
-    public function test_store_returns_back_with_errors_if_form_data_is_invalid($invalid_form_data, $invalid_fields): void
+    public function test_store_returns_back_with_errors_if_form_data_is_invalid(array $invalid_form_data, array $invalid_fields): void
     {
         // Arrange
         $user = User::factory()->create();

@@ -25,7 +25,7 @@ class PasswordControllerTest extends TestCase
     /**
      * @dataProvider invalidProfileEditFormData
      */
-    public function test_update_redirects_back_with_errors_if_form_data_is_invalid_for_authenticated_user($invalid_form_data, $invalid_fields): void
+    public function test_update_redirects_back_with_errors_if_form_data_is_invalid_for_authenticated_user(array $invalid_form_data, array $invalid_fields): void
     {
         // Arrange
         $user = User::factory()->create();

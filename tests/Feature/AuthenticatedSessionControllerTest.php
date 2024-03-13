@@ -84,7 +84,7 @@ class AuthenticatedSessionControllerTest extends TestCase
     /**
      * @dataProvider invalidCredentials
      */
-    public function test_store_redirects_back_for_guest_user_with_incorrect_credentials($incorrect_credentials): void
+    public function test_store_redirects_back_for_guest_user_with_incorrect_credentials(array $incorrect_credentials): void
     {
         // Arrange
         $password = 'password123';
