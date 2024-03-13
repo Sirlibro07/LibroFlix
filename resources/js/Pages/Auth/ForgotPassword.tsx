@@ -23,8 +23,8 @@ export default function ForgotPassword({ status }: ForgotPasswordProps) {
             route_name="password_reset_email.store"
             button_title="Send Recovery Email"
             processing={processing}
+            status={status}
         >
-            <AuthSuccessMessage status={status} />
             <FormInputField
                 name={"email"}
                 value={data.email}

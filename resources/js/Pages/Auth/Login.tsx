@@ -28,8 +28,8 @@ export default function Login({ status }: LoginProps) {
             link_route_name="register.create"
             link_title="Don't have an account? Sign up"
             processing={processing}
+            status={status}
         >
-            <AuthSuccessMessage status={status} />
             <FormInputField
                 name={"email"}
                 value={data.email}

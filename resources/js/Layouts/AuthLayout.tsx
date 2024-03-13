@@ -28,6 +28,7 @@ const AuthLayout = ({
     link_route_name = "",
     link_title = "",
     processing = false,
+    status = "",
 }: AuthLayoutProps) => {
     const renderWithContext = (auth_content_jsx: ReactNode): ReactNode => {
         return (
@@ -41,6 +42,7 @@ const AuthLayout = ({
                     link_title: link_title,
                     processing: processing,
                     name: name,
+                    status: status,
                 }}
             >
                 {auth_content_jsx}

@@ -4,8 +4,13 @@ import GeneralLink from "../Global/GeneralLink";
 import Button from "../Button/Button";
 import Heading, { HeadingProps } from "../LayoutItems/Heading";
 import AuthLayoutContext from "@/Contexts/AuthLayoutContext";
+import AuthSuccessMessage, {
+    AuthSuccessMessageProps,
+} from "./AuthSuccessMessage";
 
-export interface AuthFormProps extends Pick<HeadingProps, "name"> {
+export interface AuthFormProps
+    extends Pick<HeadingProps, "name">,
+        AuthSuccessMessageProps {
     children: ReactNode;
     method_function: (url: string) => void;
     route_name: string;
@@ -33,6 +38,8 @@ export default function AuthForm() {
                 name={Context.name}
                 className="text-center lg:text-typescale_67px"
             />
+
+            <AuthSuccessMessage status={Context.status} />
 
             {Context.children}
 

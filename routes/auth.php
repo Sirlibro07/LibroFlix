@@ -29,7 +29,7 @@ Route::middleware('guest')->group(function () {
         ->name('password_reset_email.create');
 
     Route::post('forgot-password', [PasswordResetEmailController::class, 'store'])
-        ->middleware("throttle:1,60")
+//        ->middleware("throttle:1,60")
         ->name('password_reset_email.store');
 
     // Reset Password
