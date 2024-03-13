@@ -18,6 +18,7 @@ Hi, thanks for visiting this project. It's a Full Stack movie website based on m
 - Factory
 - Service
 - Dependency injection
+- Repository
 
 ## Stack
 - Docker
