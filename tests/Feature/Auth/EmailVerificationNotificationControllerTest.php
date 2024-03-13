@@ -13,6 +13,20 @@ class EmailVerificationNotificationControllerTest extends TestCase
 
     private string $store_route_name = 'email_verification_notification.store';
 
+    public function test_store_returns_429_after_too_many_requests(): void
+    {
+        // Arrange
+        $user = User::factory()->create();
+        $profile_edit_route = route('profile.edit');
+        $this->actingAs($user)->from($profile_edit_route)->post(route('email_verification_notification.store'));
+
+        // Act
+        $response = $this->actingAs($user)->from($profile_edit_route)->post(route('email_verification_notification.store'));
+
+        // Assert
+        $response->assertTooManyRequests();
+    }
+
     public function test_store_redirects_to_login_for_guest_user(): void
     {
         // Act

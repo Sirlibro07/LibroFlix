@@ -50,6 +50,19 @@ class PasswordResetEmailControllerTest extends TestCase
         $response->assertSessionHas('status');
     }
 
+    public function test_store_returns_429_after_too_many_requests(): void
+    {
+        // Arrange
+        $user = User::factory()->create();
+        $this->from(route($this->create_route_name))->post(route($this->store_route_name, ['email' => $user->email]));
+
+        // Act
+        $response = $this->from(route($this->create_route_name))->post(route($this->store_route_name, ['email' => $user->email]));
+
+        // Assert
+        $response->assertTooManyRequests();
+    }
+
     /**
      * @dataProvider invalidEmails
      */
