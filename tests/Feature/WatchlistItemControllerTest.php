@@ -15,7 +15,6 @@ use Tests\TestCase;
 class WatchlistItemControllerTest extends TestCase
 {
     use RefreshDatabase, ViewTest, RedirectsTest;
-
     private string $watchlist_items_index_route_name = 'watchlist_items.index';
     private string $watchlist_items_store_route_name = 'watchlist_items.store';
     private string $watchlist_items_destroy_route_name = 'watchlist_items.destroy';
