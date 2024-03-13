@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <!-- Meta Tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Title -->
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
         
-         <link rel="icon" type="image/x-icon" href="{{asset("storage/images/app/favicon.ico")}}">
+        <!-- Icon -->
+        <link rel="icon" type="image/x-icon" href="{{asset("storage/images/app/favicon.ico")}}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
