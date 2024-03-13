@@ -1,6 +1,6 @@
 import React from "react";
 
-interface HeadingProps {
+export interface HeadingProps {
     name: string;
     className?: string;
 }

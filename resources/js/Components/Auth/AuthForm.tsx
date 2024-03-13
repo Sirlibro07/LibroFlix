@@ -1,9 +1,19 @@
 import formSubmit from "@/Helpers/functions/form/formSubmit";
-import React, { useContext } from "react";
+import React, { ReactNode, useContext } from "react";
 import GeneralLink from "../Global/GeneralLink";
 import Button from "../Button/Button";
-import Heading from "../LayoutItems/Heading";
+import Heading, { HeadingProps } from "../LayoutItems/Heading";
 import AuthLayoutContext from "@/Contexts/AuthLayoutContext";
+
+export interface AuthFormProps extends Pick<HeadingProps, "name"> {
+    children: ReactNode;
+    method_function: (url: string) => void;
+    route_name: string;
+    button_title: string;
+    link_route_name?: string;
+    link_title?: string;
+    processing: boolean;
+}
 
 export default function AuthForm() {
     const Context = useContext(AuthLayoutContext);
@@ -11,8 +21,6 @@ export default function AuthForm() {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         formSubmit(e, Context.method_function, Context.route_name);
     };
-
-    console.log(useContext(AuthLayoutContext).link_title);
 
     return (
         <form

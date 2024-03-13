@@ -1,15 +1,7 @@
-import { ReactNode, createContext } from "react";
+import { AuthFormProps } from "@/Components/Auth/AuthForm";
+import { createContext } from "react";
 
-export interface AuthLayoutContextProps {
-    name: string;
-    children: ReactNode;
-    method_function: (url: string) => void;
-    route_name: string;
-    button_title: string;
-    link_route_name?: string;
-    link_title?: string;
-    processing: boolean;
-}
+export interface AuthLayoutContextProps extends AuthFormProps {}
 
 const AuthLayoutContext = createContext<AuthLayoutContextProps | undefined>(
     undefined
