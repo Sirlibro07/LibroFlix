@@ -4,7 +4,7 @@ import MovieInfo from "./MovieInfo";
 import MovieRating from "./MovieRating";
 import MovieDescription from "./MovieDescription";
 import MovieType from "@/Helpers/Types/MovieType";
-import Actions from "./Actions";
+import MovieActions from "./MovieActions";
 import WatchlistIconAction from "../Watchlist/WatchlistIconAction";
 
 export interface MovieDetailsProps {
@@ -25,7 +25,7 @@ const MovieDetails = ({ movie }: MovieDetailsProps) => {
             </div>
             <MovieInfo date={movie.year} />
             <MovieRating rating={movie.rating} className={"mb-6 md:mb-5"} />
-            <Actions
+            <MovieActions
                 button="play"
                 slug={movie.slug}
                 watchlisted={movie.watchlisted}

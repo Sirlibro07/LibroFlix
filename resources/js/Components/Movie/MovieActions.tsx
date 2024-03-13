@@ -5,11 +5,11 @@ import WatchlistActionButton, {
 } from "../Watchlist/WatchlistActionButton";
 import MovieLearnButton from "./MovieLearnButton";
 
-interface ActionsProps extends WatchlistActionButtonProps {
+interface MovieActionsProps extends WatchlistActionButtonProps {
     button: "learn" | "play";
 }
 
-const Actions = ({ button, slug, watchlisted }: ActionsProps) => {
+const MovieActions = ({ button, slug, watchlisted }: MovieActionsProps) => {
     return (
         <div className="flex gap-2 lg:gap-3">
             {button == "play" ? (
@@ -30,4 +30,4 @@ const Actions = ({ button, slug, watchlisted }: ActionsProps) => {
     );
 };
 
-export default Actions;
+export default MovieActions;
