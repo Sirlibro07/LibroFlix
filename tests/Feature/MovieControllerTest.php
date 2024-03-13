@@ -15,6 +15,10 @@ class MovieControllerTest extends TestCase
 {
     use RefreshDatabase, ViewTest;
 
+    private string $movies_index_route_name = 'movies.index';
+    private string $movies_show_route_name = 'movies.show';
+    private string $movies_watch_route_name = 'movies.watch';
+
     /**
      * @dataProvider titlesData
      */
@@ -25,7 +29,7 @@ class MovieControllerTest extends TestCase
         Log::info($title_data);
 
         // Act
-        $response = $this->get(route('movies.index', $title));
+        $response = $this->get(route($this->movies_index_route_name, $title));
 
         // Assert
         $this->assertViewResponse($response);
@@ -37,7 +41,7 @@ class MovieControllerTest extends TestCase
         $expected_movie = Movie::factory()->create();
 
         // Act
-        $response = $this->get(route('movies.show', $expected_movie->slug));
+        $response = $this->get(route($this->movies_show_route_name, $expected_movie->slug));
 
         // Assert
         $this->assertViewResponse($response);
@@ -50,7 +54,7 @@ class MovieControllerTest extends TestCase
         $incorrect_slug = $expected_movie->slug . 'hello';
 
         // Act
-        $response = $this->get(route('movies.show', $incorrect_slug));
+        $response = $this->get(route($this->movies_show_route_name, $incorrect_slug));
 
         // Assert
         $response->assertNotFound();
@@ -63,7 +67,7 @@ class MovieControllerTest extends TestCase
         $expected_movie = Movie::factory()->create();
 
         // Act
-        $response = $this->actingAs($user)->get(route('movies.watch', $expected_movie->slug));
+        $response = $this->actingAs($user)->get(route($this->movies_watch_route_name, $expected_movie->slug));
 
         // Assert
         $this->assertViewResponse($response);
@@ -72,7 +76,7 @@ class MovieControllerTest extends TestCase
     public function test_watch_redirects_to_login_for_guest_user()
     {
         // Act
-        $response = $this->get(route('movies.watch', 'slug'));
+        $response = $this->get(route($this->movies_watch_route_name, 'slug'));
 
         // Assert
         $response->assertStatus(302);
@@ -87,7 +91,7 @@ class MovieControllerTest extends TestCase
         $incorrect_slug = $expected_movie->slug . 'hello';
 
         // Act
-        $response = $this->actingAs($user)->get(route('movies.watch', $incorrect_slug));
+        $response = $this->actingAs($user)->get(route($this->movies_watch_route_name, $incorrect_slug));
 
         // Assert
         $response->assertNotFound();

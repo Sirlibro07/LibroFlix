@@ -13,14 +13,14 @@ use Tests\TestCase;
 class AuthenticatedSessionControllerTest extends TestCase
 {
     use RefreshDatabase, ViewTest, RedirectsTest;
-    private string $create_route = 'login.create';
-    private string $store_route = 'login.store';
-    private string $destroy_route = 'logout.store';
+    private string $create_route_name = 'login.create';
+    private string $store_route_name = 'login.store';
+    private string $destroy_route_name = 'logout.store';
 
     public function test_create_returns_view_for_guest_user(): void
     {
         // Act
-        $response = $this->get(route($this->create_route));
+        $response = $this->get(route($this->create_route_name));
 
         // Assert
         $this->assertViewResponse($response);
@@ -32,7 +32,7 @@ class AuthenticatedSessionControllerTest extends TestCase
         $user = User::factory()->create();
 
         // Act
-        $response = $this->actingAs($user)->get(route($this->create_route));
+        $response = $this->actingAs($user)->get(route($this->create_route_name));
 
         // Assert
         $this->assertRedirectHome($response);
@@ -44,7 +44,7 @@ class AuthenticatedSessionControllerTest extends TestCase
         $user = User::factory()->create();
 
         // Act
-        $response = $this->actingAs($user)->post(route($this->store_route));
+        $response = $this->actingAs($user)->post(route($this->store_route_name));
 
         // Assert
         $this->assertRedirectHome($response);
@@ -56,11 +56,11 @@ class AuthenticatedSessionControllerTest extends TestCase
     public function test_store_redirects_back_with_errors_for_guest_user_with_invalid_form_data(array $invalid_form_data, array $invalid_fields): void
     {
         // Act
-        $response = $this->from(route($this->create_route))->post(route($this->store_route), $invalid_form_data);
+        $response = $this->from(route($this->create_route_name))->post(route($this->store_route_name), $invalid_form_data);
 
         // Assert
         $response->assertStatus(302);
-        $response->assertRedirect(route($this->create_route));
+        $response->assertRedirect(route($this->create_route_name));
         $response->assertSessionHasErrors($invalid_fields);
     }
 
@@ -75,7 +75,7 @@ class AuthenticatedSessionControllerTest extends TestCase
         $form_data = [...$credentials, 'remember'=> false];
 
         // Act
-        $response = $this->from(route($this->create_route))->post(route($this->store_route), $form_data);
+        $response = $this->from(route($this->create_route_name))->post(route($this->store_route_name), $form_data);
 
         // Assert
         $this->assertRedirectHome($response);
@@ -95,11 +95,11 @@ class AuthenticatedSessionControllerTest extends TestCase
         $form_data = [...$incorrect_credentials, 'remember'=> false];
 
         // Act
-        $response = $this->from(route($this->create_route))->post(route($this->store_route), $form_data);
+        $response = $this->from(route($this->create_route_name))->post(route($this->store_route_name), $form_data);
 
         // Assert
         $response->assertStatus(302);
-        $response->assertRedirect(route($this->create_route));
+        $response->assertRedirect(route($this->create_route_name));
         $response->assertSessionHasErrors('email');
     }
 
@@ -109,7 +109,7 @@ class AuthenticatedSessionControllerTest extends TestCase
         $user = User::factory()->create();
 
         // Act
-        $response = $this->actingAs($user)->delete(route($this->destroy_route));
+        $response = $this->actingAs($user)->delete(route($this->destroy_route_name));
 
         // Assert
         $this->assertRedirectHome($response);
@@ -118,7 +118,7 @@ class AuthenticatedSessionControllerTest extends TestCase
     public function test_destroy_redirects_login_for_guest_user(): void
     {
         // Act
-        $response = $this->delete(route($this->destroy_route));
+        $response = $this->delete(route($this->destroy_route_name));
 
         // Assert
         $this->assertRedirectsToLogin($response);

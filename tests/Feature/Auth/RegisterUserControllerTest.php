@@ -13,13 +13,13 @@ class RegisterUserControllerTest extends TestCase
 {
     use RefreshDatabase, RedirectsTest, ViewTest;
 
-    private string $create_route = 'register.create';
-    private string $store_route = 'register.store';
+    private string $create_route_name = 'register.create';
+    private string $store_route_name = 'register.store';
 
     public function test_create_returns_view_for_guest_user(): void
     {
         // Act
-        $response = $this->get(route($this->create_route));
+        $response = $this->get(route($this->create_route_name));
 
         // Assert
         $this->assertViewResponse($response);
@@ -31,7 +31,7 @@ class RegisterUserControllerTest extends TestCase
         $user = User::factory()->create();
 
         // Act
-        $response = $this->actingAs($user)->get(route($this->create_route));
+        $response = $this->actingAs($user)->get(route($this->create_route_name));
 
         // Assert
         $this->assertRedirectHome($response);
@@ -43,7 +43,7 @@ class RegisterUserControllerTest extends TestCase
         $user = User::factory()->create();
 
         // Act
-        $response = $this->actingAs($user)->post(route($this->store_route));
+        $response = $this->actingAs($user)->post(route($this->store_route_name));
 
         // Assert
         $this->assertRedirectHome($response);
@@ -55,10 +55,10 @@ class RegisterUserControllerTest extends TestCase
     public function test_store_redirects_back_with_errors_for_guest_user_with_invalid_form_data(array $invalid_form_data, array $invalid_fields): void
     {
         // Act
-        $response = $this->from($this->create_route)->post(route($this->store_route), $invalid_form_data);
+        $response = $this->from($this->create_route_name)->post(route($this->store_route_name), $invalid_form_data);
 
         // Assert
-        $response->assertRedirect($this->create_route);
+        $response->assertRedirect($this->create_route_name);
         $response->assertSessionHasErrors($invalid_fields);
     }
 
@@ -68,7 +68,7 @@ class RegisterUserControllerTest extends TestCase
         $form_data = ['name'=> 'libro', 'email' => 'libro@gmail.com', 'password' => 'Password123', 'password_confirmation' => 'Password123'];
 
         // Act
-        $response = $this->from($this->create_route)->post(route($this->store_route), $form_data);
+        $response = $this->from($this->create_route_name)->post(route($this->store_route_name), $form_data);
 
         // Assert
         $this->assertRedirectHome($response);

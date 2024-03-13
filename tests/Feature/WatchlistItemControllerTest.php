@@ -16,10 +16,14 @@ class WatchlistItemControllerTest extends TestCase
 {
     use RefreshDatabase, ViewTest, RedirectsTest;
 
+    private string $watchlist_items_index_route_name = 'watchlist_items.index';
+    private string $watchlist_items_store_route_name = 'watchlist_items.store';
+    private string $watchlist_items_destroy_route_name = 'watchlist_items.destroy';
+
     public function test_index_redirects_to_login_for_guest_user(): void
     {
         // Act
-        $response = $this->get(route('watchlist_items.index'));
+        $response = $this->get(route($this->watchlist_items_index_route_name));
 
         // Assert
         $this->assertRedirectsToLogin($response);
@@ -31,7 +35,7 @@ class WatchlistItemControllerTest extends TestCase
         $user = User::factory()->create();
 
         // Act
-        $response = $this->actingAs($user)->get(route('watchlist_items.index'));
+        $response = $this->actingAs($user)->get(route($this->watchlist_items_index_route_name));
 
         // Assert
         $this->assertViewResponse($response);
@@ -45,7 +49,7 @@ class WatchlistItemControllerTest extends TestCase
         $movie_route = route('movies.show', $movie->slug);
 
         // Act
-        $response = $this->actingAs($user)->from($movie_route)->post(route('watchlist_items.store', $movie->slug));
+        $response = $this->actingAs($user)->from($movie_route)->post(route($this->watchlist_items_store_route_name, $movie->slug));
 
         // Assert
         $response->assertRedirect($movie_route);
@@ -60,7 +64,7 @@ class WatchlistItemControllerTest extends TestCase
         $movie_route = route('movies.show', $movie->slug);
 
         // Act
-        $response = $this->actingAs($user)->from($movie_route)->post(route('watchlist_items.store', $incorrect_slug));
+        $response = $this->actingAs($user)->from($movie_route)->post(route($this->watchlist_items_store_route_name, $incorrect_slug));
 
         // Assert
         $response->assertNotFound();
@@ -72,7 +76,7 @@ class WatchlistItemControllerTest extends TestCase
         $movie = Movie::factory()->create();
 
         // Act
-        $response = $this->post(route('watchlist_items.store', $movie->slug));
+        $response = $this->post(route($this->watchlist_items_store_route_name, $movie->slug));
 
         // Assert
         $this->assertRedirectsToLogin($response);
@@ -86,7 +90,7 @@ class WatchlistItemControllerTest extends TestCase
         $movie_route = route('movies.show', $movie->slug);
 
         // Act
-        $response = $this->actingAs($user)->from($movie_route)->delete(route('watchlist_items.destroy', $movie->slug));
+        $response = $this->actingAs($user)->from($movie_route)->delete(route($this->watchlist_items_destroy_route_name, $movie->slug));
 
         // Assert
         $response->assertRedirect($movie_route);
@@ -101,7 +105,7 @@ class WatchlistItemControllerTest extends TestCase
         $movie_route = route('movies.show', $movie->slug);
 
         // Act
-        $response = $this->actingAs($user)->from($movie_route)->delete(route('watchlist_items.destroy', $incorrect_slug));
+        $response = $this->actingAs($user)->from($movie_route)->delete(route($this->watchlist_items_destroy_route_name, $incorrect_slug));
 
         // Assert
         $response->assertNotFound();
@@ -113,7 +117,7 @@ class WatchlistItemControllerTest extends TestCase
         $movie = Movie::factory()->create();
 
         // Act
-        $response = $this->delete(route('watchlist_items.destroy', $movie->slug));
+        $response = $this->delete(route($this->watchlist_items_destroy_route_name, $movie->slug));
 
         // Assert
         $this->assertRedirectsToLogin($response);

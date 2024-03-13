@@ -15,7 +15,8 @@ class NewPasswordControllerTest extends TestCase
     use RefreshDatabase, RedirectsTest, ViewTest;
 
     private PasswordResetService $password_reset_service;
-    private string $store_route = 'password_reset.store';
+    private string $store_route_name = 'password_reset.store';
+    private string $create_route = 'password_reset.create';
 
     protected function setUp(): void
     {
@@ -23,7 +24,7 @@ class NewPasswordControllerTest extends TestCase
 
         $this->password_reset_service = new PasswordResetService();
     }
-    private string $create_route = 'password_reset.create';
+
 
     public function test_create_returns_view_for_guest_user_with_correct_email(): void
     {
@@ -95,7 +96,7 @@ class NewPasswordControllerTest extends TestCase
         $signed_route = $this->password_reset_service->signedPasswordResetRoute($user);
 
         // Act
-        $response = $this->from($signed_route)->post(route($this->store_route), $invalid_form_data);
+        $response = $this->from($signed_route)->post(route($this->store_route_name), $invalid_form_data);
 
         // Assert
         $response->assertRedirect($signed_route);
@@ -112,7 +113,7 @@ class NewPasswordControllerTest extends TestCase
         $signed_route = $this->password_reset_service->signedPasswordResetRoute($user);
 
         // Act
-        $response = $this->from($signed_route)->post(route($this->store_route), [
+        $response = $this->from($signed_route)->post(route($this->store_route_name), [
             'email' => $user->email,
             'token' => 'incorrect_token',
             'password' => $new_password,
@@ -135,7 +136,7 @@ class NewPasswordControllerTest extends TestCase
         $new_password = 'newPassword123';
 
         // Act
-        $response = $this->from($signed_route)->post(route($this->store_route), [
+        $response = $this->from($signed_route)->post(route($this->store_route_name), [
             'email'=>$user->email,
             'token' => $user->password_reset_token,
             'password'=>$new_password,

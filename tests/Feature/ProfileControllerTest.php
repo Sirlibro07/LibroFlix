@@ -16,13 +16,17 @@ class ProfileControllerTest extends TestCase
 {
     use RefreshDatabase, ViewTest, RedirectsTest;
 
+    private string $profile_edit_route_name = 'profile.edit';
+    private string $profile_update_route_name = 'profile.update';
+    private string $profile_destroy_route_name = 'profile.destroy';
+
     public function test_edit_returns_correct_view_for_authenticated_user(): void
     {
         // Arrange
         $user = User::factory()->create();
 
         // Act
-        $response = $this->actingAs($user)->get(route('profile.edit'));
+        $response = $this->actingAs($user)->get(route($this->profile_edit_route_name));
 
         // Assert
         $this->assertViewResponse($response);
@@ -32,7 +36,7 @@ class ProfileControllerTest extends TestCase
     public function test_edit_redirects_to_login_for_guest_user(): void
     {
         // Act
-        $response = $this->get(route('profile.edit'));
+        $response = $this->get(route($this->profile_edit_route_name));
 
         // Assert
         $this->assertRedirectsToLogin($response);
@@ -48,11 +52,11 @@ class ProfileControllerTest extends TestCase
 
         // Act
         $response = $this->actingAs($user)
-            ->from(route('profile.edit'))
-            ->patch(route('profile.update', $invalid_data));
+            ->from(route($this->profile_edit_route_name))
+            ->patch(route($this->profile_update_route_name, $invalid_data));
 
         // Assert
-        $response->assertRedirect(route('profile.edit'));
+        $response->assertRedirect(route($this->profile_edit_route_name));
         $response->assertSessionHasErrors($invalid_fields);
     }
 
@@ -63,17 +67,17 @@ class ProfileControllerTest extends TestCase
         $requestData = ['name' => 'fabio', 'email' => 'fabio@gmail.com'];
 
         // Act
-        $response = $this->actingAs($user)->from(route('profile.edit'))->patch(route('profile.update', $requestData));
+        $response = $this->actingAs($user)->from(route($this->profile_edit_route_name))->patch(route($this->profile_update_route_name, $requestData));
 
         // Assert
-        $response->assertRedirect(route('profile.edit'));
+        $response->assertRedirect(route($this->profile_edit_route_name));
         $response->assertSessionHas('status');
     }
 
     public function test_update_redirects_to_login_for_guest_user(): void
     {
         // Act
-        $response = $this->patch(route('profile.update'));
+        $response = $this->patch(route($this->profile_update_route_name));
 
         //Assert
         $this->assertRedirectsToLogin($response);
@@ -82,7 +86,7 @@ class ProfileControllerTest extends TestCase
     public function test_destroy_redirects_to_login_for_guest_user()
     {
         // Act
-        $response = $this->delete(route('profile.destroy'));
+        $response = $this->delete(route($this->profile_destroy_route_name));
 
         //Assert
         $this->assertRedirectsToLogin($response);
@@ -98,11 +102,11 @@ class ProfileControllerTest extends TestCase
 
         // Act
         $response = $this->actingAs($user)
-            ->from(route('profile.edit'))
-            ->delete(route('profile.destroy', $invalid_password));
+            ->from(route($this->profile_edit_route_name))
+            ->delete(route($this->profile_destroy_route_name, $invalid_password));
 
         // Assert
-        $response->assertRedirect(route('profile.edit'));
+        $response->assertRedirect(route($this->profile_edit_route_name));
         $response->assertSessionHasErrors(['password']);
     }
 
@@ -115,7 +119,7 @@ class ProfileControllerTest extends TestCase
         ]);
 
         // Act
-        $response = $this->actingAs($user)->from(route('profile.edit'))->delete(route('profile.destroy', ['password' => $user_password]));
+        $response = $this->actingAs($user)->from(route($this->profile_edit_route_name))->delete(route($this->profile_destroy_route_name, ['password' => $user_password]));
 
         // Assert
         $response->assertRedirect(route('home'));

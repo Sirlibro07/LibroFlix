@@ -12,10 +12,12 @@ class HomeControllerTest extends TestCase
 {
     use RefreshDatabase, ViewTest;
 
+    private string $home_route_name = 'home';
+
     public function test_invoke_returns_correct_view(): void
     {
         // Act
-        $response = $this->get(route('home'));
+        $response = $this->get(route($this->home_route_name));
 
         // Assert
         $this->assertViewResponse($response);
