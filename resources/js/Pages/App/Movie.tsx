@@ -4,9 +4,10 @@ import underscoreToSpace from "@/Helpers/functions/global/underscoreToSpace";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 import MovieResourceType from "@/Helpers/Types/MovieResourceType";
+import MovieType from "@/Helpers/Types/MovieType";
 
 interface MovieProps {
-    movie: MovieResourceType;
+    movie: MovieResourceType<MovieType>;
 }
 
 const Movie = ({ movie }: MovieProps) => {

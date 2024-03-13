@@ -3,10 +3,11 @@ import HomeContent from "@/Components/Home/HomeContent";
 import MoviesContext from "@/Contexts/MoviesContext";
 import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
-import MoviesResourceType from "@/Helpers/Types/MoviesResourceType";
+import MovieResourceType from "@/Helpers/Types/MovieResourceType";
+import MovieType from "@/Helpers/Types/MovieType";
 
 interface HomeProps {
-    movies: MoviesResourceType;
+    movies: MovieResourceType<MovieType[]>;
 }
 
 const Home = ({ movies }: HomeProps) => {

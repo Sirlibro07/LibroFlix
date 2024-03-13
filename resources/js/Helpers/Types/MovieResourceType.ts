@@ -1,5 +1,5 @@
 import MovieType from "./MovieType";
 
-type MovieResourceType = { data: MovieType };
+type MovieResourceType<T extends MovieType | MovieType[]> = { data: T };
 
 export default MovieResourceType;

@@ -2,10 +2,11 @@ import AppLayout from "@/Layouts/AppLayout";
 import React, { ReactNode } from "react";
 import MoviesContext from "@/Contexts/MoviesContext";
 import SearchContent from "@/Components/Search/SearchContent";
-import MoviesResourceType from "@/Helpers/Types/MoviesResourceType";
+import MovieResourceType from "@/Helpers/Types/MovieResourceType";
+import MovieType from "@/Helpers/Types/MovieType";
 
 interface SearchProps {
-    movies: MoviesResourceType;
+    movies: MovieResourceType<MovieType[]>;
     title: string;
 }
 

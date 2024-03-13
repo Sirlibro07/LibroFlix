@@ -1,10 +1,11 @@
 import Grid from "@/Components/Grid/Grid";
 import AppLayout from "@/Layouts/AppLayout";
-import MoviesResourceType from "@/Helpers/Types/MoviesResourceType";
+import MovieResourceType from "@/Helpers/Types/MovieResourceType";
+import MovieType from "@/Helpers/Types/MovieType";
 import React, { useMemo } from "react";
 
 interface WatchlistProps {
-    watchlist_items: MoviesResourceType;
+    watchlist_items: MovieResourceType<MovieType[]>;
 }
 
 const Watchlist = ({ watchlist_items }: WatchlistProps) => {
