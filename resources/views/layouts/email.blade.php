@@ -27,7 +27,7 @@
 </head>
 <body>
     <main class="center">
-        <h1 id="logo" class="text-brand-class">Librone</h1>
+        <h1 id="logo" class="text-brand-class">{{config('app.name')}}</h1>
         @yield('content')
     </main>
 </body>
