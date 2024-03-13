@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('watchlist_items', function (Blueprint $table) {
-            $table->foreignId("user_id")->constrained("users");
-            $table->foreignId("movie_id")->constrained("movies");
+            $table->foreignId("user_id")->constrained();
+            $table->foreignId("movie_id")->constrained();
         });
     }
 
