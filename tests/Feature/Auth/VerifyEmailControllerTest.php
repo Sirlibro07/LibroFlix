@@ -36,7 +36,7 @@ class VerifyEmailControllerTest extends TestCase
         $response->assertSessionHas('status');
     }
 
-    public function test_invoke_returns_403_if_uri_is_modified(): void
+    public function test_invoke_returns_403_if_url_is_not_a_signed_route(): void
     {
         // Arrange
         $user = User::factory()->create();

@@ -70,7 +70,7 @@ class NewPasswordControllerTest extends TestCase
         $response->assertNotFound();
     }
 
-    public function test_create_returns_403_if_uri_is_modified(): void
+    public function test_create_returns_403_if_url_is_not_a_signed_route(): void
     {
         // Arrange
         $user = User::factory()->create();

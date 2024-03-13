@@ -43,7 +43,7 @@ Route::middleware('guest')->group(function () {
 
 // Email Verification
 Route::get('verify-email/{user:email}/{token}', VerifyEmailController::class)
-    ->middleware(['signed'])
+    ->middleware('signed')
     ->name('verification.verify');
 
 Route::middleware('auth')->group(function () {
