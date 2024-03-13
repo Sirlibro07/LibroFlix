@@ -6,66 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
-<link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|reggae-one:400" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|reggae-one:400" rel="stylesheet" />
     <style>
-        *
-        {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            color:white;
-            font-weight: normal;
-        }
+      .text-brand-class {
+        color: #f37335;
+      }
 
-        html,body
-        {
-            height: 100%;
-        }
+      #logo {
+        font-family: Reggae One, Inter, sans-serif;
+        font-size: 33px;
+        margin-bottom: 20px;
+      }
 
-        body
-        {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        main
-        {
-            height: fit-content;
-            width: clamp(250px, 100%, 500px);
-            background-color: black;
-            border-radius: 30px;
-            padding: 20px;
-            
-        }
-
-        .text-brand-class
-        {
-            color: #F37335;
-        }
-
-        #logo
-        {
-            font-family: Reggae One, Inter, sans-serif;
-            font-size: 33px;
-            margin-bottom: 20px;
-        }
-
-        p
-        {
-            line-height: 1.5rem;
-            font-size: 16px;
-            font-family: Inter, sans-serif;
-            
-        }
-
-        @media(min-width: 1024px)
-        {
-            main
-            {
-                padding: 50px
-            }
-        }
+      p {
+        line-height: 1.5rem;
+        font-size: 16px;
+        font-family: Inter, sans-serif;
+      }
     </style>
 </head>
 <body>
