@@ -23,7 +23,7 @@ Hi, thanks for visiting this project. It's a Full Stack movie website based on m
 ## Stack
 - Docker
 - Back End done in Laravel + MySql
-- Front End done in React.tsx SSR rendered by Laravel
+- Front End done in Tailwind CSS + React.tsx SSR rendered by Laravel
 
 ## Tests
 
