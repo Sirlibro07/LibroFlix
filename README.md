@@ -4,26 +4,26 @@ Hi, thanks for visiting this project. It's a Full Stack movie website based on m
 
 ## Functionalities
 
-- Authentication such as login, register, email verification, and reset password.
-- Movie Search
-- Dedicated Movie page
-- Watchlist store and delete
-- Account Crud
-
-
+-   Authentication such as login, register, email verification, and reset password.
+-   Movie Search
+-   Dedicated Movie page
+-   Watchlist store and delete
+-   Account Crud
 
 ## Patterns Used
 
-- MVC
-- Factory
-- Service
-- Dependency injection
-- Repository
+-   MVC
+-   Factory
+-   Service
+-   Dependency injection
+-   Repository
+-   Event | Listener | Observer
 
 ## Stack
-- Docker
-- Back End done in Laravel + MySql
-- Front End done in Tailwind CSS + React.tsx SSR rendered by Laravel
+
+-   Docker
+-   Back End done in Laravel + MySql
+-   Front End done in Tailwind CSS + React.tsx SSR rendered by Laravel
 
 ## Tests
 
