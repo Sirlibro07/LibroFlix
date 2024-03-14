@@ -8,8 +8,9 @@ const FooterSocials = () => {
                 className="mr-3"
                 icon_type="brands"
                 icon_name="linkedin"
+                link_url="https://www.linkedin.com/in/fabio-carminati-web-developer/"
             />
-            <FooterSocial icon_type="brands" icon_name="discord" />
+            {/* <FooterSocial icon_type="brands" icon_name="discord" /> */}
         </>
     );
 };
