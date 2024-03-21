@@ -1,6 +1,6 @@
-import React, { ReactNode, useContext } from "react";
+import React, { ReactNode } from "react";
 import Heading from "./Heading";
-import NavbarContext from "@/Contexts/NavbarContext";
+import useBrightness from "@/Hooks/useBrightness";
 
 export interface AppLayoutChildrenProps {
     className?: string;
@@ -17,17 +17,12 @@ const AppLayoutChildren = ({
     Heading_className = "",
     body_padding = true,
 }: AppLayoutChildrenProps) => {
-    const Context = useContext(NavbarContext);
-    const { isMenuVisible } = Context;
-    const { isSearchbarVisible } = Context;
-
     const body_padding_style = body_padding ? "body-padding" : "";
-    const low_brightness_style =
-        isMenuVisible || isSearchbarVisible ? "brightness-[30%]" : "";
+    const brightness_style = useBrightness();
 
     return (
         <div
-            className={`${body_padding_style} ${low_brightness_style} relative min-height-full`}
+            className={`${body_padding_style} ${brightness_style} relative min-height-full`}
         >
             <section className={`${className}`}>
                 {Heading_name && (
